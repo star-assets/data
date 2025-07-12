@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="ChangelingDisguisePlayerIndex"/>
+<Behavior id="SpiderMineSCBWWeapon@MimicDisable"/>
+<Effect id="ReaverSCBWWeapon@ChaseCancel"/>
+<Effect id="ReaverSCBWWeapon@ChaseSwitch"/>
+<Effect id="ReaverSCBWWeapon@SetInitial"/>
+</Preload>
