@@ -1,0 +1,21 @@
+<Catalog>
+  <CColorStyle default="1">
+    <Name value="ColorStyle/Name/##id##" />
+    <ColorEntry />
+  </CColorStyle>
+  <CColorStyle id="AllWhite" />
+  <CColorStyle id="Primary">
+    <ColorEntry />
+  </CColorStyle>
+  <CColorStyle id="Shields" parent="AllWhite" />
+  <CColorStyle id="Energy" parent="AllWhite" />
+  <CColorStyle id="Reduction">
+    <ColorEntry />
+  </CColorStyle>
+  <CColorStyle id="HoT">
+    <ColorEntry />
+  </CColorStyle>
+  <CColorStyle id="DoT">
+    <ColorEntry />
+  </CColorStyle>
+</Catalog>

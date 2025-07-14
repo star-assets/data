@@ -1,0 +1,6 @@
+<Catalog>
+  <CObjective default="1">
+    <Name value="Objective/Name/##id##" />
+    <Description value="Objective/Description/##id##" />
+  </CObjective>
+</Catalog>

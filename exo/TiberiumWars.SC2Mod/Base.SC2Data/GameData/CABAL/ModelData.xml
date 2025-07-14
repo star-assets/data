@@ -1,0 +1,864 @@
+<Catalog>
+    <CModel default="1" id="CabalUnit" parent="Unit">
+        <?token id="model" value="##id##"?>
+        <Model value="Assets\Units\Cabal\##model##.m3"/>
+        <EditorCategories value="Race:Cabal"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel default="1" id="CabalBuildingDeath" parent="BuildingDeath">
+        <Model value="Assets\Buildings\Cabal\##model##.m3"/>
+        <LowQualityModel value="TerranBuildingDeathLow"/>
+        <EditorCategories value="Race:Cabal"/>
+    </CModel>
+    <CModel default="1" id="CabalBuilding" parent="Unit">
+        <?token id="model" value="##id##"?>
+        <Model value="Assets\Buildings\Cabal\##model##.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel default="1" id="CabalUnitDeath" parent="UnitDeath">
+        <?token id="model" value="##id##"?>
+        <Model value="Assets\Units\Cabal\##model##.m3"/>
+        <EditorCategories value="Race:CABAL"/>
+        <Occlusion value="Show"/>
+    </CModel>
+
+    <CModel id="VertigoPlatformDeath" parent="StarportDeathBase">
+        <Model value="Assets\Effects\Terran\TerranSmallUnitDeath\TerranSmallUnitDeath.m3"/>
+        <Events index="0" removed="1"/>
+        <Events index="1" removed="1"/>
+        <Events index="2" removed="1"/>
+        <Events index="3" removed="1"/>
+        <Events index="4" removed="1"/>
+        <Events index="5" removed="1"/>
+        <Events index="6" removed="1"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDevout_Upgrade" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalEnlightened_Upgrade" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalBlackHand_Upgrade" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalRaider" parent="CabalUnit">
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="CabalReaper_Upgrade" parent="CabalUnit">
+        <Model value="Assets\Models\Nod Reaper\Nod Reape Upgrader.m3"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="CabalWidowWreckage" parent="CabalUnit">
+        <AttachProps Id="Ref_Weapon 01">
+            <Keys index="SetA" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 02">
+            <Keys index="SetA" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 03">
+            <Keys index="SetA" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 04">
+            <Keys index="SetA" value="0"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 05">
+            <Keys index="CustomA" value="1"/>
+            <Keys index="SetA" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 06">
+            <Keys index="SetA" value="4"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 07">
+            <Keys index="CustomA" value="1"/>
+            <Keys index="SetA" value="1"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 08">
+            <Keys index="SetB" value="4"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 15">
+            <Keys index="SetA" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 16">
+            <Keys index="SetA" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 17">
+            <Keys index="SetA" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Weapon 18">
+            <Keys index="SetA" value="3"/>
+        </AttachProps>
+        <AttachProps Id="Ref_Center">
+            <Keys index="Turret" value="0"/>
+        </AttachProps>
+        <Events>
+            <Anim value="Stand,Morph,Start"/>
+            <Name value="ThorImmortalityProtocolBirth"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Thor_ImmortalityProtocolBirth"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,End"/>
+            <Name value="ThorImmortalityProtocolDeath"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+            <Payload value="Thor_ImmortalityProtocolDeath"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="0.600000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="1.933000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="3.100000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="4.433000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="5.733000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Morph,00"/>
+            <Name value="Thor_ImmortalityProtocolWeld"/>
+            <Type value="Sound"/>
+            <Time value="6.933000"/>
+            <Payload value="Thor_ImmortalityProtocolWeld"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="ThorWreckageSparks"/>
+            <Type value="Sound"/>
+            <Time value="0.210000"/>
+            <Payload value="ThorWreckageSparks"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="ThorWreckageSparks"/>
+            <Type value="Sound"/>
+            <Time value="0.370000"/>
+            <Payload value="ThorWreckageSparks"/>
+        </Events>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="ThorWreckageSparks"/>
+            <Type value="Sound"/>
+            <Time value="1.430000"/>
+            <Payload value="ThorWreckageSparks"/>
+        </Events>
+        <Radius value="0.800000"/>
+        <SelectionRadius value="1.845700"/>
+        <ShadowRadius value="1.230700"/>
+    </CModel>
+    <CModel id="CabalSpider" parent="CabalUnit">
+        <Radius value="0.650000"/>
+        <SelectionRadius value="0.866400"/>
+        <ShadowRadius value="0.866400"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.600000"/>
+        <TipabilityWidth value="0.400000"/>
+    </CModel>
+    <CModel id="CabalReckoner" parent="NodUnit">
+        <Radius value="1.050000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.800000"/>
+        <TipabilityWidth value="0.400000"/>
+    </CModel>
+<!--    <CModel id="CabalReckonerUnpack" parent="NodUnit">-->
+<!--        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Deploy.m3"/>-->
+<!--        <Radius value="1.050000"/>-->
+<!--        <SelectionRadius value="1.250000"/>-->
+<!--        <ShadowRadius value="1.250000"/>-->
+<!--        <Tipability value="0.750000"/>-->
+<!--        <TipabilityLength value="0.800000"/>-->
+<!--        <TipabilityWidth value="0.400000"/>-->
+<!--        <UnitGlossaryCamera value="Star2CameraMid08"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalReckoner_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalReckonerDeployed_Death" parent="CabalUnitDeath"/>
+<!--    <CModel id="CabalReckonerUnpackDeath" parent="CabalUnitDeath">-->
+<!--        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Deploy Death.m3"/>-->
+<!--        <LowQualityModel value="TerranLargeUnitDeathLow"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalVertigo" parent="CabalUnit">
+        <Model value="Assets\Models\Nod Vertigo\Nod Vertigo.m3"/>
+        <PlanetPanelCamera value="Star2CameraLow04"/>
+        <Radius value="0.625000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+        <TechPurchaseCamera value="TechPurchaseStarship"/>
+        <Tipability value="0.750000"/>
+        <UnitGlossaryCamera value="Star2CameraLow04"/>
+    </CModel>
+    <CModel id="CabalAscended" parent="CabalUnit"/>
+    <CModel id="CabalMarauder" parent="CabalUnit">
+        <Radius value="0.650000"/>
+        <SelectionRadius value="0.866400"/>
+        <ShadowRadius value="0.866400"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.600000"/>
+        <TipabilityWidth value="0.400000"/>
+    </CModel>
+    <CModel id="CabalFlameMine" parent="CabalUnit">
+        <Radius value="0.250000"/>
+        <SelectionLayer value="3"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="CabalBike" parent="CabalUnit">
+        <Radius value="0.650000"/>
+        <SelectionRadius value="0.866400"/>
+        <ShadowRadius value="0.866400"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.750000"/>
+        <TipabilityLength value="0.600000"/>
+        <TipabilityWidth value="0.400000"/>
+    </CModel>
+    <CModel id="CabalCenturion" parent="CabalUnit">
+        <Radius value="0.650000"/>
+        <SelectionRadius value="0.999700"/>
+        <ShadowRadius value="0.999700"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="CabalHijacker" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalDominator" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalEnlightened" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalSalvator" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalReaper" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalBlackHand" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+    <CModel id="CabalScalpel" parent="CabalUnit">
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.750000"/>
+    </CModel>
+    <CModel id="CabalVenom" parent="CabalUnit">
+        <Radius value="0.625000"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="0.625000"/>
+        <ShadowRadius value="0.625000"/>
+        <Tipability value="0.750000"/>
+    </CModel>
+    <CModel id="CabalCobra" parent="CabalUnit">
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.750000"/>
+    </CModel>
+    <CModel id="CabalDevout" parent="CabalUnit">
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+    </CModel>
+<!--    <CModel id="CabalSupportCrawlerMorph" parent="CabalUnit">-->
+<!--        <Model value="Assets\Models\Nod Support MCV\Nod Support MCV Morph.m3"/>-->
+<!--        <ScaleMax value="1.111000,1.111000,1.111000"/>-->
+<!--        <ScaleMin value="1.111000,1.111000,1.111000"/>-->
+<!--        <SelectionRadius value="2.000000"/>-->
+<!--        <ShadowRadius value="2.000000"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalSupportConstructionYard" parent="CommandCenterBase">
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+<!--    <CModel id="CabalOffenseCrawlerUnpack" parent="CabalUnit">-->
+<!--        <Model value="Assets\Models\Nod Offense MCV\Nod Offense MCV Morph.m3"/>-->
+<!--        <ScaleMax value="1.111000,1.111000,1.111000"/>-->
+<!--        <ScaleMin value="1.111000,1.111000,1.111000"/>-->
+<!--        <SelectionRadius value="2.000000"/>-->
+<!--        <ShadowRadius value="2.000000"/>-->
+<!--    </CModel>-->
+<!--    <CModel id="CabalDefenseCrawlerMorph" parent="CabalUnit">-->
+<!--        <ScaleMax value="1.111000,1.111000,1.111000"/>-->
+<!--        <ScaleMin value="1.111000,1.111000,1.111000"/>-->
+<!--        <Model value="Assets\Models\Nod Defense MCV\Nod Defense MCV Morph.m3"/>-->
+<!--        <SelectionRadius value="2.000000"/>-->
+<!--        <ShadowRadius value="2.000000"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalDefenseConstructionYard" parent="CabalBuilding">
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="CabalMantis_Upgrade" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalMantis" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalSupportCrawler" parent="CabalUnit">
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+        <Radius value="2.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="CabalOffenseCrawler" parent="CabalUnit">
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+        <Radius value="2.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="CabalUnderminer" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalAfterShock" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalWidow" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawler" parent="CabalUnit">
+        <SelectionRadius value="2.000000"/>
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+        <ShadowRadius value="2.000000"/>
+        <Radius value="2.000000"/>
+    </CModel>
+    <CModel id="CabalHolySpirit" parent="CabalUnit">
+        <Model value="Assets\Models\Nod Avatar\Avatar Upgrade.m3"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.100000"/>
+        <TipabilityLength value="0.100000"/>
+        <TipabilityWidth value="0.100000"/>
+    </CModel>
+    <CModel id="CabalStealthTank" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalAvengerTank" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalMedusa" parent="CabalUnit">
+        <Radius value="1.000000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.700000"/>
+        <SelectionRadius value="1.562500"/>
+        <ShadowRadius value="1.562500"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.150000"/>
+    </CModel>
+    <CModel id="CabalSalamander" parent="CabalUnit">
+        <SquibTypeDefault value="Metal"/>
+        <Radius value="1.000000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.700000"/>
+        <SelectionRadius value="1.562500"/>
+        <Tipability value="0.150000"/>
+        <ShadowRadius value="1.562500"/>
+    </CModel>
+    <CModel id="CabalBasilisk" parent="CabalUnit">
+        <SquibTypeDefault value="Metal"/>
+        <Radius value="1.000000"/>
+        <SelectionOffset value="0.000000,0.000000,-0.700000"/>
+        <SelectionRadius value="1.562500"/>
+        <Tipability value="0.150000"/>
+        <ShadowRadius value="1.562500"/>
+    </CModel>
+    <CModel id="CabalOffenseConstructionYard" parent="CabalBuilding">
+        <Model value="Assets\Models\Nod Offense MCV\Nod Offense CY.m3"/>
+        <SelectionRadius value="2.000000"/>
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="CabalMonitoringStation" parent="CabalBuilding">
+        <ScaleMax value="0.020000,0.020000,0.020000"/>
+        <ScaleMin value="0.020000,0.020000,0.020000"/>
+    </CModel>
+    <CModel id="CabalScorpion" parent="CabalUnit"/>
+    <CModel id="CabalLeviathan" parent="CabalUnit">
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <AttachProps index="1" removed="1"/>
+        <AttachProps index="2" removed="1"/>
+        <AttachProps index="3" removed="1"/>
+        <AttachProps index="4" removed="1"/>
+        <AttachProps index="5" removed="1"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+    </CModel>
+    <CModel id="CabalLeviathanDrone" parent="CabalUnit"/>
+<!--    <CModel id="CabalMissilePodO" parent="CabalBuilding">-->
+<!--        <Model value="Assets\Models\Rocket Pod\Rocket Pod.m3"/>-->
+<!--        <PlanetPanelCamera value="Star2CameraHigh06"/>-->
+<!--        <Radius value="1.000000"/>-->
+<!--        <SelectionLayer value="2"/>-->
+<!--        <SelectionRadius value="1.250000"/>-->
+<!--        <ShadowRadius value="1.250000"/>-->
+<!--        <TechPurchaseCamera value="Star2CameraHigh06"/>-->
+<!--        <UnitGlossaryCamera value="Star2CameraHigh06"/>-->
+<!--        <EditorCategories value="Race:Nod"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalFlameColumn" parent="CabalBuilding">
+        <SelectionRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <Radius value="0.750000"/>
+        <UnitGlossaryCamera value="Star2CameraHigh05"/>
+        <ShadowRadius value="0.750000"/>
+    </CModel>
+    <CModel id="CabalIncinerator" parent="CabalBuilding">
+        <SelectionRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <Radius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+    </CModel>
+    <CModel id="CabalOutpost" parent="CabalBuilding">
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="CabalObeliskOfLife" parent="CabalBuilding">
+        <SelectionRadius value="0.750000"/>
+        <SquibTypeDefault value="Metal"/>
+        <Radius value="0.750000"/>
+        <ShadowRadius value="0.750000"/>
+    </CModel>
+    <CModel id="CabalEngineer" parent="CabalUnit"/>
+    <CModel id="CabalViperTurret" parent="CabalBuilding">
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+<!--    <CModel id="CabalViperTurret0" parent="CabalBuilding">-->
+<!--        <Model value="Assets\Models\Nod Turret\Nod Turret.m3"/>-->
+<!--        <PlanetPanelCamera value="Star2CameraHigh06"/>-->
+<!--        <Radius value="1.000000"/>-->
+<!--        <SelectionLayer value="2"/>-->
+<!--        <SelectionRadius value="1.250000"/>-->
+<!--        <ShadowRadius value="1.250000"/>-->
+<!--        <TechPurchaseCamera value="Star2CameraHigh06"/>-->
+<!--        <UnitGlossaryCamera value="Star2CameraHigh06"/>-->
+<!--        <EditorCategories value="Race:Nod"/>-->
+<!--    </CModel>-->
+    <CModel id="CabalHelipad" parent="CabalBuilding">
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalTunnelDoodad" parent="Doodad">
+        <Model value="Assets\Models\Nod Tunnel\Nod tunnel.m3"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <Events>
+            <Anim value="Stand,Work,Start,00"/>
+            <Name value="SubwayTransport_Powerup"/>
+            <Type value="Sound"/>
+            <Time value="0.482000"/>
+            <Payload value="SubwayTransport_Powerup"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,Work,End,00"/>
+            <Name value="SubwayTransport_PowerDown"/>
+            <Type value="Sound"/>
+            <Time value="0.482000"/>
+            <Payload value="SubwayTransport_PowerDown"/>
+        </Events>
+        <Radius value="1.250000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="4.000000"/>
+        <ShadowRadius value="4.000000"/>
+        <SquibTypeDefault value="Metal"/>
+    </CModel>
+    <CModel id="CabalTyrant" parent="CabalUnit"/>
+    <CModel id="CabalSlave" parent="CabalUnit">
+        <TextureDeclares Prefix="NU">
+            <Adaptions TriggerOnSubstring="S_VehicleAE" Slot="main"/>
+        </TextureDeclares>
+    </CModel>
+    <CModel id="CabalMissilePod" parent="CabalBuilding">
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="CabalTunnel" parent="CabalBuilding">
+        <Radius value="1.500000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+    </CModel>
+    <CModel id="CabalBike_Death" parent="CabalUnitDeath">
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="CabalDefenseConstructionYard_Death" parent="CabalUnitDeath">
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawler_Death" parent="CabalUnitDeath">
+        <ScaleMax value="1.111000,1.111000,1.111000"/>
+        <ScaleMin value="1.111000,1.111000,1.111000"/>
+    </CModel>
+    <CModel id="CabalScalpel_Death" parent="CabalUnitDeath">
+        <Radius value="0.625000"/>
+    </CModel>
+    <CModel id="CabalWidowWreckage_Death" parent="CabalUnitDeath" model="CabalWidowWreckage">
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TerranPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TerranPreExplosionSmall"/>
+            <Type value="Sound"/>
+            <Time value="0.200000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TerranExplosionMedium"/>
+            <Type value="Sound"/>
+            <Time value="0.800000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="TerranExplosionLarge"/>
+            <Type value="Sound"/>
+            <Time value="1.533000"/>
+        </Events>
+        <Radius value="1.400000"/>
+    </CModel>
+    <CModel id="CabalOutpost_Death" parent="CabalBuildingDeath"/>
+    <CModel id="CabalMedusa_Death" parent="CabalUnitDeath">
+        <PhysicsDeathMotionFactor value="1.200000,0.200000"/>
+    </CModel>
+    <CModel id="CabalSalamander_Death" parent="CabalUnitDeath">
+        <PhysicsDeathMotionFactor value="1.200000,0.200000"/>
+    </CModel>
+    <CModel id="CabalLeviathan_Death" parent="CabalUnitDeath">
+        <PhysicsDeathMotionFactor value="2.000000,0.600000"/>
+    </CModel>
+    <CModel id="CabalBasilisk_Death" parent="CabalUnitDeath">
+        <PhysicsDeathMotionFactor value="1.200000,0.200000"/>
+    </CModel>
+    <CModel id="CabalTyrant_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalAvengerTank_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalCobra_Death" parent="CabalUnitDeath">
+        <Radius value="0.625000"/>
+    </CModel>
+    <CModel id="CabalVenom_Death" parent="CabalUnitDeath">
+        <Radius value="0.625000"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+    </CModel>
+    <CModel id="CabalFlameTank" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalIncineratorWeaponBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\LaserDrillBeam\LaserDrillBeam.m3"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalSalamanderWeaponAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Badger_AttackMissile_Impact\Badger_AttackMissile_Impact.m3"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="CabalReaperAttackBeamUpgrade" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <AnimSpeed value="4.000000"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalSpecter" parent="CabalUnit">
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="CabalWeaponsLaboratory" parent="CabalBuilding">
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="CabalMissilePod_Death" parent="CabalBuildingDeath"/>
+    <CModel id="CabalObelisk_Death" parent="CabalBuildingDeath"/>
+    <CModel id="CabalSpecter_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalStronghold" parent="CabalBuilding"/>
+    <CModel id="CabalShrine" parent="CabalBuilding"/>
+    <CModel id="CabalPyramid" parent="CabalBuilding"/>
+    <CModel id="CabalControlNode_Death" parent="CabalBuilding"/>
+    <CModel id="CabalControlNode" parent="CabalBuilding"/>
+    <CModel id="CabalCrawlerHangar" parent="CabalBuilding"/>
+    <CModel id="CabalAscender" parent="CabalUnit"/>
+    <CModel id="CabalDropShip" parent="CabalUnit"/>
+    <CModel id="CabalWidow_SpiderAttachment" parent="CabalUnit"/>
+    <CModel id="CabalWidowLaserAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <AnimSpeed value="3.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDeepBurrow" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\Dehaka_Coop_Young_Leap\Dehaka_Coop_Young_Leap.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="CabalShieldGeneratorShield">
+        <Model value="Assets\Effects\Protoss\SentryShieldBubble\SentryShieldBubble.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalShieldGeneratorImpact" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\SentryShieldImpact\SentryShieldImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodTurretsHub" parent="NodBuilding"/>
+    <CModel id="CabalLeviathanDrone_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalViperTurret_DeathO" parent="BuildingDeath">
+        <Model value="Assets\Models\Nod Turret\Nod Turret Death.m3"/>
+        <LowQualityModel value="TerranBuildingDeathLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalFlameTank_Death" parent="CabalUnitDeath"/>
+    <CModel id="CabalViperTurret_Death" parent="CabalBuildingDeath"/>
+    <CModel id="UnderminerAttackDirectedImpact" parent="ImpactFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_Impact\Artillery_Mengsk_COOP_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="UnderminerExplosion2" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\Dehaka_Coop_Young_Leap\Dehaka_Coop_Young_Leap.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="CabalMedusaHealingImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Artanis_AstralWinds_Impact\Artanis_AstralWinds_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalMedusaHealImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\KerriganRespawnImpact\KerriganRespawnImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalBasiliskAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalReaperAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\DarkArchon_Beam\DarkArchon_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalHijackerEMPImpactModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="CabalMarauderAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Nova_Shotgun_Impact\Nova_Shotgun_Impact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalMarauderAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\Nova_Shotgun_Launch\Nova_Shotgun_Launch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalBasiliskStasisFieldImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\StasisWardImpact\StasisWardImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="StasisFieldModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\StasisWardShockwave\StasisWardShockwave.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="LiquidTibLeviathan" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Lighting value="DefensiveMatrix"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="CabalMedusaAttackBeam" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\WarpRayMissile\WarpRayMissile.m3"/>
+        <LowQualityModel value="VoidRayAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalMedusaWeaponSAttackBeam2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\LaserDrillBeam\LaserDrillBeam.m3"/>
+        <LowQualityModel value="SentryAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalHijackerLockLaserBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TargetLockBeam\TargetLockBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodDevoutAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Models\GhostSnipeBeamRed.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawlerAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeamImpact\ColossusBeamImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawlerAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\BattleCruiserPlasmaLaunch\BattleCruiserPlasmaLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalMedusaChargeBase" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\WarpRayBeam\WarpRayBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="BlackHandLeader" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
+        <Priority value="32"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="BlackHandLeader2" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
+        <Priority value="32"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="earthquake" parent="OneShotSpellFX">
+        <Model value="Assets\Models\Storm_FX_Thrall_Base_Earthquake.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+        <AnimSpeed value="0.500000"/>
+    </CModel>
+    <CModel id="UnderminerExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_Impact\Artillery_Mengsk_COOP_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="NodDeepBurrowSplat" parent="Splat">
+        <Model value="Assets\Splats\Splat_ZerglingBurrowed\Splat_ZerglingBurrowed.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <VariationCount value="3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="HCAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_Purifier_Coop_TimeBeam\Colossus_Purifier_Coop_TimeBeam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="TyrantAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <AnimSpeed value="3.000000"/>
+    </CModel>
+    <CModel id="CabalTemple" parent="CabalBuilding">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="1.200000"/>
+        <ShadowRadius value="1.200000"/>
+    </CModel>
+    <CModel id="CabalTemple_Death" parent="CabalBuildingDeath">
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+</Catalog>

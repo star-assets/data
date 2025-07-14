@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit default="1">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="BEACON">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="DESTRUCTIBLE">
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="ITEM">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="PLACEHOLDER">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="PLACEHOLDER_AIR">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="POWERUP">
+        <?token id="ID"?>
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="SMSET">
+        <Race value="Neut"/>
+    </CUnit>
+    <CUnit default="1" id="PATHINGBLOCKER">
+        <EditorCategories value="ObjectType:Other"/>
+    </CUnit>
+    <CUnit default="1" id="SprayDefault">
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="Movable" value="0"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <EditorFlags index="NoPalettes" value="1"/>
+        <Response value="Nothing"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <MinimapRadius value="0"/>
+        <EditorCategories value="ObjectType:Spray"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+    </CUnit>
+    <CUnit default="1" id="MineralFieldDefault">
+        <Name value="Unit/Name/MineralField"/>
+        <Description value="Button/Tooltip/MineralField"/>
+        <DeathRevealRadius value="3"/>
+        <Mob value="Multiplayer"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="CreateVisible" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FlagArray index="ClearRallyOnTargetLost" value="0"/>
+        <ResourceState value="Harvestable"/>
+        <ResourceType value="Minerals"/>
+        <FogVisibility value="Snapshot"/>
+        <EditorFlags index="NeutralDefault" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <LifeArmor value="10"/>
+        <BehaviorArray Link="MineralFieldMinerals"/>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="FootprintMineralsRounded"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Resource"/>
+        <Fidget DelayMax="0"/>
+    </CUnit>
+    <CUnit default="1" id="RichMineralFieldDefault" parent="MineralFieldDefault">
+        <Name value="Unit/Name/RichMineralField"/>
+        <Description value="Button/Tooltip/RichMineralField"/>
+        <BehaviorArray index="0" Link="HighYieldMineralFieldMinerals"/>
+    </CUnit>
+    <CUnit id="RichMineralField" parent="RichMineralFieldDefault"/>
+    <CUnit id="MineralField" parent="MineralFieldDefault"/>
+    <CUnit id="MineralField450" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMinerals450"/>
+    </CUnit>
+    <CUnit id="MineralField750" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="MineralFieldOpaque" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMineralsOpaque"/>
+    </CUnit>
+    <CUnit id="MineralFieldOpaque900" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMineralsOpaque900"/>
+    </CUnit>
+    <CUnit id="RichMineralField750" parent="RichMineralFieldDefault">
+        <BehaviorArray index="0" Link="HighYieldMineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="VespeneGeyser">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Multiplayer"/>
+        <ResourceState value="Raw"/>
+        <ResourceType value="Vespene"/>
+        <FogVisibility value="Snapshot"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmor value="10"/>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="FootprintGeyserRounded"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Resource"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="CreateVisible" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <EditorFlags index="NeutralDefault" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <BehaviorArray Link="RawVespeneGeyserGas"/>
+        <Fidget DelayMax="0"/>
+    </CUnit>
+    <CUnit id="SpacePlatformGeyser" parent="VespeneGeyser"/>
+    <CUnit id="RichVespeneGeyser">
+        <DeathRevealRadius value="3"/>
+        <Mob value="Multiplayer"/>
+        <ResourceState value="Raw"/>
+        <ResourceType value="Vespene"/>
+        <FogVisibility value="Snapshot"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmor value="10"/>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="FootprintGeyserRounded"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.5"/>
+        <EditorCategories value="ObjectType:Resource"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="CreateVisible" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <EditorFlags index="NeutralDefault" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <BehaviorArray Link="RawRichVespeneGeyserGas"/>
+        <Fidget DelayMax="0"/>
+        <Description value="Button/Tooltip/VespeneGeyser"/>
+    </CUnit>
+    <CUnit id="BeaconArmy" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconDefend" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconAttack" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconHarass" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconIdle" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconAuto" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconDetect" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconScout" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconClaim" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconExpand" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconRally" parent="BEACON">
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="BeaconCustom1" parent="BEACON"/>
+    <CUnit id="BeaconCustom2" parent="BEACON"/>
+    <CUnit id="BeaconCustom3" parent="BEACON"/>
+    <CUnit id="BeaconCustom4" parent="BEACON"/>
+    <CUnit id="LoadOutSpray@1" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@2" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@3" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@4" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@5" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@6" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@7" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@8" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@9" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@10" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@11" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@12" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@13" parent="SprayDefault"/>
+    <CUnit id="LoadOutSpray@14" parent="SprayDefault"/>
+    <CUnit id="CreepBlocker1x1" parent="PATHINGBLOCKER">
+        <Footprint value="Footprint1x1BlockCreep"/>
+        <PlacementFootprint value="Footprint1x1"/>
+    </CUnit>
+    <CUnit id="PermanentCreepBlocker1x1" parent="PATHINGBLOCKER">
+        <Footprint value="PermanentFootprint1x1BlockCreep"/>
+        <PlacementFootprint value="Footprint1x1"/>
+    </CUnit>
+    <CUnit id="PathingBlocker1x1" parent="PATHINGBLOCKER">
+        <Footprint value="Footprint1x1"/>
+        <PlacementFootprint value="Footprint1x1"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+    </CUnit>
+    <CUnit id="PathingBlocker2x2" parent="PATHINGBLOCKER">
+        <Radius value="1"/>
+        <Footprint value="Footprint2x2"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+    </CUnit>
+    <CUnit id="PurifierVespeneGeyser" parent="VespeneGeyser"/>
+    <CUnit id="ShakurasVespeneGeyser" parent="VespeneGeyser"/>
+    <CUnit id="UmojanLabMineralField">
+        <DeathRevealRadius value="3"/>
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="CreateVisible" value="1"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <ResourceState value="Harvestable"/>
+        <ResourceType value="Minerals"/>
+        <FogVisibility value="Snapshot"/>
+        <EditorFlags index="NeutralDefault" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="10000"/>
+        <LifeMax value="10000"/>
+        <LifeArmor value="10"/>
+        <BehaviorArray Link="MineralFieldMineralsNoRemove"/>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="FootprintMineralsRounded"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.75"/>
+        <EditorCategories value="ObjectType:Resource"/>
+        <Fidget DelayMax="0"/>
+        <Description value="Button/Tooltip/MineralField"/>
+    </CUnit>
+    <CUnit id="BattleStationMineralField" parent="MineralFieldDefault"/>
+    <CUnit id="BattleStationMineralField750" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="PurifierMineralField" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMineralsNoRemove"/>
+    </CUnit>
+    <CUnit id="PurifierMineralField750" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="PurifierRichMineralField" parent="RichMineralFieldDefault"/>
+    <CUnit id="PurifierRichMineralField750" parent="RichMineralFieldDefault">
+        <BehaviorArray index="0" Link="HighYieldMineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="PickupPalletGas" parent="ITEM">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <Collide index="Structure" value="1"/>
+        <Height value="0.25"/>
+        <AbilArray Link="PickupPalletGas"/>
+        <MinimapRadius value="0.375"/>
+        <LeaderAlias value=""/>
+    </CUnit>
+    <CUnit id="PickupPalletMinerals" parent="ITEM">
+        <Facing value="19.995"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <Collide index="Structure" value="1"/>
+        <Height value="0.5"/>
+        <AbilArray Link="PickupPalletMinerals"/>
+        <MinimapRadius value="0.375"/>
+    </CUnit>
+    <CUnit id="ProtossVespeneGeyser" parent="VespeneGeyser"/>
+    <CUnit id="LabMineralField" parent="MineralFieldDefault"/>
+    <CUnit id="LabMineralField750" parent="MineralFieldDefault">
+        <BehaviorArray index="0" Link="MineralFieldMinerals750"/>
+    </CUnit>
+    <CUnit id="Beacon_Protoss" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="1.875"/>
+        <SeparationRadius value="1.875"/>
+        <MinimapRadius value="1.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="Beacon_ProtossSmall" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <MinimapRadius value="0.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="Beacon_Terran" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="1.875"/>
+        <SeparationRadius value="1.875"/>
+        <MinimapRadius value="1.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="Beacon_TerranSmall" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <MinimapRadius value="0.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="Beacon_Zerg" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="1.875"/>
+        <SeparationRadius value="1.875"/>
+        <MinimapRadius value="1.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="Beacon_ZergSmall" parent="DESTRUCTIBLE">
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <Radius value="0.875"/>
+        <SeparationRadius value="0.875"/>
+        <MinimapRadius value="0.875"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value=""/>
+        <BehaviorArray Link="PreventKnockback"/>
+    </CUnit>
+    <CUnit id="EnemyPathingBlocker1x1" parent="PATHINGBLOCKER">
+        <Footprint value="EnemyPathingBlocker1x1"/>
+        <PlacementFootprint value="EnemyPathingBlocker1x1"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+        <EditorFlags index="NeutralDefault" value="0"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <CUnit id="EnemyPathingBlocker2x2" parent="PATHINGBLOCKER">
+        <Radius value="1"/>
+        <Footprint value="EnemyPathingBlocker2x2"/>
+        <PlacementFootprint value="EnemyPathingBlocker2x2"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+        <EditorFlags index="NeutralDefault" value="0"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <CUnit id="EnemyPathingBlocker4x4" parent="PATHINGBLOCKER">
+        <Radius value="1"/>
+        <Footprint value="EnemyPathingBlocker4x4"/>
+        <PlacementFootprint value="EnemyPathingBlocker4x4"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+        <EditorFlags index="NeutralDefault" value="0"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <CUnit id="EnemyPathingBlocker8x8" parent="PATHINGBLOCKER">
+        <Radius value="1"/>
+        <Footprint value="EnemyPathingBlocker8x8"/>
+        <PlacementFootprint value="EnemyPathingBlocker8x8"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+        <EditorFlags index="NeutralDefault" value="0"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <CUnit id="EnemyPathingBlocker16x16" parent="PATHINGBLOCKER">
+        <Radius value="1"/>
+        <Footprint value="EnemyPathingBlocker16x16"/>
+        <PlacementFootprint value="EnemyPathingBlocker16x16"/>
+        <Collide index="Burrow" value="0"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Structure" value="0"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="Small" value="0"/>
+        <EditorFlags index="NeutralDefault" value="0"/>
+        <FlagArray index="Turnable" value="0"/>
+    </CUnit>
+    <CUnit id="GasCanister" parent="ITEM">
+        <AbilArray Link="PickupGas100"/>
+        <Height value="0.3"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Small" value="1"/>
+    </CUnit>
+    <CUnit id="GasCanisterProtoss" parent="ITEM">
+        <AbilArray Link="PickupGas100"/>
+        <Height value="0.3"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="GasCanisterZerg" parent="ITEM">
+        <AbilArray Link="PickupGas100"/>
+        <Height value="0.3"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="MineralCrystal" parent="ITEM">
+        <AbilArray Link="PickupMinerals100"/>
+        <Facing value="19.995"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="PalletGas" parent="ITEM">
+        <AbilArray Link="PickupGas100"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+        <LeaderAlias value=""/>
+    </CUnit>
+    <CUnit id="PalletMinerals" parent="ITEM">
+        <AbilArray Link="PickupMinerals100"/>
+        <Facing value="19.995"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="NaturalGas" parent="ITEM">
+        <AbilArray Link="PickupGas100"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="NaturalMinerals" parent="ITEM">
+        <AbilArray Link="PickupMinerals100"/>
+        <Facing value="19.995"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+    <CUnit id="NaturalMineralsRed" parent="ITEM">
+        <Name value="Unit/Name/NaturalMinerals"/>
+        <AbilArray Link="PickupMinerals100"/>
+        <Facing value="19.995"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Untooltipable" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <MinimapRadius value="0.375"/>
+        <Collide index="Structure" value="1"/>
+    </CUnit>
+</Catalog>

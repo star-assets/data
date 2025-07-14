@@ -1,0 +1,5 @@
+<Catalog>
+  <CHeroStat default="1">
+    <Name value="HeroStat/Name/##id##" />
+  </CHeroStat>
+</Catalog>

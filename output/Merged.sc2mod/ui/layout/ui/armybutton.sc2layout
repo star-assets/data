@@ -1,0 +1,7 @@
+<Desc>
+  <Frame type="ArmyButton" name="ArmyButtonTemplate" template="StandardTemplates/HelperButtonTemplate">
+    <Frame type="Image" name="Icon">
+      <Texture val="@@@UI/ArmyButtonIcon" />
+    </Frame>
+  </Frame>
+</Desc>

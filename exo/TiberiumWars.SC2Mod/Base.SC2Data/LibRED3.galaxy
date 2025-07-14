@@ -1,0 +1,1022 @@
+include "TriggerLibs/NativeLib"
+
+include "LibRED3_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Red Alert
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libRED3_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool libRED3_InitVariables_completed = false;
+
+void libRED3_InitVariables () {
+    if (libRED3_InitVariables_completed) {
+        return;
+    }
+
+    libRED3_InitVariables_completed = true;
+
+    libRED3_gv_chaowuPanel = c_invalidDialogId;
+    libRED3_gv_maintenancePanel = c_invalidDialogId;
+    libRED3_gv_chaowucommandpanel = c_invalidDialogId;
+    libRED3_gv_maintenancecommandpanel = c_invalidDialogId;
+    libRED3_gv_teleportationmarktarget = UnitGroupEmpty();
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Charging
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Charging_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    int lv_player;
+    unitgroup lv_prismProcessed;
+    unitgroup lv_prismOptions;
+    unitgroup lv_prismChargers;
+    unit lv_prismIter;
+    unit lv_chainTarget;
+    unit lv_prismCharger;
+
+    // Automatic Variable Declarations
+    unitgroup auto8ED84108_g;
+    int auto8ED84108_u;
+
+    // Variable Initialization
+    lv_unit = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    lv_player = UnitGetOwner(lv_unit);
+    lv_prismProcessed = UnitGroupEmpty();
+    lv_prismOptions = UnitGroupEmpty();
+    lv_prismChargers = UnitGroupEmpty();
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupAdd(lv_prismProcessed, lv_unit);
+    UnitGroupAdd(lv_prismChargers, lv_unit);
+    lv_prismCharger = lv_unit;
+    while ((lv_prismCharger != null)) {
+        auto8ED84108_g = UnitGroup("AuSpectrumTower", lv_player, RegionCircle(UnitGetPosition(lv_prismCharger), 9.0), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+        auto8ED84108_u = UnitGroupCount(auto8ED84108_g, c_unitCountAll);
+        for (;; auto8ED84108_u -= 1) {
+            lv_prismIter = UnitGroupUnitFromEnd(auto8ED84108_g, auto8ED84108_u);
+            if (lv_prismIter == null) { break; }
+            if ((UnitGroupHasUnit(lv_prismProcessed, lv_prismIter) == false) && (UnitAbilityGetCooldown(lv_prismIter, "AuDefenceAdvancedChargeReal", "Abil/##id##") == 0.0)) {
+                UnitGroupAdd(lv_prismProcessed, lv_prismIter);
+                UnitGroupAdd(lv_prismOptions, lv_prismIter);
+            }
+
+        }
+        if ((UnitGroupCount(lv_prismOptions, c_unitCountAlive) == 0)) {
+            return true;
+        }
+
+        lv_prismIter = UnitGroupClosestToPoint(lv_prismOptions, UnitGetPosition(lv_unit));
+        lv_chainTarget = UnitGroupClosestToPoint(lv_prismChargers, UnitGetPosition(lv_prismIter));
+        UnitGroupAdd(lv_prismChargers, lv_prismIter);
+        UnitGroupRemove(lv_prismOptions, lv_prismIter);
+        UnitIssueOrder(lv_prismIter, OrderTargetingUnit(AbilityCommand("AuDefenceAdvancedChargeFake", 0), lv_chainTarget), c_orderQueueReplace);
+        UnitIssueOrder(lv_prismIter, OrderTargetingUnit(AbilityCommand("AuDefenceAdvancedChargeReal", 0), lv_unit), c_orderQueueAddToEnd);
+        if ((UnitGroupCount(lv_prismChargers, c_unitCountAlive) > 5)) {
+            return true;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Charging_Init () {
+    libRED3_gt_Charging = TriggerCreate("libRED3_gt_Charging_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_Charging, c_playerAny, "RASpectrumTowerAttackStartDelay");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initial minecart sound effect Soviet
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_InitialminecartsoundeffectSoviet_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("SuOreMiner_What", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_InitialminecartsoundeffectSoviet_Init () {
+    libRED3_gt_InitialminecartsoundeffectSoviet = TriggerCreate("libRED3_gt_InitialminecartsoundeffectSoviet_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_InitialminecartsoundeffectSoviet, c_playerAny, "JurefinerycreateMiner4");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initial minecart sound effect Empire
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_InitialminecartsoundeffectEmpire_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("JuYorico_What9", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_InitialminecartsoundeffectEmpire_Init () {
+    libRED3_gt_InitialminecartsoundeffectEmpire = TriggerCreate("libRED3_gt_InitialminecartsoundeffectEmpire_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_InitialminecartsoundeffectEmpire, c_playerAny, "JurefinerycreateMiner");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initial minecart sound effect Shenzhou
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_InitialminecartsoundeffectShenzhou_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("SuOreMiner_What44", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_InitialminecartsoundeffectShenzhou_Init () {
+    libRED3_gt_InitialminecartsoundeffectShenzhou = TriggerCreate("libRED3_gt_InitialminecartsoundeffectShenzhou_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_InitialminecartsoundeffectShenzhou, c_playerAny, "JurefinerycreateMiner3");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Initial minecart sound effect Allies
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_InitialminecartsoundeffectAllies_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("JuYorico_What96", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_InitialminecartsoundeffectAllies_Init () {
+    libRED3_gt_InitialminecartsoundeffectAllies = TriggerCreate("libRED3_gt_InitialminecartsoundeffectAllies_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_InitialminecartsoundeffectAllies, c_playerAny, "JurefinerycreateMiner2");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Allies build voice trigger
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Alliesbuildvoicetrigger_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if (((libNtve_gf_TriggeringProgressUnitType() == "AuPowerPlant") && (TechTreeUnitCount(EventPlayer(), "AuPowerPlant", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuRefinery") && (TechTreeUnitCount(EventPlayer(), "AuRefinery", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuBarrack") && (TechTreeUnitCount(EventPlayer(), "AuBarrack", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuWarFactory") && (TechTreeUnitCount(EventPlayer(), "AuWarFactory", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuOldFactory") && (TechTreeUnitCount(EventPlayer(), "AuOldFactory", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuArtilleryFactory") && (TechTreeUnitCount(EventPlayer(), "AuArtilleryFactory", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuAirport") && (TechTreeUnitCount(EventPlayer(), "AuAirport", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuAlliedradar") && (TechTreeUnitCount(EventPlayer(), "AuAlliedradar", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuDefenseBureau") && (TechTreeUnitCount(EventPlayer(), "AuDefenseBureau", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "AuAdvancedPowerPlant") && (TechTreeUnitCount(EventPlayer(), "AuAdvancedPowerPlant", c_techCountCompleteOnly) < 1))) {
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Alliesbuildvoicetrigger_Init () {
+    libRED3_gt_Alliesbuildvoicetrigger = TriggerCreate("libRED3_gt_Alliesbuildvoicetrigger_Func");
+    TriggerAddEventUnitConstructProgress(libRED3_gt_Alliesbuildvoicetrigger, null, c_unitProgressStageStart);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Empire Building Voice Trigger
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_EmpireBuildingVoiceTrigger_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if (((libNtve_gf_TriggeringProgressUnitType() == "JpPowerPlant") && (TechTreeUnitCount(EventPlayer(), "JpPowerPlant", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "JpImperialMine") && (TechTreeUnitCount(EventPlayer(), "JpImperialMine", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "JpBarracks") && (TechTreeUnitCount(EventPlayer(), "JpBarracks", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "JpWarFactory") && (TechTreeUnitCount(EventPlayer(), "JpWarFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "JpMechFactory") && (TechTreeUnitCount(EventPlayer(), "JpMechFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "Radar") && (TechTreeUnitCount(EventPlayer(), "Radar", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "JpImperialNanohost") && (TechTreeUnitCount(EventPlayer(), "JpImperialNanohost", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnNuclearPowerPlant") && (TechTreeUnitCount(EventPlayer(), "CnNuclearPowerPlant", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.7, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2224", -1), c_maxPlayers, PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), 100.0, 0.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_EmpireBuildingVoiceTrigger_Init () {
+    libRED3_gt_EmpireBuildingVoiceTrigger = TriggerCreate("libRED3_gt_EmpireBuildingVoiceTrigger_Func");
+    TriggerAddEventUnitConstructProgress(libRED3_gt_EmpireBuildingVoiceTrigger, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: China builds voice triggers
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Chinabuildsvoicetriggers_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if (((libNtve_gf_TriggeringProgressUnitType() == "CnTeslaReactor") && (TechTreeUnitCount(EventPlayer(), "CnTeslaReactor", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnSmeltingFurnace") && (TechTreeUnitCount(EventPlayer(), "CnSmeltingFurnace", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnBarracks") && (TechTreeUnitCount(EventPlayer(), "CnBarracks", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnHeavyArmorWorkshop") && (TechTreeUnitCount(EventPlayer(), "CnHeavyArmorWorkshop", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnWarFactory") && (TechTreeUnitCount(EventPlayer(), "CnWarFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnRadar") && (TechTreeUnitCount(EventPlayer(), "CnRadar", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "RuSolvebuilding") && (TechTreeUnitCount(EventPlayer(), "RuSolvebuilding", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnLargeFossilfuelpowerstation") && (TechTreeUnitCount(EventPlayer(), "CnLargeFossilfuelpowerstation", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "CnAirport") && (TechTreeUnitCount(EventPlayer(), "CnAirport", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.3, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2223", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Chinabuildsvoicetriggers_Init () {
+    libRED3_gt_Chinabuildsvoicetriggers = TriggerCreate("libRED3_gt_Chinabuildsvoicetriggers_Func");
+    TriggerAddEventUnitConstructProgress(libRED3_gt_Chinabuildsvoicetriggers, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: New Constrrctuion Options Available
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_NewConstrrctuionOptionsAvailable_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if (((libNtve_gf_TriggeringProgressUnitType() == "SuReactor") && (TechTreeUnitCount(EventPlayer(), "SuReactor", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuRefinery") && (TechTreeUnitCount(EventPlayer(), "SuRefinery", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuBarracks") && (TechTreeUnitCount(EventPlayer(), "SuBarracks", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "NukeSiloNova") && (TechTreeUnitCount(EventPlayer(), "NukeSiloNova", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuRussiamArtilleryFactory") && (TechTreeUnitCount(EventPlayer(), "SuRussiamArtilleryFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuHeavyArtilleryFactory") && (TechTreeUnitCount(EventPlayer(), "SuHeavyArtilleryFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuMechaFactory") && (TechTreeUnitCount(EventPlayer(), "SuMechaFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuArtilleryFactory") && (TechTreeUnitCount(EventPlayer(), "SuArtilleryFactory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuAirport") && (TechTreeUnitCount(EventPlayer(), "SuAirport", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuRadar") && (TechTreeUnitCount(EventPlayer(), "SuRadar", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuWarLaboratory") && (TechTreeUnitCount(EventPlayer(), "SuWarLaboratory", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuSuperReactor") && (TechTreeUnitCount(EventPlayer(), "SuSuperReactor", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    else if (((libNtve_gf_TriggeringProgressUnitType() == "SuCrane") && (TechTreeUnitCount(EventPlayer(), "SuCrane", c_techCountQueuedOrBetter) <= 1))) {
+        Wait(1.8, c_timeGame);
+        SoundPlayForPlayer(SoundLink("JUConstructionComplete2222", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_NewConstrrctuionOptionsAvailable_Init () {
+    libRED3_gt_NewConstrrctuionOptionsAvailable = TriggerCreate("libRED3_gt_NewConstrrctuionOptionsAvailable_Func");
+    TriggerAddEventUnitConstructProgress(libRED3_gt_NewConstrrctuionOptionsAvailable, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit loss China
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_UnitlossChina_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("unitlost14", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_UnitlossChina_Init () {
+    libRED3_gt_UnitlossChina = TriggerCreate("libRED3_gt_UnitlossChina_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_UnitlossChina, c_playerAny, "unitlost14");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit loss Allies
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_UnitlossAllies_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("unitlost1", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_UnitlossAllies_Init () {
+    libRED3_gt_UnitlossAllies = TriggerCreate("libRED3_gt_UnitlossAllies_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_UnitlossAllies, c_playerAny, "unitlost1");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit loss Soviet
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_UnitlossSoviet_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("unitlost12", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_UnitlossSoviet_Init () {
+    libRED3_gt_UnitlossSoviet = TriggerCreate("libRED3_gt_UnitlossSoviet_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_UnitlossSoviet, c_playerAny, "unitlost12");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unit loss Empire
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_UnitlossEmpire_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    SoundPlayForPlayer(SoundLink("unitlost13", -1), c_maxPlayers, PlayerGroupSingle(EventPlayer()), 100.0, 0.0);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_UnitlossEmpire_Init () {
+    libRED3_gt_UnitlossEmpire = TriggerCreate("libRED3_gt_UnitlossEmpire_Func");
+    TriggerAddEventPlayerEffectUsed(libRED3_gt_UnitlossEmpire, c_playerAny, "unitlost13");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Player commander repair panel settings
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Playercommanderrepairpanelsettings_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    playergroup auto65DCE44D_g;
+    int auto65DCE44D_var;
+    string auto2BC380F9_val;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto65DCE44D_g = GameAttributePlayersForTeam(1);
+    auto65DCE44D_var = -1;
+    while (true) {
+        auto65DCE44D_var = PlayerGroupNextPlayer(auto65DCE44D_g, auto65DCE44D_var);
+        if (auto65DCE44D_var < 0) { break; }
+        auto2BC380F9_val = GameAttributePlayerValue("3", auto65DCE44D_var);
+        if (auto2BC380F9_val == "0001") {
+            libNtve_gf_CreateUnitsAtPoint2(1, "AubuildDunmmyUnit3232", 0, auto65DCE44D_var, PointFromId(1688986256));
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0002") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0015") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0016") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0003") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0005") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0009") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0004") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0006") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0008") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0017") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0012") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0019") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0011") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0013") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0018") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0020") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0022") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0023") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0014") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0025") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0024") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0021") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else if (auto2BC380F9_val == "0026") {
+            DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+            libRED3_gv_maintenancePanel = DialogLastCreated();
+            DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+            libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+            DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), c_anchorTop, -250, -10);
+            libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto65DCE44D_var));
+            DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto65DCE44D_var), true);
+            DialogSetImageVisible(DialogLastCreated(), false);
+        }
+        else {
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Playercommanderrepairpanelsettings_Init () {
+    libRED3_gt_Playercommanderrepairpanelsettings = TriggerCreate("libRED3_gt_Playercommanderrepairpanelsettings_Func");
+    TriggerEnable(libRED3_gt_Playercommanderrepairpanelsettings, false);
+    TriggerAddEventTimeElapsed(libRED3_gt_Playercommanderrepairpanelsettings, 0.3, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Active skill: Lightning Storm! 2
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_ActiveskillLightningStorm2_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringToText(""), Color(0.00, 50.20, 100.00)));
+    Wait(7.0, c_timeGame);
+    UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, TextWithColor(StringToText(""), Color(0.00, 100.00, 100.00)));
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_ActiveskillLightningStorm2_Init () {
+    libRED3_gt_ActiveskillLightningStorm2 = TriggerCreate("libRED3_gt_ActiveskillLightningStorm2_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_ActiveskillLightningStorm2, null, AbilityCommand("OdinNuclearStrike222233", 0), c_unitAbilStageExecute, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Active skill: Law-knowing special skill
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_ActiveskillLawknowingspecialskill_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    GameSetLighting("TTosh01Eruption", 0.5);
+    TriggerEnable(TriggerGetCurrent(), false);
+    Wait(7.0, c_timeGame);
+    GameSetLighting("BattleStation", 0.7);
+    TriggerEnable(TriggerGetCurrent(), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_ActiveskillLawknowingspecialskill_Init () {
+    libRED3_gt_ActiveskillLawknowingspecialskill = TriggerCreate("libRED3_gt_ActiveskillLawknowingspecialskill_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_ActiveskillLawknowingspecialskill, null, AbilityCommand("Herrscher3rdInstant2", 0), c_unitAbilStageExecute, true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Allied Repair Panel Settings
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_AlliedRepairPanelSettings_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    playergroup auto9BE208C8_g;
+    int auto9BE208C8_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto9BE208C8_g = GameAttributePlayersForTeam(1);
+    auto9BE208C8_var = -1;
+    while (true) {
+        auto9BE208C8_var = PlayerGroupNextPlayer(auto9BE208C8_g, auto9BE208C8_var);
+        if (auto9BE208C8_var < 0) { break; }
+        libNtve_gf_CreateUnitsAtPoint2(1, "AubuildDunmmyUnit323", 0, auto9BE208C8_var, RegionRandomPoint(RegionEntireMap()));
+        DialogCreate(500, 550, c_anchorTop, 0, 0, true);
+        libRED3_gv_maintenancePanel = DialogLastCreated();
+        DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(auto9BE208C8_var), true);
+        DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+        libRED3_gv_maintenancecommandpanel = DialogLastCreated();
+        DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(auto9BE208C8_var), c_anchorTop, -250, -10);
+        libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(UnitLastCreated()), PlayerGroupSingle(auto9BE208C8_var));
+        DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(auto9BE208C8_var), true);
+        DialogSetImageVisible(DialogLastCreated(), false);
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_AlliedRepairPanelSettings_Init () {
+    libRED3_gt_AlliedRepairPanelSettings = TriggerCreate("libRED3_gt_AlliedRepairPanelSettings_Func");
+    TriggerEnable(libRED3_gt_AlliedRepairPanelSettings, false);
+    TriggerAddEventTimeElapsed(libRED3_gt_AlliedRepairPanelSettings, 0.3, c_timeGame);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Chaowu panel UI production
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_ChaowupanelUIproduction_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!(((libNtve_gf_TriggeringProgressUnitType() == "SuVacuumImploder") || (libNtve_gf_TriggeringProgressUnitType() == "AuProtonCollider") || (libNtve_gf_TriggeringProgressUnitType() == "JpPsionicDecimator") || (libNtve_gf_TriggeringProgressUnitType() == "KorhalCannon223") || (libNtve_gf_TriggeringProgressUnitType() == "SuIronCurtain") || (libNtve_gf_TriggeringProgressUnitType() == "SuNuclearBombSilo") || (libNtve_gf_TriggeringProgressUnitType() == "AuChronoSphere") || (libNtve_gf_TriggeringProgressUnitType() == "AuOldChronosphere") || (libNtve_gf_TriggeringProgressUnitType() == "SuOldIronCurtain") || (libNtve_gf_TriggeringProgressUnitType() == "AuWeathercontroller") || (libNtve_gf_TriggeringProgressUnitType() == "JpNanoSwarm") || (libNtve_gf_TriggeringProgressUnitType() == "CnSundialarray") || (libNtve_gf_TriggeringProgressUnitType() == "CnDongfeng41launchsilo")))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogCreate(87, 500, c_anchorTopLeft, 0, 0, true);
+    libRED3_gv_chaowuPanel = DialogLastCreated();
+    DialogSetVisible(DialogLastCreated(), PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), true);
+    DialogControlCreateFromTemplate(DialogLastCreated(), c_triggerControlTypeCommandPanel, "SuperWeaponUI/TerranGlobalCommandPanelTemplate");
+    libRED3_gv_chaowucommandpanel = DialogLastCreated();
+    DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), c_anchorTopLeft, -155, 100);
+    libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(EventUnitProgressUnit()), PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())));
+    DialogControlSetVisible(DialogControlLastCreated(), PlayerGroupSingle(UnitGetOwner(EventUnitProgressUnit())), true);
+    DialogSetImageVisible(DialogLastCreated(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_ChaowupanelUIproduction_Init () {
+    libRED3_gt_ChaowupanelUIproduction = TriggerCreate("libRED3_gt_ChaowupanelUIproduction_Func");
+    TriggerAddEventUnitConstructProgress(libRED3_gt_ChaowupanelUIproduction, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Time and Space Teleportation Sticky
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_TimeandSpaceTeleportationSticky_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "AuChronoTeleportationCoverUnit", 0, UnitGetOwner(EventUnit()), EventUnitTargetPoint());
+    UnitGroupAdd(libRED3_gv_teleportationmarktarget, UnitLastCreated());
+    UISetTargetingOrder(PlayerGroupSingle(UnitGetOwner(EventUnit())), libRED3_gv_teleportationmarktarget, OrderTargetingPoint(AbilityCommand("SuIronCurtain2", 0), EventUnitTargetPoint()), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_TimeandSpaceTeleportationSticky_Init () {
+    libRED3_gt_TimeandSpaceTeleportationSticky = TriggerCreate("libRED3_gt_TimeandSpaceTeleportationSticky_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_TimeandSpaceTeleportationSticky, null, AbilityCommand("SuIronCurtain222", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Clear the cover after teleportation
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Clearthecoverafterteleportation_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libRED3_gt_UnitlossAllies, false);
+    UnitBehaviorAddPlayer(EventUnit(), "RAMovementSpeedAndArmor20Percent62", EventPlayer(), 1);
+    Wait(1.0, c_timeGame);
+    TriggerEnable(libRED3_gt_UnitlossAllies, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Clearthecoverafterteleportation_Init () {
+    libRED3_gt_Clearthecoverafterteleportation = TriggerCreate("libRED3_gt_Clearthecoverafterteleportation_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_Clearthecoverafterteleportation, null, AbilityCommand("SuIronCurtain2", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Clear the cover after the teleportation is cancelled.
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_Clearthecoveraftertheteleportationiscancelled_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    unitgroup auto12B4A02B_g;
+    int auto12B4A02B_u;
+    unit auto12B4A02B_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(libRED3_gt_UnitlossAllies, false);
+    auto12B4A02B_g = UnitGroup("AuChronoTeleportationCoverUnit", c_playerAny, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0);
+    auto12B4A02B_u = UnitGroupCount(auto12B4A02B_g, c_unitCountAll);
+    for (;; auto12B4A02B_u -= 1) {
+        auto12B4A02B_var = UnitGroupUnitFromEnd(auto12B4A02B_g, auto12B4A02B_u);
+        if (auto12B4A02B_var == null) { break; }
+        UnitBehaviorAddPlayer(auto12B4A02B_var, "RAMovementSpeedAndArmor20Percent62", EventPlayer(), 1);
+    }
+    Wait(1.0, c_timeGame);
+    TriggerEnable(libRED3_gt_UnitlossAllies, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_Clearthecoveraftertheteleportationiscancelled_Init () {
+    libRED3_gt_Clearthecoveraftertheteleportationiscancelled = TriggerCreate("libRED3_gt_Clearthecoveraftertheteleportationiscancelled_Func");
+    TriggerAddEventTargetModeUpdate(libRED3_gt_Clearthecoveraftertheteleportationiscancelled, c_playerAny, AbilityCommand("SuIronCurtain2", 0), c_targetModeStateOff);
+}
+
+void libRED3_InitTriggers () {
+    libRED3_gt_Charging_Init();
+    libRED3_gt_InitialminecartsoundeffectSoviet_Init();
+    libRED3_gt_InitialminecartsoundeffectEmpire_Init();
+    libRED3_gt_InitialminecartsoundeffectShenzhou_Init();
+    libRED3_gt_InitialminecartsoundeffectAllies_Init();
+    libRED3_gt_Alliesbuildvoicetrigger_Init();
+    libRED3_gt_EmpireBuildingVoiceTrigger_Init();
+    libRED3_gt_Chinabuildsvoicetriggers_Init();
+    libRED3_gt_NewConstrrctuionOptionsAvailable_Init();
+    libRED3_gt_UnitlossChina_Init();
+    libRED3_gt_UnitlossAllies_Init();
+    libRED3_gt_UnitlossSoviet_Init();
+    libRED3_gt_UnitlossEmpire_Init();
+    libRED3_gt_Playercommanderrepairpanelsettings_Init();
+    libRED3_gt_ActiveskillLightningStorm2_Init();
+    libRED3_gt_ActiveskillLawknowingspecialskill_Init();
+    libRED3_gt_AlliedRepairPanelSettings_Init();
+    libRED3_gt_ChaowupanelUIproduction_Init();
+    libRED3_gt_TimeandSpaceTeleportationSticky_Init();
+    libRED3_gt_Clearthecoverafterteleportation_Init();
+    libRED3_gt_Clearthecoveraftertheteleportationiscancelled_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libRED3_InitLib_completed = false;
+
+void libRED3_InitLib () {
+    if (libRED3_InitLib_completed) {
+        return;
+    }
+
+    libRED3_InitLib_completed = true;
+
+    libRED3_InitLibraries();
+    libRED3_InitVariables();
+    libRED3_InitTriggers();
+}
+

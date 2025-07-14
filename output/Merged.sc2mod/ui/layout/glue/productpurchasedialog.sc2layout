@@ -1,0 +1,62 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="ProductPurchaseDialog" name="ProductPurchaseDialog">
+    <Anchor relative="$parent" />
+    <VisibilityOnFade val="true" />
+    <AcceptsMouse val="true" />
+    <RenderType val="LDR" />
+    <Frame type="BlurFrame" name="FullscreenBlurFrame" template="StandardTemplates/FullscreenBlurFrame">
+      <Anchor relative="$parent" />
+      <Alpha val="0" />
+      <Animation name="DialogAnimation">
+        <Event event="OnShown" action="DirectionForward" frame="$parent" />
+        <Event event="OnShown" action="Play" frame="$parent" />
+        <Event event="DialogDismissed" action="DirectionReverse" frame="$parent" />
+        <Event event="DialogDismissed" action="Play" frame="$parent" />
+        <Controller type="Blur" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.2" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="BackgroundFrame">
+      <Anchor relative="$parent" />
+      <LayerColor val="000000" />
+      <Alpha val="170" />
+      <Animation name="DialogAnimation">
+        <Event event="OnShown" action="DirectionForward" frame="$parent" />
+        <Event event="OnShown" action="Play" frame="$parent" />
+        <Event event="DialogDismissed" action="DirectionReverse" frame="$parent" />
+        <Event event="DialogDismissed" action="Play" frame="$parent" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.2" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.2" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="ProductPurchasePanel" name="ProductPurchasePanel" template="ProductPurchasePanel/ProductPurchasePanelTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Animation name="DialogAnimation">
+      <Event event="OnShown" action="DirectionForward" />
+      <Event event="OnShown" action="Play" />
+      <Event event="DialogDismissed" action="DirectionReverse" />
+      <Event event="DialogDismissed" action="Play" />
+      <Controller type="Sound" end="Pause">
+        <Key type="Sound" time="0" sound="@UI_BNet_HeroDetailsOpen" />
+        <Key type="Sound" time="0.175" sound="@UI_BNet_HeroDetailsClose" />
+      </Controller>
+      <Controller type="Fade" end="Pause">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.175" />
+      </Controller>
+    </Animation>
+  </Frame>
+</Desc>

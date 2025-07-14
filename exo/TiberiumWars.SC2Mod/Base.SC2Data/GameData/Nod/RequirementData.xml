@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--Hide Upgrade If Research Already Started-->
+    <CRequirement default="1" id="NodLearnUpgrade">
+        <?token id="upgrade" type="CUpgradeLink" value="Bogus"?>
+        <EditorCategories value="Race:Nod,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="##id##"/>
+        <NodeArray index="Show" Link="RN_##upgrade##"/>
+    </CRequirement>
+    <!--Allow Ability if Upgrade Complete-->
+    <CRequirement default="1" id="NodRequireUpgrade">
+        <?token id="upgrade" type="CUpgradeLink" value="Bogus"?>
+        <EditorCategories value="Race:Nod,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="RC_##upgrade##"/>
+    </CRequirement>
+    <!--Unit Requirements-->
+    <CRequirement default="1" id="NodRequirement">
+        <?token id="requirement" type="CRequirementLink" value="##id##"?>
+        <EditorCategories value="Race:Nod,TechType:Unit"/>
+        <CanBeSuppressed index="Use" value="0"/>
+        <NodeArray index="Use" Link="##requirement##"/>
+    </CRequirement>
+
+    <!--Abilities Requirements-->
+    <CRequirement parent="NodRequireUpgrade" id="LearnRocketRag" upgrade="MantisRocketrag"/>
+    <CRequirement parent="NodRequireUpgrade" id="LearnHealCabalMedusa" upgrade="CabalMedusaHeal"/>
+    <CRequirement parent="NodRequireUpgrade" id="LearnTibBomb" upgrade="TibBomb"/>
+    <CRequirement parent="NodRequireUpgrade" id="NodNuke" upgrade="NodNuke"/>
+    <CRequirement parent="NodRequireUpgrade" id="MarkOfKane" upgrade="MarkOfKane"/>
+    <CRequirement parent="NodRequireUpgrade" id="FactorySpeed" upgrade="FactorySpeed"/>
+    <CRequirement parent="NodRequireUpgrade" id="CabalMedusaEffect" upgrade="CabalMedusaHalo"/>
+    <CRequirement parent="NodRequireUpgrade" id="InvertWarhead" upgrade="InvertWarHead"/>
+    <CRequirement parent="NodRequireUpgrade" id="NodRepairRange" upgrade="RadiusofReapair"/>
+    <CRequirement parent="NodRequireUpgrade" id="BlackHandLeader" upgrade="Leader"/>
+    <CRequirement parent="NodRequireUpgrade" id="LiquidTibFLameTank" upgrade="FlameZone"/>
+    <CRequirement parent="NodRequireUpgrade" id="TechIINod" upgrade="TechII"/>
+    <CRequirement parent="NodRequireUpgrade" id="StealhField" upgrade="StealthInvertField"/>
+    <CRequirement parent="NodRequireUpgrade" id="ObeliskCharge" upgrade="ObeliskCharge"/>
+    <CRequirement parent="NodRequireUpgrade" id="BUildTurret" upgrade="BuildTurret"/>
+    <CRequirement parent="NodRequireUpgrade" id="EnlightenedSuicide" upgrade="SuicideEnlightened"/>
+    <CRequirement parent="NodRequireUpgrade" id="TechIIINod" upgrade="TechIII"/>
+    <CRequirement parent="NodRequireUpgrade" id="HaveGDIjetpack" upgrade="GDIJetPack"/>
+    <CRequirement parent="NodRequireUpgrade" id="AccuracyUpgradeUes" upgrade="AccuracyUpgrade"/>
+
+    <CRequirement parent="NodRequireUpgrade" id="UseCabalCobraCloak" upgrade="CobraStealth"/>
+    <CRequirement parent="NodRequireUpgrade" id="UseDarkArmorBlackHand" upgrade="TibBomb"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasCabalBikeUpgrade" upgrade="BikeSpeed"/>
+    <CRequirement parent="NodRequireUpgrade" id="UseNodCloakVenom" upgrade="VenomStealth"/>
+    <CRequirement parent="NodRequireUpgrade" id="UseDarkArmorDevout" upgrade="DarkArmorDevout"/>
+    <CRequirement parent="NodRequireUpgrade" id="UseNodSpecterCloak" upgrade="SpecterStealth"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodTiberiumInfusion" upgrade="NodTiberiumInfusion"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodTiberiumCoreMissiles" upgrade="NodTiberiumCoreMissiles"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodDozerBlades" upgrade="NodDozerBlades"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodLaserFencing" upgrade="NodLaserFencing"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodPurifyingFlames" upgrade="NodPurifyingFlames"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodRaiderEMPCoils" upgrade="NodRaiderEMPCoils"/>
+    <CRequirement parent="NodRequireUpgrade" id="HasNodLaserCapacitors" upgrade="NodLaserCapacitors"/>
+
+
+
+    <!--Units Requirements-->
+    <CRequirement parent="NodRequirement" id="BuildNodTiberiumSilo"/>
+    <CRequirement parent="NodRequirement" id="BuildNodHand"/>
+    <CRequirement parent="NodRequirement" id="BuildNodWarFactory"/>
+    <CRequirement parent="NodRequirement" id="BuildNodOperationsCenter"/>
+    <CRequirement parent="NodRequirement" id="BuildNodAirTower"/>
+    <CRequirement parent="NodRequirement" id="BuildNodShrine"/>
+    <CRequirement parent="NodRequirement" id="BuildNodTechLab"/>
+    <CRequirement parent="NodRequirement" id="BuildNodChemicalPlant"/>
+    <CRequirement parent="NodRequirement" id="BuildNodCrane"/>
+    <CRequirement parent="NodRequirement" id="BuildNodAirSupport"/>
+    <CRequirement parent="NodRequirement" id="BuildNodRedeemerFacility"/>
+    <CRequirement parent="NodRequirement" id="BuildNodTemple"/>
+    <CRequirement parent="NodRequirement" id="BuildNodVoiceOfKane"/>
+    <CRequirement parent="NodRequirement" id="BuildNodDisruptionTower"/>
+    <CRequirement parent="NodRequirement" id="BuildNodObeliskOfLight"/>
+    <CRequirement parent="NodRequirement" id="BuildNodTurretsHub"/>
+
+
+    <CRequirement parent="NodRequirement" id="TrainNodBlackHand"/>
+    <CRequirement parent="NodRequirement" id="TrainNodFanatic"/>
+    <CRequirement parent="NodRequirement" id="TrainNodShadow"/>
+    <CRequirement parent="NodRequirement" id="TrainNodConfessor"/>
+    <CRequirement parent="NodRequirement" id="TrainNodSaboteur"/>
+    <CRequirement parent="NodRequirement" id="TrainNodAwakened"/>
+    <CRequirement parent="NodRequirement" id="TrainTiberiumTrooper"/>
+    <CRequirement parent="NodRequirement" id="TrainEnlightened"/>
+    <CRequirement parent="NodRequirement" id="TrainNodCommando"/>
+    <CRequirement parent="NodRequirement" id="TrainNodRedeemer" />
+
+
+    <CRequirement parent="NodRequirement" id="NoMCVSupport" requirement="REQ_MCVSupport"/>
+    <CRequirement parent="NodRequirement" id="NoMCVOffense" requirement="REQ_MCVOffense"/>
+    <CRequirement parent="NodRequirement" id="NoMCVDefense" requirement="REQ_MCVDefense"/>
+    <CRequirement parent="NodRequirement" id="HaveNodVertigo"/>
+    <CRequirement parent="NodRequirement" id="HaveNodPowerPlant" requirement="REQC_NodPower"/>
+    <CRequirement parent="NodRequirement" id="HaveNodAirTower" requirement="REQC_NodHangar"/>
+    <CRequirement parent="NodRequirement" id="HaveNodWarfactory" requirement="REQC_NodWarFactory"/>
+    <CRequirement parent="NodRequirement" id="LeviathanRequirements" requirement="REQ_CabalLeviathan"/>
+    <CRequirement parent="NodRequirement" id="NodArmInterceptor" requirement="REQ_NodInterceptor"/>
+    <CRequirement parent="NodRequirement" id="HaveChemicalPlant" requirement="UC_ChemicalPlant"/>
+    <CRequirement parent="NodRequirement" id="HaveNodShrine" requirement="UC_NodShrine"/>
+    <CRequirement parent="NodRequirement" id="HaveNodRefinery" requirement="UC_NodTiberiumRefinery"/>
+    <CRequirement parent="NodRequirement" id="HaveNodTechPlant" requirement="UC_NodTechLab"/>
+    <CRequirement parent="NodRequirement" id="HaveNodOperationsCenter" requirement="UC_NodOperationsCenter"/>
+    <CRequirement parent="NodRequirement" id="HaveBarracksGDI" requirement="UC_BarracksGDI"/>
+    <CRequirement parent="NodRequirement" id="HaveGDICommandpost" requirement="UC_ComandPost"/>
+    <CRequirement parent="NodRequirement" id="HaveNodArtilleryBeacon" requirement="UC_NodArtilleryBeacon"/>
+
+
+
+
+    <!--Upgrades Requirements -->
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodInfantryArmorsLevel1" upgrade="NodInfantryArmorsLevel1"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodInfantryArmorsLevel2" upgrade="NodInfantryArmorsLevel2"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodInfantryArmorsLevel3" upgrade="NodInfantryArmorsLevel3"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodLightWeaponsLevel1" upgrade="NodLightWeaponsLevel1"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodLightWeaponsLevel2" upgrade="NodLightWeaponsLevel2"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodLightWeaponsLevel3" upgrade="NodLightWeaponsLevel3"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodVehiclesArmorsLevel1" upgrade="NodVehiclesArmorsLevel1"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodVehiclesArmorsLevel2" upgrade="NodVehiclesArmorsLevel2"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodVehiclesArmorsLevel3" upgrade="NodVehiclesArmorsLevel3"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodHeavyWeaponsLevel1" upgrade="NodHeavyWeaponsLevel1"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodHeavyWeaponsLevel2" upgrade="NodHeavyWeaponsLevel2"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodHeavyWeaponsLevel3" upgrade="NodHeavyWeaponsLevel3"/>
+
+
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodTiberiumInfusion" upgrade="NodTiberiumInfusion"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodCyberneticLegs" upgrade="NodCyberneticLegs"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodChargedParticleBeams" upgrade="NodChargedParticleBeams"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodPurifyingFlames" upgrade="NodPurifyingFlames"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodLaserCapacitors" upgrade="NodLaserCapacitors"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodTiberiumCoreMissiles" upgrade="NodTiberiumCoreMissiles"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodDisruptionPods" upgrade="NodDisruptionPods"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodRaiderEMPCoils" upgrade="NodRaiderEMPCoils"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodQuadTurrets" upgrade="NodQuadTurrets"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodSignatureGenerators" upgrade="NodSignatureGenerators"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodExplosiveDamage" upgrade="NodExplosiveDamage"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodLaserFencing" upgrade="NodLaserFencing"/>
+    <CRequirement parent="NodLearnUpgrade" id="LearnNodDozerBlades" upgrade="NodDozerBlades"/>
+
+    <CRequirement id="LearnAccuracyUpgrade" parent="NodLearnUpgrade" upgrade="AccuracyUpgrade"/>
+    <CRequirement id="LearnRangeUpgrade" parent="NodLearnUpgrade" upgrade="RangeUpgrade"/>
+    <CRequirement id="LearnNodCloak" parent="NodLearnUpgrade" upgrade="AirStealthUpgrade"/>
+    <CRequirement id="LearnSelfRepairUpgrade" parent="NodLearnUpgrade" upgrade="RepairUpgrade"/>
+    <CRequirement id="LearnReloadUpgrade" parent="NodLearnUpgrade" upgrade="ReloadUpgrade"/>
+    <CRequirement id="learnDarkArmor" parent="NodLearnUpgrade" upgrade="DarkArmor"/>
+    <CRequirement id="learnTECHIII" parent="NodLearnUpgrade" upgrade="TechIII"/>
+    <CRequirement id="learnspeedupgrade" parent="NodLearnUpgrade" upgrade="SpeedUpgrade"/>
+    <CRequirement id="learnTECHII" parent="NodLearnUpgrade" upgrade="TechII"/>
+    <CRequirement id="ChemicalFactoryUp" parent="NodLearnUpgrade" upgrade="TibField"/>
+
+
+
+
+</Catalog>

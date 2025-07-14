@@ -1,0 +1,23 @@
+<Catalog>
+  <CShape default="1">
+    <Name value="Shape/Name/##id##" />
+  </CShape>
+  <CShapeArc default="1" />
+  <CShapeQuad default="1" />
+  <CShapeArc id="CorsairSCBWDisruptionWeb@Visibility">
+    <Arc value="360" />
+    <Radius value="2.25" />
+  </CShapeArc>
+  <CShapeArc id="ArbiterSCBWRecall@Visibility">
+    <Arc value="360" />
+    <Radius value="2.544" />
+  </CShapeArc>
+  <CShapeArc id="LurkerSCBWWeapon@Visibility">
+    <Arc value="360" />
+    <Radius value="6" />
+  </CShapeArc>
+  <CShapeArc id="DefilerSCBWDarkSwarm@Visibility">
+    <Arc value="360" />
+    <Radius value="3.75" />
+  </CShapeArc>
+</Catalog>

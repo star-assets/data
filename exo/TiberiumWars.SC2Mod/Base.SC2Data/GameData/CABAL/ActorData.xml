@@ -1,0 +1,2263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorUnit default="1" id="CabalBuilding" parent="NodBuilding">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="CabalVehicleBase" parent="NodVehicleBase">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <EditorCategories value="Race:CABAL"/>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="CabalWheelerBase" parent="NodWheelerBase">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <EditorCategories value="Race:CABAL"/>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="CabalInfantryBase" parent="NodInfantryBase">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <EditorCategories value="Race:CABAL"/>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="CabalUnitBase" parent="NodUnitBase">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="CabalAirBase" parent="NodAirBase">
+        <?token id="wireframe" value="##id##Wireframe"?>
+        <HeroIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\Cabal\##icon##.dds"/>
+        <GroupIcon>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image index="0" value="Assets\icons\Cabal\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="CabalBike" parent="CabalWheelerBase" wireframe="CabalBikeWireframe">
+        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="UnitBirth; ValidateUnit HasBikeUpgrade" Send="AnimClear CoverA"/>
+        <On Terms="Upgrade.BikeSpeed.Add" Send="AnimClear CoverA"/>
+        <On Terms="Upgrade.BikeSpeed.Remove" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="ActorCreation" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <On Terms="UnitBirth; ValidateUnit HasBikeUpgrade" Send="AnimClear CoverB"/>
+        <On Terms="Upgrade.BikeSpeed.Add" Send="AnimClear CoverB"/>
+        <On Terms="Upgrade.BikeSpeed.Remove" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <DeathArray index="Normal" ModelLink="CabalBike_Death"/>
+    </CActorUnit>
+    <CActorUnit id="CabalRaider" parent="CabalWheelerBase" wireframe="CabalRaiderWireframe">
+        <On Terms="ActorCreation; ValidatePlayer NoBikeUpgrade" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidatePlayer HasCabalBikeUpgrade" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="Upgrade.BikeSpeed.Add" Send="AnimClear CoverB"/>
+        <On Terms="Upgrade.BikeSpeed.Add" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="Upgrade.BikeSpeed.Remove" Send="AnimClear CoverA"/>
+        <On Terms="Upgrade.BikeSpeed.Remove" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalReckonerUnpackMorph" parent="CabalVehicleBase" wireframe="CabalReckonerDeployedWireframe" unitName="SiegeModeMorphModel" icon="CabalReckonerDeployed">
+        <On Terms="AbilMorph.*.Start; MorphTo CabalReckonerUnpack" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalReckonerUnpack" Send="AnimPlay Start Morph,Start"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalReckonerUnpack" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalReckonerPack" Send="Destroy"/>
+        <Model value="CabalReckoner"/>
+        <HighlightTooltip value="Unit/Name/CabalReckoner"/>
+        <SoundArray index="Ready" value="NodReckoner_Ready"/>
+        <SoundArray index="Help" value="NodReckoner_Help"/>
+        <SoundArray index="What" value="NodReckoner_What"/>
+        <SoundArray index="Yes" value="NodReckoner_Yes"/>
+        <SoundArray index="Attack" value="NodReckoner_Attack"/>
+        <SoundArray index="Pissed" value="NodReckoner_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalReckonerPackMorph" parent="CabalVehicleBase" wireframe="CabalReckonerWireframe" unitName="TankModeMorphModel" icon="CabalReckoner">
+        <On Terms="AbilMorph.*.Start; MorphTo CabalReckonerPack" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalReckonerPack" Send="AnimPlay End Morph,End"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalReckonerPack" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalReckonerUnpack" Send="Destroy"/>
+        <On Terms="ActorCreation; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <Model value="CabalReckoner"/>
+        <HighlightTooltip value="Unit/Name/CabalReckoner"/>
+        <SoundArray index="Ready" value="NodReckoner_Ready"/>
+        <SoundArray index="Help" value="NodReckoner_Help"/>
+        <SoundArray index="What" value="NodReckoner_What"/>
+        <SoundArray index="Yes" value="NodReckoner_Yes"/>
+        <SoundArray index="Attack" value="NodReckoner_Attack"/>
+        <SoundArray index="Pissed" value="NodReckoner_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalReckonerPack" parent="CabalVehicleBase" wireframe="CabalReckonerWireframe" unitName="CabalReckonerPack" icon="CabalReckoner">
+        <DeathArray index="Normal" ModelLink="CabalReckoner_Death" SoundLink="SiegeBreaker_Explode"/>
+        <AbilSoundArray AbilCmd="CabalDeepBurrow,Execute" Sound="NodReckoner_Burrow"/>
+        <NameOffset value="50"/>
+        <Model value="CabalReckoner"/>
+        <SoundArray index="Ready" value="NodReckoner_Ready"/>
+        <SoundArray index="Help" value="NodReckoner_Help"/>
+        <SoundArray index="What" value="NodReckoner_What"/>
+        <SoundArray index="Yes" value="NodReckoner_Yes"/>
+        <SoundArray index="Attack" value="NodReckoner_Attack"/>
+        <SoundArray index="Pissed" value="NodReckoner_What"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Target="_DeathModel" Send="AnimBracketStart BurrowStart Burrow IGNORE Unburrow ContentNonLooping,OpeningPlayForever"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStop" Send="AnimBracketStop BurrowStart"/>
+        <On Terms="AbilMorph.*.Start; MorphTo ReckonerUnpack" Send="Destroy"/>
+        <Scale value="0.800000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalReckonerUnpack" parent="CabalVehicleBase" wireframe="CabalReckonerWireframe" unitName="CabalReckonerUnpack" icon="CabalReckonerIcon">
+        <DeathArray index="Normal" ModelLink="CabalReckonerDeployed_Death"/>
+        <BarOffset value="65"/>
+        <NameOffset value="50"/>
+        <Model value="CabalReckoner"/>
+        <SoundArray index="Ready" value="NodReckoner_Ready"/>
+        <SoundArray index="Help" value="NodReckoner_Help"/>
+        <SoundArray index="What" value="NodReckoner_What"/>
+        <SoundArray index="Yes" value="NodReckoner_Yes"/>
+        <SoundArray index="Attack" value="NodReckoner_Attack"/>
+        <SoundArray index="Pissed" value="NodReckoner_What"/>
+        <Scale value="0.800000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalVertigo" parent="CabalUnitBase">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitBirth.CabalVertigoLanded" Send="Create"/>
+        <HostSiteOps Ops="SOpBankerVenom"/>
+        <AnimBlendTime value="0.300000"/>
+        <DeathArray index="Normal" ModelLink="CabalVenom_Death" SoundLink="Wraith_Explode"/>
+        <BarOffset value="55"/>
+        <BarWidth value="66"/>
+        <GroupSoundArray index="Birth" value="Wraith_Birth"/>
+        <GroupSoundArray index="Ready" value="Vertigo_Ready"/>
+        <GroupSoundArray index="Help" value="Vertigo_Help"/>
+        <GroupSoundArray index="What" value="Vertigo_What"/>
+        <GroupSoundArray index="Yes" value="Vertigo_Yes"/>
+        <GroupSoundArray index="Attack" value="Vertigo_Attack"/>
+        <GroupSoundArray index="Pissed" value="Vertigo_What"/>
+        <SoundArray index="Ready" value="Vertigo_Ready"/>
+        <SoundArray index="Help" value="Vertigo_Help"/>
+        <SoundArray index="What" value="Vertigo_What"/>
+        <SoundArray index="Yes" value="Vertigo_Yes"/>
+        <SoundArray index="Attack" value="Vertigo_Attack"/>
+        <SoundArray index="Movement" value="Venom_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalScorpion" parent="CabalVehicleBase">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.CabalScorpionBurrow" Send="Create"/>
+        <On Terms="UnitBirth.CabalScorpionBurrow" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="ActorCreation" Send="StatusSet Fired 0"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimPlay Burrow Burrow NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimClear Unburrow 0.000000"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimPlay Unburrow Unburrow PlayForever,NonLooping 0.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo" Send="AnimClear Unburrow 0.000000"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create WidowMine_Land"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="AnimBracketStart BurrowStart Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStop" Send="AnimBracketStop BurrowStart"/>
+        <DeathArray index="Normal" ModelLink="CabalTyrant_Death" SoundLink="Terran_ExplosionSmall"/>
+        <DeathCustoms ModelLink="CabalTyrant_Death" Name="RagdollBasic">
+            <BodySquibs Name="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ModelLink="Invisible" Name="Variation1"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLargeVehicle"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.8125"/>
+        <BarOffset value="35"/>
+        <BarWidth value="42"/>
+        <NameOffset value="10"/>
+    </CActorUnit>
+    <CActorUnit id="CabalMissilePod" parent="CabalBuilding">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitBirth.CabalMissilePodUG" Send="Create"/>
+        <On Terms="UnitBirth.CabalMissilePodUG" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalMissilePodUG" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalMissilePod" Send="AnimGroupRemove Burrow"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsBuried" Send="DeathCustomize Burrowed"/>
+        <BuildModel value="MissilePodPlacement"/>
+        <DeathArray index="Normal" SoundLink="PerditionTurret_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="PerditionTurret_Explode"/>
+        <DeathCustoms ModelLink="TerranBuildingDeath" SoundLink="Terran_ExplosionMedium" Name="Burrowed"/>
+        <!--        <PlacementModel value="MissilePodPlacement"/>-->
+        <!--        <PlacementActorModel value="PerditionTurretPlacementModel"/>-->
+        <BarOffset value="75"/>
+        <BarWidth value="85"/>
+        <SoundArray index="What" value="PerditionTurret_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalFlameColumn" parent="CabalBuilding">
+        <Aliases value="_UnitHuge"/>
+        <On Terms="ActorCreation; ValidateUnit MissileTurretUpgraded" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="Upgrade.ReinforcedSuperstructure.Add" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit MissileTurretUpgradedNoConstruction" Send="DeathCustomize Upgrade"/>
+        <On Terms="Signal.*.test" Send="Create TurretUnitDeathModel"/>
+        <On Terms="Signal.*.test" Send="SetOpacity"/>
+        <CreepHeightClass value="Small"/>
+        <BuildModel value="CabalViperTurretPlacement"/>
+        <DeathArray index="Normal" ModelLink="CabalObelisk_Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="MissileTurret_Explode"/>
+        <DeathCustoms ModelLink="MissileTurretTitaniumHousingDeath" Name="Upgrade"/>
+        <!--        <PlacementModel value="CabalViperTurretPlacement"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <!--        <PlacementActorModel value="MissileTurretSkinnablePlacementModel"/>-->
+        <BarOffset value="90"/>
+        <SoundArray index="Ready" value="MissileTurret_Ready"/>
+        <SoundArray index="What" value="MissileTurret_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalIncinerator" parent="CabalBuilding">
+        <Aliases value="_UnitHuge"/>
+        <On Terms="ActorCreation; ValidateUnit MissileTurretUpgraded" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="Upgrade.ReinforcedSuperstructure.Add" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit MissileTurretUpgradedNoConstruction" Send="DeathCustomize Upgrade"/>
+        <On Terms="Signal.*.test" Send="Create TurretUnitDeathModel"/>
+        <On Terms="Signal.*.test" Send="SetOpacity"/>
+        <CreepHeightClass value="Small"/>
+        <BuildModel value="NodObeliskOfLightPlacement"/>
+        <DeathArray index="Normal" ModelLink="CabalObelisk_Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="MissileTurret_Explode"/>
+        <DeathCustoms ModelLink="MissileTurretTitaniumHousingDeath" Name="Upgrade"/>
+        <!--        <PlacementModel value="NodObeliskOfLightPlacement"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <!--        <PlacementActorModel value="MissileTurretSkinnablePlacementModel"/>-->
+        <BarOffset value="90"/>
+        <SoundArray index="Ready" value="MissileTurret_Ready"/>
+        <SoundArray index="What" value="MissileTurret_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalObeliskOfLife" parent="CabalBuilding" wireframe="CabalBrightstoneWireframe" unitName="CabalObeliskOfLife" icon="CabalBrightstone">
+        <Aliases value="_UnitHuge"/>
+        <On Terms="ActorCreation; ValidateUnit MissileTurretUpgraded" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="Upgrade.ReinforcedSuperstructure.Add" Send="ModelSwap MissileTurretTitaniumHousing"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit MissileTurretUpgradedNoConstruction" Send="DeathCustomize Upgrade"/>
+        <On Terms="Signal.*.test" Send="Create TurretUnitDeathModel"/>
+        <On Terms="Signal.*.test" Send="SetOpacity"/>
+        <CreepHeightClass value="Small"/>
+        <BuildModel value="NodObeliskOfLightPlacement"/>
+        <DeathArray index="Normal" ModelLink="CabalObelisk_Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="MissileTurret_Explode"/>
+        <DeathCustoms ModelLink="MissileTurretTitaniumHousingDeath" Name="Upgrade"/>
+        <!--        <PlacementModel value="NodObeliskOfLightPlacement"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <!--        <PlacementActorModel value="MissileTurretSkinnablePlacementModel"/>-->
+        <BarOffset value="90"/>
+        <SoundArray index="Ready" value="MissileTurret_Ready"/>
+        <SoundArray index="What" value="MissileTurret_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalShieldGenerator" parent="CabalBuilding">
+        <Macros value="QueueAnim"/>
+        <Model value="NodShadowShieldGeneratorSmall"/>
+        <CreepHeightClass value="Medium"/>
+        <DeathArray index="Normal" ModelLink="ShadowShieldGeneratorDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="EngineeringBay_Explode"/>
+        <PortraitModel value="AdjutantPortrait"/>
+        <SoundArray index="Ready" value="EngineeringBay_Ready"/>
+        <SoundArray index="What" value="EngineeringBay_What"/>
+        <!--PlacementModel value="NodShadowShieldGeneratorSmall"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <BuildModel value="NodShadowShieldGeneratorSmall"/-->
+        <BuildModel value="NodObeliskOfLightPlacement"/>
+        <!--        <PlacementModel value="NodObeliskOfLightPlacement"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <!--        <PlacementActorModel value="MissileTurretSkinnablePlacementModel"/>-->
+    </CActorUnit>
+    <CActorUnit id="CabalTunnel" parent="CabalBuilding">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="QueueAnim"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationEngineeringBay"/>
+        <On Terms="UnitConstruction.CabalTunnel.Start" Send="Create BarracksBuild"/>
+        <CreepHeightClass value="Medium"/>
+        <SoundArray index="Ready" value="EngineeringBay_Ready"/>
+        <SoundArray index="What" value="EngineeringBay_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalHelipad" parent="CabalBuilding">
+        <DeathArray index="Normal" ModelLink="VertigoPlatformDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
+        <BarOffset value="155"/>
+        <BarWidth value="160"/>
+        <SoundArray index="Ready" value="Starport_Ready"/>
+        <SoundArray index="What" value="Starport_What"/>
+        <SoundArray index="Movement" value="Starport_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalOutpost" parent="CabalBuilding">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitConstruction.CabalOutpost.Start" Send="Create BarracksBuild"/>
+        <CreepHeightClass value="Small"/>
+        <DeathArray index="Normal" SoundLink="SupplyDepot_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SupplyDepot_Explode"/>
+        <!--        <PlacementModel value="CabalOutpostPM"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <BarOffset value="70"/>
+        <BarWidth value="80"/>
+        <NameOffset value="40"/>
+        <SoundArray index="Ready" value="SupplyDepot_Ready"/>
+        <SoundArray index="What" value="SupplyDepot_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalControlNode" parent="CabalBuilding" wireframe="CabalControlNode">
+        <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Small"/>
+        <DeathArray index="Normal" SoundLink="SupplyDepot_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SupplyDepot_Explode"/>
+        <!--        <PlacementModel value="NodPowerPlantPM"/>-->
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <BarOffset value="70"/>
+        <BarWidth value="80"/>
+        <NameOffset value="40"/>
+        <SoundArray index="Ready" value="SupplyDepot_Ready"/>
+        <SoundArray index="What" value="SupplyDepot_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <Model value="NodPowerPlant"/>
+        <BuildModel value="NodPowerPlant"/>
+    </CActorUnit>
+    <CActorUnit id="CabalCrawlerHangar" parent="CabalBuilding" wireframe="CabalHelipadWireframe" unitName="CabalCrawlerHangar" icon="CabalHelipad">
+        <Aliases value="_UnitLarge"/>
+        <CreepHeightClass value="Small"/>
+        <DeathArray index="Normal" SoundLink="SupplyDepot_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SupplyDepot_Explode"/>
+        <PlacementSound value="Terran_BuildingPlacementSmall"/>
+        <BarOffset value="70"/>
+        <BarWidth value="80"/>
+        <NameOffset value="40"/>
+        <SoundArray index="Ready" value="SupplyDepot_Ready"/>
+        <SoundArray index="What" value="SupplyDepot_What"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <HeroIcon value="Assets\icons\factions\faction-kw-markedofkane.dds"/>
+        <UnitIcon value="Assets\icons\factions\faction-kw-markedofkane.dds"/>
+        <GroupIcon>
+            <Image value="Assets\icons\factions\faction-kw-markedofkane.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\icons\factions\faction-kw-markedofkane.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit id="CabalSupportConstructionYard" parent="CabalBuilding" wireframe="CabalSupportCrawler" icon="CabalSupportCrawler">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <Macros value="MacroTownhallDeco_Terran"/>
+        <Macros value="TerranPlanetaryFortressPlayerDecalMacro"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalSupportConstructionYard" Send="Create"/>
+        <On Terms="UnitBirth.CabalSupportConstructionYard; PlayerHasClanDecal" Send="Create TerranClanFlag"/>
+        <On Terms="UnitBirth.CabalSupportConstructionYard; PlayerHasTrophy" Send="Create TerranPlayerTrophy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom CabalSupportConstructionYard" Send="Destroy"/>
+        <DeathArray index="Normal" ModelLink="CabalDefenseConstructionYard_Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="PlanetaryFortress_Explode"/>
+        <!--        <PlacementModel value="CabalDefenseCrawlerPlacement"/>-->
+        <BarOffset value="180"/>
+        <BarWidth value="200"/>
+        <GlossaryAnim value="Stand,A"/>
+        <MinimapIcon value="Assets\icons\NodDefenseGroupConstructionPlantIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <NameOffset value="150"/>
+        <SoundArray index="Ready" value="NodCrawler_What"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalOffenseConstructionYard" parent="CabalBuilding" wireframe="CabalOffenseCrawler" icon="CabalOffenseCrawler">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <Macros value="MacroTownhallDeco_Terran"/>
+        <Macros value="TerranPlanetaryFortressPlayerDecalMacro"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalOffenseConstructionYard" Send="Create"/>
+        <On Terms="UnitBirth.CabalOffenseConstructionYard; PlayerHasClanDecal" Send="Create TerranClanFlag"/>
+        <On Terms="UnitBirth.CabalOffenseConstructionYard; PlayerHasTrophy" Send="Create TerranPlayerTrophy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom CabalOffenseConstructionYard" Send="Destroy"/>
+        <DeathArray index="Normal" ModelLink="CabalDefenseConstructionYard_Death"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="PlanetaryFortress_Explode"/>
+        <!--        <PlacementModel value="CabalDefenseCrawlerPlacement"/>-->
+        <BarOffset value="180"/>
+        <BarWidth value="200"/>
+        <GlossaryAnim value="Stand,A"/>
+        <MinimapIcon value="Assets\icons\NodOffensiveGroupMCVIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <NameOffset value="150"/>
+        <SoundArray index="Ready" value="NodCrawler_What"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDefenseCrawlerDeployed" parent="CabalBuilding">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="QueueAnim"/>
+        <Macros value="BuildingFlattenTerrainMacro"/>
+        <Macros value="MacroTownhallDeco_Terran"/>
+        <Macros value="TerranPlanetaryFortressPlayerDecalMacro"/>
+        <AcceptedHostedPropTransfers index="Decal" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalDefenseCrawlerDeployed" Send="Create"/>
+        <On Terms="UnitBirth.CabalDefenseCrawlerDeployed; PlayerHasClanDecal" Send="Create TerranClanFlag"/>
+        <On Terms="UnitBirth.CabalDefenseCrawlerDeployed; PlayerHasTrophy" Send="Create TerranPlayerTrophy"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom CabalDefenseCrawlerDeployed" Send="Destroy"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="PlanetaryFortress_Explode"/>
+        <BarOffset value="180"/>
+        <BarWidth value="200"/>
+        <GlossaryAnim value="Stand,A"/>
+        <MinimapIcon value="Assets\icons\NodDefenseGroupConstructionPlantIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <NameOffset value="150"/>
+        <SoundArray index="Ready" value="NodCrawler_What"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <!--        <PlacementModel value="CabalDefenseCrawlerPlacement"/>-->
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalWeaponsLaboratory" parent="CabalBuilding">
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
+        <SoundArray index="Ready" value="Starport_Ready"/>
+        <SoundArray index="What" value="Starport_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalGrandShrine" parent="CabalBuilding">
+        <Model value="NodTemple"/>
+        <CreepHeightClass value="Medium"/>
+        <BuildModel value="NodTemple"/>
+        <DeathArray index="Normal" ModelLink="NodTempleDeath"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="EngineeringBay_Explode"/>
+    </CActorUnit>
+    <CActorUnit id="CabalShrine" parent="CabalBuilding">
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
+        <SoundArray index="Ready" value="Starport_Ready"/>
+        <SoundArray index="What" value="Starport_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalPyramid" parent="CabalBuilding">
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
+        <SoundArray index="Ready" value="Starport_Ready"/>
+        <SoundArray index="What" value="Starport_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalViperTurret" parent="CabalBuilding">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitBirth.CabalViperTurretUG" Send="Create"/>
+        <On Terms="UnitBirth.CabalViperTurretUG" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalViperTurretUG" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalViperTurret" Send="AnimGroupRemove Burrow"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsBuried" Send="DeathCustomize Burrowed"/>
+        <DeathArray index="Normal" SoundLink="PerditionTurret_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="CabalViperTurret_Death" SoundLink="PerditionTurret_Explode"/>
+        <DeathCustoms ModelLink="TerranBuildingDeath" SoundLink="Terran_ExplosionMedium" Name="Burrowed"/>
+        <BarOffset value="75"/>
+        <BarWidth value="85"/>
+        <SoundArray index="What" value="PerditionTurret_What"/>
+        <BuildModel value="CabalViperTurretPlacement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalViperTurret0" parent="CabalBuilding" wireframe="CabalViperTurretWireframe" unitName="CabalViperTurret0" icon="CabalViperTurret">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsBuried" Send="DeathCustomize Burrowed"/>
+        <BuildModel value="CabalViperTurretPlacement"/>
+        <DeathArray index="Normal" ModelLink="CabalViperTurret_DeathO" SoundLink="PerditionTurret_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="PerditionTurret_Explode"/>
+        <DeathCustoms ModelLink="TerranBuildingDeath" SoundLink="Terran_ExplosionMedium" Name="Burrowed"/>
+        <BarOffset value="75"/>
+        <BarWidth value="85"/>
+        <SoundArray index="What" value="PerditionTurret_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalMissilePodO" parent="CabalBuilding" wireframe="MissileBayWireframe" unitName="CabalMissilePodO" icon="MissileBayIcon">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="UnitBirth.CabalMissilePodUG" Send="AnimGroupApply Burrow Burrow Unburrow ClosingFull,Instant"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsBuried" Send="DeathCustomize Burrowed"/>
+        <BuildModel value="MissilePodPlacement"/>
+        <DeathArray index="Normal" ModelLink="CabalMissilePod_Death" SoundLink="PerditionTurret_Explode"/>
+        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="PerditionTurret_Explode"/>
+        <DeathCustoms ModelLink="TerranBuildingDeath" SoundLink="Terran_ExplosionMedium" Name="Burrowed"/>
+        <BarOffset value="75"/>
+        <BarWidth value="85"/>
+        <SoundArray index="What" value="PerditionTurret_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSupportCrawlerUnpack" parent="CabalUnitBase" wireframe="CabalSupportCrawlerWireframe" unitName="TankModeMorphModel" icon="CabalSupportCrawler">
+        <Aliases value="_UnitLarge"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <AcceptedTransfers index="ModelMaterials" value="1"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalSupportConstructionYard" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalSupportConstructionYard" Send="AnimPlay Start Morph,Start"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalSupportConstructionYard" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalSupportCrawler" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <Model value="CabalSupportCrawlerMorph"/>
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath" SoundLink="SiegeTank_Explode"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <HighlightTooltip value="Unit/Name/CabalSupportCrawler"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSupportCrawlerPack" parent="CabalVehicleBase" wireframe="CabalSupportCrawlerWireframe" unitName="TankModeMorphModel" icon="CabalSupportCrawler">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalSupportCrawler" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalSupportCrawler" Send="AnimPlay End Morph,End"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalSupportCrawler" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalSupportConstructionYard" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <On Terms="ActorCreation; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <Model value="CabalSupportCrawlerMorph"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <AbilSoundArray/>
+        <HighlightTooltip value="Unit/Name/SupportMCV"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSupportCrawler" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <DeathArray index="Normal" ModelLink="CabalDefenseCrawler_Death"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.1992"/>
+        <AbilSoundArray AbilCmd="CabalDefenseCrawlerDeploy,255" Sound="NodCrawler_Deploy"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <MinimapIcon value="Assets\icons\NodSupportGroupMCVIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalOffenseCrawlerUnpack" parent="CabalUnitBase" wireframe="NodDefenseGroupConstructionPlantWireframe" unitName="SiegeModeMorphModel" icon="NodDefenseGroupConstructionPlantIcon">
+        <Aliases value="_UnitLarge"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <AcceptedTransfers index="ModelMaterials" value="1"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalOffenseConstructionYard" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalOffenseConstructionYard" Send="AnimPlay Start Morph,Start"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalOffenseConstructionYard" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalOffenseCrawler" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <Model value="CabalOffenseCrawlerUnpack"/>
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath" SoundLink="SiegeTank_Explode"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <HighlightTooltip value="Unit/Name/CabalOffenseCrawler"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalOffenseCrawlerPack" parent="CabalVehicleBase" wireframe="NodOffensiveGroupMCVWireframe" unitName="TankModeMorphModel" icon="NodOffensiveGroupMCVIcon">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalOffenseCrawler" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalOffenseCrawler" Send="AnimPlay End Morph,End"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalOffenseCrawler" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalOffenseConstructionYard" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <On Terms="ActorCreation; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <Model value="CabalOffenseCrawlerUnpack"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <AbilSoundArray/>
+        <HighlightTooltip value="Unit/Name/CabalOffenseCrawler"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalOffenseCrawler" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <DeathArray index="Normal" ModelLink="CabalDefenseCrawler_Death"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1.1992"/>
+        <AbilSoundArray AbilCmd="CabalDefenseCrawlerDeploy,255" Sound="NodCrawler_Deploy"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <MinimapIcon value="Assets\icons\NodOffensiveGroupMCVIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDefenseCrawler" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <DeathArray index="Normal" ModelLink="CabalDefenseCrawler_Death"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <AbilSoundArray AbilCmd="CabalDefenseCrawlerDeploy,255" Sound="NodCrawler_Deploy"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <MinimapIcon value="Assets\icons\NodDefenseGroupMCVIcon.dds"/>
+        <MinimapIconScale value="0.400000"/>
+        <MinimapFlashWhenAttacked value="0"/>
+        <MinimapUseSelfColor value="0"/>
+        <MinimapUseSelectionColor value="0"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <Scale value="0.850000"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDefenseConstructionYard" parent="CabalUnitBase" wireframe="NodDefenseGroupConstructionPlantWireframe" unitName="SiegeModeMorphModel" icon="NodDefenseGroupConstructionPlantIcon">
+        <Aliases value="_UnitLarge"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <AcceptedTransfers index="ModelMaterials" value="1"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalDefenseCrawlerDeployed" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalDefenseCrawlerDeployed" Send="AnimPlay Start Morph,Start"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalDefenseCrawlerDeployed" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalDefenseCrawler" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <Model value="CabalDefenseCrawlerMorph"/>
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath" SoundLink="SiegeTank_Explode"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <HighlightTooltip value="Unit/Name/Defense MCV GDI"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDefenseCrawlerPack" parent="CabalVehicleBase" wireframe="NodDefenseGroupMCVWireframe" unitName="TankModeMorphModel" icon="NodDefenseGroupMCVIcon">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalDefenseCrawler" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo CabalDefenseCrawler" Send="AnimPlay End Morph,End"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalDefenseCrawler" Send="Destroy"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom CabalDefenseCrawlerDeployed" Send="Destroy"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <On Terms="ActorCreation; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <Model value="CabalDefenseCrawlerMorph"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeUnitDeath"/>
+        <DeathCustoms ModelLink="TerranLargeUnitDeathLow" Name="AntiGravTerran"/>
+        <AbilSoundArray/>
+        <HighlightTooltip value="Unit/Name/CabalDefenseCrawler"/>
+        <SoundArray index="Birth" value="CabalDefenseCrawler_Birth"/>
+        <SoundArray index="Ready" value="NodCrawler_Ready"/>
+        <SoundArray index="Help" value="NodCrawler_Help"/>
+        <SoundArray index="What" value="NodCrawler_What"/>
+        <SoundArray index="Yes" value="NodCrawler_Yes"/>
+        <SoundArray index="Attack" value="NodCrawler_Attack"/>
+        <SoundArray index="Pissed" value="NodCrawler_What"/>
+        <SoundArray index="Movement" value="CabalDefenseCrawler_Movement"/>
+        <SoundArray index="Turning" value="CabalDefenseCrawler_Turning"/>
+        <SoundArray index="Board" value="CabalDefenseCrawler_Board"/>
+        <SoundArray index="Click" value="CabalDefenseCrawler_Click"/>
+        <SoundArray index="ClickError" value="CabalDefenseCrawler_ClickError"/>
+        <SoundArray index="Highlight" value="CabalDefenseCrawler_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalReaper" parent="CabalInfantryBase">
+        <On Terms="Abil.ObeliskCharge.SourceCastStart" Send="AnimPlay Attack"/>
+        <DeathArray index="Normal" VoiceLink="CabalReaper_Death"/>
+    </CActorUnit>
+    <CActorUnit id="CabalHijacker" parent="CabalInfantryBase">
+        <On Terms="Abil.CabalHijackerAttack.SourceCastStart" Send="AnimPlay Attack Attack NonLooping"/>
+        <DeathArray index="Normal" VoiceLink="CabalHijacker_Death"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSlave" parent="CabalInfantryBase">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="CarryAnim"/>
+        <Macros value="MacroWorkerHat"/>
+        <Macros value="CarryTerrazineNodeAnim"/>
+        <Macros value="CarryAnimCampaign"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="AnimClear Gather"/>
+        <On Terms="Abil.SCVHarvest.Stop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Abil.Repair.SourceChannelStart" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="TimerKill Repair"/>
+        <On Terms="Abil.Repair.SourceChannelStop" Send="AnimClear Repair"/>
+        <On Terms="AnimDone.*.Complete; AnimName Repair" Send="TimerSet 0.000000,0.300000 Repair"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="AnimPlay Repair Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Repair" Send="Create SCVRepairSound"/>
+        <On Terms="Abil.*.WorkerStart" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerStop" Send="AnimClear Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="TimerKill Build"/>
+        <On Terms="Abil.*.WorkerCancel" Send="AnimClear Build"/>
+        <On Terms="AnimDone.*.Complete; AnimName Build" Send="TimerSet 0.000000,0.300000 Build"/>
+        <On Terms="TimerExpired; TimerName Build" Send="AnimPlay Build Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Build" Send="Create SCVBuildSound"/>
+        <On Terms="Abil.SCVHarvest.Start" Send="StatusSet CloakSound 1"/>
+        <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.Create" Send="StatusSet CloakSound 1"/>
+        <On Terms="Confirmation.SCV.Start" Send="StatusSet CloakSound 0"/>
+        <On Terms="Behavior.CloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.CloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="Abil.GatherSpecialObject.SourcePrepStart" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="AnimClear Gather"/>
+        <On Terms="Abil.GatherSpecialObject.SourceCastStop" Send="TimerKill Gather"/>
+        <On Terms="AnimDone.*.Complete; AnimName Gather" Send="TimerSet 0.000000,0.300000 Gather"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
+        <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Create" Send="AnimGroupApply Gather"/>
+        <On Terms="Behavior.CarryChrysalisEgg.Destroy" Send="AnimGroupRemove Gather"/>
+        <On Terms="Upgrade.FusionWelder.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Upgrade.DualFusionWelders.Add" Send="ModelSwap SCVFusionWelder"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Create; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOn"/>
+        <On Terms="Behavior.OracleCloakFieldEffect.Destroy; IsStatus CloakSound 0" Send="Create Worker_CloakFieldOff"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SCV_Land"/>
+        <On Terms="Behavior.SCVFakeRepair.On" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="AnimDone; AnimName Work,A; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,B Work,B"/>
+        <On Terms="AnimDone; AnimName Work,B; ValidateUnit HaveSCVFakeRepair" Send="AnimPlay Work,A Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,A"/>
+        <On Terms="Behavior.SCVFakeRepair.Off" Send="AnimClear Work,B"/>
+        <AnimBlendTime value="0.500000"/>
+        <DeathArray index="Normal" SoundLink="Alert_NodEconomydeath"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="0.600000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSmall"/>
+        </TerrainSquibs>
+        <BarWidth value="42"/>
+        <SoundArray index="Help" value="Alert_NodEconomyUnderAttack"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDominator" parent="CabalInfantryBase">
+        <DeathArray index="Normal" VoiceLink="CabalDominator_Death"/>
+    </CActorUnit>
+    <CActorUnit id="CabalEnlightened" parent="CabalInfantryBase">
+        <DeathArray index="Normal" VoiceLink="Enlightened_Death"/>
+        <SoundArray index="Ready" value="Enlightened_Ready"/>
+        <SoundArray index="Help" value="Enlightened_Help"/>
+        <SoundArray index="What" value="Enlightened_What"/>
+        <SoundArray index="Yes" value="Enlightened_Yes"/>
+        <SoundArray index="Attack" value="Enlightened_Attack"/>
+        <SoundArray index="Pissed" value="Enlightened_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSalvator" parent="CabalInfantryBase">
+        <DeathArray index="Normal" VoiceLink="HighConfessor_Death"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <SoundArray index="Ready" value="HighConfessor_Ready"/>
+        <SoundArray index="Help" value="HighConfessor_Help"/>
+        <SoundArray index="What" value="HighConfessor_What"/>
+        <SoundArray index="Yes" value="HighConfessor_Yes"/>
+        <SoundArray index="Attack" value="HighConfessor_Attack"/>
+        <SoundArray index="Pissed" value="HighConfessor_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalAscended" parent="CabalInfantryBase">
+        <DeathArray index="Normal" VoiceLink="CabalAscended_Death"/>
+    </CActorUnit>
+    <CActorUnit id="CabalBlackHand" parent="CabalInfantryBase">
+        <On Terms="UnitBirth; ValidateUnit HasDarkArmorBlackHand" Send="ModelSwap CabalBlackHand_Upgrade"/>
+        <On Terms="Upgrade.TibBomb.Add" Send="ModelSwap CabalBlackHand_Upgrade"/>
+        <DeathArray index="Normal" VoiceLink="BlackHand_Death"/>
+        <WalkAnimMoveSpeed value="4"/>
+        <HighlightTooltip value="Unit/Name/Black Hand"/>
+        <SoundArray index="Ready" value="BlackHand_Ready"/>
+        <SoundArray index="Help" value="BlackHand_Help"/>
+        <SoundArray index="What" value="BlackHand_What"/>
+        <SoundArray index="Yes" value="BlackHand_Yes"/>
+        <SoundArray index="Attack" value="BlackHand_Attack"/>
+        <SoundArray index="Pissed" value="BlackHand_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalDevout" parent="CabalInfantryBase">
+        <On Terms="UnitBirth; ValidateUnit HasDarkArmorDevout" Send="ModelSwap CabalDevout_Upgrade"/>
+        <On Terms="Upgrade.DarkArmorDevout.Add" Send="ModelSwap CabalDevout_Upgrade"/>
+        <DeathArray index="Normal" VoiceLink="Devout_Death"/>
+        <SoundArray index="Ready" value="Devout_Ready"/>
+        <SoundArray index="Help" value="Devout_Help"/>
+        <SoundArray index="What" value="Devout_What"/>
+        <SoundArray index="Yes" value="Devout_Yes"/>
+        <SoundArray index="Attack" value="Devout_Attack"/>
+        <SoundArray index="Pissed" value="Devout_What"/>
+    </CActorUnit>
+    <CActorUnit id="CabalCenturion" parent="CabalUnitBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <!--        <On Terms="WeaponStart.GoliathA.AttackStart" Send="AnimBracketStart Spell Spell"/>-->
+        <!--        <On Terms="WeaponStop.GoliathA.AttackStop" Send="AnimBracketStop Spell"/>-->
+        <!--        <On Terms="WeaponStart.GoliathAUpgraded.AttackStart" Send="AnimBracketStart Spell Spell"/>-->
+        <!--        <On Terms="WeaponStop.GoliathAUpgraded.AttackStop" Send="AnimBracketStop Spell"/>-->
+        <!--        <On Terms="ActorCreation" Send="TextureSelectBySlot main {RequireAll diffuse}"/>-->
+        <!--        <On Terms="ActorCreation" Send="TextureSelectByMatch main.specular main"/>-->
+        <On Terms="UnitBirth.CabalCenturion" Send="TerrainSquibActivateGroup RippleStandard"/>
+        <DeathArray index="Normal" VoiceLink=""/>
+        <DeathCustoms index="0" AnimProps="Death" ModelLink=""/>
+        <StandAnimTurnTime value="4"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive2"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="3.6093"/>
+        <BarOffset value="75"/>
+        <BarWidth value="66"/>
+        <GroupSoundArray index="Birth" value="Goliath_Birth"/>
+        <GroupSoundArray index="Ready" value="CabalCenturion_Ready"/>
+        <GroupSoundArray index="Help" value="CabalCenturion_Help"/>
+        <GroupSoundArray index="What" value="CabalCenturion_What"/>
+        <GroupSoundArray index="Yes" value="CabalCenturion_Yes"/>
+        <GroupSoundArray index="Attack" value="CabalCenturion_Attack"/>
+        <GroupSoundArray index="Pissed" value="Goliath_Pissed"/>
+        <SoundArray index="Pissed" value="Goliath_Pissed"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopCabalCenturion"/>
+    </CActorUnit>
+    <CActorUnit id="CabalLeviathanDrone" parent="NodUnitBase" unitName="CabalLeviathanDrone" icon="InterceptorIcon">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="ModelSwap DarkInterceptor"/>
+        <On Terms="UnitBirth" Send="ModelSwap DarkInterceptor"/>
+        <On Terms="UnitDeathCustomize" Send="DeathCustomize DarkProtoss"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Interceptor_Land"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="DeathCustomsEnablePhysics 0"/>
+        <On Terms="UnitBirth" Send="DeathCustomsEnablePhysics 0"/>
+        <On Terms="Behavior.ReleaseInterceptorsTimedLifeWarning.Off" Send="AnimPlay Work Work PlayForever"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit IsTerrazineShadow" Send="DeathCustomize Hallucination"/>
+        <DeathArray index="Normal" SoundLink="Interceptor_Explode"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <BarOffset value="25"/>
+        <LifeArmorIcon value="Assets\textures\btn-upgrade-protoss-airarmorlevel0.dds"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Movement" value="InterceptorWeaponBirth"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <StatusBarFlags index="Workers" value="0"/>
+        <StatusBarFlags index="Custom" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalFlameMine" parent="NodUnitBase" wireframe="wireframe-nodmine" unitName="SpiderMine" icon="btn-nodmine">
+        <Aliases value="_UnitSmall"/>
+        <On Terms="UnitBirth.CabalFlameMine" Send="Create"/>
+        <On Terms="UnitBirth.CabalFlameMine" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SpiderMineBurrowed" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SpiderMineBurrowed" Send="AnimClear Unburrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SpiderMine" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo SpiderMine" Send="AnimPlay Unburrow Unburrow"/>
+        <On Terms="AbilMorph.VultureSpiderMineBurrow.Start" Send="Create VultureSpiderMineBurrowSound"/>
+        <On Terms="Abil.attack.ReadyStart" Send="Create VultureSpiderMineSeekSound"/>
+        <On Terms="ActorCreation; ValidateUnit HasCerberusMines" Send="ModelSwap CerberusMine"/>
+        <Model value="CabalFlameMine"/>
+        <BuildModel value="CabalFlameMine"/>
+        <DeathArray index="Normal" ModelLink="SpiderMineExplosion" SoundLink="Terran_ExplosionSmall"/>
+        <!--        <PlacementModel value="SpiderMinePlacement"/>-->
+        <BarOffset value="10"/>
+        <GroupSoundArray index="Birth" value="SpiderMineBirth"/>
+        <GroupSoundArray index="Ready" value="SpiderMineReady"/>
+        <GroupSoundArray index="Help" value="SpiderMineHelp"/>
+        <GroupSoundArray index="What" value="SpiderMineWhat"/>
+        <GroupSoundArray index="Yes" value="SpiderMineYes"/>
+        <GroupSoundArray index="Attack" value="SpiderMineYes"/>
+        <GroupSoundArray index="Pissed" value="SpiderMinePissed"/>
+        <NameOffset value="10"/>
+        <SoundArray index="Birth" value="SpiderMineBirth"/>
+        <SoundArray index="Ready" value="SpiderMineReady"/>
+        <SoundArray index="Help" value="SpiderMineHelp"/>
+        <SoundArray index="What" value="SpiderMineWhat"/>
+        <SoundArray index="Yes" value="SpiderMineYes"/>
+        <SoundArray index="Attack" value="SpiderMineYes"/>
+        <SoundArray index="Pissed" value="SpiderMinePissed"/>
+        <SoundArray index="Movement" value="SpiderMineMovement"/>
+        <SoundArray index="Turning" value="SpiderMineTurning"/>
+        <SoundArray index="Board" value="SpiderMineBoard"/>
+    </CActorUnit>
+    <CActorUnit id="CabalWidowRebornMorphModel" parent="CabalUnitBase" wireframe="CabalWidowWireframe" unitName="ThorRebornMorphModel" icon="CabalWidow">
+        <On Terms="AbilMorph.*.Start; MorphTo CabalWidow; MorphFrom CabalWidowWreckage" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimPlay MorphStart Morph,Start"/>
+        <On Terms="AnimDone; AnimName MorphStart" Send="AnimPlay Morph Morph 0 -1.000000 -1.000000 8.233000 AsDuration"/>
+        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay MorphEnd Morph,End"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalWidow" Send="Destroy"/>
+        <Model value="CabalWidowWreckage"/>
+        <Baselines index="Stand" AnimProps=""/>
+        <DeathArray index="Normal" ModelLink="CabalWidowWreckage_Death" SoundLink="Thor_Explode"/>
+        <HighlightTooltip value="Unit/Name/CabalWidowRebornMorphModel"/>
+    </CActorUnit>
+    <CActorUnit id="CabalWidowWreckage" parent="CabalUnitBase" wireframe="CabalWidowWireframe" unitName="CabalWidowWreckage" icon="CabalWidow">
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalWidowWreckage" Send="$Birth 0 1.000000 1.000000"/>
+        <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever,NonLooping"/>
+        <On Terms="UnitBirth.CabalWidowWreckage.Suppressed" Send="$Stand PlayForever,NonLooping"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo CabalWidowWreckage; PlayerHasReward ThorCE" Send="ModelSwap CabalWidowWreckage"/>
+        <Baselines index="Stand" AnimProps=""/>
+        <DeathArray index="Normal" ModelLink="CabalWidowWreckage_Death" SoundLink="Thor_Explode"/>
+        <WalkAnimMoveSpeed value="1.75"/>
+        <BarOffset value="170"/>
+        <BarWidth value="160"/>
+        <GroupSoundArray index="What" value="ThorGroupWhat"/>
+        <GroupSoundArray index="Yes" value="ThorGroupYes"/>
+        <GroupSoundArray index="Attack" value="ThorGroupAttack"/>
+        <GroupSoundArray index="Board" value="ThorGroupBoard"/>
+        <SoundArray index="Birth" value="CabalWidow_Birth"/>
+        <SoundArray index="Ready" value="CabalWidow_Ready"/>
+        <SoundArray index="Help" value="CabalWidow_Help"/>
+        <SoundArray index="What" value="CabalWidow_What"/>
+        <SoundArray index="Yes" value="CabalWidow_Yes"/>
+        <SoundArray index="Attack" value="CabalWidow_Attack"/>
+        <SoundArray index="Pissed" value="CabalWidow_What"/>
+        <SoundArray index="Movement" value="CabalAvengerTank_Movement"/>
+        <SoundArray index="Turning" value="CabalWidow_Turning"/>
+        <SoundArray index="Board" value="CabalWidow_Board"/>
+        <SoundArray index="Click" value="CabalWidow_Click"/>
+        <SoundArray index="ClickError" value="CabalWidow_ClickError"/>
+        <SoundArray index="Highlight" value="CabalWidow_Highlight"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSpider" parent="CabalWheelerBase">
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="AnimBracketStart BurrowStart Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStop" Send="AnimBracketStop BurrowStart"/>
+    </CActorUnit>
+    <CActorUnit id="CabalMarauder" parent="CabalWheelerBase"/>
+    <CActorUnit id="CabalAfterShock" parent="CabalUnitBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <AcceptedTransfers index="ModelMaterials" value="1"/>
+        <On index="65" Terms="Effect.EarthquakeCP.Start" Send="AnimBracketStart Spell Stand,Work {} {} ContentNonLooping,ContentPlayOnce"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="CabalSpecter_Death" SoundLink="SiegeTank_Explode"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <StandAnimTurnTime value="3.33"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="1"/>
+        <AbilSoundArray/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <SoundArray index="Movement" value="NodSpecter_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalUnderminer" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <DeathArray index="Normal" ModelLink="CabalSpecter_Death"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <AbilSoundArray/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <SoundArray index="Movement" value="NodSpecter_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalWidow" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="AnimBracketStart BurrowStart Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStop" Send="AnimBracketStop BurrowStart"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <AbilSoundArray/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopWidow"/>
+    </CActorUnit>
+    <CActorUnit id="CabalScalpel" parent="CabalAirBase">
+        <Aliases value="_UnitLarge"/>
+        <DeathArray index="Normal" ModelLink="CabalScalpel_Death"/>
+        <DeathCustoms>
+            <ModelLink value="DeathVoidShadowMedium"/>
+            <SoundLink value="ShadowUnit_DeathFX"/>
+            <VoiceLink value="ShadowUnit_DeathVox"/>
+            <Name value="Shadow"/>
+        </DeathCustoms>
+        <GroupSoundArray index="Birth" value="Wraith_Birth"/>
+        <GroupSoundArray index="Ready" value="Scalpel_Ready"/>
+        <GroupSoundArray index="Help" value="Scalpel_Help"/>
+        <GroupSoundArray index="What" value="Scalpel_What"/>
+        <GroupSoundArray index="Yes" value="Scalpel_Yes"/>
+        <GroupSoundArray index="Attack" value="Scalpel_Attack"/>
+        <GroupSoundArray index="Pissed" value="Scalpel_What"/>
+        <SoundArray index="Ready" value="Scalpel_Ready"/>
+        <SoundArray index="Help" value="Scalpel_Help"/>
+        <SoundArray index="What" value="Scalpel_What"/>
+        <SoundArray index="Yes" value="Scalpel_Yes"/>
+        <SoundArray index="Attack" value="Scalpel_Attack"/>
+        <SoundArray index="Movement" value="Scalpel_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalMedusa" parent="CabalAirBase">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Abil.Yamato.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 3.500000 AsDuration"/>
+        <On Terms="Abil.Yamato.SourcePrepStop" Send="AnimClear Spell"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Battlecruiser_Land"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="SetOpacity"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Send="SetOpacity 1.000000"/>
+        <On Terms="Behavior.HyperjumpTeleport.On" Send="Create BattleCruiserTacticalJump_Placement"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Target="BattleCruiserTacticalJump_Placement" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="Create HyperjumpLaunch"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.On" Send="Create HyperjumpImpact"/>
+        <On Terms="Abil.attack.ReadyStop" Target="_BattlecruiserTurretATA" Send="LookAtDisengage"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="Create HyperjumpImpact"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="SetVisibility"/>
+        <On Terms="Behavior.BattleCruiserFastJump.Off" Send="SetVisibility 1"/>
+        <On Terms="WeaponStart.CabalMedusaWeaponS.AttackStart" Target="Turret_CabalMedusa" Send="LookAtEngage Continue"/>
+        <On Terms="ActorCreation" Send="Create Turret_CabalMedusaLookAt"/>
+        <HostSiteOps Ops="SOpBankerBattlecruiser"/>
+        <DeathArray index="Normal" ModelLink="CabalMedusa_Death" SoundLink=""/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive2"/>
+        </TerrainSquibs>
+        <BarOffset value="75"/>
+        <BarWidth value="130"/>
+        <NameOffset value="110"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopCabalMedusa"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSalamander" parent="CabalAirBase">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Abil.Yamato.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 3.500000 AsDuration"/>
+        <On Terms="Abil.Yamato.SourcePrepStop" Send="AnimClear Spell"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Battlecruiser_Land"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="SetOpacity"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Send="SetOpacity 1.000000"/>
+        <On Terms="Behavior.HyperjumpTeleport.On" Send="Create BattleCruiserTacticalJump_Placement"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Target="BattleCruiserTacticalJump_Placement" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="Create HyperjumpLaunch"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.On" Send="Create HyperjumpImpact"/>
+        <On Terms="ActorCreation" Send="Create CabalSalamanderLookAt012"/>
+        <On Terms="ActorCreation" Send="Create CabalSalamanderLookAt02"/>
+        <On Terms="ActorCreation" Send="Create CabalSalamanderLookAt03"/>
+        <On Terms="ActorCreation" Send="Create CabalSalamanderLookAt04"/>
+        <On Terms="WeaponStart.CabalSalamanderRocket.AttackStart" Target="Turret_00" Send="LookAtEngage Continue"/>
+        <On Terms="Abil.attack.ReadyStop" Target="Turret_00" Send="LookAtDisengage"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="Create HyperjumpImpact"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="SetVisibility"/>
+        <On Terms="Behavior.BattleCruiserFastJump.Off" Send="SetVisibility 1"/>
+        <On Terms="WeaponStart.CabalSalamanderRocket2.AttackStart" Target="Turret_01" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.CabalSalamanderRocket3.AttackStart" Target="Turret_02" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.CabalSalamanderRocket4.AttackStart" Target="Turret_03" Send="LookAtEngage Continue"/>
+        <On Terms="Abil.attack.ReadyStop" Target="Turret_01" Send="LookAtDisengage"/>
+        <On Terms="Abil.attack.ReadyStop" Target="Turret_02" Send="LookAtDisengage"/>
+        <On Terms="Abil.attack.ReadyStop" Target="Turret_03" Send="LookAtDisengage"/>
+        <On Terms="Effect.LiquidTibWeaponCreatePersistent.Start" Send="$Spell NonLooping"/>
+        <On Terms="WeaponStart.CabalSalmanderFlamethrower.AttackStart" Send="$Spell"/>
+        <HostSiteOps Ops="SOpBankerBattlecruiser"/>
+        <DeathArray index="Normal" ModelLink="CabalSalamander_Death" SoundLink=""/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive2"/>
+        </TerrainSquibs>
+        <BarOffset value="75"/>
+        <BarWidth value="130"/>
+        <NameOffset value="110"/>
+    </CActorUnit>
+    <CActorUnit id="CabalLeviathan" parent="CabalAirBase">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Mothership_Land"/>
+        <On Terms="WeaponStart.CabalLeviathanMissile3.AttackStart" Target="Turret01" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.CabalLeviathanMissile1.AttackStart" Target="Turret02" Send="LookAtEngage Continue"/>
+        <On Terms="WeaponStart.CabalLeviathanMissile2.AttackStart" Target="Turret03" Send="LookAtEngage Continue"/>
+        <On Terms="ActorCreation" Send="Create LeviathanLookAt01"/>
+        <On Terms="ActorCreation" Send="Create LeviathanLookAt02"/>
+        <On Terms="ActorCreation" Send="Create LeviathanLookAt03"/>
+        <On Terms="WeaponStop.CabalLeviathanMissile1.AttackStop" Target="Turret02" Send="LookAtDisengage"/>
+        <On Terms="WeaponStop.CabalLeviathanMissile2.AttackStop" Target="Turret03" Send="LookAtDisengage"/>
+        <On Terms="WeaponStop.CabalLeviathanMissile3.AttackStop" Target="Turret01" Send="LookAtDisengage"/>
+        <Baselines index="Walk" AnimProps="Walk,01"/>
+        <BuildModel value="MothershipTeleportIn"/>
+        <DeathArray index="Normal" ModelLink="CabalLeviathan_Death" SoundLink="Mothership_Explode_Start"/>
+        <DeathCustoms>
+            <ActorModel value="MothershipDeathRagdoll"/>
+            <ModelLink value="CabalLeviathan_Death"/>
+            <Name value="RagdollBasic"/>
+            <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+            <BodySquibs Name="BasicHeavy" Model="ProtossLargeRobotSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="FireHeavy"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="FireHeavy"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive3"/>
+        </TerrainSquibs>
+        <AbilSoundArray AbilCmd="Vortex,Execute" Sound="Mothership_VortexVO"/>
+        <AbilSoundArray AbilCmd="WormholeTransit,Execute" Sound="Mothership_WormholeTransitVO"/>
+        <BarOffset value="180"/>
+        <BarWidth value="216"/>
+        <GlossaryAnim value="GLstand"/>
+        <NameOffset value="130"/>
+        <SelectAbilCmd value="Vortex,Execute"/>
+        <SoundArray index="Birth" value="Mothership_Birth"/>
+        <SoundArray index="Pissed" value="Mothership_Pissed"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+    </CActorUnit>
+    <CActorUnit id="CabalTyrant" parent="CabalWheelerBase">
+        <Aliases value="_UnitSmall"/>
+        <Macros value="ZergBurrowStandardAnimMacro"/>
+        <Macros value="ZergSmallBurrowEffects"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitBirth.CabalTyrantBurrow" Send="Create"/>
+        <On Terms="UnitBirth.CabalTyrantBurrow" Send="AnimPlay Burrow Burrow PlayForever,NonLooping"/>
+        <On Terms="ActorCreation" Send="StatusSet Fired 0"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimPlay Burrow Burrow NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimClear Unburrow 0.000000"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimClear Burrow"/>
+        <On Terms="AbilMorph.*.Start; MorphTo" Send="AnimPlay Unburrow Unburrow PlayForever,NonLooping 0.000000 0.000000"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo" Send="AnimClear Unburrow 0.000000"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create WidowMine_Land"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="AnimBracketStart BurrowStart Burrow IGNORE Unburrow ClosingFull,OpeningPlayForever"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStop" Send="AnimBracketStop BurrowStart"/>
+        <DeathArray index="Normal" ModelLink="CabalTyrant_Death" SoundLink="Terran_ExplosionSmall"/>
+        <DeathCustoms ModelLink="CabalTyrant_Death" Name="RagdollBasic">
+            <BodySquibs Name="TerranSquibDeathRagdoll"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollSiegeTank" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollNuke" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollFire" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Fire"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollAcid" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollBaneling" InheritsFrom="RagdollBasic">
+            <BodySquibs Name="Acid"/>
+        </DeathCustoms>
+        <DeathCustoms Name="RagdollUltraUnburrow" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDPRH" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollOverkillDOI" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms Name="RagdollMidair" InheritsFrom="RagdollBasic"/>
+        <DeathCustoms ModelLink="Invisible" Name="Variation1"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleLargeVehicle"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="2.8125"/>
+        <BarOffset value="35"/>
+        <BarWidth value="42"/>
+        <NameOffset value="10"/>
+    </CActorUnit>
+    <CActorUnit id="CabalBasilisk" parent="CabalAirBase">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmAir"/>
+        <Macros value="PhysicsDeathsVoidAir"/>
+        <On Terms="Abil.Yamato.SourcePrepStart" Send="$Spell 0 -1.000000 -1.000000 3.500000 AsDuration"/>
+        <On Terms="Abil.Yamato.SourcePrepStop" Send="AnimClear Spell"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Battlecruiser_Land"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="SetOpacity"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Send="SetOpacity 1.000000"/>
+        <On Terms="Behavior.HyperjumpTeleport.On" Send="Create BattleCruiserTacticalJump_Placement"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.Off" Target="BattleCruiserTacticalJump_Placement" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.HyperjumpTeleportOut.On" Send="Create HyperjumpLaunch"/>
+        <On Terms="Behavior.HyperjumpTeleportIn.On" Send="Create HyperjumpImpact"/>
+        <On Terms="ActorCreation" Send="Create BasliskLaserLookAt"/>
+        <On Terms="WeaponStart.CabalBasiliskWeapon.AttackStart" Target="BasliskLaser" Send="LookAtEngage Continue"/>
+        <On Terms="Abil.attack.ReadyStop" Target="BasliskLaser" Send="LookAtDisengage"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="Create HyperjumpImpact"/>
+        <On Terms="Behavior.BattleCruiserFastJump.On" Send="SetVisibility"/>
+        <On Terms="Behavior.BattleCruiserFastJump.Off" Send="SetVisibility 1"/>
+        <HostSiteOps Ops="SOpBankerBattlecruiser"/>
+        <DeathArray index="Normal" ModelLink="CabalBasilisk_Death" SoundLink=""/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionFlier"/>
+        <PhysicsMatchKeysOrdered value="BasicAir,Basic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeDown value="5.000000"/>
+            <RangeDownFade value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleMassive2"/>
+        </TerrainSquibs>
+        <BarOffset value="75"/>
+        <BarWidth value="130"/>
+        <NameOffset value="110"/>
+    </CActorUnit>
+    <CActorUnit id="CabalVenom" parent="CabalAirBase"/>
+    <CActorUnit id="CabalCobra" parent="CabalAirBase">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="WeaponStart.*.AttackStart" Target="CobraTurret" Send="LookAtEngage Continue"/>
+        <On Terms="ActorCreation" Send="Create CobraLookAt"/>
+        <DeathArray index="Normal" ModelLink="CabalCobra_Death"/>
+        <DeathCustoms>
+            <ModelLink value="DeathVoidShadowMedium"/>
+            <SoundLink value="ShadowUnit_DeathFX"/>
+            <VoiceLink value="ShadowUnit_DeathVox"/>
+            <Name value="Shadow"/>
+        </DeathCustoms>
+        <GroupSoundArray index="Birth" value="Wraith_Birth"/>
+        <GroupSoundArray index="Ready" value="Cobra_Ready"/>
+        <GroupSoundArray index="Help" value="Cobra_Help"/>
+        <GroupSoundArray index="What" value="Cobra_What"/>
+        <GroupSoundArray index="Yes" value="Cobra_Yes"/>
+        <GroupSoundArray index="Attack" value="Cobra_Attack"/>
+        <GroupSoundArray index="Pissed" value="Cobra_What"/>
+        <SoundArray index="Ready" value="Cobra_Ready"/>
+        <SoundArray index="Help" value="Cobra_Help"/>
+        <SoundArray index="What" value="Cobra_What"/>
+        <SoundArray index="Yes" value="Cobra_Yes"/>
+        <SoundArray index="Attack" value="Cobra_Attack"/>
+        <SoundArray index="Movement" value="Cobra_Movement"/>
+    </CActorUnit>
+    <CActorUnit id="CabalSpecter" parent="CabalVehicleBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <DeathArray index="Normal" ModelLink="CabalSpecter_Death"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <AbilSoundArray/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+    </CActorUnit>
+    <CActorUnit id="CabalMantis" parent="CabalVehicleBase">
+        <On Terms="Abil.LaunchRocket.SourceCastStart" Send="AnimPlay Spell Stand,Work NonLooping"/>
+        <On Terms="UnitBirth; ValidateUnit HasMantisRocket" Send="ModelSwap CabalMantis_Upgrade"/>
+        <On Terms="Upgrade.MantisRocketrag.Add" Send="ModelSwap CabalMantis_Upgrade"/>
+        <SoundArray index="Ready" value="NodMantis_Ready"/>
+        <SoundArray index="Attack" value="NodMantisAttack"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopC"/>
+    </CActorUnit>
+    <CActorUnit id="CabalHolySpirit" parent="CabalAirBase">
+        <Aliases value="_UnitLarge"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <Inherits index="ModelMaterials" value="1"/>
+        <AcceptedTransfers index="ModelMaterials" value="1"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <StandAnimTurnTime value="3.33"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.100000,0.250000"/>
+            <RangeUp value="1.000000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="3"/>
+        <AbilSoundArray/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
+        <SoundArray index="Ready" value="NodAvatarReady"/>
+        <SoundArray index="Attack" value="NodAvatarAttack"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopAvatar"/>
+    </CActorUnit>
+    <CActorUnit id="CabalEngineer" parent="CabalInfantryBase">
+        <Aliases value="_MissileHybrids"/>
+        <Macros value="D8ChargeAnim"/>
+        <Macros value="D8ChargeAnim"/>
+        <Macros value="TerrainSquibAnimations"/>
+        <Macros value="PhysicsDeathsSwarmGround"/>
+        <Macros value="PhysicsDeathsVoidGround"/>
+        <On Terms="Behavior.ReaperJump.Launch" Send="AnimBracketStart Jump Jump,Start Jump Jump,End"/>
+        <On Terms="Behavior.ReaperJump.Launch" Send="AnimBlendTimeApply 0.100000"/>
+        <On Terms="Behavior.ReaperJump.LandDown" Send="AnimBracketStop Jump"/>
+        <On Terms="Behavior.ReaperJump.LandDown" Send="AnimBlendTimeApply"/>
+        <On Terms="Behavior.ReaperJump.LandUp" Send="AnimBracketStop Jump"/>
+        <On Terms="Behavior.ReaperJump.LandUp" Send="AnimBlendTimeApply"/>
+        <On Terms="UnitBirth.ReaperPlacement" Send="Create"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Reaper_Land"/>
+        <On Terms="Abil.healCNC.SourceChannelStart" Send="AnimPlay Spell Work PlayForever"/>
+        <On Terms="Abil.healCNC.SourceChannelStop" Send="AnimClear Spell"/>
+        <DeathArray index="Normal" SoundLink="Reaper_Explode"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <TerrainSquibs>
+            <MovementDistance value="0.150000,0.150000"/>
+            <IdlePeriod value="0.250000,0.500000"/>
+            <RangeUp value="0.600000"/>
+            <RangeDown value="1.000000"/>
+            <AttachQuery Methods="AMFilterCenter"/>
+            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleReaper"/>
+        </TerrainSquibs>
+        <WalkAnimMoveSpeed value="5"/>
+        <AbilSoundArray AbilCmd="D8Charge,Execute" Sound="Reaper_D8ChargeVO"/>
+        <AbilSoundArray AbilCmd="KD8Charge,Execute" Sound="Reaper_D8ChargeVO"/>
+        <BarOffset value="50"/>
+        <LifeArmorIcon value="Assets\textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <SoundArray index="Pissed" value="Reaper_Pissed"/>
+    </CActorUnit>
+    <CActorUnit id="CabalStealthTank" parent="CabalVehicleBase">
+        <EventDataFootprint index="0" Model="StealthTankFootprint"/>
+        <BuildModel value="StealthTank"/>
+        <DeathArray index="Normal" VoiceLink="StealthTankDeathVoice"/>
+        <PlacementModel value="StealthTank"/>
+        <SoundArray index="Ready" value="StealthTank_Ready"/>
+        <SoundArray index="Help" value="StealthTank_Help"/>
+        <SoundArray index="What" value="StealthTank_What"/>
+        <SoundArray index="Yes" value="StealthTank_Yes"/>
+        <SoundArray index="Attack" value="StealthTank_Attack"/>
+    </CActorUnit>
+    <CActorUnit id="CabalFlameTank" parent="CabalVehicleBase"/>
+    <CActorUnit id="CabalAvengerTank" parent="CabalVehicleBase">
+        <AbilSoundArray AbilCmd="stop,Stop" Sound="CabalAvengerTankMovementStop"/>
+        <AbilSoundArray AbilCmd="move,Move" Sound="CabalAvengerTank_Movement"/>
+        <SoundArray index="Movement" value="NodVehicleMoveLoopA"/>
+    </CActorUnit>
+    <CActorDoodad id="CabalTunnelDoodad">
+        <On index="0" Terms="ActorCreation" Send="Create SoundEmitter Doodad_PortCity_SubwayEntrance"/>
+        <RandomScaleRange value="1.000000,1.000000"/>
+    </CActorDoodad>
+    <CActorUnit id="CabalMonitoringStation" parent="CabalBuilding" wireframe="OperationsCenterWireframe" unitName="CabalMonitoringStation" icon="OperationsCenterIcon">
+        <Aliases value="_UnitHuge"/>
+        <Macros value="QueueAnim"/>
+        <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationEngineeringBay"/>
+        <CreepHeightClass value="Medium"/>
+        <DeathArray index="Normal" ModelLink="OPCenterDeath"/>
+        <!--        <PlacementModel value="OPCenterPlacement"/>-->
+        <Scale value="1.200000"/>
+        <SoundArray index="Ready" value="EngineeringBay_Ready"/>
+        <SoundArray index="What" value="EngineeringBay_What"/>
+    </CActorUnit>
+    <CActorAction id="LiquidTibAttack" parent="GenericAttackBase">
+        <On Terms="Effect.LiquidTibFlameThrowerSet.Start" Send="Create"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>
+        <LaunchAttachQuery Methods="Weapon 5"/>
+        <LaunchAssets Model="BlackHandAttackLaunch" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+    </CActorAction>
+    <CActorAction id="LiquidTibAttack2" parent="GenericAttackBase">
+        <On Terms="Effect.LiquidTibFlameThrowerSet2.Start" Send="Create"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>
+        <LaunchAttachQuery Methods="Weapon 6"/>
+        <LaunchAssets Model="BlackHandAttackLaunch" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+    </CActorAction>
+    <CActorAction id="CabalLeviathantAttackLaunch2" parent="GenericAttack" effectImpact="CabalLeviathanDamage" effectLaunch="CabalLeviathanLaunchMissile2">
+        <LaunchAttachQuery Methods="Weapon 3"/>
+        <LaunchAssets Sound="CabalBikeWeaponAttackLaunch2"/>
+        <Missile value="CabalLeviathanMissile"/>
+        <ImpactMap index="None" Model="NodArtilleryImpact" Sound="CabalBikeWeaponAttackImpact2" ModelReaction="HailstormMissileVolleyImpactReaction"/>
+        <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
+        <On index="1" Terms="Effect.LeviathanLiquidTibCreatePersistent.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On index="2" Terms="Effect.LeviathanLiquidTibCreatePersistent.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <ImpactSiteOps Ops="SOpTargetPointStationary SOpShadow SOpMoveUpByDot1"/>
+    </CActorAction>
+    <CActorAction id="CabalLeviathantAttackLaunch3" parent="GenericAttack" effectImpact="CabalLeviathanDamage" effectLaunch="CabalLeviathanLaunchMissile3">
+        <LaunchAttachQuery Methods="Weapon 2"/>
+        <LaunchAssets Sound="CabalBikeWeaponAttackLaunch2"/>
+        <Missile value="CabalLeviathanMissile"/>
+        <ImpactMap index="None" Model="NodArtilleryImpact" Sound="CabalBikeWeaponAttackImpact2" ModelReaction="HailstormMissileVolleyImpactReaction"/>
+        <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
+        <On index="1" Terms="Effect.LeviathanLiquidTibCreatePersistent.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On index="2" Terms="Effect.LeviathanLiquidTibCreatePersistent.Start; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <ImpactSiteOps Ops="SOpTargetPointStationary SOpShadow SOpMoveUpByDot1"/>
+    </CActorAction>
+    <CActorLookAt id="CobraLookAt" parent="BattlecruiserLookAt">
+        <Aliases value="CobraTurret"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="CobraTurret" Weight="1" Time="300"/>
+            <Stop Group="CobraTurret" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorLookAt id="CabalSalamanderLookAt02" parent="BattlecruiserLookAt">
+        <Aliases value="Turret_01"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="Turret_01" Weight="1" Time="300"/>
+            <Stop Group="Turret_01" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorAction id="DefenderAttack23" parent="GenericAttack" effectImpact="CabalAscendedDamage" effectLaunch="AscendedALM2">
+        <LaunchAttachQuery Methods="AMFilterWeaponLeft"/>
+        <LaunchAssets Model="DefenderAirAttackLaunch2" Sound="Defender_AttackLaunch2"/>
+        <Missile value="NodMilitantRocketWeaponMissile"/>
+        <ImpactMap index="None" Model="DefenderAirAttackImpact2" Sound="Defender_AttackImpact2"/>
+        <ImpactPhysics Name="JavelinImpact" MatchKeys="Basic" Physics="ThorAAAttackForce"/>
+    </CActorAction>
+    <CActorLookAt id="CabalSalamanderLookAt012" parent="BattlecruiserLookAt">
+        <Aliases value="Turret_00"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="Turret_00" Weight="1" Time="300"/>
+            <Stop Group="Turret_00" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorLookAt id="CabalSalamanderLookAt03" parent="BattlecruiserLookAt">
+        <Aliases value="Turret_02"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="Turret_02" Weight="1" Time="300"/>
+            <Stop Group="Turret_02" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorLookAt id="CabalSalamanderLookAt04" parent="BattlecruiserLookAt">
+        <Aliases value="Turret_03"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="Turret_03" Weight="1" Time="300"/>
+            <Stop Group="Turret_03" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorAction id="CabalDefenseCrawlerAttack" parent="GenericAttack" effectAttack="CabalDefenseCrawlerCannon">
+        <LaunchAttachQuery Methods="Weapon"/>
+        <Beam value="ObeliskAttackBeam"/>
+        <ImpactMap index="None" Sound="CabalDefenseCrawler_AttackImpact"/>
+        <ImpactPhysics Name="IbiksCannonImpact" MatchKeys="Basic" Physics="PlanetaryFortressAttackForce"/>
+    </CActorAction>
+    <CActorAction id="CabalAvengerTankAttack" parent="GenericAttack" effectAttack="CabalAvengerCannon">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="SiegeTankAttackLaunch" Sound="CabalAvengerTank_AttackLaunch"/>
+        <ImpactMap index="None" Model="SiegeTankAttackImpact" Sound="SiegeTank_AttackImpact"/>
+        <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
+    </CActorAction>
+    <CActorUnit id="CabalDropShip" parent="CabalAirBase" wireframe="CabalDropShip" unitName="CabalDropShip" icon="CabalDropShip">
+        <Aliases value="_UnitLarge"/>
+        <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStart" Send="AnimBracketStart Unload Work,Start Work Work,End"/>
+        <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStop" Send="AnimBracketStop Unload"/>
+        <On Terms="AbilTransport.SpecOpsDropshipTransport.TransportLoad; AbilTransport Thor" Send="Create ThorTransit"/>
+        <On Terms="Signal.*.ThorTransit" Send="RefSetFromMsg ::actor.Thor ::Sender"/>
+        <On Terms="UnitDeath" Target="::actor.Thor" Send="Signal Dead"/>
+        <On Terms="ActorCreation" Send="Create SpecialOpsDropship_FlyIn"/>
+        <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStart" Target="SpecialOpsDropship_FlyIn" Send="Destroy"/>
+        <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStop" Send="Create SpecialOpsDropship_FlyOut"/>
+        <DeathArray index="Normal" ModelLink="ExplodingBarrelLarge" SoundLink="SpecialOpsDropship_Explode"/>
+        <BarOffset value="50"/>
+        <BarWidth value="102"/>
+    </CActorUnit>
+    <CActorUnit id="CabalAscender" parent="CabalAirBase" wireframe="CabalAscender" unitName="CabalAscender" icon="CabalAscender">
+        <Aliases value="_UnitLarge"/>
+        <DeathArray index="Normal" ModelLink="ExplodingBarrelLarge" SoundLink="SpecialOpsDropship_Explode"/>
+        <BarOffset value="50"/>
+        <BarWidth value="102"/>
+    </CActorUnit>
+    <CActorSound id="CabalWidowLoadSound2" parent="SoundOneShot">
+        <On Terms="AbilTransport.WidowTransport.TransportLoad" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="Medivac_Load"/>
+    </CActorSound>
+    <CActorSound id="CabalWidowUnloadSound2" parent="SoundOneShot">
+        <On Terms="AbilTransport.WidowTransport.TransportUnload" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+        <Sound value="Medivac_Unload"/>
+    </CActorSound>
+    <CActorModel id="LiquidTib" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.LiquidTibCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.LiquidTibCreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+    </CActorModel>
+    <CActorAction id="CabalMedusaWeaponSAttack" parent="GenericAttackBase">
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Start" Send="Create"/>
+        <On Terms="Effect.DisruptionBeamDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Stop" Send="Destroy WhenReady"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide"/>
+        <AcquisitionYawHalfArc value="10.000000"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalMedusaWeaponSAttackBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Stop; At Effect" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::actor.CasterUnit _Unit Caster Find"/>
+        <On Terms="ActorCreation" Target="::actor.CasterUnit" Send="Signal CampaignBeamCreated"/>
+        <Model value="CabalMedusaWeaponSAttackBeam2"/>
+    </CActorBeamSimple>
+    <CActorSound id="CabalMedusaWeaponSAttackLoop" parent="SoundContinuous">
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Start" Send="Create"/>
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Stop" Send="Destroy"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Start" Send="Create"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Stop" Send="Destroy"/>
+        <Sound value="Sentry_WeaponLoop"/>
+    </CActorSound>
+    <CActorSound id="CabalMedusaWeaponSAttackStart" parent="SoundOneShot">
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Start" Send="Create"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Start" Send="Create"/>
+        <Sound value="CabalMedusaWeaponS_WeaponStart"/>
+    </CActorSound>
+    <CActorSound id="CabalMedusaWeaponSAttackStop" parent="SoundOneShot">
+        <On Terms="Effect.CabalMedusaWeaponSBeam.Stop" Send="Create"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Stop" Send="Create"/>
+        <Sound value="CabalMedusaWeaponS_WeaponEnd"/>
+    </CActorSound>
+    <CActorAction id="CabalMedusaChargeBeamAttack" parent="GenericAttackBase">
+        <On Terms="Effect.CabalMedusaChargeBeamBaseDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.CabalMedusaChargeBeamBase.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.CabalMedusaChargeBeamBaseDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.CabalMedusaChargeBeamBase.Stop" Send="Destroy"/>
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalMedusaChargeBeamAttackBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Aliases value="_VoidRayChargeAttackBeam"/>
+        <Supporter Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <On Terms="ActorCreation" Target="::Host" Send="Signal VoidRayChargeAttackBeamModel"/>
+        <On Terms="ActorCreation; ValidateEffect VoidRayChargeBeamCounterPhase1" Send="AnimPlay Attack Attack,02 PlayForever"/>
+        <On Terms="ActorCreation; ValidateEffect VoidRayChargeBeamCounterCheckPhase2Ready" Send="AnimPlay Attack Attack,04 PlayForever"/>
+        <On Terms="ActorCreation; ValidateEffect VoidRayChargeBeamCounterCheckPhase3Ready" Send="AnimPlay Attack Attack,06 PlayForever"/>
+        <On Terms="Effect.CabalMedusaChargeBeamPhase2AB.Start" Send="AnimPlay Attack Attack,04 PlayForever"/>
+        <On Terms="Effect.VoidRayChargeBeamPhase3AB.Start" Send="AnimPlay Attack Attack,06 PlayForever"/>
+        <On Terms="Effect.VoidRayChargeBeamRangePhase2AB.Start" Send="AnimPlay Attack Attack,04 PlayForever"/>
+        <On Terms="Effect.VoidRayChargeBeamRangePhase3AB.Start" Send="AnimPlay Attack Attack,06 PlayForever"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="Effect.VoidRayChargeBeam.Stop; At Effect" Send="TimerSet 0.125000 DelayDestroy"/>
+        <On Terms="Effect.VoidRayChargeBeamBase.Stop; At Effect" Send="TimerSet 0.125000 DelayDestroy"/>
+        <On Terms="Effect.VoidRayChargeBeamRange.Stop; At Effect" Send="TimerSet 0.125000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::actor.CasterUnit _Unit Caster Find"/>
+        <On Terms="ActorCreation" Target="::actor.CasterUnit" Send="Signal CampaignBeamCreated"/>
+        <Host Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <Model value="CabalMedusaAttackBeam"/>
+    </CActorBeamSimple>
+    <CActorModel id="CabalMedusaEnhancementAddition01" parent="ModelAddition">
+        <On Terms="Behavior.CabalMedusaChargeBeamCounter.On" Send="Create"/>
+        <On Terms="Behavior.CabalMedusaChargeBeamCounter.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit IsVoidRayTaldarim" Send="ModelSwap VoidRayTaldarimChargeBeam"/>
+        <HostSiteOps Ops="SOpAttachWeapon03"/>
+        <Model value="CabalMedusaChargeBase"/>
+    </CActorModel>
+    <CActorModel id="CabalMedusaEnhancementAddition02" parent="ModelAddition">
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase2.On" Send="Create"/>
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase2.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase3.On" Send="Create"/>
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase3.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit IsVoidRayTaldarim" Send="ModelSwap VoidRayTaldarimChargeBeam"/>
+        <HostSiteOps Ops="SOpAttachWeapon05"/>
+        <Model value="CabalMedusaChargeBase"/>
+    </CActorModel>
+    <CActorModel id="CabalMedusaEnhancementAddition03" parent="ModelAddition">
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase3.On" Send="Create"/>
+        <On Terms="Behavior.CabalMedusaChargeBeamPhase3.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidateUnit IsVoidRayTaldarim" Send="ModelSwap VoidRayTaldarimChargeBeam"/>
+        <HostSiteOps Ops="SOpAttachWeapon07"/>
+        <Model value="CabalMedusaChargeBase"/>
+    </CActorModel>
+    <CActorSound id="CabalMedusaSoundEnd" parent="SoundOneShot">
+        <On Terms="WeaponStop.CabalMedusaChargeBeamBase.AttackStop" Send="Create"/>
+        <On Terms="Effect.CabalMedusaChargeBeamBase.Stop" Send="Create"/>
+        <Sound value="CabalMedusa_WeaponEnd"/>
+    </CActorSound>
+    <CActorSound id="CabalMedusaSoundStart" parent="SoundOneShot">
+        <On Terms="Effect.CabalMedusaChargeBeamBase.Start" Send="Create"/>
+        <Sound value="CabalMedusa_WeaponStart"/>
+    </CActorSound>
+    <CActorSound id="CabalMedusaSound" parent="SoundContinuous">
+        <Inherits index="Visibility" value="0"/>
+        <On Terms="WeaponStart.CabalMedusaChargeBeamBase.AttackStart" Send="Create"/>
+        <On Terms="WeaponStop.CabalMedusaChargeBeamBase.AttackStop" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <Sound value="CabalMedusa_WeaponLoop1"/>
+    </CActorSound>
+    <CActorModel id="CabalMedusaHealImpactModel" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.CabalMedusaHealSearch.Start" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldRotation="1"/>
+    </CActorModel>
+    <CActorSound id="CabalMedusaHealSound" parent="SoundOneShot">
+        <On Terms="Effect.CabalMedusaHealSearch.Start" Send="Create"/>
+        <Host Subject="_Selectable"/>
+    </CActorSound>
+    <CActorAction id="CabalReaperAttack" parent="GenericAttack" effectAttack="CabalReaperShockwaveDamage">
+        <LaunchAssets Sound="CabalReaper_AttackLaunch"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactMap index="None" Model="" Sound="CabalReaper_AttackImpact"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalReaperAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
+        <Scale value="0.500000"/>
+    </CActorBeamSimple>
+    <CActorSplat id="NodStasisFieldCursorSplat" parent="ProtossCursorSplat" abil="PsiStorm">
+        <On index="0" Terms="Abil.NodStasisField.Cursor" Send="Create"/>
+        <Model value="NodAOECursorSplat"/>
+    </CActorSplat>
+    <CActorModel id="CabalHijackerEMPImpactModel" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Behavior.AwakenEMPStunned.On" Send="Create"/>
+        <On Terms="Behavior.CabalHijackerEMPStun.On" Send="Create"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart $BSD"/>
+        <On Terms="Behavior.CabalHijackerEMPStun.Off" Send="AnimBracketStop BSD"/>
+        <On Terms="Behavior.AwakenEMPStunned.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="1.000000"/>
+    </CActorModel>
+    <CActorSound id="CabalHijackerEMP_ActorSound" parent="SoundOneShot">
+        <On Terms="Effect.CabalHijackerTargetLockCP.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.CabalHijackerTargetLockCP.Stop" Send="AnimBracketStop BSD"/>
+        <Sound value="CabalHijackerEMP_Ping"/>
+        <Layers Sound="SentryMonitor_TargetLock_On">
+            <Chance value="0"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSplat id="liquidTibCursorSplat" parent="ProtossCursorSplat" abil="PsiStorm">
+        <On index="0" Terms="Abil.LiquidTib.Cursor" Send="Create"/>
+        <Model value="NodAOECursorSplat"/>
+    </CActorSplat>
+    <CActorSound id="StasisfieldImpactSound" parent="SoundOneShot">
+        <On Terms="Behavior.StasisField.On" Send="Create"/>
+        <Sound value="CabalBasiliskStasisFieldImpact"/>
+    </CActorSound>
+    <CActorModel id="CabalBasiliskStasisFieldImpact" parent="ModelAnimationStyleContinuous">
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+        <On Terms="Behavior.StasisField.On" Send="Create"/>
+        <On Terms="Behavior.StasisField.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachCenter"/>
+        <AutoScaleFactor value="0.750000"/>
+    </CActorModel>
+    <CActorModel id="StasisfieldModel" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.StassisFieldPersistent.Start" Send="Create"/>
+        <On Terms="Effect.StassisFieldPersistent.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation; ValidatePlayer HaveVoidHighTemplarPsiStormFilter" Send="SetTintColor 0,255,0"/>
+        <On Terms="Effect.PsiStormShakurasPersistent.Start" Send="Create"/>
+        <On Terms="Effect.PsiStormShakurasPersistent.Stop" Send="AnimBracketStop BSD"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="StasisFieldModel"/>
+        <Scale value="1.300000"/>
+    </CActorModel>
+    <CActorSound id="StasisFieldSound" parent="SoundContinuous">
+        <On Terms="Effect.StassisFieldPersistent.Start" Send="Create"/>
+        <On Terms="Effect.StassisFieldPersistent.Stop" Send="Destroy"/>
+        <On Terms="Effect.PsiStormShakurasPersistent.Start" Send="Create"/>
+        <On Terms="Effect.PsiStormShakurasPersistent.Stop" Send="Destroy"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Sound value="CabalBasiliskStasisField_PsionicStormLaunch"/>
+    </CActorSound>
+    <CActorBeamSimple id="CabalHijackerLockLaserBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.CabalHijackerTargetLockCP.Start; At Target" Send="Create"/>
+        <On Terms="Effect.CabalHijackerTargetLockCP.Stop" Send="AnimBracketStop BSD"/>
+        <On Terms="Effect.DarkArchonMindControlRemoveTargetLock.Start; At Target" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="Create SentryMonitor_TargetLock_Loop_ActorSound"/>
+        <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <HostLaunch Subject="_Unit" Scope="Caster"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="_Unit" Scope="Target"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorLookAt id="Turret_CabalMedusaLookAt" parent="BattlecruiserLookAt">
+        <Aliases value="Turret_CabalMedusa"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="Turret_CabalMedusa" Weight="1" Time="300"/>
+            <Stop Group="Turret_CabalMedusa" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorAction id="HCAttack" parent="GenericAttack" effectAttack="HCShockwaveDamage">
+        <LaunchAssets Sound="HC_AttackLaunch"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+    </CActorAction>
+    <CActorAction id="CabalBasiliskAttack" parent="GenericAttack" effectAttack="HCShockwaveDamage2">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="CabalBasilisk_AttackLaunch"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="HC_AttackImpact"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+    </CActorAction>
+    <CActorModel id="LiquidTib2" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.LeviathanLiquidTibCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.LeviathanLiquidTibCreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <Model value="LiquidTibLeviathan"/>
+        <Scale value="0.700000"/>
+    </CActorModel>
+    <CActorModel id="CabalMedusaHealingImpactModel" parent="ModelAnimationStyleOneShot">
+        <Inherits index="CloakEffect" value="1"/>
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.CabalMedusaHealSmall.Start; At Target" Send="Create"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOrigin" HoldRotation="1"/>
+    </CActorModel>
+    <CActorLookAt id="BasliskLaserLookAt" parent="BattlecruiserLookAt">
+        <Aliases value="BasliskLaser"/>
+        <Types Id="BattlecruiserTurret">
+            <Start Group="BasliskLaser" Weight="1" Time="300"/>
+            <Stop Group="BasliskLaser" Weight="1" Time="500"/>
+        </Types>
+    </CActorLookAt>
+    <CActorModel id="BlackHandLiquidTib" parent="ModelAnimationStyleContinuous">
+        <On Terms="Effect.BlackHandLiquidTibCreatePersistent.Start" Send="Create"/>
+        <On Terms="Effect.BlackHandLiquidTibCreatePersistent.Stop" Send="AnimBracketStop BSD"/>
+        <Model value="LiquidTibLeviathan"/>
+    </CActorModel>
+    <CActorAction id="NodBlackHandAttackLaunch" parent="GenericAttack" effectImpact="CabalLeviathanDamage" effectLaunch="BlackHandLaunchMissile">
+        <On index="1" Terms="Effect.LeviathanLiquidTibCreatePersistent.Start; FromEffectTreeDescendant" Send="ActionImpact"/>
+        <On index="2" Terms="Effect.LeviathanLiquidTibCreatePersistent.Start; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <LaunchAttachQuery Methods="Weapon 1"/>
+        <LaunchAssets Sound="CabalBikeWeaponAttackLaunch22"/>
+        <Missile value="CabalBlackHandMissile"/>
+        <ImpactMap index="None" Model="HailstormMissileVolleyImpact" Sound="CabalBikeWeaponAttackImpact22" ModelReaction="HailstormMissileVolleyImpactReaction"/>
+        <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
+    </CActorAction>
+    <CActorBeamSimple id="HCAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
+        <Scale value="0.500000"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="CabalBasiliskAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
+    </CActorBeamSimple>
+    <CActorAction id="CabalMarauderAttack" parent="GenericAttack" effectAttack="CabalMarauderDamage">
+        <LaunchAttachQuery Methods="AMPatternRollingStripe"/>
+        <LaunchAssets Sound="CabalMarauder_AttackLaunch"/>
+        <ImpactMap index="None" Sound="SiegeTank_AttackImpact"/>
+        <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
+    </CActorAction>
+    <CActorModel id="CabalWidow_SpiderAttachment" parent="ModelAddition">
+        <EditorCategories value=""/>
+        <HostSiteOps Ops="SOpAttachWeapon02"/>
+        <Aliases index="0" value="spider1"/>
+        <On Terms="Behavior.SpiderTankloaded.On" Send="Create"/>
+        <On Terms="Behavior.SpiderTankloaded.Off" Send="Destroy"/>
+    </CActorModel>
+    <CActorModel id="WidowSpider2" parent="ModelAddition">
+        <Aliases index="0" value="spider1"/>
+        <EditorCategories value=""/>
+        <On Terms="Behavior.SpiderCount2.On" Send="Create"/>
+        <On Terms="Behavior.SpiderCount2.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon03"/>
+        <Model value="CabalWidow_SpiderAttachment"/>
+    </CActorModel>
+    <CActorModel id="WidowSpider3" parent="ModelAddition">
+        <Aliases index="0" value="spider1"/>
+        <EditorCategories value=""/>
+        <On Terms="Behavior.SpiderCount3.On" Send="Create"/>
+        <On Terms="Behavior.SpiderCount3.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon04"/>
+        <Model value="CabalWidow_SpiderAttachment"/>
+    </CActorModel>
+    <CActorModel id="WidowSpider4" parent="ModelAddition">
+        <Aliases index="0" value="spider1"/>
+        <EditorCategories value=""/>
+        <On Terms="Behavior.SpiderCount4.On" Send="Create"/>
+        <On Terms="Behavior.SpiderCount4.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon05"/>
+        <Model value="CabalWidow_SpiderAttachment"/>
+    </CActorModel>
+    <CActorModel id="WidowSpider5" parent="ModelAddition">
+        <Aliases index="0" value="spider1"/>
+        <EditorCategories value=""/>
+        <On Terms="Behavior.SpiderCount5.On" Send="Create"/>
+        <On Terms="Behavior.SpiderCount5.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon06"/>
+        <Model value="CabalWidow_SpiderAttachment"/>
+    </CActorModel>
+    <CActorModel id="WidowSpider6" parent="ModelAddition">
+        <Aliases index="0" value="spider1"/>
+        <EditorCategories value=""/>
+        <On Terms="Behavior.SpiderCount6.On" Send="Create"/>
+        <On Terms="Behavior.SpiderCount6.Off" Send="Destroy"/>
+        <HostSiteOps Ops="SOpAttachWeapon01"/>
+        <Model value="CabalWidow_SpiderAttachment"/>
+    </CActorModel>
+    <CActorAction id="CabalWidowLaserAttack" parent="GenericAttack" effectAttack="CabalWidowLaserDamage">
+        <LaunchAttachQuery Methods="Weapon 7"/>
+        <LaunchAssets Sound="CabalWidowLaser_AttackLaunch"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalWidowLaserAttackBeam" parent="GenericAttackBeam">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorBeamSimple>
+    <CActorSplat id="NodDeepBurrowSplatFinish" parent="BurrowedSplatBase">
+        <On Terms="Effect.NodDeepBurrowDeepBurrow.Stop" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefClear ::Host"/>
+        <On Terms="ActorCreation" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <On Terms="Effect.NodDeepBurrowDeepBurrow.Stop" Send="Create CabalDeepBurrow"/>
+        <On Terms="Effect.NodDeepBurrowDeepBurrow.Stop" Send="Create NodBurrowDown"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary SOpShadow"/>
+        <Model value="NodDeepBurrowSplat"/>
+        <Scale value="2.000000"/>
+    </CActorSplat>
+    <CActorSplat id="NodDeepBurrowSplatStart" parent="BurrowedSplatBase">
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="Create"/>
+        <On Terms="ActorCreation" Send="RefClear ::Host"/>
+        <On Terms="ActorCreation" Send="TimerSet 4.000000,2.000000 DelayDestroy"/>
+        <On Terms="TimerExpired; TimerName DelayDestroy" Send="Destroy"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="Create CabalDeepBurrow"/>
+        <On Terms="Abil.CabalDeepBurrow.SourceCastStart" Send="Create NodBurrowDown"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary SOpShadow"/>
+        <Model value="NodDeepBurrowSplat"/>
+        <Scale value="2.000000"/>
+    </CActorSplat>
+    <CActorModel id="CabalDeepBurrow" parent="ModelAnimationStyleOneShot">
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary SOpShadow"/>
+    </CActorModel>
+    <CActorAction id="CabalSpiderAttack" parent="GenericAttack" effectAttack="CabalSpiderWeaponDamage">
+        <LaunchAssets Sound="CabalSpider_AttackLaunch"/>
+        <Beam value="NodScorpionTankWeaponUAttackBeam"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+    </CActorAction>
+    <CActorAction id="UnderminerAttack" parent="GenericAttack" effectAttack="UnderminerAttack">
+        <LaunchAssets Model="" Sound=""/>
+        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
+        <ImpactMap index="None" Model="UnderminerAttackDirectedImpact" Sound="SiegeTank_SiegedAttackImpact"/>
+        <ImpactPhysics Name="Explosion" MatchKeys="Basic" Physics="SiegeTankSiegedForce"/>
+        <DamageMap index="None" Model="SiegeTankSiegedAttackDirectedDamage"/>
+        <DamageModel value="SiegeTankAttackDamageModel"/>
+        <ShieldFlashType value="Header"/>
+    </CActorAction>
+    <CActorAction id="UnderminerAttackDummy" parent="GenericAttack" effectAttack="UnderminerAttackDummy">
+        <LaunchAssets Model="SiegeTankSiegedAttackLaunch" Sound="GDIShepherdTankAttackLaunch"/>
+        <ImpactMap index="None" Model="UnderminerAttackDirectedImpact" Sound="SiegeTank_SiegedAttackImpact"/>
+        <ImpactPhysics Name="Explosion" MatchKeys="Basic" Physics="SiegeTankSiegedForce"/>
+        <DamageMap index="None" Model="SiegeTankSiegedAttackDirectedDamage"/>
+        <DamageModel value="SiegeTankAttackDamageModel"/>
+        <ShieldFlashType value="Header"/>
+        <ImpactSiteOps Ops="SOpActionCenter SOpTargetUnitZ" HoldPosition="1"/>
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+    </CActorAction>
+    <CActorModel id="UnderminerExplosion2" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.UnderminerAttackDummy.Start" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="UnderminerExplosion" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.UnderminerAttackDummy.Start" Send="Create"/>
+    </CActorModel>
+    <CActorAction id="CabalOffenseCrawlerLaserAttack" parent="GenericAttack" effectAttack="CabalOffenseCrawlerLaserDamage">
+        <LaunchAttachQuery Methods="AMFilterWeapon02"/>
+        <LaunchAssets Sound="Scorpion_AttackLaunch"/>
+        <Beam value="CabalScorpionAttackBeam"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+    </CActorAction>
+    <CActorModel id="CabalShieldGeneratorImpact" parent="ModelAnimationStyleContinuous">
+        <Inherits index="CloakEffect" value="1"/>
+        <On Terms="Behavior.NodShield.On" Send="Create"/>
+        <On Terms="Behavior.NodShield.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor 64,64,255"/>
+        <On Terms="ActorCreation" Send="AnimPlay Loop Birth"/>
+        <On Terms="AnimDone; AnimName Loop" Send="AnimPlay Loop2 Birth"/>
+        <On Terms="AnimDone; AnimName Loop2" Send="AnimPlay Loop Birth"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachCenterSoft"/>
+        <AutoScaleFactor value="0.700000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+    </CActorModel>
+    <CActorModel id="earthquake2" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.SpawnTib.Start" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpTargetPoint"/>
+        <Model value="earthquake"/>
+    </CActorModel>
+    <CActorSound id="earthquakeImpactSound" parent="SoundOneShot">
+        <On Terms="Effect.earthquakeDamage.Start" Send="Create"/>
+        <On Terms="Effect.SpawnTib.Start" Send="Create"/>
+        <Sound value="earthquakeImpact"/>
+    </CActorSound>
+    <CActorModel id="earthquake" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.earthquakeDamage.Start" Send="Create"/>
+        <Host Subject="_Unit"/>
+        <HostSiteOps Ops="SOpAttachOriginStationary"/>
+    </CActorModel>
+    <CActorAction id="CabalOffenseCrawlerLaserAttack2" parent="GenericAttack" effectAttack="CabalOffenseCrawlerLaserDamage2">
+        <LaunchAttachQuery Methods="AMFilterWeapon01"/>
+        <LaunchAssets Sound="Scorpion_AttackLaunch"/>
+        <Beam value="CabalScorpionAttackBeam"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+    </CActorAction>
+    <CActorSplat id="NodFlameMineCurssorSplat" parent="ProtossCursorSplat" abil="PsiStorm">
+        <On index="0" Terms="Abil.NodDropFlameMines.Cursor" Send="Create"/>
+        <Model value="NodAOECursorSplat"/>
+    </CActorSplat>
+    <CActorAction id="CabalIncineratorWeaponAttack" parent="GenericAttackBase">
+        <On Terms="Effect.CabalIncineratorBeamCP.Start" Send="Create"/>
+        <On Terms="Effect.DisruptionBeamDamage.Start; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Stop" Send="Destroy WhenReady"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance SOpForwardLaunchGuide"/>
+        <AcquisitionYawHalfArc value="10.000000"/>
+        <ActionFlags index="AlignedImpactsAndDamages" value="1"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+        <Lifetime value="-1.000000"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalIncineratorWeaponAttackBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="Effect.CabalIncineratorBeamCP.Stop; At Effect" Send="AnimBracketStop BSD"/>
+        <On Terms="ActorCreation" Send="RefSetFromRequest ::actor.CasterUnit _Unit Caster Find"/>
+        <On Terms="ActorCreation" Target="::actor.CasterUnit" Send="Signal CampaignBeamCreated"/>
+        <Model value="CabalIncineratorWeaponBeam"/>
+    </CActorBeamSimple>
+    <CActorAction id="CabalReaperAttackUpgrade" parent="GenericAttack" effectAttack="CabalReaperShockwaveDamageUp">
+        <LaunchAssets Sound="NodCommando_AttackLaunch"/>
+        <Beam value="CabalReaperAttackBeamUpgrade"/>
+        <BeamScope value="Caster"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
+        <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
+        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
+    </CActorAction>
+    <CActorBeamSimple id="CabalReaperAttackBeamUpgrade" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
+        <Scale value="0.500000"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="CabalHealBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.CabalCNCheal.TargetStart" Send="Create"/>
+        <On Terms="Effect.CabalCNCheal.TargetStop" Send="Destroy"/>
+        <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <Model value="CNCHealBeam"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+    </CActorBeamSimple>
+    <CActorRange id="CabalHolyOneRange">
+        <On index="0" Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <On Terms="Behavior.CabalHolyOneTauntCasterBehavior.Off" Send="Destroy"/>
+        <On Terms="Behavior.CabalHolyOneTauntCasterBehavior.On" Send="Create"/>
+        <Range value="9.000000"/>
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+        <IconArcLength value="3.250000"/>
+    </CActorRange>
+    <CActorModel id="CabalHolyOneTauntedTargetAnimation" parent="ModelAddition">
+        <On Terms="Behavior.CabalHolyOneTauntTargetBehavior.Off" Send="Destroy"/>
+        <On Terms="Behavior.CabalHolyOneTauntTargetBehavior.On" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOverhead SOpHigherBy1"/>
+        <Model value="FireMedium"/>
+        <Scale value="0.600000"/>
+    </CActorModel>
+    <CActorModel id="CabalHolyOneTauntingAnimation" parent="ModelAddition">
+        <On Terms="Behavior.CabalHolyOneTauntCasterBehavior.Off" Send="Destroy"/>
+        <On Terms="Behavior.CabalHolyOneTauntCasterBehavior.On" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachOverhead SOpHigherBy1"/>
+        <Model value="FireMedium"/>
+        <Scale value="3.000000,3.000000,4.000000"/>
+    </CActorModel>
+    <CActorModel id="CabalReaperGuerrillaChargeSpeedAnimation" parent="ModelAddition">
+        <On Terms="Behavior.CabalReaperGuerrillaChargeSpeed.Off" Send="Destroy"/>
+        <On Terms="Behavior.CabalReaperGuerrillaChargeSpeed.On" Send="Create"/>
+        <Model value="AcidSalivaWeapon"/>
+        <Scale value="2.000000"/>
+    </CActorModel>
+    <CActorModel id="CabalReaperGuerrillaChargeWeaponAnimation" parent="ModelAddition">
+        <On Terms="Behavior.CabalReaperGuerrillaChargeRange.Off" Send="Destroy"/>
+        <On Terms="Behavior.CabalReaperGuerrillaChargeRange.On" Send="Create"/>
+        <HostSiteOps Ops="SOpAttachWeapon"/>
+        <Model value="AcidSalivaWeapon"/>
+        <Scale value="0.100000,3.000000,0.100000"/>
+    </CActorModel>
+    <CActorModel id="CabalHealModel" parent="ModelAnimationStyleContinuous">
+        <On Terms="ActorCreation" Send="$Birth PlayForever"/>
+        <On Terms="Effect.CabalCNCheal.TargetStart; At Target" Send="Create"/>
+        <On Terms="Effect.CabalCNCheal.TargetStop; At Target" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Model value="CNCHealModel"/>
+    </CActorModel>
+    <CActorSound id="CabalHealSound" parent="SoundContinuous">
+        <On Terms="Abil.CabalEngineerheal.TargetChannelStart" Send="Create"/>
+        <On Terms="Abil.CabalEngineerheal.TargetChannelStop" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <Sound value="CNC_Heal"/>
+    </CActorSound>
+    <CActorAction id="CabalCenturionWeapon" parent="GenericAttack" effectAttack="CabalCenturionWeaponDamage">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="SiegeTankAttackLaunch" Sound="CabalAvengerTank_AttackLaunch"/>
+        <ImpactMap index="None" Model="SiegeTankAttackImpact" Sound="SiegeTank_AttackImpact"/>
+        <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
+        <LaunchSiteOps HoldPosition="1" HoldRotation="1"/>
+    </CActorAction>
+</Catalog>

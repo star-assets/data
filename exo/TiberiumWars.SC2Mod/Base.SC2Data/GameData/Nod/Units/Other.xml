@@ -1,0 +1,130 @@
+<Catalog>
+    <!--    <CValidatorUnitType id="TargetIsNotNodConfessor">-->
+    <!--        <Find value="0"/>-->
+    <!--        <Value value="NodConfessor"/>-->
+    <!--    </CValidatorUnitType>-->
+
+
+
+
+    <!--    <CEffectDamage id="GideonAwakenWeaponDamageLaser" parent="DU_WEAP">-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--        <AttributeBonus index="Armored" value="5"/>-->
+    <!--        <Kind value="Ranged"/>-->
+    <!--        <Amount value="12"/>-->
+    <!--        <Death value="Blast"/>-->
+    <!--    </CEffectDamage>-->
+
+
+    <!--    <CUnit id="CabalVisceroid" parent="NodGround">-->
+    <!--        <Description value="Button/Tooltip/ve"/>-->
+    <!--        <Race value="CABAL"/>-->
+    <!--        <Attributes index="Light" value="1"/>-->
+    <!--        <Attributes index="Biological" value="1"/>-->
+    <!--        <Attributes index="Summoned" value="1"/>-->
+    <!--        <LifeStart value="110"/>-->
+    <!--        <LifeMax value="110"/>-->
+    <!--        <LifeRegenDelay value="1"/>-->
+    <!--        <LifeRegenRate value="0.5"/>-->
+    <!--        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>-->
+    <!--        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>-->
+    <!--        <Speed value="3.3007"/>-->
+    <!--        <LateralAcceleration value="46.0625"/>-->
+    <!--        <StationaryTurningRate value="999.8437"/>-->
+    <!--        <TurningRate value="999.8437"/>-->
+    <!--        <Sight value="7"/>-->
+    <!--        <Food value="1"/>-->
+    <!--        <CostResource index="Minerals" value="100"/>-->
+    <!--        <CostResource index="Vespene" value="100"/>-->
+    <!--        <KillXP value="25"/>-->
+    <!--        <BehaviorArray Link="TiberiumProtection"/>-->
+    <!--        <BehaviorArray Link="TiberiumHeal"/>-->
+    <!--        <WeaponArray Link="CabalClawsVisceroid"/>-->
+    <!--        <InnerRadius value="0.5"/>-->
+    <!--        <ScoreMake value="100"/>-->
+    <!--        <ScoreKill value="200"/>-->
+    <!--        <SubgroupPriority value="14"/>-->
+    <!--        <MinimapRadius value="0.375"/>-->
+    <!--        <TacticalAI value="Broodling"/>-->
+    <!--        <AIEvalFactor value="0"/>-->
+    <!--        <LeaderAlias value=""/>-->
+    <!--        <HotkeyAlias value="Broodling"/>-->
+    <!--        <GlossaryPriority value="200"/>-->
+    <!--    </CUnit>-->
+
+
+    <!--    <CModel id="CabalVisceroid" parent="Unit">-->
+    <!--        <Model value="Assets\Models\Visceroid\Visceroid.m3"/>-->
+    <!--        <EditorCategories value="Race:Neut"/>-->
+    <!--        <Occlusion value="Show"/>-->
+    <!--        <Radius value="0.250000"/>-->
+    <!--        <ScaleMax value="1.600000,1.600000,1.600000"/><ScaleMin value="1.600000,1.600000,1.600000"/>-->
+    <!--        <SelectionRadius value="0.250000"/>-->
+    <!--        <ShadowRadius value="0.250000"/>-->
+    <!--    </CModel>-->
+    <!--    <CActorUnit id="CabalVisceroid" parent="NodUnitBase" unitName="CabalVisceroid"  wireframe="Wireframe-visceroid" icon="btn-visceroid">-->
+    <!--        <On Terms="UnitBirth.*.Normal" Send="AnimPlay Birth Stand,Work,Start 0 0.000000"/>-->
+    <!--        <On Terms="UnitBirth.*.Normal" Send="Create CorpserBirth"/>-->
+    <!--        <On Terms="UnitHeightUpdate.*.Land" Send="Create Broodling_Land"/>-->
+    <!--        <Scale value="1.400000"/>-->
+    <!--        <DeathArray index="Normal" SoundLink="Broodling_Explode"/>-->
+    <!--        <DeathArray index="Disintegrate" AnimProps="Death" SoundLink="Broodling_DeathFXAcid"/>-->
+    <!--        <DeathArray index="Fire" SoundLink="Broodling_DeathFXFire"/>-->
+    <!--        <PortraitModel value="SymbiotePortrait"/>-->
+    <!--        <WalkAnimMoveSpeed value="1.5"/>-->
+    <!--        <BarOffset value="25"/>-->
+    <!--        <BarWidth value="40"/>-->
+    <!--        <LifeArmorIcon value="Assets\textures\btn-upgrade-zerg-groundcarapace-level0.dds"/>-->
+    <!--        <ShieldArmorIcon value="Assets\icons\btn-upgrade-zerg-swarmfrenzy.dds"/>-->
+    <!--        <StatusColors index="Shields">-->
+    <!--            <ColorArray index="0" value="255,0,128,0"/>-->
+    <!--        </StatusColors>-->
+    <!--        <VitalColors index="Shields">-->
+    <!--            <ColorArray value="255,0,128,0"/>-->
+    <!--        </VitalColors>-->
+    <!--        <VitalNames index="Shields" value="Vital/ZergShields"/> <WireframeShieldColor value="255,0,128,0"/>-->
+    <!--    </CActorUnit>-->
+    <!--    <CBehaviorBuff id="CabalTiberiumInfest">-->
+    <!--        <Alignment value="Negative"/>-->
+    <!--        <InfoIcon value="Assets\textures\TargetingDecalTiberiumCatalystMissile.dds"/>-->
+    <!--        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>-->
+    <!--        <BuffFlags index="DisableWhileUnderConstruction" value="1"/>-->
+    <!--        <Duration value="3"/>-->
+    <!--        <Modification>-->
+    <!--            <DeathResponse Chance="1" Effect="CabalVisceroidSpawnVisceroidDelay">-->
+    <!--                <Type index="Remove" value="0"/>-->
+    <!--            </DeathResponse>-->
+    <!--        </Modification>-->
+    <!--    </CBehaviorBuff>-->
+    <!--    <CEffectApplyBehavior id="CabalVisceroidInvertWarheadAttackAB">-->
+    <!--        <ValidatorArray index="0" removed="1"/>-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--        <Behavior value="CabalTiberiumInfest"/>-->
+    <!--    </CEffectApplyBehavior>-->
+    <!--    <CEffectCreateUnit id="CabalVisceroidSpawnVisceroid">-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--        <DebugTrace value="1"/>-->
+    <!--        <OwningPlayer Value="Hostile"/>-->
+    <!--        <WhichLocation Value="TargetPoint"/>-->
+    <!--        <CreateFlags index="Placement" value="0"/>-->
+    <!--        <SpawnOwner Value="Hostile"/>-->
+    <!--        <SpawnUnit value="CabalVisceroid"/>-->
+    <!--    </CEffectCreateUnit>-->
+    <!--    <CEffectCreatePersistent id="CabalVisceroidSpawnVisceroidDelay">-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--        <DebugTrace value="1"/>-->
+    <!--        <ExpireDelay value="0.5"/>-->
+    <!--        <FinalEffect value="CabalVisceroidSpawnVisceroid"/>-->
+    <!--    </CEffectCreatePersistent>-->
+    <!--    <CEffectSet id="CabalHotSZerglingVisceroidClaws">-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--        <EffectArray value="CabalVisceroidInvertWarheadAttackAB"/>-->
+    <!--        <EffectArray value="CabalVisceroidClaws"/>-->
+    <!--    </CEffectSet>-->
+        <CEffectDamage id="CabalVisceroidClaws" parent="DU_WEAP">
+            <EditorCategories value="Race:Nod"/>
+            <AttributeBonus index="Armored" value="10"/>
+            <AttributeBonus index="Massive" value="10"/>
+            <Amount value="5"/>
+        </CEffectDamage>
+</Catalog>

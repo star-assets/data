@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CModel default="1">
+        <?token id="ID"?>
+        <EditorCategories value="Race:Neutral"/>
+    </CModel>
+    <CModel default="1" id="PlacementEx" parent="Placement">
+    <LowQualityModel value="##low##"/>
+    <SelectionRadius value="0.000000"/>
+    <ShadowRadius value="0.000000"/>
+    <EditorCategories value="Race:Neutral"/>
+</CModel>
+    <CModel default="1" id="BuildingEx" parent="Building">
+        <SelectionLayer value="2"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CModel>
+    <CModel default="1" id="BuildingDeathEx" parent="BuildingDeath">
+        <LowQualityModel value="##low##"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CModel>
+    <CModel default="1" id="TerranBuildingBuild" parent="BuildingEx">
+        <?token id="Race" value="Terran"?>
+        <?token id="name" value="TerranBuild"?>
+        <Model value="Assets\Buildings\Terran\##name##\##name##.m3"/>
+    </CModel>
+    <CModel default="1" id="TerranBuildingBuildSmall" parent="BuildingEx">
+        <?token id="Race" value="Terran"?>
+        <?token id="name" value="TerranBuildSmall"?>
+        <Model value="Assets\Buildings\Terran\##name##\##name##.m3"/>
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel default="1" id="TerranBuildingBuildTiny" parent="BuildingEx">
+        <?token id="Race" value="Terran"?>
+        <?token id="name" value="TerranBuildSmall"?>
+        <Model value="Assets\Buildings\Terran\##name##\##name##.m3"/>
+        <Radius value="0.800000"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.800000"/>
+        <ShadowRadius value="1.000000"/>
+    </CModel>
+    <CModel id="BurrowedSplat" parent="Splat">
+        <Model value="Assets\Splats\Splat_ZerglingBurrowed\Splat_ZerglingBurrowed.m3"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CModel id="AOEPreTargetAirUnitProtoss" parent="PersistentSpellFX">
+        <Model value="Assets\UI\Feedback\AOEPreTargetAirUnitProtoss\AOEPreTargetAirUnitProtoss.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="AOEPreTargetAirUnitProtossSplat" parent="Splat">
+        <Model value="Assets\UI\Feedback\AOEPreTargetAirUnitProtossSplat\AOEPreTargetAirUnitProtossSplat.m3"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CModel>
+    <CModel id="StaticPortrait" parent="Portrait">
+        <Flags index="Download" value="1"/>
+        <Model value="Assets\Portraits\Terran\TerranPortraitTransition\TerranPortraitTransition.m3"/>
+        <Image value="Assets\Textures\TerranPortraitTransition_Static.dds"/>
+    </CModel>
+</Catalog>

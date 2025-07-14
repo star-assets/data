@@ -1,0 +1,8 @@
+<Catalog>
+  <CHerdNode default="1" />
+  <CHerdNode id="HerdNode_ZergSmall" />
+  <CHerdNode id="HerdNode_ZergBanelings" />
+  <CHerdNode id="HerdNode_ZergMedium" />
+  <CHerdNode id="HerdNode_ZergQueens" />
+  <CHerdNode id="HerdNode_ZergLarge" />
+</Catalog>

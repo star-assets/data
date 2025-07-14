@@ -1,0 +1,1441 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Constant name="e_multiplayerLoadingPanelModeVersus" val="0" />
+  <Constant name="e_multiplayerLoadingPanelModeFree" val="1" />
+  <Constant name="e_multiplayerLoadingPanelModeSingle" val="2" />
+  <Constant name="e_multiplayerLoadingPanelModeExtended" val="3" />
+  <Constant name="PlayerCard_Spacing_FromMinimap" val="60" />
+  <Constant name="PlayerCard_Spacing_Horizontal" val="28" />
+  <Constant name="PlayerCard_Spacing_Vertical" val="22" />
+  <Constant name="Extended_Color_LoadingBg" val="18,21,24" />
+  <Constant name="Extended_Color_LoadingFill" val="105,132,189" />
+  <Constant name="Extended_Color_OuterBorder" val="72,91,130" />
+  <Constant name="Extended_Color_PlayerBorder" val="18,21,24" />
+  <Constant name="Extended_Color_RaceBg" val="30,32,45" />
+  <Constant name="Extended_Color_RaceFill" val="134,151,191" />
+  <Constant name="PlayerItemWidth" val="500" />
+  <Constant name="MapWidth" val="380" />
+  <Constant name="TandemVerticalSpacing" val="-5" />
+  <Frame type="Frame" name="MinimapContainerTemplate">
+    <Width val="464" />
+    <Height val="464" />
+    <Frame type="Image" name="BackgroundImage">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+      <Texture val="Assets\Textures\white.dds" />
+      <Color val="18,21,24" />
+    </Frame>
+    <Frame type="RangeFrame" name="VerticalWidthLimit">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapVertical" pos="Min" offset="0" />
+      <LowerWidth val="5" />
+    </Frame>
+    <Frame type="Image" name="MinimapVertical">
+      <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/BackgroundImage" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/BackgroundImage" pos="Mid" offset="0" />
+      <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/Minimap/MinimapImage/@Texture}" />
+      <ScaleWidthToTexture val="true" />
+    </Frame>
+    <Frame type="Image" name="MinimapHorizontal">
+      <Anchor side="Top" relative="$parent/BackgroundImage" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/BackgroundImage" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/BackgroundImage" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="0" />
+      <Texture val="{$parent/MinimapVertical/@Texture}" />
+      <ScaleHeightToTexture val="true" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="MinimapBorderOuter">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer_16x9" />
+      <TextureType val="NineSlice" />
+      <Color val="0,0,0" />
+    </Frame>
+    <Frame type="Image" name="MinimapBorderInner">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner_16x9" />
+      <TextureType val="NineSlice" />
+      <Color val="36,107,169" />
+    </Frame>
+    <StateGroup name="OrientationState">
+      <DefaultState val="Vertical" />
+      <State name="Horizontal">
+        <When type="Property" frame="VerticalWidthLimit" />
+        <Action type="SetProperty" frame="MinimapVertical" Visible="false" />
+        <Action type="SetProperty" frame="MinimapHorizontal" Visible="true" />
+      </State>
+      <State name="Vertical">
+        <Action type="SetProperty" frame="MinimapVertical" Visible="true" />
+        <Action type="SetProperty" frame="MinimapHorizontal" Visible="false" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Image" name="SilencePenaltyImageTemplate">
+    <Visible val="false" />
+    <Width val="32" />
+    <Height val="32" />
+    <Texture val="@UI/Glues_Icons_Silence" />
+    <Animation name="SilenceState">
+      <Event event="SilencedPenaltyOn" action="Reset,Play" frame="$parent" />
+      <Event event="SilencedPenaltyOff" action="Reset,Stop" frame="$parent" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="PortraitBorderImageTemplate">
+    <Anchor side="Top" relative="$parent" pos="Max" offset="5000" />
+    <Anchor side="Left" relative="$parent" pos="Max" offset="5000" />
+    <Visible val="False" />
+    <Texture val="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Unranked" />
+    <StateGroup name="DataState">
+      <DefaultState val="Unranked" />
+      <State name="TeamGameUnranked">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Unranked" />
+      </State>
+      <State name="TeamGameBronze">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Bronze" />
+      </State>
+      <State name="TeamGameSilver">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Silver" />
+      </State>
+      <State name="TeamGameGold">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Gold" />
+      </State>
+      <State name="TeamGamePlatinum">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Platinum" />
+      </State>
+      <State name="TeamGameDiamond">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Diamond" />
+      </State>
+      <State name="TeamGameMaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Master" />
+      </State>
+      <State name="TeamGameGrandmaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" operator="GreaterThan" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Grandmaster" />
+      </State>
+      <State name="TerranBronze">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Bronze" />
+      </State>
+      <State name="TerranSilver">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Silver" />
+      </State>
+      <State name="TerranGold">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Gold" />
+      </State>
+      <State name="TerranPlatinum">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Platinum" />
+      </State>
+      <State name="TerranDiamond">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Diamond" />
+      </State>
+      <State name="TerranMaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Master" />
+      </State>
+      <State name="TerranGrandmaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Grandmaster" />
+      </State>
+      <State name="ZergBronze">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Bronze" />
+      </State>
+      <State name="ZergSilver">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Silver" />
+      </State>
+      <State name="ZergGold">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Gold" />
+      </State>
+      <State name="ZergPlatinum">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Platinum" />
+      </State>
+      <State name="ZergDiamond">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Diamond" />
+      </State>
+      <State name="ZergMaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Master" />
+      </State>
+      <State name="ZergGrandmaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Grandmaster" />
+      </State>
+      <State name="ProtossBronze">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Bronze" />
+      </State>
+      <State name="ProtossSilver">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Silver" />
+      </State>
+      <State name="ProtossGold">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Gold" />
+      </State>
+      <State name="ProtossPlatinum">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Platinum" />
+      </State>
+      <State name="ProtossDiamond">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Diamond" />
+      </State>
+      <State name="ProtossMaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Master" />
+      </State>
+      <State name="ProtossGrandmaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Grandmaster" />
+      </State>
+      <State name="RandomBronze">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Bronze" />
+      </State>
+      <State name="RandomSilver">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Silver" />
+      </State>
+      <State name="RandomGold">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Gold" />
+      </State>
+      <State name="RandomPlatinum">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Platinum" />
+      </State>
+      <State name="RandomDiamond">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Diamond" />
+      </State>
+      <State name="RandomMaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Master" />
+      </State>
+      <State name="RandomGrandmaster">
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Grandmaster" />
+      </State>
+      <State name="Unranked">
+        <Action type="SetProperty" frame="$this" Texture="@UI/MultiplayerLoadingPanelPlayerFrameLeagueBorder_Unranked" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Label" name="MMRLabelTemplate">
+    <Anchor side="Top" relative="$parent" pos="Max" offset="5000" />
+    <Anchor side="Left" relative="$parent" pos="Max" offset="5000" />
+    <Visible val="False" />
+    <Text val="" />
+    <Frame type="TextFormatFrame" name="FormatPlayerMMR">
+      <Anchor relative="$parent" />
+      <Visible val="false" />
+      <FormatText val="%0%" />
+      <Replacement val="{$parent/$parent/@PlayerMMR}" />
+    </Frame>
+    <StateGroup name="DataState">
+      <DefaultState val="DoNotDisplay" />
+      <State name="TerranMaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="TerranGrandmaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="ZergMaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="ZergGrandmaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="ProtossMaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="ProtossGrandmaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="RandomMaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="RandomGrandmaster">
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="StateGroup" frame="$ancestor[@type=MultiplayerLoadingPanel]" />
+        <When type="Property" frame="$parent" operator="GreaterThan" />
+        <When type="Property" frame="$parent" />
+        <When type="Property" frame="$parent" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="DoNotDisplay">
+        <Action type="SetProperty" frame="$this" />
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="MultiplayerLoadingPlayerTileListItem" name="MultiplayerPlayerTileListItemBaseTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="Image" name="PortraitBorderImage" template="MultiplayerLoadingPanel/PortraitBorderImageTemplate" />
+    <Frame type="Label" name="MMRLabel" template="MultiplayerLoadingPanel/MMRLabelTemplate" />
+  </Frame>
+  <Frame type="MultiplayerLoadingTandemPlayerTileListItem" name="MultiplayerTandemPlayerTileListItemTemplate" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemBaseTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="Image" name="PortraitBorderImage" template="MultiplayerLoadingPanel/PortraitBorderImageTemplate" />
+    <Frame type="Label" name="MMRLabel" template="MultiplayerLoadingPanel/MMRLabelTemplate" />
+  </Frame>
+  <Frame type="TileList" name="MultiplayerTandemPlayerTileListTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="MultiplayerLoadingTandemPlayerTileListItem" name="Item0" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListItemTemplate" />
+  </Frame>
+  <Frame type="MultiplayerLoadingPlayerTileListItem" name="MultiplayerPlayerTileListItemTemplate" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemBaseTemplate">
+    <Anchor relative="$parent" />
+  </Frame>
+  <Frame type="TileList" name="MultiplayerPlayerTileListTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item0" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+      <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+    </Frame>
+  </Frame>
+  <Frame type="MultiplayerLoadingTeamTileListItem" name="MultiplayerTeamTileListItemTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="TileList" name="PlayerTileList" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListTemplate" />
+  </Frame>
+  <Frame type="TileList" name="MultiplayerTeamTileListTemplate">
+    <Anchor relative="$parent" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item0" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate">
+      <Frame type="TileList" name="PlayerTileList" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListTemplate">
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item1" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item2" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item3" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+      </Frame>
+    </Frame>
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item1" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate">
+      <Frame type="TileList" name="PlayerTileList" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListTemplate">
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item1" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item2" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+        <Frame type="MultiplayerLoadingPlayerTileListItem" name="Item3" template="MultiplayerLoadingPanel/MultiplayerPlayerTileListItemTemplate">
+          <Frame type="TileList" name="TandemPlayerTileList" template="MultiplayerLoadingPanel/MultiplayerTandemPlayerTileListTemplate" />
+        </Frame>
+      </Frame>
+    </Frame>
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item2" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item3" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item4" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item5" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item6" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+    <Frame type="MultiplayerLoadingTeamTileListItem" name="Item7" template="MultiplayerLoadingPanel/MultiplayerTeamTileListItemTemplate" />
+  </Frame>
+  <Frame type="Frame" name="VersusTeamsPlayerContainerTemplate">
+    <Anchor side="Top" relative="MinimapContainer" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="MinimapContainer" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    <Height val="3000" />
+    <Visible val="false" />
+    <Frame type="Frame" name="MinimapContainer" template="MultiplayerLoadingPanel/MinimapContainerTemplate">
+      <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="246" />
+      <Anchor side="Left" relative="$parent/$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Frame type="Label" name="MapNameLabel">
+      <Anchor side="Top" relative="$parent/MinimapContainer" pos="Max" offset="60" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelMapName" />
+      <Options val="NoWrapping|ScaleToPreventTruncation" />
+      <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/MapNameLabel/@Text}" />
+    </Frame>
+    <Frame type="Label" name="TournamentNameLabel">
+      <Anchor side="Top" relative="$parent/MapNameLabel" pos="Max" offset="10" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelTournamentName" />
+      <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TournamentNameLabel/@Text}" />
+      <Options val="ScaleToPreventTruncation" />
+      <CollapseLayout val="true" />
+    </Frame>
+    <Frame type="Label" name="TournamentRoundLabel">
+      <Anchor side="Top" relative="$parent/TournamentNameLabel" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelTournamentName" />
+      <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TournamentRoundLabel/@Text}" />
+      <Options val="ScaleToPreventTruncation" />
+      <CollapseLayout val="true" />
+    </Frame>
+    <Frame type="Frame" name="LeftContainer">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Frame type="ParentCenteredFrame" name="Team0Container">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="Player3" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="Player0" pos="Max" offset="0" />
+        <Frame type="Frame" name="Player0" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player1" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item1/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player2" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item2/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player3" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item3/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+    <Frame type="Frame" name="RightContainer">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Frame type="ParentCenteredFrame" name="Team1Container">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="Player3" pos="Max" offset="0" />
+        <Anchor side="Left" relative="Player0" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Frame type="Frame" name="Player0" template="LoadingPlayerCardTemplates/LoadingPlayerCardReverseTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player1" template="LoadingPlayerCardTemplates/LoadingPlayerCardReverseTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item1/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player2" template="LoadingPlayerCardTemplates/LoadingPlayerCardReverseTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item2/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player3" template="LoadingPlayerCardTemplates/LoadingPlayerCardReverseTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="36" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerName}" />
+          </Frame>
+          <Frame type="Label" name="PlayerMMR">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/MMRLabel/@Text}" />
+            <Visible val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/MMRLabel/@Visible}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item3/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="Archon1v1PlayerContainerTemplate">
+    <Anchor relative="$parent" />
+    <Visible val="false" />
+    <Frame type="Frame" name="MinimapContainer" template="MultiplayerLoadingPanel/MinimapContainerTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="246" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Frame type="Label" name="MapNameLabel">
+      <Anchor side="Top" relative="$parent/MinimapContainer" pos="Max" offset="60" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelMapName" />
+      <Options val="NoWrapping|ScaleToPreventTruncation" />
+      <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/MapNameLabel/@Text}" />
+    </Frame>
+    <Frame type="Frame" name="LeftContainer">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+      <Frame type="ParentCenteredFrame" name="Team0Container">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="TandemPlayer0" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="TandemPlayer0" pos="Max" offset="0" />
+        <Frame type="Frame" name="TandemPlayer0" template="LoadingPlayerCardTemplates/LoadingTandemPlayerCardTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+          <Frame type="Image" name="TandemBanner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TandemFormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="ProgressBar" name="TandemLoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="TandemClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="TandemAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="TandemAvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="TandemAvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+    <Frame type="Frame" name="RightContainer">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Frame type="ParentCenteredFrame" name="Team1Container">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="TandemPlayer1" pos="Max" offset="0" />
+        <Anchor side="Left" relative="TandemPlayer1" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Frame type="Frame" name="TandemPlayer1" template="LoadingPlayerCardTemplates/LoadingTandemPlayerCardReverseTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+          <Frame type="Image" name="TandemBanner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="TandemFormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="ProgressBar" name="TandemLoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="TandemClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="TandemRaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="TandemAvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="TandemAvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="FFAPlayerContainerTemplate">
+    <Anchor relative="$parent" />
+    <Visible val="false" />
+    <Frame type="ParentCenteredFrame" name="HorizontalCenter">
+      <Anchor side="Top" relative="MinimapContainer" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="MinimapContainer" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="90" />
+      <Anchor side="Right" relative="Column1" pos="Max" offset="0" />
+      <Height val="3000" />
+      <Frame type="Frame" name="MinimapContainer" template="MultiplayerLoadingPanel/MinimapContainerTemplate">
+        <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="246" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      </Frame>
+      <Frame type="Label" name="MapNameLabel">
+        <Anchor side="Top" relative="$parent/MinimapContainer" pos="Max" offset="60" />
+        <Anchor side="Left" relative="$parent/MinimapContainer" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent/MinimapContainer" pos="Max" offset="0" />
+        <Style val="MultiplayerLoadingPanelMapName" />
+        <Options val="NoWrapping|ScaleToPreventTruncation" />
+        <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/MapNameLabel/@Text}" />
+      </Frame>
+      <Frame type="ParentCenteredFrame" name="Column0">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="Player3" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent/MinimapContainer" pos="Max" offset="#PlayerCard_Spacing_FromMinimap" />
+        <Anchor side="Right" relative="Player0" pos="Max" offset="0" />
+        <PreserveAnchorOffset val="true" />
+        <Frame type="Frame" name="Player0" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="#PlayerCard_Spacing_Horizontal" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item0/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player1" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item1/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player2" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item2/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player3" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item3/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Frame type="ParentCenteredFrame" name="Column1">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="Player3" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent/Column0" pos="Max" offset="0" />
+        <Anchor side="Right" relative="Player0" pos="Max" offset="0" />
+        <PreserveAnchorOffset val="true" />
+        <Frame type="Frame" name="Player0" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+          <Anchor side="Left" relative="$parent" pos="Min" offset="#PlayerCard_Spacing_Horizontal" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item4/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player1" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item5/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player2" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item6/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+        <Frame type="Frame" name="Player3" template="LoadingPlayerCardTemplates/LoadingPlayerCardTemplate">
+          <Anchor side="Top" relative="$sibling-1" pos="Max" offset="#PlayerCard_Spacing_Vertical" />
+          <Anchor side="Left" relative="$sibling-1" pos="Min" offset="0" />
+          <Frame type="Image" name="Banner">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@RewardRaceBanner[Image1v1]}" />
+          </Frame>
+          <Frame type="Image" name="ColorIndicator">
+            <Color val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerColor}" />
+          </Frame>
+          <Frame type="TextFormatFrame" name="FormatPlayerName">
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@ClanTag}" />
+            <Replacement val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerName}" />
+          </Frame>
+          <Frame type="MathFrame" name="TeamMathFrame">
+            <A val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@TeamID}" />
+          </Frame>
+          <Frame type="ProgressBar" name="LoadingProgressBar">
+            <Value val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerLoadingProgress}" />
+          </Frame>
+          <Frame type="BattleClubFrame" name="ClanIconContainer">
+            <ClubId val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@ClanId}" />
+          </Frame>
+          <Frame type="Label" name="RaceAILabel">
+            <Text val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerRace}" />
+            <Enabled val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@IsAI}" />
+          </Frame>
+          <Frame type="Image" name="AvatarImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerAvatar}" />
+            <PixelTextureCoords val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/@PlayerAvatarTexCoords}" />
+          </Frame>
+          <Frame type="Image" name="AvatarBorderImage">
+            <Texture val="{$ancestor[@type=MultiplayerLoadingPanel]/TeamTileList/Item7/PlayerTileList/Item0/PortraitBorderImage/@Texture}" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="MultiplayerLoadingPanel" name="MultiplayerLoadingPanelTemplate">
+    <Frame type="Image" name="BackgroundMeleeVignette">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Texture val="@UI/MultiplayerLoadingPanelVignette_Back" />
+      <Visible val="False" />
+    </Frame>
+    <Frame type="TileList" name="TeamTileList" template="MultiplayerLoadingPanel/MultiplayerTeamTileListTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="125" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-59" />
+    </Frame>
+    <Frame type="Frame" name="MinimapContainer" template="MultiplayerLoadingPanel/MinimapContainerTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="125" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Alpha val="0" />
+    </Frame>
+    <Frame type="Label" name="TournamentNameLabel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="35" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelTournamentName" />
+      <CollapseLayout val="true" />
+      <Alpha val="0" />
+    </Frame>
+    <Frame type="Label" name="TournamentRoundLabel">
+      <Anchor side="Top" relative="$parent/TournamentNameLabel" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelTournamentName" />
+      <CollapseLayout val="true" />
+      <Alpha val="0" />
+    </Frame>
+    <Frame type="Label" name="MapNameLabel">
+      <Anchor side="Top" relative="$parent/Minimap" pos="Max" offset="60" />
+      <Anchor side="Left" relative="$parent/Minimap" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/Minimap" pos="Max" offset="0" />
+      <Style val="MultiplayerLoadingPanelMapName" />
+      <Options val="NoWrapping|ScaleToPreventTruncation" />
+      <Alpha val="{$parent/TeamTileList/@Alpha}" />
+    </Frame>
+    <Frame type="Minimap" name="Minimap">
+      <Anchor relative="$parent/FreeModeMinimapAnchor" />
+      <Alpha val="{$parent/TeamTileList/@Alpha}" />
+      <Visible val="false" />
+      <Frame type="Image" name="MinimapImage">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+      </Frame>
+    </Frame>
+    <Frame type="Frame" name="VersusModeMinimapAnchor">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="#MapWidth" />
+    </Frame>
+    <Frame type="Frame" name="VersusTeamsPlayerContainer" template="MultiplayerLoadingPanel/VersusTeamsPlayerContainerTemplate" />
+    <Frame type="Frame" name="Archon1v1PlayerContainer" template="MultiplayerLoadingPanel/Archon1v1PlayerContainerTemplate" />
+    <Frame type="Frame" name="FreeModeMinimapAnchor">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="#MapWidth" />
+    </Frame>
+    <Frame type="Frame" name="SingleModeMinimapAnchor">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="-500" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="#MapWidth" />
+    </Frame>
+    <Frame type="Frame" name="ExtendedModeMinimapAnchor">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-100" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="45" />
+      <Width val="#MapWidth" />
+    </Frame>
+    <Frame type="Frame" name="FFAPlayerContainer" template="MultiplayerLoadingPanel/FFAPlayerContainerTemplate" />
+    <StateGroup name="GameTypeState">
+      <DefaultState val="Extended" />
+      <State name="Offline">
+        <When type="Property" />
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+      <State name="Archon1v1">
+        <When type="Property" />
+        <When type="Property" />
+        <When type="Property" frame="TeamTileList/Item0/PlayerTileList" />
+        <When type="Property" frame="TeamTileList/Item1/PlayerTileList" />
+        <When type="Property" frame="TeamTileList/Item0/PlayerTileList/Item0/TandemPlayerTileList" />
+        <When type="Property" frame="TeamTileList/Item1/PlayerTileList/Item0/TandemPlayerTileList" />
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="true" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+      <State name="Versus">
+        <When type="Property" />
+        <When type="Property" />
+        <When type="Property" frame="TeamTileList/Item0/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item1/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" />
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="true" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+      <State name="FFA8OrLess">
+        <When type="Property" />
+        <When type="Property" operator="LessThanOrEqual" />
+        <When type="Property" />
+        <When type="Property" frame="TeamTileList/Item0/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item1/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item2/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item3/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item4/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item5/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item6/PlayerTileList" operator="LessThanOrEqual" />
+        <When type="Property" frame="TeamTileList/Item7/PlayerTileList" operator="LessThanOrEqual" />
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="true" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+      <State name="Single">
+        <When type="Property" />
+        <When type="Property" />
+        <When type="Property" />
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="true" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+      <State name="Extended">
+        <Action type="SetProperty" frame="Archon1v1PlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="VersusTeamsPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="FFAPlayerContainer" Visible="false" />
+        <Action type="SetProperty" frame="TeamTileList" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

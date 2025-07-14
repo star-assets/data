@@ -1,0 +1,6 @@
+<Catalog>
+  <CLocation default="1">
+    <Name value="Location/Name/##id##" />
+    <Description value="Location/Description/##id##" />
+  </CLocation>
+</Catalog>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CButton default="1" id="NodButton">
+        <?token id="icon" value="##id##"?>
+        <EditorCategories value="Race:Nod"/>
+        <Icon value="Assets\icons\Nod\##icon##.dds"/>
+    </CButton>
+    <CButton default="1" id="CabalButton">
+        <?token id="icon" value="##id##"?>
+        <EditorCategories value="Race:Nod"/>
+        <Icon value="Assets\icons\Cabal\##icon##.dds"/>
+    </CButton>
+</Catalog>

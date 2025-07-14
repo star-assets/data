@@ -1,0 +1,3934 @@
+<Catalog>
+        <CSound default="1">
+            <?token id="ID"?>
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Alert">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Announcer">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Installer">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Death">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="DeathVoice">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Ready">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Spell">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Combat">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="PhysicsImpact">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Voice">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Pissed">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="Movement">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="VO">
+            <EditorCategories value="Race:Neutral"/>
+        </CSound>
+        <CSound default="1" id="HoS_Voice" parent="VO">
+            <Mode value="3DWorld"/>
+            <ReverbBalance Room="0"/>
+            <Flags index="Ignorable" value="1"/>
+            <SustainFade index="1" Time="250"/>
+            <PanLevel value="0.750000"/>
+            <Category value="Voice"/>
+            <SpeakerMix index="BackLeft" value="0.500000"/>
+            <SpeakerMix index="BackRight" value="0.500000"/>
+            <SpeakerMix index="SideLeft" value="0.500000"/>
+            <SpeakerMix index="SideRight" value="0.500000"/>
+        </CSound>
+        <CSound default="1" id="ACVO" parent="VO">
+            <AssetArray index="0" removed="1"/>
+            <AssetArrayTemplate>
+                <File value="LocalizedData\Sounds\VO\^TemplateParam2^.ogg"/>
+                <FacialAnim value="^TemplateParam1^"/>
+                <FacialGroup value="^TemplateParam1^"/>
+                <FacialFile value="LocalizedData\Sounds\VO\^TemplateParam1^.fxe"/>
+            </AssetArrayTemplate>
+            <SpeakerMix index="BackLeft" value="0.000000"/>
+            <SpeakerMix index="BackRight" value="0.000000"/>
+            <SpeakerMix index="SideLeft" value="0.000000"/>
+            <SpeakerMix index="SideRight" value="0.000000"/>
+        </CSound>
+        <CSound default="1" id="ACVO_Priority" parent="VO">
+            <Exclusivity value="CriticalPath"/>
+            <SpeakerMix index="BackLeft" value="0.000000"/>
+            <SpeakerMix index="BackRight" value="0.000000"/>
+            <SpeakerMix index="SideLeft" value="0.000000"/>
+            <SpeakerMix index="SideRight" value="0.000000"/>
+        </CSound>
+        <CSound default="1" id="ACAlert" parent="Alert">
+            <AssetArrayTemplate>
+                <File value="LocalizedData\Sounds\VO\^TemplateParam2^.ogg"/>
+                <FacialAnim value="^TemplateParam1^"/>
+                <FacialGroup value="^TemplateParam1^"/>
+                <FacialFile value="LocalizedData\Sounds\VO\^TemplateParam1^.fxe"/>
+            </AssetArrayTemplate>
+        </CSound>
+        <CSound default="1" id="ACVO_Pings" parent="ACVO">
+            <Exclusivity value="CommanderFluff"/>
+        </CSound>
+
+    <CSound default="1" id="Foley">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="GunsSet">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="IGNORE">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="WORLD">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="MUSIC">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="SM">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="SM_Old">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Highlight">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Ambience_Map">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="UI">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Bnet_UI">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Flames">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="ConstantFlames">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Build">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Gather">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Ambience_Object">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Other">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Interactive">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Interactive2D">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="DevCutScene">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="CutScene">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Briefings">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Mission">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Campaign">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Campaign2D">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="TutorialTerran">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="TutorialProtoss">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="TutorialZerg">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="ChallengesTerran">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="ChallengesProtoss">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="ChallengesZerg">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="TV">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="DevTV">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Movie">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="ME">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Movie3D">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="SetPiece">
+        <EditorCategories value="Race:Neutral"/>
+    </CSound>
+    <CSound default="1" id="Ambience_Set">
+        <Flags index="Download" value="0"/>
+        <Flags index="Stream" value="1"/>
+        <Category value="SAmbient"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="250"/>
+        <LoopCount value="-1"/>
+        <DupeDestroyCount value="2"/>
+        <DupeHistoryCount value="1"/>
+        <DupeMuteCount value="1"/>
+        <PanLevel value="0.000000"/>
+        <SustainFade index="1" Time="1000"/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="BackLeft" value="0.700000"/>
+        <SpeakerMix index="BackRight" value="0.700000"/>
+        <SpeakerMix index="SideLeft" value="0.700000"/>
+        <SpeakerMix index="SideRight" value="0.700000"/>
+    </CSound>
+    <CSound default="1" id="Scripted_2D_Multichannel">
+        <Category value="Other"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <Flags index="Wait" value="1"/>
+        <PanLevel value="0.000000"/>
+        <ReverbBalance Room="0"/>
+        <SustainFade index="1" Time="250"/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="BackLeft" value="0.500000"/>
+        <SpeakerMix index="BackRight" value="0.500000"/>
+        <SpeakerMix index="SideLeft" value="0.500000"/>
+        <SpeakerMix index="SideRight" value="0.500000"/>
+    </CSound>
+    <CSound default="1" id="Ambient_Emitter_ForDelayedOneshots" parent="WORLD">
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="4"/>
+        <LoopCount value="-1"/>
+        <LoopDelay value="5000,15000"/>
+        <MixerPriority value="256"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <PlayDelay value="0,5000"/>
+        <PositionRandomOffset value="5.000000,5.000000,0.000000"/>
+        <Volume value="-1.000000,1.000000"/>
+        <VolumeRolloffPoints Distance="8.000000"/>
+        <VolumeRolloffPoints Distance="25.000000" Volume="-96.000000"/>
+        <Category value="Ambient"/>
+    </CSound>
+    <CSound default="1" id="FlyingUnit_Land" parent="Spell">
+        <Flags index="Ignorable" value="1"/>
+        <Category value="Combat"/>
+        <DupeDestroyCount value="12"/>
+        <DupeHistoryCount value="4"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="8"/>
+    </CSound>
+    <CSound default="1" id="Land" parent="WORLD">
+        <Flags index="Ignorable" value="1"/>
+        <Flags index="Purgable" value="1"/>
+        <Category value="Combat"/>
+        <MixerPriority value="250"/>
+        <DupeHistoryCount value="4"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+    </CSound>
+    <CSound default="1" id="Scripted_3D_Multichannel" parent="WORLD">
+        <Category value="Mission"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <Flags index="Wait" value="1"/>
+        <PanLevel value="0.500000"/>
+        <ReverbBalance Room="-1000"/>
+        <SustainFade index="1" Time="250"/>
+    </CSound>
+    <CSound default="1" id="Scripted_3D_World" parent="WORLD">
+        <Category value="Other"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <Flags index="Wait" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+    </CSound>
+    <CSound default="1" id="Scripted_2D_Stereo">
+        <Category value="Other"/>
+        <Flags index="AutoUnload" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <Flags index="Wait" value="1"/>
+        <PanLevel value="0.000000"/>
+        <ReverbBalance Room="0"/>
+        <SustainFade index="1" Time="250"/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+    </CSound>
+    <CSound default="1" id="Ambience_Screens">
+        <Flags index="Download" value="0"/>
+        <Flags index="Stream" value="1"/>
+        <Category value="Ambient"/>
+        <OffsetFadeIn Volume="-96.000000"/>
+        <OffsetFadeIn Time="250"/>
+        <LoopCount value="-1"/>
+        <SustainFade index="1" Time="1500"/>
+        <SpeakerMix index="Center" value="0.250000"/>
+        <SpeakerMix index="BackLeft" value="0.700000"/>
+        <SpeakerMix index="BackRight" value="0.700000"/>
+        <SpeakerMix index="SideLeft" value="0.700000"/>
+        <SpeakerMix index="SideRight" value="0.700000"/>
+    </CSound>
+    <CSound default="1" id="HoS_DeathBoss" parent="WORLD">
+        <Category value="Other"/>
+    </CSound>
+    <CSound default="1" id="CritterDeath_NP" parent="Voice"/>
+    <CSound default="1" id="Ambient_Emitter_ForLoopingFiles" parent="WORLD">
+        <Flags index="Ignorable" value="1"/>
+        <Flags index="Purgable" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="4"/>
+        <LoopCount value="-1"/>
+        <LoopDelay value="5000,15000"/>
+        <MixerPriority value="256"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <ResourcePriority value="64"/>
+        <VolumeRolloffPoints Distance="8.000000"/>
+        <VolumeRolloffPoints Distance="22.000000" Volume="-96.000000"/>
+    </CSound>
+    <CSound default="1" id="FXAPortrait">
+        <?token id="Race" value="Terran"?>
+    </CSound>
+    <CSound default="1" id="ACVO_SubPath">
+        <Category value="Dialogue"/>
+        <AssetArray>
+            <File value="LocalizedData\Sounds\VO\##SubPath##\##id##.ogg"/>
+            <FacialAnim value="##id##"/>
+            <FacialGroup value="##id##"/>
+            <FacialFile value="LocalizedData\Sounds\VO\##SubPath##\##id##.fxe"/>
+            <PortraitModel value="##Portrait##"/>
+            <PortraitActor value="##Actor##"/>
+            <Speaker value="Character/Name/##Speaker##"/>
+            <Subtitle value="Conversation/##Subtitle##/Line##Line##"/>
+        </AssetArray>
+        <Flags index="AutoUnload" value="1"/>
+        <Flags index="Stream" value="1"/>
+        <Flags index="Wait" value="1"/>
+        <Flags index="NeedsUpdate" value="1"/>
+        <Flags index="NeedsTTS" value="1"/>
+    </CSound>
+    
+
+    <CSound default="1" id="ProtossCommAck" parent="Alert">
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CSound>
+    <CSound default="1" id="ZergCommAck" parent="Alert">
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="Race:Zerg"/>
+    </CSound>
+    <CSound default="1" id="TerranCommAck" parent="Alert">
+        <Volume value="-3.000000,-3.000000"/>
+        <EditorCategories value="Race:Terran"/>
+    </CSound>
+
+    <!--<CSound default="1" id="HoS_Set" parent="SetPiece">-->
+    <!--  <Mode value="2D"/>-->
+    <!--  <SpeakerMix index="FrontLeft" value="0"/>-->
+    <!--  <SpeakerMix index="FrontRight" value="0"/>-->
+    <!--  <SpeakerMix index="BackLeft" value="0"/>-->
+    <!--  <SpeakerMix index="BackRight" value="0"/>-->
+    <!--  <SpeakerMix index="SideLeft" value="0"/>-->
+    <!--  <SpeakerMix index="SideRight" value="0"/>-->
+    <!--  <Volume value="-9.000000,-9.000000"/>-->
+    <!--  <ResourcePriority value="32"/>-->
+    <!--</CSound>-->
+    <!--<CSound default="1" id="HoS_Alert" parent="VO">-->
+    <!--  <Category value="Alert"/>-->
+    <!--  <Flags index="Ignorable" value="1"/>-->
+    <!--  <Volume value="-4.000000,-4.000000"/>-->
+    <!--  <SustainFade index="1" Time="250"/>-->
+    <!--  <SpeakerMix index="BackLeft" value="0"/>-->
+    <!--  <SpeakerMix index="BackRight" value="0"/>-->
+    <!--  <SpeakerMix index="SideLeft" value="0"/>-->
+    <!--  <SpeakerMix index="SideRight" value="0"/>-->
+    <!--</CSound>-->
+    <!--<CSound default="1" id="HoS_World" parent="VO">-->
+    <!--  <Mode value="3DWorld"/>-->
+    <!--  <ReverbBalance Room="0"/>-->
+    <!--</CSound>-->
+    <CSound id="Protoss_ExplosionSmall" parent="Combat">
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionSmall9.wav" Pitch="-3.000000,3.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CSound>
+    <CSound id="Protoss_ExplosionMedium" parent="Combat">
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Volume value="-4.000000,-2.000000"/>
+        <Pitch value="5.000000,7.000000"/>
+        <DupeDestroyCount value="5"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CSound>
+    <CSound id="Protoss_ExplosionLarge" parent="Combat">
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Protoss\SharedEffects\Explosions\Protoss_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <Volume value="-1.000000,0.000000"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <DupeDestroyCount value="5"/>
+        <EditorCategories value="Race:Protoss"/>
+    </CSound>
+    <CSound id="Terran_ExplosionSmall" parent="Combat">
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionSmall9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="5"/>
+        <Volume value="-5.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ExplosionMedium" parent="Combat">
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium4.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium5.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium6.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium7.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium8.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionMedium9.wav"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="-2.000000,3.000000"/>
+        <DupeMuteCount value="5"/>
+        <Volume value="-5.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Terran_ExplosionLarge" parent="Combat">
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge0.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge1.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge2.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge3.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge4.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge5.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge6.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge7.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge8.wav" Pitch="-3.000000,3.000000"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\Explosions\Terran_ExplosionLarge9.wav" Pitch="-3.000000,3.000000"/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="5"/>
+    </CSound>
+    <CSound id="Confetti_Explosion_Large" parent="Ambience_Object">
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Lrg_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Lrg_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Lrg_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Lrg_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Lrg_05.wav" FacialGroup=""/>
+        <Pitch value="-3.000000,-1.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="Confetti_Explosion_Medium" parent="Ambience_Object">
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Med_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Med_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Med_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Med_04.wav" FacialGroup=""/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="Confetti_Explosion_Small" parent="Ambience_Object">
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Sml_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Sml_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Sml_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Sml_04.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Death_Confetti_Boom_Sml_05.wav" FacialGroup=""/>
+        <Pitch value="2.000000,4.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXEviscerate" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEviscerate2.wav"/>
+        <Pitch value="0.000000,2.000000"/>
+        <Volume value="-6.000000,-4.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFire" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Volume value="-6.000000,-6.000000"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXFireLarge" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXFire5.wav"/>
+        <Pitch value="-4.000000,-2.000000"/>
+    </CSound>
+    <CSound id="Uni_DeathFXSilentKill" parent="Combat">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXSilentKill0.wav"/>
+    </CSound>
+    <CSound id="Uni_DeathFXEat" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXEat0.wav"/>
+    </CSound>
+    <CSound id="Uni_DeathFXAcid" parent="Death">
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid0.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid1.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid2.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid3.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid4.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid5.wav"/>
+        <AssetArray File="Assets\Sounds\Uni\Deaths\Uni_DeathFXAcid6.wav"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="TriggerSound">
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+        <AssetArray/>
+    </CSound>
+
+
+    
+    <CSound id="AIComm_Protoss_FullForceConfirm" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_038.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_039.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_176.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_FullForceEnterCombat" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_255.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_256.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_257.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NoArmyAttack" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_040.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_178.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_DefendArea" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_041.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_179.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_268.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NoArmyDefendArea" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_042.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_180.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_AttackCautious" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_253.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_249.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_181.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_043.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_254.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_EndingHarrass" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_044.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_182.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_183.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_184.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_250.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NoArmyHarrass" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_045.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_185.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_FullAIControl" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_046.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_186.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_190.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NeedDetection" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_047.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_187.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NeedHelp" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_048.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_188.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_189.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_Scouting" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_049.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_191.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_192.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ScoutingComplete" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_050.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_194.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_195.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ScoutingUnable" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_052.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_196.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_197.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_NoArmyScouting" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_051.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_198.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ScoutingScoutDied" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_053.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_200.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_199.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_SendingDetector" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_054.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_201.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_AbortingDetector" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_055.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_202.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_203.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_BuildingDetector" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_056.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_204.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_DetectingDetectorDied" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_057.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_205.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_Expanding" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_058.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_206.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_207.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ExpansionSecured" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_059.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_208.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_209.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_210.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_211.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_212.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ExpansionFailed" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_060.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_213.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_214.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ProtossSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_061.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_215.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_TerranSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_062.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_216.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ZergSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_063.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_217.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ProtossBuildingSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_064.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_218.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_219.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_TerranBuildingSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_065.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_220.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_221.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ZergBuildingSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_066.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_222.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_223.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_TownHallSighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_067.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_224.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_225.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_226.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_227.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_228.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_EnemySighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_068.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_229.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Protoss_ProxySighted" parent="ProtossCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_230.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ProtossAICommand_163.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_FullForceConfirm" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_258.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_001.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_102.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_FullForceEnterCombat" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_003.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_259.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_260.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NoArmyAttack" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_002.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_101.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_DefendArea" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_100.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_004.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_005.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NoArmyDefendArea" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_006.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_007.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_AttackCautious" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_262.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_103.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_108.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_261.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_107.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_EndingHarrass" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_009.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_104.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_105.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_106.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_109.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NoArmyHarrass" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_018.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_FullAIControl" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_015.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_014.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_110.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_111.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NeedDetection" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_013.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_269.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NeedHelp" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_011.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_012.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_010.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_Scouting" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_016.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_114.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_115.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ScoutingComplete" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_017.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_113.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_119.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_112.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ScoutingUnable" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_019.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_116.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_117.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_118.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_NoArmyScouting" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_020.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_120.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ScoutingScoutDied" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_021.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_122.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_121.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_SendingDetector" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_128.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_022.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_AbortingDetector" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_023.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_129.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_BuildingDetector" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_024.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_126.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_DetectingDetectorDied" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_025.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_127.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_Expanding" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_026.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_125.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ExpansionSecured" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_027.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_008.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_123.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ExpansionFailed" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_028.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_124.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ProtossSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_029.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_141.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_TerranSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_030.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_142.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ZergSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_031.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_143.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ProtossBuildingSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_032.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_140.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_TerranBuildingSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_033.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_139.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ZergBuildingSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_034.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_138.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_TownHallSighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_035.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_130.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_132.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_133.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_134.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_135.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_EnemySighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_036.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_136.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_137.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Terran_ProxySighted" parent="TerranCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_037.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_TerranAICommand_131.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_FullForceConfirm" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_263.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_264.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_265.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_FullForceEnterCombat" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_159.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_166.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_069.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NoArmyAttack" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_070.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_160.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_DefendArea" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_161.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_071.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_162.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NoArmyDefendArea" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_072.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_164.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_AttackCautious" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_158.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_073.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_165.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_266.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_267.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_EndingHarrass" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_074.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_167.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_168.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_251.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_252.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NoArmyHarrass" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_081.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_169.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_FullAIControl" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_170.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_171.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_075.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NeedDetection" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_172.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_076.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NeedHelp" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_077.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_173.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_174.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_Scouting" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_087.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_175.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_231.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ScoutingComplete" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_088.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_232.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ScoutingUnable" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_089.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_233.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_NoArmyScouting" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_090.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_237.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ScoutingScoutDied" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_091.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_236.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_SendingDetector" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_093.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_234.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_AbortingDetector" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_092.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_235.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_BuildingDetector" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_094.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_238.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_DetectingDetectorDied" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_095.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_239.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_Expanding" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_096.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_240.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_241.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_242.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_243.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ExpansionSecured" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_097.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_244.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_245.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_246.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ExpansionFailed" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_098.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_247.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_248.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ProtossSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_078.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_144.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_TerranSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_079.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_145.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ZergSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_080.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_146.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ProtossBuildingSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_082.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_147.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_TerranBuildingSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_099.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_148.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ZergBuildingSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_083.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_149.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_TownHallSighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_084.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_150.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_151.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_152.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_153.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_155.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_EnemySighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_085.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_156.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_157.ogg"/>
+    </CSound>
+    <CSound id="AIComm_Zerg_ProxySighted" parent="ZergCommAck">
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_086.ogg"/>
+        <AssetArray File="LocalizedData\Sounds\VO\AICommunication_ZergAICommand_154.ogg"/>
+    </CSound>
+
+
+    <CSound id="e_cmdFoodUsageImpossible" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="LocalizedData\Sounds\VO\Alert_TerranMaxSupply.ogg" FacialGroup=""/>
+        <Volume value="-9.000000,-9.000000"/>
+    </CSound>
+
+
+    
+
+</Catalog>

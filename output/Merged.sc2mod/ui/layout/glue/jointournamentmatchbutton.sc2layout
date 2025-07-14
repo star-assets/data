@@ -1,0 +1,55 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Animation name="DisableAnimationTemplate">
+    <Controller type="Visibility" end="Pause">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Enabled" end="Pause">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Frame type="JoinTournamentMatchButton" name="JoinTournamentMatchButtonTemplate" template="StandardTemplates/StandardButtonAlternateTemplate">
+    <Animation name="Active">
+      <Event event="Active" action="Reset,Play" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+      </Controller>
+      <Controller type="Enabled" end="Pause">
+        <Key type="Bool" time="0" />
+      </Controller>
+      <Controller type="Tooltip" end="Pause">
+        <Key type="Text" time="0" />
+      </Controller>
+    </Animation>
+    <Animation name="Inactive">
+      <Event event="Inactive" action="Reset,Play" />
+      <Controller type="Tooltip" end="Pause">
+        <Key type="Text" time="0" />
+      </Controller>
+    </Animation>
+    <Animation name="NotPartyLeader">
+      <Event event="NotPartyLeader" action="Reset,Play" />
+      <Controller type="Tooltip" end="Pause">
+        <Key type="Text" time="0" />
+      </Controller>
+    </Animation>
+    <Animation name="PartyMismatch">
+      <Event event="PartyMismatch" action="Reset,Play" />
+      <Controller type="Tooltip" end="Pause">
+        <Key type="Text" time="0" />
+      </Controller>
+    </Animation>
+    <Animation name="Empty">
+      <Event event="Empty" action="Reset,Play" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+      </Controller>
+    </Animation>
+    <Animation name="PendingHotPatch">
+      <Event event="PendingHotPatch" action="Reset,Play" />
+      <Controller type="Tooltip" end="Pause">
+        <Key type="Text" time="0" />
+      </Controller>
+    </Animation>
+  </Frame>
+</Desc>

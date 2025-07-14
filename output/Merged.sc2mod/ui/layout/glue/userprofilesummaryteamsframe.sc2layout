@@ -1,0 +1,327 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="LadderTeamTileListItem" name="LadderTeamTileListItemTemplate">
+    <Frame type="MatchmakingLeagueIcon" name="LeagueIcon" template="MatchmakingLeagueIcon/MatchmakingLeagueIconSmallResizableTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="8" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="-67" />
+      <Width val="336" />
+      <League val="{$parent/@League}" />
+      <LeagueTier val="{$parent/@Tier}" />
+      <LeagueRank val="{$parent/@Rank}" />
+    </Frame>
+    <Frame type="Label" name="LeagueLabel">
+      <Anchor side="Bottom" relative="$parent/RatingProgressBar" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent/RatingProgressBar" pos="Min" offset="6" />
+      <Anchor side="Right" relative="$parent/RatingProgressBar" pos="Max" offset="-6" />
+      <Text val="{$this/FormatFrame/@Text}" />
+      <Style val="Profile_Summary_League" />
+      <Frame type="MatchmakingLeagueIcon" name="LeagueIcon">
+        <Anchor relative="$parent" />
+        <League val="{$parent/$parent/@League}" />
+      </Frame>
+      <Frame type="TextFormatFrame" name="FormatFrame">
+        <Anchor relative="$parent" />
+        <FormatText val="@UI/UserProfileSummaryTeamsFrame/League" />
+        <Replacement val="{$parent/LeagueIcon/@LeagueName}" />
+        <Replacement val="{$parent/$parent/@Tier}" />
+      </Frame>
+      <StateGroup name="LeagueState">
+        <DefaultState val="NotGM" />
+        <State name="GM">
+          <When type="AnimationState" frame="LeagueIcon" />
+          <Action type="SetProperty" />
+        </State>
+        <State name="NotGM">
+          <Action type="SetProperty" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Label" name="MMRLeagueLabel">
+      <Anchor side="Top" relative="$parent/RatingProgressBar" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/RatingProgressBar" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/RatingProgressBar" pos="Min" offset="16" />
+      <Anchor side="Right" relative="$parent/RatingProgressBar" pos="Max" offset="-6" />
+      <Text val="{$this/FormatFrame/@Text}" />
+      <Style val="@CurrentLeagueRankTitle" />
+      <Visible val="false" />
+      <RenderPriority val="520" />
+      <Frame type="MatchmakingLeagueIcon" name="LeagueIcon">
+        <Anchor relative="$parent" />
+        <League val="{$parent/$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame/@League}" />
+      </Frame>
+      <Frame type="TextFormatFrame" name="FormatFrame">
+        <Anchor relative="$parent" />
+        <FormatText val="%0% %1%" />
+        <Replacement val="{$parent/LeagueIcon/@LeagueName}" />
+        <Replacement val="{$parent/$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame/@LeagueTier}" />
+      </Frame>
+      <StateGroup name="LeagueState">
+        <DefaultState val="NotGM" />
+        <State name="GM">
+          <When type="AnimationState" frame="LeagueIcon" />
+          <Action type="SetProperty" />
+        </State>
+        <State name="NotGM">
+          <Action type="SetProperty" />
+        </State>
+      </StateGroup>
+      <StateGroup name="VisibleState">
+        <State name="VisibleLeague">
+          <When type="Property" frame="$parent" operator="NotEqual" />
+          <When type="Property" frame="$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame" operator="NotEqual" />
+          <Action type="SetProperty" Visible="True" />
+        </State>
+        <State name="VisibleTier">
+          <When type="Property" frame="$parent" operator="NotEqual" />
+          <When type="Property" frame="$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame" operator="NotEqual" />
+          <Action type="SetProperty" Visible="True" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="ViewLadderTeamButton">
+      <Anchor relative="$parent/LeagueIcon" />
+    </Frame>
+    <Frame type="Label" name="RatingLabel">
+      <Anchor side="Top" relative="$parent/RatingProgressBar" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/LeagueLabel" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/LeagueLabel" pos="Max" offset="0" />
+      <Text val="{$this/FormatFrame/@Text}" />
+      <Style val="Profile_Summary_Standard" />
+      <Frame type="TextFormatFrame" name="FormatFrame">
+        <Anchor relative="$parent" />
+        <FormatText val="@UI/UserProfileSummaryTeamsFrame/MMR" />
+        <Replacement val="{$parent/$parent/@Rating}" />
+        <StateGroup name="LocalUserStateGroup">
+          <State name="LocalUserState">
+            <When type="Property" frame="$BattleUI" operator="NotEqual" />
+            <Action type="SetProperty" />
+          </State>
+        </StateGroup>
+      </Frame>
+    </Frame>
+    <Frame type="Image" name="DerankWarningIcon">
+      <Anchor side="Top" relative="$parent/RatingProgressBar" pos="Max" offset="-5" />
+      <Anchor side="Right" relative="$parent/RatingProgressBar" pos="Max" offset="-2" />
+      <Texture val="@UI/SC2_UI_UserProfile_Summary_DerankWarning" />
+      <AcceptsMouse val="True" />
+      <StateGroup name="TooltipState">
+        <DefaultState val="NotVisible" />
+        <State name="Visible">
+          <When type="Property" frame="$BattleUI" />
+          <Action type="SetProperty" />
+        </State>
+        <State name="NotVisible">
+          <Action type="SetProperty" />
+        </State>
+      </StateGroup>
+      <StateGroup name="VisibilityState">
+        <DefaultState val="NotVisible" />
+        <State name="VisibleLeague">
+          <When type="Property" frame="$parent" operator="NotEqual" />
+          <When type="Property" frame="$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame" operator="LessThan" />
+          <Action type="SetProperty" Visible="True" />
+        </State>
+        <State name="VisibleTier">
+          <When type="Property" frame="$parent" operator="NotEqual" />
+          <When type="Property" frame="$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame" />
+          <When type="Property" frame="$parent/RatingProgressBar/ProgressBar/LeagueRatingFrame" operator="GreaterThan" />
+          <Action type="SetProperty" Visible="True" />
+        </State>
+        <State name="NotVisible">
+          <Action type="SetProperty" Visible="False" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Label" name="TeammatesLabel">
+      <Anchor side="Top" relative="$parent/RatingLabel" pos="Max" offset="10" />
+      <Anchor side="Left" relative="$parent/LeagueLabel" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/LeagueLabel" pos="Max" offset="0" />
+      <Text val="{$this/FormatFrame/@Text}" />
+      <Style val="Profile_Summary_StandardSmall" />
+      <Frame type="TextFormatFrame" name="FormatFrame">
+        <Anchor relative="$parent" />
+        <FormatText val="@UI/MatchmakingLeaguePanel/TeamFormat_Names" />
+        <Replacement val="{NamesFrame/@Text}" />
+        <ReplacedName val="names" />
+        <Frame type="TextFormatFrame" name="NamesFrame">
+          <Anchor relative="$parent" />
+          <FormatText val="%0%, %1%" />
+          <Replacement val="{PlayerFrame0/@DisplayNameExcludeClan}" />
+          <Replacement val="{PlayerFrame1/@DisplayNameExcludeClan}" />
+          <Replacement val="{PlayerFrame2/@DisplayNameExcludeClan}" />
+          <Replacement val="{PlayerFrame3/@DisplayNameExcludeClan}" />
+          <Frame type="BattleUserFrame" name="PlayerFrame0">
+            <Anchor relative="$parent" />
+            <PresenceId val="{$ancestor[@type=LadderTeamTileListItem]/@PresenceId[0]}" />
+          </Frame>
+          <Frame type="BattleUserFrame" name="PlayerFrame1">
+            <Anchor relative="$parent" />
+            <PresenceId val="{$ancestor[@type=LadderTeamTileListItem]/@PresenceId[1]}" />
+          </Frame>
+          <Frame type="BattleUserFrame" name="PlayerFrame2">
+            <Anchor relative="$parent" />
+            <PresenceId val="{$ancestor[@type=LadderTeamTileListItem]/@PresenceId[2]}" />
+          </Frame>
+          <Frame type="BattleUserFrame" name="PlayerFrame3">
+            <Anchor relative="$parent" />
+            <PresenceId val="{$ancestor[@type=LadderTeamTileListItem]/@PresenceId[3]}" />
+          </Frame>
+          <StateGroup name="TeamCountState">
+            <DefaultState val="One" />
+            <State name="Four">
+              <When type="Property" frame="PlayerFrame3" operator="NotEqual" />
+              <Action type="SetProperty" />
+            </State>
+            <State name="Three">
+              <When type="Property" frame="PlayerFrame2" operator="NotEqual" />
+              <Action type="SetProperty" />
+            </State>
+            <State name="Two">
+              <When type="Property" frame="PlayerFrame1" operator="NotEqual" />
+              <Action type="SetProperty" />
+            </State>
+            <State name="One">
+              <Action type="SetProperty" />
+            </State>
+          </StateGroup>
+        </Frame>
+      </Frame>
+      <StateGroup name="VisibilityState">
+        <DefaultState val="Visible" />
+        <State name="NotVisible">
+          <When type="StateGroup" frame="FormatFrame/NamesFrame" />
+          <Action type="SetProperty" Visible="False" />
+        </State>
+        <State name="Visible">
+          <Action type="SetProperty" Visible="True" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Frame" name="RatingProgressBar" template="StandardElementsTemplates/MMRProgressBarContainerTemplate">
+      <Frame type="ProgressBar" name="ProgressBar">
+        <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="101" />
+        <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="238" />
+        <Width val="408" />
+        <Height val="30" />
+        <Frame type="LeagueRatingFrame" name="LeagueRatingFrame">
+          <Anchor relative="$parent" />
+          <IsArrangedTeam val="{$ancestor[@type=LadderTeamTileListItem]/@IsArrangedTeam}" />
+          <Rating val="{$ancestor[@type=LadderTeamTileListItem]//@Rating}" />
+          <QueueId val="{$ancestor[@type=LadderTeamTileListItem]//@QueueId}" />
+        </Frame>
+        <Frame type="MathFrame" name="MathFrame">
+          <Anchor relative="$parent" />
+          <A val="200" />
+          <B val="{$ancestor[@type=LadderTeamTileListItem]//@Rank}" />
+          <Operator val="Subtract" />
+        </Frame>
+        <StateGroup name="ProgressBarState">
+          <DefaultState val="NotGMState" />
+          <State name="GMState">
+            <When type="Property" frame="$parent/$parent" />
+            <Action type="SetProperty" frame="$this" />
+            <Action type="SetProperty" frame="$this" />
+            <Action type="SetProperty" frame="$this" />
+          </State>
+          <State name="NotGMState">
+            <Action type="SetProperty" frame="$this" />
+            <Action type="SetProperty" frame="$this" />
+            <Action type="SetProperty" frame="$this" />
+          </State>
+        </StateGroup>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="UserProfileSummaryTeamsFrame" name="UserProfileSummaryTeamsFrame">
+    <QueueId val="{$this/ModePulldown/@QueueId}" />
+    <Frame type="TileList" name="TileList">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="70" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Width val="664" />
+      <Visible val="{$this/@HasSelectedData}" />
+      <Frame type="PageSelectorButtonList" name="PageSelector">
+        <Anchor relative="$parent" />
+      </Frame>
+      <Frame type="LadderTeamTileListItem" name="Item0" template="UserProfileSummaryTeamsFrame/LadderTeamTileListItemTemplate">
+        <Anchor relative="$parent" />
+      </Frame>
+    </Frame>
+    <Frame type="Image" name="Backlight">
+      <Anchor side="Top" relative="$parent/EmptyLeagueIcon" pos="Min" offset="-30" />
+      <Anchor side="Left" relative="$parent/EmptyLeagueIcon" pos="Mid" offset="9" />
+      <Anchor side="Right" relative="$parent/EmptyLeagueIcon" pos="Mid" offset="9" />
+      <Width val="235" />
+      <Height val="235" />
+      <Texture val="@UI/SC2_UI_Collection_VoicePack_CharacterFrame_GenericEffect_RadialGradient_256x256" />
+      <Color val="0,111,201" />
+      <Alpha val="230" />
+      <Visible val="{$parent/EmptyLeagueIcon/@Visible}" />
+    </Frame>
+    <Frame type="MatchmakingLeagueIcon" name="EmptyLeagueIcon" template="MatchmakingLeagueIcon/MatchmakingLeagueIconResizableTemplate">
+      <Anchor side="Top" relative="$parent/TileList" pos="Min" offset="104" />
+      <Anchor side="Left" relative="$parent/TileList" pos="Min" offset="-67" />
+      <Width val="336" />
+      <HideBanner val="True" />
+    </Frame>
+    <Frame type="BattleQueuePulldown" name="ModePulldown" template="StandardSmallButtonTemplates/StandardSmallPulldownTemplate">
+      <TagString val="Ladd" />
+      <TagString val="LotV" />
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/TileList" pos="Min" offset="15" />
+        <Anchor side="Left" relative="$parent/$parent/$parent/VerticalDivider1" pos="Max" offset="15" />
+        <Width val="410" />
+      </Frame>
+    </Frame>
+    <Frame type="Label" name="PlacementLabel">
+      <Anchor side="Top" relative="$parent/ModePulldown" pos="Max" offset="6" />
+      <Anchor side="Left" relative="$parent/$parent/VerticalDivider1" pos="Max" offset="14" />
+      <Anchor side="Right" relative="$parent/$parent/VerticalDivider2" pos="Min" offset="-14" />
+      <Style val="MatchmakingLeaguePanel_Details" />
+      <Text val="@UI/UserProfileSummaryTeamsFrame/NoPlacement" />
+    </Frame>
+    <Frame type="BattleQueueFrame" name="QueueFrame">
+      <Anchor relative="$parent" />
+      <QueueHandle val="201,66" />
+    </Frame>
+    <Frame type="Label" name="SeasonLabel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="20" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-12" />
+      <Text val="{$this/SeasonFrame/@SeasonName}" />
+      <Style val="Profile_Summary_Header" />
+      <Frame type="MatchmakingSeasonFrame" name="SeasonFrame">
+        <Anchor relative="$parent" />
+        <SeasonId val="{$this/@CurrentSeasonId}" />
+      </Frame>
+    </Frame>
+    <Animation name="ViewLadderTeam">
+      <Event event="OnClick" action="Reset,Play" frame="TileList/Item0/ViewLadderTeamButton" />
+      <Controller type="Event" end="Pause">
+        <Key type="Event" time="0" />
+      </Controller>
+    </Animation>
+    <StateGroup name="TeamState">
+      <DefaultState val="Team" />
+      <State name="NoTeam">
+        <When type="Property" frame="ModePulldown" />
+        <Action type="SetProperty" frame="PlacementLabel" />
+      </State>
+      <State name="Team">
+        <Action type="SetProperty" frame="PlacementLabel" />
+      </State>
+    </StateGroup>
+    <StateGroup name="LeagueDataState">
+      <DefaultState val="Empty" />
+      <State name="Populated">
+        <When type="Property" frame="TileList" Visible="True" />
+        <Action type="SetProperty" frame="EmptyLeagueIcon" Visible="False" />
+        <Action type="SetProperty" frame="PlacementLabel" Visible="False" />
+      </State>
+      <State name="Empty">
+        <Action type="SetProperty" frame="EmptyLeagueIcon" Visible="True" />
+        <Action type="SetProperty" frame="PlacementLabel" Visible="True" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

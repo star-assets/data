@@ -1,0 +1,7 @@
+<Catalog>
+  <CHeroAbil default="1">
+    <Name value="HeroAbil/Name/##id##" />
+    <Description value="HeroAbil/Description/##id##" />
+    <Tooltip value="HeroAbil/Tooltip/##id##" />
+  </CHeroAbil>
+</Catalog>

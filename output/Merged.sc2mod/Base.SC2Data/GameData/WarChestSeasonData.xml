@@ -1,0 +1,46 @@
+<Catalog>
+  <CWarChestSeason default="1">
+    <Name value="WarChestSeason/Name/##id##" />
+    <ESportsSeason value="WarChestSeason/ESportsSeason/##id##" />
+    <ESportsName value="WarChestSeason/ESportsName/##id##" />
+    <ESportsLocation value="WarChestSeason/ESportsLocation/##id##" />
+    <ESportsDate value="WarChestSeason/ESportsDate/##id##" />
+    <ESportsShowPlayers value="0" />
+    <HowItWorks1 value="WarChestSeason/HowItWorks1/##id##" />
+    <HowItWorks2 value="WarChestSeason/HowItWorks2/##id##" />
+    <HowItWorks3 value="WarChestSeason/HowItWorks3/##id##" />
+    <HowItWorks4 value="WarChestSeason/HowItWorks4/##id##" />
+    <LearnMoreTitle1 value="WarChestSeason/LearnMoreTitle1/##id##" />
+    <LearnMoreTitle2 value="WarChestSeason/LearnMoreTitle2/##id##" />
+    <LearnMoreTitle3 value="WarChestSeason/LearnMoreTitle3/##id##" />
+    <LearnMoreDescription1 value="WarChestSeason/LearnMoreDescription1/##id##" />
+    <LearnMoreDescription2 value="WarChestSeason/LearnMoreDescription2/##id##" />
+    <LearnMoreDescription3 value="WarChestSeason/LearnMoreDescription3/##id##" />
+    <LearnMoreImage1 value="Assets/Textures/SC2_UI_Collection_WarChest_IntroDialog_ImageA.dds" />
+    <LearnMoreImage2 value="Assets/Textures/SC2_UI_Collection_WarChest_IntroDialog_ImageB.dds" />
+    <LearnMoreImage3 value="Assets/Textures/SC2_UI_Collection_WarChest_IntroDialog_ImageC.dds" />
+    <PurchaseTitle value="WarChestSeason/PurchaseTitle/##id##" />
+    <PurchaseDescription value="WarChestSeason/PurchaseDescription/##id##" />
+    <PurchaseWarning value="WarChestSeason/PurchaseWarning/##id##" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_1">
+    <ESportsShowPlayers value="1" />
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_2">
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_3">
+    <ESportsShowPlayers value="1" />
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_4">
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_5">
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+  <CWarChestSeason id="WARCHEST_SEASON_6">
+    <PurchaseImage value="Assets/Textures/SC2_UI_Collection_WarChest_PurchaseDialog_ExclusivesBadge.dds" />
+  </CWarChestSeason>
+</Catalog>

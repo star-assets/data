@@ -1,0 +1,372 @@
+<Catalog>
+  <CConversationState default="1" />
+  <CConversationState default="1">
+    <ValueRange value="0,100" />
+    <Flags index="AllowConditions" value="1" />
+    <Flags index="AllowActions" value="1" />
+    <Flags index="Sorted" value="1" />
+  </CConversationState>
+  <CConversationState id="Characters">
+    <Flags index="AllowConditions" value="0" />
+    <Flags index="AllowActions" value="0" />
+    <Indices Id="CharAdjutant" Name="ConversationState/Characters/CharAdjutant" Color="255,128,0,128">
+      <Variations Value="AdjutantPortrait">
+        <DefaultCategories value="Default" />
+      </Variations>
+      <Variations Value="AdjutantPortrait_L">
+        <DefaultCategories value="ConversationType:Mission" />
+        <DefaultCategories value="ConversationType:Generic" />
+      </Variations>
+    </Indices>
+    <Indices Id="CharExecutor" Name="ConversationState/Characters/CharExecutor" Color="255,128,0,128">
+      <Variations Value="ExecutorPortrait" />
+    </Indices>
+    <Indices Id="CharQueen" Name="ConversationState/Characters/CharQueen" Color="255,128,0,128">
+      <Variations Value="QueenPortrait" />
+    </Indices>
+    <Indices Id="ModUtilityVoice" Name="ConversationState/Characters/ModUtilityVoice" Color="255,128,0,0" />
+    <CustomColors value="255,128,128,0" />
+    <CustomColors value="255,128,0,128" />
+    <CustomColors value="255,0,128,128" />
+    <CustomColors value="255,255,128,64" />
+    <CustomColors value="255,128,0,255" />
+    <CustomColors value="255,255,0,128" />
+    <CustomColors value="255,0,64,128" />
+    <CustomColors value="255,128,64,64" />
+    <CustomColors value="255,128,128,255" />
+    <CustomColors value="255,0,128,64" />
+  </CConversationState>
+  <CConversationState id="TutorialLoadScreenText">
+    <Indices Id="Tutorial Load Screen Text" Name="ConversationState/TutorialLoadScreenText/Tutorial Load Screen Text">
+      <InfoText Text="ConversationState/TutorialLoadScreenText/Tutorial Load Screen Text/Info/" />
+      <InfoText Id="Tutorial Load Screen Text" Text="ConversationState/TutorialLoadScreenText/Tutorial Load Screen Text/Info/Tutorial Load Screen Text" />
+    </Indices>
+    <InfoIds />
+  </CConversationState>
+  <CConversationState id="WizardDataSCBW">
+    <Indices Id="CreateUnitSCBW" Name="ConversationState/WizardDataSCBW/CreateUnitSCBW">
+      <InfoText Id="IntroText" Text="ConversationState/WizardDataSCBW/CreateUnitSCBW/Info/IntroText" />
+    </Indices>
+    <InfoIds />
+  </CConversationState>
+  <CConversationState id="ABChoice">
+    <Indices ImagePath="Assets\icons\allied-spy-build-icon.dds" />
+    <Indices ImagePath="Assets\icons\hands-up-construction-icon.dds" />
+    <Indices>
+      <InfoText Id="Tooltip" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Tooltip" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Tooltip" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Tooltip" />
+    </Indices>
+  </CConversationState>
+  <CConversationState id="ABChoiceRewards">
+    <Indices ImagePath="Assets\icons\spy-skill-icon.dds" />
+    <Indices ImagePath="Assets\Textures\btn-ability-protoss-cloakfield-color.dds" />
+    <Indices ImagePath="Assets\icons\proton-collider-build-icon.dds" />
+    <Indices Id="ABChoiceRewardsSpectre4" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsSpectre4" EditorPrefix="ConversationState/ABChoiceRewards/ABChoiceRewardsSpectre4/EditorPrefix" ImagePath="Assets\icons\fire-the-proton-collider!.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsSpectre4/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsGhost1" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost1" EditorPrefix="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost1/EditorPrefix" ImagePath="Assets\icons\lan-shadow-thorn-skill-icon.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost1/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsGhost2" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost2" EditorPrefix="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost2/EditorPrefix" ImagePath="Assets\Textures\btn-ability-terran-cloak-color.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost3/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsGhost3" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost3" EditorPrefix="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost3/EditorPrefix" ImagePath="Assets\icons\weather-controller-build-icon.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost4/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsGhost4" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost4" EditorPrefix="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost4/EditorPrefix" ImagePath="Assets\icons\launch-a-lightning-storm!.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsGhost4/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsNydusWorm" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsNydusWorm" ImagePath="Assets\Textures\btn-building-zerg-nydusworm.dds">
+      <InfoText Text="ConversationState/ABChoiceRewards/ABChoiceRewardsNydusWorm/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsMutalisk" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsMutalisk" ImagePath="Assets\Textures\btn-unit-zerg-mutalisk.dds">
+      <InfoText Id="Tooltip" Text="ConversationState/ABChoiceRewards/ABChoiceRewardsMutalisk/Info/Tooltip" />
+    </Indices>
+    <Indices Id="ABChoiceRewardsBroodLord" Name="ConversationState/ABChoiceRewards/ABChoiceRewardsBroodLord" ImagePath="Assets\Textures\btn-unit-zerg-mantalisk.dds">
+      <InfoText Id="Tooltip" Text="ConversationState/ABChoiceRewards/ABChoiceRewardsBroodLord/Info/Tooltip" />
+    </Indices>
+  </CConversationState>
+  <CConversationState id="LabResearch">
+    <Indices>
+      <InfoUpgrade Upgrade="AuTechlvP13252" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuTechlvP13253" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-light-prism-tower-construction-icon-new.dds">
+      <InfoUpgrade Id="Upgrade 1" Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="" />
+    </Indices>
+    <Indices ImagePath="assets\textures\spectrum-tower-construction-icon.dds">
+      <InfoUpgrade Id="Upgrade 1" Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="" Cmd="0" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\故事模式二代phantom-tank-build-icon.dds">
+      <InfoUpgrade Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="" Cmd="0" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\故事模式新phantom-tank-build-icon.dds">
+      <InfoUpgrade Id="Upgrade 1" Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="" Cmd="0" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\ui_hots_icon_flashfreeze.dds">
+      <InfoUpgrade Upgrade="AuTechlvP13254" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuTechlvP13255" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\war-gate-fortress-construction-icon.dds">
+      <InfoUpgrade Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="" Cmd="0" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-french-cannon-construction-icon.dds">
+      <InfoUpgrade Upgrade="ZZZ" />
+      <InfoAbilCmd Abil="CarrierHangar22" Cmd="11" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionweaponslevel1.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-mengsk-engineeringbay-dominionarmorlevel1.dds">
+      <InfoUpgrade Upgrade="AuTechlvP12" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-power-plant-icon.dds">
+      <InfoUpgrade Upgrade="AuTechlvP13" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-progression-mengsk-15-promotiongranted.dds">
+      <InfoUpgrade Upgrade="AuTechlvP132" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-allied-agreement-iii-oilfield.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1322" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-allied-protocol:-dual-mine-carts.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1323" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-guardian-tank-hi-tech-upgrade-icon.dds">
+      <InfoUpgrade Id="Upgrade 1" Upgrade="Fascist2422242" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\故事模式advanced-aeronautics.dds">
+      <InfoUpgrade Upgrade="Fascist242224" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-allied-protocol:-advanced-power-supply.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1324" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-allied-agreement-technology-free-trade.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1325" />
+    </Indices>
+  </CConversationState>
+  <CConversationState id="MissionCompleted">
+    <Indices>
+      <InfoValue Id="Reward" Value="400" />
+    </Indices>
+  </CConversationState>
+  <CConversationState id="Missions">
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" Text="ConversationState/Missions/THanson02/Info/Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Loading Screen Restart 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoValue Id="Reward" />
+    </Indices>
+    <Indices>
+      <InfoValue Id="Reward" />
+    </Indices>
+    <Indices>
+      <InfoValue Id="ResearchZerg" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\time-and-space-teleportation-device-icon.dds">
+      <InfoText Id="Loading Screen Restart 2" />
+      <InfoText Id="Loading Screen Help 2" />
+      <InfoText Id="Epilogue" />
+      <InfoValue Id="Reward" Value="400" />
+      <InfoValue Id="ResearchProtoss" />
+      <InfoValue Id="ResearchZerg" />
+    </Indices>
+    <Indices>
+      <InfoText Id="Objectives" />
+    </Indices>
+  </CConversationState>
+  <CConversationState id="Tech">
+    <Indices ImagePath="Assets\Textures\btn-upgrade-mengsk-engineeringbay-orbitaldrop.dds">
+      <InfoUpgrade Upgrade="AuTechlvP13262" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\killbots_coop.dds">
+      <InfoUpgrade Upgrade="AuTechlvP1326" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\talent-swann-level05-vespenedrone.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP12" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-mengsk-engineeringbay-neosteelfortifiedarmor.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP111" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-status-radar.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP112" />
+      <InfoAbilCmd Abil="" />
+      <InfoAbilCmd Abil="" Cmd="0" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-warhound-thunderboltMissiles.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP19" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-ripwaveMissiles.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP110" />
+    </Indices>
+    <Indices ImagePath="assets\textures\peacekeeper-infantry-switches-to-shotgun-mode.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP113" />
+    </Indices>
+    <Indices ImagePath="assets\textures\peacekeepers-switch-to-blast-shield-mode.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP114" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP115" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\househunters_coop.dds" ImageEdge="Bottom">
+      <InfoUpgrade Upgrade="AuJunTechlvP116" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-tychus-vanadiumshell.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP119" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-reaper-shadesuit.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP120" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP121" />
+    </Indices>
+    <Indices ImagePath="assets\textures\javelin-trooper-laser-guidance-mode.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP13" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP122" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-nova-jetpack.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP123" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-juggernautplating.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP117" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-protoss-fenix-adeptchampionbounceattack.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP118" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-stetmann-mechahydraliskMissileDamage.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP185" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\war3_pasbtnengineeringupgrade.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP184" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-terran-nova-specialordance.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP187" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP186" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-karax-upgrade-purifierbeam.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP189" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-ability-protoss-timewarp.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP188" />
+      <InfoAbilCmd Abil="RAToggleShieldSphere" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-progression-mengsk-06-engineeringbayupgradecache.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1810" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP1811" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP1812" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-neosteelbunker.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1813" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-detection.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1815" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-tomahawkpowercell.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1814" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-fullborecanisterammo.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP125" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\story-mode-allied-accord:-aircraft-thrusters.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP126" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-techupgrade-terran-titaniumhousing.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP124" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-ability-mengsk-earthsplitterordnance-earthsplitterbombardment.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP1816" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-attackspeed.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP127" />
+      <InfoAbilCmd Abil="" />
+      <InfoAbilCmd Abil="" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="AuJunTechlvP128" />
+      <InfoAbilCmd Abil="RAInvincible" />
+      <InfoAbilCmd Abil="" />
+    </Indices>
+    <Indices>
+      <InfoUpgrade Upgrade="PermanentCloakGhost2" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\spy-skill-icon.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP14" />
+      <InfoAbilCmd Abil="" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-upgrade-tychus-tankhealth.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP15" />
+    </Indices>
+    <Indices ImagePath="Assets\Textures\btn-ability-zeratul-warpprism-autounloadon.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP16" />
+      <InfoAbilCmd Abil="" />
+    </Indices>
+    <Indices ImagePath="Assets\icons\riot-beam-icon.dds">
+      <InfoUpgrade Upgrade="AuJunTechlvP17" />
+    </Indices>
+  </CConversationState>
+</Catalog>

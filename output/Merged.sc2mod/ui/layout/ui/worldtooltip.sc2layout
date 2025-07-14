@@ -1,0 +1,18 @@
+<Desc>
+  <Frame type="WorldTooltip" name="WorldTooltip" template="StandardTemplates/StandardGameTooltip">
+    <MaxWidth val="350" />
+    <RenderPriority val="1024" />
+    <Frame type="Label" name="TipLabel">
+      <Style val="@@@StandardTooltipHeader" />
+      <Anchor side="Top" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-14" />
+    </Frame>
+    <Frame type="Label" name="SubTipLabel">
+      <Style val="@@@StandardTooltip" />
+      <Anchor side="Top" relative="$parent/TipLabel" pos="Max" offset="10" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-14" />
+    </Frame>
+  </Frame>
+</Desc>

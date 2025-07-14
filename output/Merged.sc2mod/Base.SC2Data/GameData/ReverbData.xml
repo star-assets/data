@@ -1,0 +1,239 @@
+<Catalog>
+  <CReverb default="1">
+    <Room value="-1000" />
+    <DecayTime value="1.49" />
+    <DecayHFRatio value="0.83" />
+    <Reflections value="-2602" />
+    <ReflectionsDelay value="0.007" />
+    <Reverb value="200" />
+    <ReverbDelay value="0.011" />
+    <HFReference value="5000" />
+    <LFReference value="250" />
+    <Diffusion value="100" />
+    <Density value="100" />
+  </CReverb>
+  <CReverb id="Off">
+    <Room value="-10000" />
+    <RoomHF value="-10000" />
+    <DecayTime value="1" />
+    <DecayHFRatio value="1" />
+    <Diffusion value="0" />
+    <Density value="0" />
+  </CReverb>
+  <CReverb id="Generic">
+    <RoomHF value="-100" />
+  </CReverb>
+  <CReverb id="PaddedCell">
+    <RoomHF value="-6000" />
+    <DecayTime value="0.17" />
+    <DecayHFRatio value="0.1" />
+    <Reflections value="-1204" />
+    <ReflectionsDelay value="0.001" />
+    <Reverb value="207" />
+    <ReverbDelay value="0.002" />
+  </CReverb>
+  <CReverb id="Room">
+    <RoomHF value="-454" />
+    <DecayTime value="0.4" />
+    <Reflections value="-1646" />
+    <ReflectionsDelay value="0.002" />
+    <Reverb value="53" />
+    <ReverbDelay value="0.003" />
+  </CReverb>
+  <CReverb id="Bathroom">
+    <RoomHF value="-1200" />
+    <DecayHFRatio value="0.54" />
+    <Reflections value="-370" />
+    <Reverb value="1030" />
+    <Density value="60" />
+  </CReverb>
+  <CReverb id="LivingRoom">
+    <RoomHF value="-6000" />
+    <DecayTime value="0.5" />
+    <DecayHFRatio value="0.1" />
+    <Reflections value="-1376" />
+    <ReflectionsDelay value="0.003" />
+    <Reverb value="-1104" />
+    <ReverbDelay value="0.004" />
+  </CReverb>
+  <CReverb id="StoneRoom">
+    <RoomHF value="-300" />
+    <DecayTime value="2.31" />
+    <DecayHFRatio value="0.64" />
+    <Reflections value="-711" />
+    <ReflectionsDelay value="0.012" />
+    <Reverb value="83" />
+    <ReverbDelay value="0.017" />
+  </CReverb>
+  <CReverb id="Auditorium">
+    <RoomHF value="-476" />
+    <DecayTime value="4.32" />
+    <DecayHFRatio value="0.59" />
+    <Reflections value="-789" />
+    <ReflectionsDelay value="0.02" />
+    <Reverb value="-289" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="ConcertHall">
+    <RoomHF value="-500" />
+    <DecayTime value="3.92" />
+    <DecayHFRatio value="0.7" />
+    <Reflections value="-1230" />
+    <ReflectionsDelay value="0.02" />
+    <Reverb value="-2" />
+    <ReverbDelay value="0.029" />
+  </CReverb>
+  <CReverb id="Cave">
+    <DecayTime value="2.91" />
+    <DecayHFRatio value="1.3" />
+    <Reflections value="-602" />
+    <ReflectionsDelay value="0.015" />
+    <Reverb value="-302" />
+    <ReverbDelay value="0.022" />
+  </CReverb>
+  <CReverb id="Arena">
+    <RoomHF value="-698" />
+    <DecayTime value="7.24" />
+    <DecayHFRatio value="0.33" />
+    <Reflections value="-1166" />
+    <ReflectionsDelay value="0.02" />
+    <Reverb value="16" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="Hangar">
+    <RoomHF value="-1000" />
+    <DecayTime value="10.05" />
+    <DecayHFRatio value="0.23" />
+    <Reflections value="-602" />
+    <ReflectionsDelay value="0.02" />
+    <Reverb value="198" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="CarpetedHallway">
+    <RoomHF value="-4000" />
+    <DecayTime value="0.3" />
+    <DecayHFRatio value="0.1" />
+    <Reflections value="-1831" />
+    <ReflectionsDelay value="0.002" />
+    <Reverb value="-1630" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="Hallway">
+    <RoomHF value="-300" />
+    <DecayHFRatio value="0.59" />
+    <Reflections value="-1219" />
+    <Reverb value="411" />
+  </CReverb>
+  <CReverb id="StoneCorridor">
+    <RoomHF value="-237" />
+    <DecayTime value="2.7" />
+    <DecayHFRatio value="0.79" />
+    <Reflections value="-1214" />
+    <ReflectionsDelay value="0.013" />
+    <Reverb value="395" />
+    <ReverbDelay value="0.02" />
+  </CReverb>
+  <CReverb id="Alley">
+    <RoomHF value="-270" />
+    <DecayHFRatio value="0.86" />
+    <Reflections value="-1204" />
+    <Reverb value="-4" />
+  </CReverb>
+  <CReverb id="Forest">
+    <RoomHF value="-3300" />
+    <DecayHFRatio value="0.54" />
+    <Reflections value="-2560" />
+    <ReflectionsDelay value="0.162" />
+    <Reverb value="-229" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="79" />
+  </CReverb>
+  <CReverb id="City">
+    <RoomHF value="-800" />
+    <DecayHFRatio value="0.67" />
+    <Reflections value="-2273" />
+    <Reverb value="-1691" />
+    <Diffusion value="50" />
+  </CReverb>
+  <CReverb id="Mountains">
+    <RoomHF value="-2500" />
+    <DecayHFRatio value="0.21" />
+    <Reflections value="-2780" />
+    <ReflectionsDelay value="0.3" />
+    <Reverb value="-1434" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="27" />
+  </CReverb>
+  <CReverb id="Quarry">
+    <RoomHF value="-1000" />
+    <Reflections value="-10000" />
+    <ReflectionsDelay value="0.061" />
+    <Reverb value="500" />
+    <ReverbDelay value="0.025" />
+  </CReverb>
+  <CReverb id="Plain">
+    <RoomHF value="-2000" />
+    <DecayHFRatio value="0.5" />
+    <Reflections value="-2466" />
+    <ReflectionsDelay value="0.179" />
+    <Reverb value="-1926" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="21" />
+  </CReverb>
+  <CReverb id="ParkingLot">
+    <DecayTime value="1.65" />
+    <DecayHFRatio value="1.5" />
+    <Reflections value="-1363" />
+    <ReflectionsDelay value="0.008" />
+    <Reverb value="-1153" />
+    <ReverbDelay value="0.012" />
+  </CReverb>
+  <CReverb id="SewerPipe">
+    <RoomHF value="-1000" />
+    <DecayTime value="2.81" />
+    <DecayHFRatio value="0.14" />
+    <Reflections value="429" />
+    <ReflectionsDelay value="0.014" />
+    <Reverb value="1023" />
+    <ReverbDelay value="0.021" />
+    <Diffusion value="80" />
+    <Density value="60" />
+  </CReverb>
+  <CReverb id="Underwater">
+    <RoomHF value="-4000" />
+    <DecayHFRatio value="0.1" />
+    <Reflections value="-449" />
+    <Reverb value="1700" />
+  </CReverb>
+  <CReverb id="Drugged">
+    <DecayTime value="8.39" />
+    <DecayHFRatio value="1.39" />
+    <Reflections value="-115" />
+    <ReflectionsDelay value="0.002" />
+    <Reverb value="985" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="Dizzy">
+    <RoomHF value="-400" />
+    <DecayTime value="17.23" />
+    <DecayHFRatio value="0.56" />
+    <Reflections value="-1713" />
+    <ReflectionsDelay value="0.02" />
+    <Reverb value="-613" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="Psychotic">
+    <RoomHF value="-151" />
+    <DecayTime value="7.56" />
+    <DecayHFRatio value="0.91" />
+    <Reflections value="-626" />
+    <Reverb value="774" />
+    <ReverbDelay value="0.03" />
+  </CReverb>
+  <CReverb id="BetaVerb" parent="Mountains">
+    <DecayTime value="1" />
+    <Reverb value="-750" />
+    <Room value="-2000" />
+    <Reflections value="-3000" />
+  </CReverb>
+</Catalog>

@@ -1,0 +1,989 @@
+<Catalog>
+  <CAttachMethod default="1" />
+  <CAttachMethodFilter default="1" />
+  <CAttachMethodPattern default="1">
+    <Multiplier value="1" />
+  </CAttachMethodPattern>
+  <CAttachMethodProximity default="1">
+    <RequestCount value="1" />
+    <Location Value="CasterUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodRandom default="1">
+    <RequestCount value="1" />
+    <Distribution value="Exponential" />
+  </CAttachMethodRandom>
+  <CAttachMethodReduction default="1">
+    <RequestCount value="1" />
+  </CAttachMethodReduction>
+  <CAttachMethodAttachType id="AMAttachesWithKeywords" />
+  <CAttachMethodAttachType id="AMAttachesWithoutKeywords">
+    <AttachType value="NoKeywords" />
+  </CAttachMethodAttachType>
+  <CAttachMethodFilter id="AMFilterCustomA">
+    <Keys Keyword="CustomA" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterDamage">
+    <Keys Keyword="Damage" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterBodySquibs">
+    <Keys Keyword="Damage" />
+  </CAttachMethodFilter>
+  <CAttachMethodIncoming id="AMIncoming" />
+  <CAttachMethodReduction id="AMReductionForBodySquibs">
+    <RequestCount value="3" />
+    <PassChanceEach value="70" />
+  </CAttachMethodReduction>
+  <CAttachMethodReduction id="AMReductionForBodySquibsHeavy">
+    <RequestCount value="1000" />
+    <PassChanceEach value="70" />
+  </CAttachMethodReduction>
+  <CAttachMethodReduction id="AMReductionForBodySquibsReduced">
+    <RequestCount value="2" />
+    <PassChanceEach value="50" />
+  </CAttachMethodReduction>
+  <CAttachMethodReduction id="AMReductionForBloodGroundSpew">
+    <PassChanceFull value="50" />
+  </CAttachMethodReduction>
+  <CAttachMethodNodeOccupancy2 id="AMNodeOccupancyDeathBlood">
+    <Targets value="BloodSquibDeathRagdoll" />
+    <Targets value="BloodSquibDeathRagdollLarge" />
+    <Logic value="RequireNone" />
+  </CAttachMethodNodeOccupancy2>
+  <CAttachMethodArcTest id="AMArcTestWeapon">
+    <Tests index="Weapon" value="1" />
+    <Tests index="ActionAcquisition" value="1" />
+    <Type value="Preference" />
+  </CAttachMethodArcTest>
+  <CAttachMethodBestMatch id="AMBestMatchWeapon">
+    <Keys value="Weapon" />
+  </CAttachMethodBestMatch>
+  <CAttachMethodFilter id="AMFilterCenter">
+    <Keys Keyword="Center" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTarget">
+    <Keys Keyword="Target" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetHeavy">
+    <Keys Keyword="Target" />
+    <Keys Keyword="Heavy" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetLight">
+    <Keys Keyword="Target" />
+    <Keys Keyword="Light" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetMedium">
+    <Keys Keyword="Target" />
+    <Keys Keyword="Medium" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetShield">
+    <Keys Keyword="Target" />
+    <Keys Keyword="Shield" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetVolumes">
+    <Keys Keyword="Target" />
+    <AttachType value="Volume" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetOrDamage">
+    <Logic value="OR" />
+    <Keys Keyword="Target" />
+    <Keys Keyword="Damage" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHead">
+    <Keys Keyword="Head" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon">
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon00">
+    <Keys Keyword="Weapon" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon01">
+    <Keys Keyword="Weapon" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon02">
+    <Keys Keyword="Weapon" Index="2" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon03">
+    <Keys Keyword="Weapon" Index="3" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHardpoint">
+    <Keys Keyword="Hardpoint" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHardpoint01">
+    <Keys Keyword="Hardpoint" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHardpoint02">
+    <Keys Keyword="Hardpoint" Index="2" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHardpointLeft">
+    <Keys Keyword="Hardpoint" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHardpointRight">
+    <Keys Keyword="Hardpoint" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponBottom">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Bottom" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponSetA0">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="SetA" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponSetA1">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="SetA" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponSetA2">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="SetA" Index="2" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponSetA3">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="SetA" Index="3" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponSetA4">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="SetA" Index="4" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponLeft">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponRight">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponAir">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Air" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeaponGround">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Ground" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPreferGround">
+    <Keys Keyword="Ground" />
+    <FilterType value="Preference" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeArmor">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Armor" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeEngine">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Engine" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeEngineBottom">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Engine" />
+    <Keys Keyword="Bottom" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeEngineLeft">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Engine" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeEngineRight">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Engine" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeWeapon">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeWeaponBottom">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Bottom" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeWeaponLeft">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterUpgradeWeaponRight">
+    <Keys Keyword="Upgrade" />
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetSetA0">
+    <Keys Keyword="Target" />
+    <Keys Keyword="SetA" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterTargetSetB0">
+    <Keys Keyword="Target" />
+    <Keys Keyword="SetB" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodProximity id="AMClosestToCaster" />
+  <CAttachMethodProximity id="AMClosestToOuter">
+    <Location Value="OuterUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodProximity id="AMClosestToTarget">
+    <Location Value="TargetUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodProximity id="AMClosest2ToTarget">
+    <RequestCount value="2" />
+    <Location Value="TargetUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodPattern id="AMPatternRollingStripe">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodVolumesRequery id="AMVolumesRequery" />
+  <CAttachMethodVolumesTargets id="AMVolumesTargets" />
+  <CAttachMethodVolumesWeightedPick id="AMVolumesWeightedPick">
+    <VolumeFactor value="1" />
+    <ProximityFactorNear value="3" />
+    <ProximityFactorFar value="1" />
+  </CAttachMethodVolumesWeightedPick>
+  <CAttachMethodNodeOccupancy id="AMNodeOccupancyNoSpam">
+    <Logic value="RequireNone" />
+  </CAttachMethodNodeOccupancy>
+  <CAttachMethodNumericField id="AMNumericFieldRadiusShield" />
+  <CAttachMethodProximity id="AMProximityAll">
+    <RequestCount value="0" />
+    <SortResults value="1" />
+  </CAttachMethodProximity>
+  <CAttachMethodProximity id="AMProximityTargetAll">
+    <RequestCount value="0" />
+    <SortResults value="1" />
+    <Location Value="TargetUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodProximity id="AMProximityTarget">
+    <Location Value="TargetUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodRandom id="AMRandom">
+    <ExponentialMean value="0.3333" />
+  </CAttachMethodRandom>
+  <CAttachMethodRandom id="AMRandomExpTight">
+    <ExponentialMean value="0.1" />
+  </CAttachMethodRandom>
+  <CAttachMethodRandom id="AMRandomUniform">
+    <Distribution value="Uniform" />
+  </CAttachMethodRandom>
+  <CAttachMethodRandom id="AMRandomUniformAll">
+    <RequestCount value="4294967295" />
+    <Distribution value="Uniform" />
+  </CAttachMethodRandom>
+  <CAttachMethodReduction id="AMReduction" />
+  <CAttachMethodReduction id="AMReductionQtr">
+    <ReductionType value="Percentage" />
+    <RequestPercentage value="0.25" />
+  </CAttachMethodReduction>
+  <CAttachMethodReduction id="AMReductionFire">
+    <ReductionType value="Percentage" />
+    <RequestCount value="2" />
+    <RequestPercentage value="0.25" />
+  </CAttachMethodReduction>
+  <CAttachMethodNodeOccupancy id="AMNodeOccupancyTerranFlames">
+    <Targets value="Assets\Effects\Terran\TerranBuildingFireLarge\TerranBuildingFireLarge.m3" />
+    <Targets value="Assets\Effects\Terran\TerranBuildingFireMedium\TerranBuildingFireMedium.m3" />
+    <Targets value="Assets\Effects\Terran\TerranBuildingSmokeLarge\TerranBuildingSmokeLarge.m3" />
+    <Targets value="Assets\Effects\Terran\TerranBuildingSmokeMedium\TerranBuildingSmokeMedium.m3" />
+  </CAttachMethodNodeOccupancy>
+  <CAttachMethodPattern id="AMPatternBanshee">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMissileTurret">
+    <Keyword value="SetA" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternRenegadeMissileTurret">
+    <Keyword value="SetA" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternThor">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternThorAA">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternReaper">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPortAllocator id="AMPortAllocatorBunker">
+    <PortLimit value="3" />
+  </CAttachMethodPortAllocator>
+  <CAttachMethodFilter id="AMFilterVikingFighter">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="10" />
+    <Keys Keyword="Weapon" Index="14" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternVikingFighter">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMothershipBeam">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="FilterHeadTop">
+    <Keys Keyword="Head" />
+    <Keys Keyword="Top" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternMPOdin">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterTurret">
+    <Keys Keyword="TurretZ" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternSJMercSentryTower">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMengskGoliath">
+    <Keyword value="SetB" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMengskViking">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterWarHound">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternWarHound">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterWarHoundDummy">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternWarHoundDummy">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMengskBanshee">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterMengskBCCannons">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="10" />
+    <Keys Keyword="Weapon" Index="11" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternMengskBCCannonsG">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMengskBCCannonsA">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMagni">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterBroodLordWings">
+    <Logic value="OR" />
+    <Keys Keyword="Target" Index="1" />
+    <Keys Keyword="Target" Index="2" />
+  </CAttachMethodFilter>
+  <CAttachMethodReduction id="AMReductionForBodySquibs">
+    <RequestCount value="2" />
+    <RequestCountRange value="2" />
+    <PassChanceEach value="100" />
+  </CAttachMethodReduction>
+  <CAttachMethodPattern id="AMPatternThorAALance">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternLiberator">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="ZealotSCBWWeapon@AMPattern">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="MissileTurretSCBWWeapon@AMPattern">
+    <Keyword value="SetA" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="ValkyrieSCBWWeapon@AMPattern">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="VultureSCBWWeapon@AMPattern">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="GoliathSCBWWeaponAir@AMPattern">
+    <Keyword value="SetB" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMFilterBadgerAG">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterAquila">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterBlitzer">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterVirtus">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Keys Keyword="Weapon" Index="4" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterBoar">
+    <Keys Keyword="Weapon" />
+    <Keys Keyword="Weapon" Index="1" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterEqualizer">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Keys Keyword="Weapon" Index="4" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon04">
+    <Keys Keyword="Weapon" Index="4" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon05">
+    <Keys Keyword="Weapon" Index="5" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon06">
+    <Keys Keyword="Weapon" Index="6" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon14">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Keys Keyword="Weapon" Index="4" />
+    <Logic value="XOR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon12">
+    <Keys Keyword="Weapon" Index="0" />
+    <Keys Keyword="Weapon" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternTorrentLunaMines">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternWard">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternHornet">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternFixer">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternTorrentAG">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="FilterNotWeapon00">
+    <Keys Keyword="Weapon" Index="0" />
+    <Logic value="XOR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternBadgerAG">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternInciter">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternInterdictor">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternTorrent">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternAvenger">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternEqualizerStratum">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternKraken">
+    <Keyword value="Weapon" />
+    <Offset value="1" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="FilterKraken">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="FilterTarget01">
+    <Keys Keyword="Target" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterSubjugatorLeft">
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterSubjugatorGround">
+    <Keys Keyword="Weapon" Index="0" />
+    <Logic value="XOR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterSubjugatorRight">
+    <Keys Keyword="Weapon" Index="1" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternHarbingerGround">
+    <Type value="Bounce" />
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternHarbingerAir">
+    <Type value="Bounce" />
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternSubjugatorLeft">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternSubjugatorRight">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternParagon">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternChopper">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternServitorMissile">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="FilterTarget00">
+    <Keys Keyword="Target" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="FilterTarget05">
+    <Keys Keyword="Target" Index="5" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon12">
+    <Keys Keyword="Weapon" Index="12" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon13">
+    <Keys Keyword="Weapon" Index="13" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="FilterTarget01">
+    <Keys Keyword="Target" Index="1" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="SynoidWarbotBFilter">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="SynoidWarbotBPattern">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="SynoidWarbotCFilter">
+    <Logic value="OR" />
+    <Keys Keyword="Weapon" Index="4" />
+    <Keys Keyword="Weapon" Index="5" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="TalDarimPatternWarmistressBeam">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="UEDAMFilterWeapon01And02">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="UEDAMPatternSpartanAir">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UEDAMPatternTurret">
+    <Keyword value="Weapon" />
+    <Multiplier value="5" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UEDAMPatternTyphoon">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UEDAMPatternStrikeFighter">
+    <Keyword value="Weapon" />
+    <Multiplier value="3" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternAloe">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternNornAA">
+    <Keyword value="SetB" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternBattleshipAA">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternBattleshipAG">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanPatternBunker">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="UmojanBunkerTurretWeaponSet">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="UmojanAMPatternFrenrirAA">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternFrenrir">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternHowler">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternHowlerAirburst">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternHowlerAirstrike">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="UmojanAMPatternPathfinder">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="UmojanTyphonFilterWeapon04">
+    <Keys Keyword="Weapon" Index="4" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterFootRight">
+    <Keys Keyword="Foot" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterFootLeft">
+    <Keys Keyword="Foot" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWaistRight">
+    <Keys Keyword="Waist" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWaistBack">
+    <Keys Keyword="Waist" />
+    <Keys Keyword="Back" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterShoulderRight">
+    <Keys Keyword="Shoulder" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterShoulderLeft">
+    <Keys Keyword="Shoulder" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWaistLeft">
+    <Keys Keyword="Waist" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="LotC_AMFilterHandLeft">
+    <Keys Keyword="Hand" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="LotC_AMFilterHandRight">
+    <Keys Keyword="Hand" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="PatternAARocket">
+    <Type value="Bounce" />
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternBehemothDefenseGunBackRight">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternBehemothDefenseGunFrontRight">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternBehemothDefenseGunFrontLeft">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternBehemothDefenseGunBackLeft">
+    <Keyword value="Weapon" />
+    <Multiplier value="2" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternDrunkenMissileVolleyNod">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternLaserCannon">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="CabalBikeWeaponUMissile">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="NodBikeWeapon">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="CabalBikeWeapon">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="CabalCrawlerRocket">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="CabalLeviathanLaunchMissile">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="NodStealthTankRocket">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="NodStealthTankRocketUP">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="RaiderWeaponNod">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="Weapon0102">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="Weapon0203">
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="Weapon010203">
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Keys Keyword="Weapon" Index="3" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternMastodon">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="HammerHeadFilter">
+    <Keys Keyword="Weapon" Index="4" />
+    <Keys Keyword="Weapon" Index="5" />
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="GDIHammerHeadRocket">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="MastodonFilter">
+    <Keys Keyword="Weapon" Index="3" />
+    <Keys Keyword="Weapon" Index="1" />
+    <Keys Keyword="Weapon" Index="2" />
+    <Logic value="OR" />
+  </CAttachMethodFilter>
+  <CAttachMethodArcTest id="AMArcTestWeapon2">
+    <Tests index="Weapon" value="1" />
+    <Tests index="ActionAcquisition" value="1" />
+    <Type value="Preference" />
+  </CAttachMethodArcTest>
+  <CAttachMethodFilter id="AMFilterWeapon2">
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon22">
+    <Keys Keyword="Weapon" Index="9" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterWeapon23">
+    <Keys Keyword="Weapon" Index="10" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2222">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternMarauder259">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="shenxiangWeapon">
+    <Keys Keyword="SetA" Index="0" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternBanshee2">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodFilter id="AMPatternMarauder22">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder222">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder223">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2232">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder224">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2242">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2243">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2244">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder22442">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder225">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2252">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder2253">
+    <Keys Keyword="SetA" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMPatternMarauder22532">
+    <Keys Keyword="SetB" />
+    <Keys Keyword="Weapon" />
+  </CAttachMethodFilter>
+  <CAttachMethodPattern id="AMPatternMarauder23">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder24">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder242">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder25">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder252">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder253">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2532">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder25322">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder253222">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder25323">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2533">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder25332">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder254">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder255">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder256">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2562">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder257">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder258">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder26">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder262">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder263">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2632">
+    <Keyword value="SetA" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternMarauder2633">
+    <Keyword value="SetB" />
+  </CAttachMethodPattern>
+  <CAttachMethodPattern id="AMPatternThorAALance2">
+    <Keyword value="Weapon" />
+  </CAttachMethodPattern>
+  <CAttachMethodPortAllocator id="AMPortAllocatorBunker2">
+    <PortLimit value="3" />
+  </CAttachMethodPortAllocator>
+  <CAttachMethodProximity id="AMProximityTargetAll2">
+    <RequestCount value="0" />
+    <SortResults value="1" />
+    <Location Value="TargetUnitOrPoint" />
+  </CAttachMethodProximity>
+  <CAttachMethodVolumesRequery id="AMVolumesRequery2" />
+  <CAttachMethodVolumesTargets id="AMVolumesTargets2" />
+  <CAttachMethodVolumesWeightedPick id="AMVolumesWeightedPick2">
+    <VolumeFactor value="1" />
+    <ProximityFactorNear value="3" />
+    <ProximityFactorFar value="1" />
+  </CAttachMethodVolumesWeightedPick>
+  <CAttachMethodFilter id="AMFilterHardpointOrDamage">
+    <Logic value="OR" />
+    <Keys Keyword="Hardpoint" />
+    <Keys Keyword="Damage" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHandLeft">
+    <Keys Keyword="Hand" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHandRight">
+    <Keys Keyword="Hand" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterChestLeft">
+    <Keys Keyword="Chest" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterChestMount">
+    <Keys Keyword="Chest" />
+    <Keys Keyword="Mount" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterChestMountLeft">
+    <Keys Keyword="Chest" />
+    <Keys Keyword="Mount" />
+    <Keys Keyword="Left" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterChestMountRight">
+    <Keys Keyword="Chest" />
+    <Keys Keyword="Mount" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterChestRight">
+    <Keys Keyword="Chest" />
+    <Keys Keyword="Right" />
+  </CAttachMethodFilter>
+  <CAttachMethodFilter id="AMFilterHeadMount">
+    <Keys Keyword="Head" />
+    <Keys Keyword="Mount" />
+  </CAttachMethodFilter>
+  <CAttachMethodNodeOccupancy id="AMNodeOccupancyBuildingFlamesWar3">
+    <Targets value="Assets\Doodads\Cinematic\War3_TownBurningFireEmitter\War3_TownBurningFireEmitter.m3" />
+    <Targets value="Assets\Environment\War3_LargeBuildingFire\War3_LargeBuildingFire_00.m3" />
+    <Targets value="Assets\Environment\War3_LargeBuildingFire\War3_LargeBuildingFire_01.m3" />
+    <Targets value="Assets\Environment\War3_LargeBuildingFire\War3_LargeBuildingFire_02.m3" />
+  </CAttachMethodNodeOccupancy>
+  <CAttachMethodRandom id="AMRandomUniformAllWar3">
+    <RequestCount value="4294967295" />
+    <Distribution value="Uniform" />
+  </CAttachMethodRandom>
+  <CAttachMethodRandom id="AMRandomWar3">
+    <Distribution value="Uniform" />
+  </CAttachMethodRandom>
+  <CAttachMethodFilter id="AMFilterDamageWar3">
+    <Keys Keyword="Damage" />
+  </CAttachMethodFilter>
+  <CAttachMethodReduction id="AMReductionFireWar3" />
+</Catalog>

@@ -1,0 +1,411 @@
+<Catalog>
+  <CGame default="1">
+    <DifficultyDefault value="3" />
+    <AirFormationDiameter value="8" />
+    <MixedFormationDiameter value="6" />
+    <UnpathableMargin value="10,8,10,20" />
+    <AcquireMovementLimit value="21" />
+    <AcquireLeashRadius value="21" />
+    <AcquireLeashResetRadius value="5" />
+    <CallForHelpPeriod value="2" />
+    <CallForHelpRadius value="4" />
+    <CameraMargin value="7,4,7,4" />
+    <CameraMarginAspectAdjust AspectWidth="4" AspectHeight="3" />
+    <CameraMarginAspectAdjust AspectWidth="16" AspectHeight="10" Margin="5,0,5,0" />
+    <CameraMarginAspectAdjust AspectWidth="16" AspectHeight="9" Margin="5,0,5,0" />
+    <CameraMarginAspectAdjust AspectWidth="5" AspectHeight="4" />
+    <SplashDamageEffect value="SplashDamage" />
+    <UnitSightRangeUnderConstruction value="4" />
+    <DifficultyLevels AttributeId="Auto" Name="UI/Difficulty00" NameMelee="UI/Difficulty00InGame" MenuTooltip="UI/Difficulty00Tip" />
+    <DifficultyLevels AttributeId="VyEy" Name="UI/Difficulty01" NameCampaign="UI/Difficulty01Campaign" NameMelee="UI/Difficulty01InGame" MenuTooltip="UI/Difficulty01Tip" Enabled="1" ActionsPerMinute="400">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="Easy" Name="UI/Difficulty02" NameCampaign="UI/Difficulty02Campaign" NameMelee="UI/Difficulty02InGame" MenuTooltip="UI/Difficulty02Tip" Enabled="1" ActionsPerMinute="600" DefaultRebuildUnit="2">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="Medi" Name="UI/Difficulty03" NameCampaign="UI/Difficulty03Campaign" NameMelee="UI/Difficulty03InGame" MenuTooltip="UI/Difficulty03Tip" Enabled="1" ActionsPerMinute="800" DefaultRebuildUnit="14" DefaultRebuildStructure="2">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="MdHd" Name="UI/Difficulty04" NameCampaign="UI/Difficulty04Campaign" NameMelee="UI/Difficulty04InGame" MenuTooltip="UI/Difficulty04Tip" Enabled="1" ActionsPerMinute="1100" DefaultRebuildUnit="14" DefaultRebuildStructure="14">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="Hard" Name="UI/Difficulty05" NameMelee="UI/Difficulty05InGame" MenuTooltip="UI/Difficulty05Tip" Enabled="1" ActionsPerMinute="1500">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="HdVH" Name="UI/Difficulty06" NameMelee="UI/Difficulty06InGame" MenuTooltip="UI/Difficulty06Tip" Enabled="1" ActionsPerMinute="2000">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="VyHd" Name="UI/Difficulty07" NameMelee="UI/Difficulty07InGame" MenuTooltip="UI/Difficulty07Tip" Enabled="1" ActionsPerMinute="2700">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="ChVi" Name="UI/Difficulty08" NameMelee="UI/Difficulty08InGame" MenuTooltip="UI/Difficulty08Tip" Enabled="1" ActionsPerMinute="2700">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="ChRe" Name="UI/Difficulty09" NameMelee="UI/Difficulty09InGame" MenuTooltip="UI/Difficulty09Tip" Enabled="1" ActionsPerMinute="2700">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <DifficultyLevels AttributeId="Insa" Name="UI/Difficulty10" NameMelee="UI/Difficulty10InGame" MenuTooltip="UI/Difficulty10Tip" Enabled="1" ActionsPerMinute="2700">
+      <Flags index="TrialAllowed" value="1" />
+    </DifficultyLevels>
+    <HandicapValues MenuTooltip="UI/HandicapTip50" Percent="50" />
+    <HandicapValues MenuTooltip="UI/HandicapTip60" Percent="60" />
+    <HandicapValues MenuTooltip="UI/HandicapTip70" Percent="70" />
+    <HandicapValues MenuTooltip="UI/HandicapTip80" Percent="80" />
+    <HandicapValues MenuTooltip="UI/HandicapTip90" Percent="90" />
+    <HandicapValues MenuTooltip="UI/HandicapTip100" Percent="100" />
+    <MapSizes Name="UI/MapSize00" MaxCells="7500" />
+    <MapSizes Name="UI/MapSize01" MaxCells="13500" />
+    <MapSizes Name="UI/MapSize02" MaxCells="22000" />
+    <MapSizes Name="UI/MapSize03" MaxCells="32500" />
+    <MapSizes Name="UI/MapSize04" MaxCells="45000" />
+    <MapSizes Name="UI/MapSize05" MaxCells="99999" />
+    <TeamColors Name="UI/TeamColor00" AttributeId="tc00">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor01" UserChoice="1" AttributeId="tc01">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor02" UserChoice="1" AttributeId="tc02">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor03" UserChoice="1" AttributeId="tc03">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor04" UserChoice="1" AttributeId="tc04">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor05" UserChoice="1" AttributeId="tc05">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor06" UserChoice="1" AttributeId="tc06">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor07" UserChoice="1" AttributeId="tc07">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor08" UserChoice="1" AttributeId="tc08">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor09" UserChoice="1" MinPlayerCount="8" AttributeId="tc09">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor10" UserChoice="1" MinPlayerCount="8" AttributeId="tc10">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor11" UserChoice="1" MinPlayerCount="8" AttributeId="tc11">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor12" UserChoice="1" MinPlayerCount="8" AttributeId="tc12">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor13" UserChoice="1" MinPlayerCount="8" AttributeId="tc13">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor14" UserChoice="1" MinPlayerCount="8" AttributeId="tc14">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor15" UserChoice="1" MinPlayerCount="8" AttributeId="tc15">
+      <Value />
+    </TeamColors>
+    <CreepBlendTime value="1" />
+    <CreepDecayTime value="1.05" />
+    <CreepDecayWeightMultiplier value="2" />
+    <CreepDecayWeightUnscaledBonus value="2" />
+    <DamageMinimum value="0.5" />
+    <AttackRevealTime value="3" />
+    <PenaltyRevealTime value="25" />
+    <StalemateTestTime value="180" />
+    <StalemateWarningTime value="180" />
+    <AttackRevealBehavior value="AttackReveal" />
+    <AI Id="Comp" Name="AI/Name/Computer" File="TriggerLibs/Computer" />
+    <FilterResults Filter="Ground,Structure;-" Result="MustTargetGroundUnits,e_cmdMustTargetGroundStructures" />
+    <FilterResults Filter="Biological,Structure;-" Result="MustTargetBiologicalUnits,e_cmdMustTargetBiologicalStructures" />
+    <FilterResults Filter="Air;-" Result="MustTargetAirUnits" />
+    <FilterResults Filter="Ground;-" Result="MustTargetGroundUnits" />
+    <FilterResults Filter="Structure;-" Result="MustTargetStructures" />
+    <FilterResults Filter="Light;-" Result="MustTargetLightUnits" />
+    <FilterResults Filter="Armored;-" Result="MustTargetArmoredUnits" />
+    <FilterResults Filter="Biological;-" Result="MustTargetBiologicalUnits" />
+    <FilterResults Filter="Heroic;-" Result="MustTargetHeroicUnits" />
+    <FilterResults Filter="Robotic;-" Result="MustTargetRoboticUnits" />
+    <FilterResults Filter="Mechanical;-" Result="MustTargetMechanicalUnits" />
+    <FilterResults Filter="Psionic;-" Result="MustTargetPsionicUnits" />
+    <FilterResults Filter="Massive;-" Result="MustTargetMassiveUnits" />
+    <FilterResults Filter="Missile;-" Result="MustTargetMissile" />
+    <FilterResults Filter="Destructible;-" Result="MustTargetDestructibles" />
+    <FilterResults Filter="Item;-" Result="MustTargetItems" />
+    <FilterResults Filter="Worker;-" Result="MustTargetWorkerUnits" />
+    <FilterResults Filter="Cloaked;-" Result="MustTargetCloakedUnits" />
+    <FilterResults Filter="Buried;-" Result="MustTargetBuriedUnits" />
+    <FilterResults Filter="Stasis;-" Result="MustTargetUnitsInAStasisField" />
+    <FilterResults Filter="UnderConstruction;-" Result="MustTargetUnderConstructionUnits" />
+    <FilterResults Filter="Dead;-" Result="MustTargetDeadUnits" />
+    <FilterResults Filter="Revivable;-" Result="MustTargetRevivableUnits" />
+    <FilterResults Filter="Hidden;-" Result="MustTargetHiddenUnits" />
+    <FilterResults Filter="Hallucination;-" Result="MustTargetHallucinations" />
+    <FilterResults Filter="Invulnerable;-" Result="MustTargetInvulnerableUnits" />
+    <FilterResults Filter="HasEnergy;-" Result="MustTargetUnitWithEnergy" />
+    <FilterResults Filter="HasShields;-" Result="MustTargetUnitWithShields" />
+    <FilterResults Filter="CanHaveEnergy;-" Result="MustTargetEnergyCapableUnits" />
+    <FilterResults Filter="CanHaveShields;-" Result="MustTargetShieldCapableUnits" />
+    <FilterResults Filter="Uncommandable;-" Result="MustTargetUncommandableUnits" />
+    <FilterResults Filter="Unstoppable;-" Result="MustTargetUnstoppableUnits" />
+    <FilterResults Filter="PreventDefeat;-" Result="MustTargetPreventDefeatUnits" />
+    <FilterResults Filter="PreventReveal;-" Result="MustTargetPreventRevealUnits" />
+    <FilterResults Filter="Passive;-" Result="MustTargetPassiveUnits" />
+    <FilterResults Filter="Resistant;-" Result="MustTargetResistantUnits" />
+    <FilterResults Filter="Stunned;-" Result="MustTargetStunnedUnits" />
+    <FilterResults Filter="Summoned;-" Result="MustTargetSummonedUnits" />
+    <FilterResults Filter="User1;-" Result="MustTargetUser1" />
+    <FilterResults Filter="Dazed;-" Result="MustTargetDazedUnits" />
+    <FilterResults Filter="-;Air" Result="CantTargetAirUnits" />
+    <FilterResults Filter="-;Ground" Result="CantTargetGroundUnits" />
+    <FilterResults Filter="-;Structure" Result="CantTargetStructures" />
+    <FilterResults Filter="-;Light" Result="CantTargetLightUnits" />
+    <FilterResults Filter="-;Armored" Result="CantTargetArmoredUnits" />
+    <FilterResults Filter="-;Biological" Result="CantTargetBiologicalUnits" />
+    <FilterResults Filter="-;Heroic" Result="CantTargetHeroicUnits" />
+    <FilterResults Filter="-;Robotic" Result="CantTargetRoboticUnits" />
+    <FilterResults Filter="-;Mechanical" Result="CantTargetMechanicalUnits" />
+    <FilterResults Filter="-;Psionic" Result="CantTargetPsionicUnits" />
+    <FilterResults Filter="-;Massive" Result="CantTargetMassiveUnits" />
+    <FilterResults Filter="-;Missile" Result="CantTargetMissile" />
+    <FilterResults Filter="-;Destructible" Result="CantTargetDestructibles" />
+    <FilterResults Filter="-;Item" Result="CantTargetItems" />
+    <FilterResults Filter="-;Worker" Result="CantTargetWorkerUnits" />
+    <FilterResults Filter="-;CanHaveEnergy" Result="CantTargetEnergyCapableUnits" />
+    <FilterResults Filter="-;CanHaveShields" Result="CantTargetShieldCapableUnits" />
+    <FilterResults Filter="-;Cloaked" Result="CantTargetCloakedUnits" />
+    <FilterResults Filter="-;Buried" Result="CantTargetBuriedUnits" />
+    <FilterResults Filter="-;Stasis" Result="CantTargetUnitsInAStasisField" />
+    <FilterResults Filter="-;UnderConstruction" Result="CantTargetUnderConstructionUnits" />
+    <FilterResults Filter="-;Dead" Result="NotSupportedPlaceholder" />
+    <FilterResults Filter="-;Revivable" Result="NotSupportedPlaceholder" />
+    <FilterResults Filter="-;Hidden" Result="CantTargetHiddenUnits" />
+    <FilterResults Filter="-;Hallucination" Result="CantTargetHallucinations" />
+    <FilterResults Filter="-;Invulnerable" Result="CantTargetInvulnerableUnits" />
+    <FilterResults Filter="-;HasEnergy" Result="CantTargetUnitWithEnergy" />
+    <FilterResults Filter="-;HasShields" Result="CantTargetUnitWithShields" />
+    <FilterResults Filter="-;Uncommandable" Result="CantTargetUncommandableUnits" />
+    <FilterResults Filter="-;Unstoppable" Result="CantTargetUnstoppableUnits" />
+    <FilterResults Filter="-;PreventDefeat" Result="CantTargetPreventDefeatUnits" />
+    <FilterResults Filter="-;PreventReveal" Result="CantTargetPreventRevealUnits" />
+    <FilterResults Filter="-;Passive" Result="CantTargetPassiveUnits" />
+    <FilterResults Filter="-;Resistant" Result="CantTargetResistantUnits" />
+    <FilterResults Filter="-;Stunned" Result="CantTargetStunnedUnits" />
+    <FilterResults Filter="-;Summoned" Result="CantTargetSummonedUnits" />
+    <FilterResults Filter="-;User1" Result="CantTargetUser1" />
+    <FilterResults Filter="-;Hover" Result="CantTargetThatUnit" />
+    <FilterResults Filter="-;Dazed" Result="CantTargetDazedUnits" />
+    <FilterResults Filter="-;MapBoss" Result="CantTargetThatUnit" />
+    <UncontestedCombatPeriod value="3" />
+    <AIResourceRequest />
+    <DamageCategories />
+    <AttackArmorTable />
+    <VeterancySearchRadius value="10" />
+    <VeterancySearchFilters value="-;Neutral,Enemy,Missile,Dead,Hidden" />
+    <ResourceConvertArray />
+    <FoodCappedMax value="190" />
+    <TeleportResetRange />
+    <JoinInProgress value="1" />
+    <DeepWaterThreshold value="0.4" />
+    <GenerateWaterPathing value="0" />
+  </CGame>
+  <CGame id="Dflt">
+    <TeamColors Name="UI/TeamColor01" UserChoice="1" AttributeId="tc01">
+      <Value />
+    </TeamColors>
+    <TeamColors Name="UI/TeamColor04" UserChoice="1" AttributeId="tc04">
+      <Value />
+    </TeamColors>
+    <TauntAbil value="stop" />
+    <FormationSeparationFactor value="3" />
+  </CGame>
+  <CGame id="Dflt">
+    <CreepDecaySound value="Zerg_CreepDecay" />
+    <CreepGrowSound value="Zerg_CreepGrow" />
+    <JoinInProgress value="0" />
+    <PlayersRequiredForLargeFormat value="5" />
+    <PlayerLeaveFlags index="ClearSelection" value="1" />
+    <PlayerLeaveFlags index="FinalizeScore" value="1" />
+    <PlayerLeaveFlags index="ForcedAlliance" value="1" />
+    <PlayerLeaveFlags index="FulfillResourceRequests" value="1" />
+    <PlayerLeaveFlags index="ReportScore" value="1" />
+    <PlayerLeaveFlags index="SplitResources" value="1" />
+    <TriggerLibs Id="Lbty" IncludePath="TriggerLibs/LibertyLib" />
+    <EnforcedGameResultScoreResult value="Experience" />
+    <SprayAbil value="LoadOutSpray" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@1" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@2" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@3" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@4" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@5" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@6" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@7" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@8" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@9" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@10" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@11" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@12" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@13" />
+    <SprayButtonReplacementTarget value="LoadOutSpray@14" />
+    <BeaconInfoArray />
+    <AIBuilds AttributeId="AB00" Name="UI/AIBuild00" MenuTooltip="UI/AIBuild00Tip" Enabled="1" Race="All" MaxDiff="10" />
+    <AIBuilds AttributeId="AB01" Name="UI/AIBuild01" MenuTooltip="UI/AIBuild01Tip" Race="All" MaxDiff="10" BuildScriptNum="1" />
+    <AIBuilds AttributeId="AB02" Name="UI/AIBuild02" MenuTooltip="UI/AIBuild02Tip" Enabled="1" Race="All" MaxDiff="10" BuildScriptNum="2" />
+    <AIBuilds AttributeId="AB03" Name="UI/AIBuild03" MenuTooltip="UI/AIBuild03Tip" Enabled="1" Race="All" MaxDiff="10" BuildScriptNum="3" />
+    <AIBuilds AttributeId="AB04" Name="UI/AIBuild04" MenuTooltip="UI/AIBuild04Tip" Enabled="1" Race="All" MaxDiff="10" BuildScriptNum="4" />
+    <AIBuilds AttributeId="AB05" Name="UI/AIBuild05" MenuTooltip="UI/AIBuild05Tip" Enabled="1" Race="All" MaxDiff="10" BuildScriptNum="5" />
+    <AIBuilds AttributeId="AB06" Name="UI/AIBuild06" MenuTooltip="UI/AIBuild06Tip" Enabled="1" Race="All" MaxDiff="10" BuildScriptNum="6" />
+    <AIBuilds AttributeId="Z030" Name="UI/AIBuild30" MenuTooltip="UI/AIBuild30Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="30" />
+    <AIBuilds AttributeId="Z031" Name="UI/AIBuild31" MenuTooltip="UI/AIBuild31Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="31" />
+    <AIBuilds AttributeId="Z032" Name="UI/AIBuild32" MenuTooltip="UI/AIBuild32Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="32" />
+    <AIBuilds AttributeId="Z040" Name="UI/AIBuild40" MenuTooltip="UI/AIBuild40Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="40" />
+    <AIBuilds AttributeId="Z041" Name="UI/AIBuild41" MenuTooltip="UI/AIBuild41Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="41" />
+    <AIBuilds AttributeId="Z042" Name="UI/AIBuild42" MenuTooltip="UI/AIBuild42Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="42" />
+    <AIBuilds AttributeId="Z043" Name="UI/AIBuild43" MenuTooltip="UI/AIBuild43Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="43" />
+    <AIBuilds AttributeId="Z044" Name="UI/AIBuild44" MenuTooltip="UI/AIBuild44Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="44" />
+    <AIBuilds AttributeId="Z045" Name="UI/AIBuild45" MenuTooltip="UI/AIBuild45Tip" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="45" />
+    <AIBuilds AttributeId="Z046" Name="UI/AIBuild46" MenuTooltip="UI/AIBuild46Tip" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="46" />
+    <AIBuilds AttributeId="Z050" Name="UI/AIBuild50" MenuTooltip="UI/AIBuild50Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="50" />
+    <AIBuilds AttributeId="Z051" Name="UI/AIBuild51" MenuTooltip="UI/AIBuild51Tip" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="51" />
+    <AIBuilds AttributeId="Z052" Name="UI/AIBuild52" MenuTooltip="UI/AIBuild52Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="52" />
+    <AIBuilds AttributeId="Z053" Name="UI/AIBuild53" MenuTooltip="UI/AIBuild53Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="53" />
+    <AIBuilds AttributeId="T070" Name="UI/AIBuild70" MenuTooltip="UI/AIBuild70Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="70" />
+    <AIBuilds AttributeId="T071" Name="UI/AIBuild71" MenuTooltip="UI/AIBuild71Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="71" />
+    <AIBuilds AttributeId="T072" Name="UI/AIBuild72" MenuTooltip="UI/AIBuild72Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="72" />
+    <AIBuilds AttributeId="T073" Name="UI/AIBuild73" MenuTooltip="UI/AIBuild73Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="73" />
+    <AIBuilds AttributeId="T080" Name="UI/AIBuild80" MenuTooltip="UI/AIBuild80Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="80" />
+    <AIBuilds AttributeId="T081" Name="UI/AIBuild81" MenuTooltip="UI/AIBuild81Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="81" />
+    <AIBuilds AttributeId="T082" Name="UI/AIBuild82" MenuTooltip="UI/AIBuild82Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="82" />
+    <AIBuilds AttributeId="T083" Name="UI/AIBuild83" MenuTooltip="UI/AIBuild83Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="83" />
+    <AIBuilds AttributeId="T084" Name="UI/AIBuild84" MenuTooltip="UI/AIBuild84Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="84" />
+    <AIBuilds AttributeId="T090" Name="UI/AIBuild90" MenuTooltip="UI/AIBuild90Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="90" />
+    <AIBuilds AttributeId="T091" Name="UI/AIBuild91" MenuTooltip="UI/AIBuild91Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="91" />
+    <AIBuilds AttributeId="T092" Name="UI/AIBuild92" MenuTooltip="UI/AIBuild92Tip" Enabled="1" Race="Terr" MinDiff="6" MaxDiff="10" BuildScriptNum="92" />
+    <AIBuilds AttributeId="P110" Name="UI/AIBuild110" MenuTooltip="UI/AIBuild110Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="110" />
+    <AIBuilds AttributeId="P111" Name="UI/AIBuild111" MenuTooltip="UI/AIBuild111Tip" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="111" />
+    <AIBuilds AttributeId="P112" Name="UI/AIBuild112" MenuTooltip="UI/AIBuild112Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="112" />
+    <AIBuilds AttributeId="P113" Name="UI/AIBuild113" MenuTooltip="UI/AIBuild113Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="113" />
+    <AIBuilds AttributeId="P114" Name="UI/AIBuild114" MenuTooltip="UI/AIBuild114Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="114" />
+    <AIBuilds AttributeId="P120" Name="UI/AIBuild120" MenuTooltip="UI/AIBuild120Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="120" />
+    <AIBuilds AttributeId="P121" Name="UI/AIBuild121" MenuTooltip="UI/AIBuild121Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="121" />
+    <AIBuilds AttributeId="P122" Name="UI/AIBuild122" MenuTooltip="UI/AIBuild122Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="122" />
+    <AIBuilds AttributeId="P123" Name="UI/AIBuild123" MenuTooltip="UI/AIBuild123Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="123" />
+    <AIBuilds AttributeId="P124" Name="UI/AIBuild124" MenuTooltip="UI/AIBuild124Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="124" />
+    <AIBuilds AttributeId="P130" Name="UI/AIBuild130" MenuTooltip="UI/AIBuild130Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="130" />
+    <AIBuilds AttributeId="P131" Name="UI/AIBuild131" MenuTooltip="UI/AIBuild131Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="131" />
+    <AIBuilds AttributeId="P132" Name="UI/AIBuild132" MenuTooltip="UI/AIBuild132Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="132" />
+  </CGame>
+  <CGame id="Dflt">
+    <DamageHistoryIntervalMax value="1" />
+    <AIBuilds AttributeId="Z045" Name="UI/AIBuild45" MenuTooltip="UI/AIBuild45Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="45" />
+  </CGame>
+  <CGame id="Dflt">
+    <AIBuilds AttributeId="Z046" Name="UI/AIBuild46" MenuTooltip="UI/AIBuild46Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="46" />
+    <AIBuilds AttributeId="Z051" Name="UI/AIBuild51" MenuTooltip="UI/AIBuild51Tip" Enabled="1" Race="Zerg" MinDiff="6" MaxDiff="10" BuildScriptNum="51" />
+    <AIBuilds AttributeId="P111" Name="UI/AIBuild111" MenuTooltip="UI/AIBuild111Tip" Enabled="1" Race="Prot" MinDiff="6" MaxDiff="10" BuildScriptNum="111" />
+  </CGame>
+  <CGame id="Dflt">
+    <MeleePointsThreshold Value="50000" Factor="0.333" />
+    <MeleePointsGameDurationMin value="210" />
+    <CreepDecayTime value="4" />
+    <CreepDecayWeightMultiplier value="0" />
+    <CreepDecayWeightUnscaledBonus value="0" />
+    <TriggerLibs Id="VdMp" IncludePath="TriggerLibs/VoidMultiLib" />
+    <EnableRewardSkins value="1" />
+    <EnableRewardVoicePacks value="1" />
+    <EnableRewardConsoleSkins value="1" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="SCEV" />
+    <TeamColors UserChoice="1">
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+    <TeamColors>
+      <Value />
+    </TeamColors>
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="DRAG" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="ZHBR" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="Scio" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="03673618" />
+    <TriggerLibs Id="Synd" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="EA49549C" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="UEDC" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="UMOJ" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="UPLL" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="TIBW" />
+    <TriggerLibs Id="SPPN" />
+    <TriggerLibs Id="RED3" />
+    <TriggerLibs Id="CNCC" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="GAw3" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="NECR" />
+  </CGame>
+  <CGame id="Dflt">
+    <TriggerLibs Id="WRZN" />
+  </CGame>
+</Catalog>

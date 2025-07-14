@@ -1,0 +1,87 @@
+<Desc>
+  <Frame type="Frame" name="ConsoleSkinTemplate" template="ConsoleSkin_Template/ConsoleSkinTemplate">
+    <Frame type="Frame" name="InfoPanelImageContainer">
+      <Anchor side="Bottom" relative="$parent" pos="Min" offset="-500" />
+    </Frame>
+    <Frame type="Frame" name="MinimapPanelImageContainer">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$this" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="2200" />
+      <Height val="100" />
+      <Frame type="Image" name="MinimapBackground">
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+        <Width val="2200" />
+        <Height val="100" />
+        <Texture val="{$ConsolePanel/@MinimapPanelImage}" />
+        <RenderType val="LDR" />
+      </Frame>
+    </Frame>
+    <Frame type="Frame" name="CommandPanelImageContainer">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="2200" />
+      <Height val="400" />
+      <Frame type="Image" name="CommandPanelBackground">
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Width val="2200" />
+        <Height val="400" />
+        <Texture val="{$ConsolePanel/@CommandPanelImage}" />
+        <RenderType val="LDR" />
+      </Frame>
+      <Frame type="Image" name="FireEffect">
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Width val="2200" />
+        <Height val="400" />
+        <LayerCount val="3" />
+        <Texture val="Assets/Textures/ui_console_panel_consoleeffectsmask_human_01.dds" layer="0" />
+        <Texture val="White.dds" layer="1" />
+        <Texture val="Assets/Textures/ui_console_panel_consoleeffectsgradient_human_01.dds" layer="2" />
+        <AlphaLayer val="True" />
+        <AlphaLayer val="True" />
+        <AlphaChannel val="Alpha" />
+        <TextureCoords top="0.2" left="0" bottom="0.4" right="3" />
+        <TextureCoords top="0.2" left="0" bottom="0.4" right="3" />
+        <WrapUV val="True" />
+        <WrapUV val="True" />
+        <LayerColor val="255,90,0" />
+        <LayerColor val="255,90,0" />
+        <Animation name="Wave">
+          <Event event="OnShown" action="Reset,Play" frame="$parent" />
+          <Controller type="LayerUV" side="Top" relative="True" end="Loop" frame="$this">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="30" />
+          </Controller>
+          <Controller type="LayerUV" side="Left" relative="True" end="Loop" frame="$this">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="120" />
+          </Controller>
+          <Controller type="LayerUV" side="Top" relative="True" end="Loop" frame="$this">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="30" />
+          </Controller>
+          <Controller type="LayerUV" side="Left" relative="True" end="Loop" frame="$this">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="150" />
+          </Controller>
+        </Animation>
+      </Frame>
+    </Frame>
+    <StateGroup name="DisplayState">
+      <DefaultState val="NotVisible" />
+      <State name="ConsoleHuman_Default">
+        <When type="Property" frame="$ConsolePanel" />
+        <Action type="SetProperty" frame="$this" Visible="True" />
+      </State>
+      <State name="NotVisible">
+        <Action type="SetProperty" frame="$this" Visible="False" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

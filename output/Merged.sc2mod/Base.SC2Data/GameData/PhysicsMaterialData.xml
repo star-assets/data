@@ -1,0 +1,149 @@
+<Catalog>
+  <CPhysicsMaterial id="Bone">
+    <Density value="1500" />
+    <Friction value="0.8" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="ClothHeavy">
+    <Density value="800" />
+    <Friction value="0.5" />
+    <LinearDamping value="0.3" />
+    <AngularDamping value="0.2" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="ClothLight">
+    <Density value="400" />
+    <Friction value="0.5" />
+    <LinearDamping value="0.4" />
+    <AngularDamping value="0.25" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Creep">
+    <Density value="1200" />
+    <Friction value="0.8" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.1" />
+    <AngularDamping value="0.1" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Dirt">
+    <Density value="1600" />
+    <Friction value="0.4" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="EnergyShield">
+    <Friction value="0.2" />
+    <Restitution value="0.5" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Flesh">
+    <Density value="800" />
+    <Friction value="0.9" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Hair">
+    <Density value="300" />
+    <Friction value="0.4" />
+    <LinearDamping value="0.3" />
+    <AngularDamping value="0.2" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Ice">
+    <Density value="800" />
+    <Friction value="0.3" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Lava">
+    <Density value="2000" />
+    <Friction value="0.2" />
+    <LinearDamping value="0.1" />
+    <AngularDamping value="0.1" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="LightArmor">
+    <Density value="950" />
+    <Friction value="0.9" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="MetalHeavy">
+    <Density value="4000" />
+    <Friction value="0.7" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="MetalLight">
+    <Density value="2500" />
+    <Friction value="0.7" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="MetalProtoss">
+    <Density value="2400" />
+    <Friction value="0.7" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Paper">
+    <Density value="200" />
+    <Friction value="0.5" />
+    <LinearDamping value="0.5" />
+    <AngularDamping value="0.25" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Plastic">
+    <Density value="800" />
+    <Friction value="0.2" />
+    <Restitution value="0.3" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Rock">
+    <Density value="2600" />
+    <Friction value="0.5" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Rubber">
+    <Density value="900" />
+    <Friction value="0.8" />
+    <Restitution value="0.8" />
+    <LinearDamping value="0.2" />
+    <AngularDamping value="0.2" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Sand">
+    <Density value="1800" />
+    <Friction value="0.5" />
+    <Restitution value="0.05" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Snow">
+    <Density value="500" />
+    <Friction value="0.4" />
+    <LinearDamping value="0.2" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Water">
+    <Friction value="0" />
+    <Restitution value="0.05" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Wood">
+    <Density value="700" />
+    <Friction value="0.2" />
+    <Restitution value="0.2" />
+    <LinearDamping value="0.02" />
+    <AngularDamping value="0.02" />
+  </CPhysicsMaterial>
+  <CPhysicsMaterial id="Grass">
+    <Density value="1600" />
+    <Friction value="0.4" />
+    <Restitution value="0.1" />
+    <LinearDamping value="0.01" />
+    <AngularDamping value="0.01" />
+  </CPhysicsMaterial>
+</Catalog>

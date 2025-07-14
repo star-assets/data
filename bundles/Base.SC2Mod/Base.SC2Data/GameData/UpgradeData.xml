@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUpgrade default="1">
+        <?token id="ID"?>
+        <EditorCategories value="Race:Neutral"/>
+    </CUpgrade>
+    <CUpgrade default="1" id="Research">
+        <EditorCategories value="Race:Neutral"/>
+    </CUpgrade>
+    <CUpgrade id="Confetti"/>
+    <CUpgrade id="SnowVisualMP"/>
+</Catalog>

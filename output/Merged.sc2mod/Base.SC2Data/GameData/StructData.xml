@@ -1,0 +1,118 @@
+<Catalog>
+  <SAbilArmMagazineInfo />
+  <SMarker>
+    <Link value="Abil/##id##" />
+    <MatchFlags index="Link" value="1" />
+    <MismatchFlags index="Id" value="1" />
+  </SMarker>
+  <SCost>
+    <Charge Link="Abil/##id##" />
+    <Cooldown Link="Abil/##id##" />
+  </SCost>
+  <SAbilMorphInfo>
+    <RallyResetPhase value="Duration" />
+    <RallyResetSection value="Stats" />
+  </SAbilMorphInfo>
+  <SAbilCmdButton>
+    <Flags index="AllowMinimap" value="1" />
+  </SAbilCmdButton>
+  <SBehaviorFraction />
+  <SBehaviorDuration>
+    <Duration value="0" />
+  </SBehaviorDuration>
+  <SSpawnInfo>
+    <Count value="1" />
+  </SSpawnInfo>
+  <SModification>
+    <VitalMaxIncreaseAffectsCurrentArray index="Life" value="1" />
+    <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="1" />
+    <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="1" />
+  </SModification>
+  <SCost>
+    <Charge Link="Behavior/##id##" Location="Behavior" />
+    <Cooldown Link="Behavior/##id##" Location="Behavior" />
+  </SCost>
+  <SDeathResponse>
+    <Type index="Remove" value="0" />
+  </SDeathResponse>
+  <SCameraSmooth>
+    <SmoothTimeMin value="0.25" />
+    <DisplacementMin value="0.01" />
+  </SCameraSmooth>
+  <SCommanderTalentTree />
+  <SCommanderMasteryTalent>
+    <MaxValuePrecision value="2" />
+  </SCommanderMasteryTalent>
+  <SCommanderDifficultyLevel />
+  <SSoundData>
+    <ThresholdFadeTime value="500" />
+    <AlertFadeTimeOut value="250" />
+    <AlertFadeTimeIn value="2000" />
+    <DupeFadeIn Volume="-96" />
+    <DupeFadeIn Time="250" />
+    <DupeFadeOut />
+    <DupeFadeOut Time="250" Volume="-96" />
+    <FogFadeIn Volume="-96" />
+    <FogFadeIn Time="250" />
+    <FogFadeOut />
+    <FogFadeOut Time="250" Volume="-96" />
+    <MuteFadeIn Volume="-96" />
+    <MuteFadeIn Time="250" />
+    <MuteFadeOut />
+    <MuteFadeOut Time="250" Volume="-96" />
+    <VolumeRolloffFadeIn Volume="-96" />
+    <VolumeRolloffFadeIn Time="100" />
+    <VolumeRolloffFadeOut />
+    <VolumeRolloffFadeOut Time="100" Volume="-96" />
+    <VolumeRolloffPoints Distance="10" />
+    <VolumeRolloffPoints Distance="30" Volume="-96" />
+  </SSoundData>
+  <SCost>
+    <Charge Link="Item/##id##" />
+    <Cooldown Link="Item/##id##" />
+  </SCost>
+  <SLightInfo>
+    <AmbientColor value="0.156863,0.003922,0.003922" />
+    <UseSeparateDetailSSAO value="1" />
+    <Param />
+    <DirectionalLight />
+  </SLightInfo>
+  <SSoundAsset>
+    <FacialGroup value="Default" />
+  </SSoundAsset>
+  <SMarker>
+    <Link value="TacticalAI/##id##" />
+    <MatchFlags index="Link" value="1" />
+    <MatchFlags index="CasterPlayer" value="1" />
+    <MismatchFlags index="Id" value="1" />
+  </SMarker>
+  <SConversationFacialAnim>
+    <SpeechAtts value="easeIn=0.25 easeOut=0.25" />
+    <AnimAtts value="easeIn=0.25 easeOut=0.25" />
+  </SConversationFacialAnim>
+  <SConversationLine>
+    <FacialBlend value="100" />
+    <OverlapPrevious value="400" />
+    <AnimBlendIn value="750" />
+    <AnimBlendOut value="750" />
+    <LookAtAttach value="Head" />
+    <Objects />
+    <Variations />
+  </SConversationLine>
+  <SConversationGroup />
+  <SConversationCondition>
+    <Operation value="Unknown" />
+    <Value value="-1" />
+  </SConversationCondition>
+  <SConversationAction>
+    <Operation value="Unknown" />
+    <Value value="-1" />
+  </SConversationAction>
+  <SConversationLine>
+    <Objects />
+    <Variations />
+  </SConversationLine>
+  <SCharge>
+    <CountUse value="1" />
+  </SCharge>
+</Catalog>

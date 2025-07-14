@@ -1,0 +1,340 @@
+<Catalog>
+  <CDSPChorus default="1">
+    <Delay value="40" />
+    <Depth value="0.03" />
+    <DryMix value="0.5" />
+    <Rate value="0.8" />
+    <WetMix1 value="0.5" />
+    <WetMix2 value="0.5" />
+    <WetMix3 value="0.5" />
+  </CDSPChorus>
+  <CDSPCompressor default="1">
+    <Attack value="50" />
+    <Release value="50" />
+  </CDSPCompressor>
+  <CDSPDistortion default="1">
+    <Level value="0.5" />
+  </CDSPDistortion>
+  <CDSPEcho default="1">
+    <DecayRatio value="0.5" />
+    <Delay value="500" />
+    <DryMix value="1" />
+    <WetMix value="1" />
+  </CDSPEcho>
+  <CDSPFlange default="1">
+    <Depth value="1" />
+    <DryMix value="0.45" />
+    <Rate value="0.1" />
+    <WetMix value="0.55" />
+  </CDSPFlange>
+  <CDSPHighPass default="1">
+    <Cutoff value="5000" />
+    <Resonance value="1" />
+  </CDSPHighPass>
+  <CDSPLowPass default="1">
+    <Cutoff value="5000" />
+    <Resonance value="1" />
+  </CDSPLowPass>
+  <CDSPLowPassSimple default="1">
+    <Cutoff value="5000" />
+  </CDSPLowPassSimple>
+  <CDSPNormalize default="1">
+    <FadeTime value="5000" />
+    <MaxAmp value="20" />
+    <Threshhold value="0.1" />
+  </CDSPNormalize>
+  <CDSPParamEQ default="1">
+    <Bandwidth value="1" />
+    <Center value="8000" />
+    <Gain value="1" />
+  </CDSPParamEQ>
+  <CDSPPitchShift default="1">
+    <FFTSize value="10" />
+    <Pitch value="1" />
+  </CDSPPitchShift>
+  <CDSPReverb default="1">
+    <DecayTime value="1.49" />
+    <DecayHFRatio value="0.83" />
+    <Density value="100" />
+    <Diffusion value="100" />
+    <HFReference value="5000" />
+    <LFReference value="250" />
+    <ReflectionsLevel value="-2602" />
+    <ReflectionsDelay value="0.007" />
+    <ReverbLevel value="200" />
+    <ReverbDelay value="0.011" />
+    <RoomRolloffFactor value="10" />
+    <Room value="-1000" />
+  </CDSPReverb>
+  <CDSPLimiter>
+    <ReleaseMs value="5" />
+    <UseARC value="1" />
+    <ThresholdDB value="-3" />
+    <MakeUpGainDB value="2.9" />
+    <SoftKneeWidthDB value="5" />
+    <ARCReleaseMs value="10" />
+    <ARCMinReleaseMs value="5" />
+    <ARCMaxReleaseMs value="50" />
+    <ARCReleaseSweepMs value="500" />
+  </CDSPLimiter>
+  <CDSPCustomCompressor>
+    <AttackMs value="500" />
+    <ReleaseMs value="500" />
+    <ThresholdDB value="-30" />
+    <Ratio value="1" />
+  </CDSPCustomCompressor>
+  <CDSPLimiter id="HowlingWolfeLimiter_MasterOutputs">
+    <ThresholdDB value="0" />
+    <MakeUpGainDB value="20" />
+    <ARCMinReleaseMs value="10" />
+    <ARCMaxReleaseMs value="500" />
+  </CDSPLimiter>
+  <CDSPCustomCompressor id="HowlingWolfeCompressor" />
+  <CDSPCompressor id="CompressorSwarmMaster01">
+    <Attack value="10" />
+    <GainMakeUp value="1" />
+    <Threshold value="-4" />
+    <Release value="20" />
+  </CDSPCompressor>
+  <CDSPLimiter id="HowlingWolfeLimiter_CombatCategory">
+    <ThresholdDB value="-4" />
+    <MakeUpGainDB value="1" />
+  </CDSPLimiter>
+  <CDSPLimiter id="HowlingWolfeLimiter_DeathCategory">
+    <ThresholdDB value="-4" />
+    <MakeUpGainDB value="1" />
+  </CDSPLimiter>
+  <CDSPLimiter id="HowlingWolfeLimiter_SpellCategory">
+    <ThresholdDB value="-4" />
+    <MakeUpGainDB value="1" />
+  </CDSPLimiter>
+  <CDSPReverb id="ReverbOff">
+    <Room value="-10000" />
+    <RoomHF value="-10000" />
+    <DecayTime value="1" />
+    <DecayHFRatio value="1" />
+    <Diffusion value="0" />
+    <Density value="0" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbGeneric">
+    <RoomHF value="-100" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbPaddedCell">
+    <RoomHF value="-6000" />
+    <DecayTime value="0.17" />
+    <DecayHFRatio value="0.1" />
+    <ReflectionsLevel value="-1204" />
+    <ReflectionsDelay value="0.001" />
+    <ReverbLevel value="207" />
+    <ReverbDelay value="0.002" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbRoom">
+    <RoomHF value="-454" />
+    <DecayTime value="0.4" />
+    <ReflectionsLevel value="-1646" />
+    <ReflectionsDelay value="0.002" />
+    <ReverbLevel value="53" />
+    <ReverbDelay value="0.003" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbBathroom">
+    <RoomHF value="-1200" />
+    <DecayHFRatio value="0.54" />
+    <ReflectionsLevel value="-370" />
+    <ReverbLevel value="1030" />
+    <Density value="60" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbLivingRoom">
+    <RoomHF value="-6000" />
+    <DecayTime value="0.5" />
+    <DecayHFRatio value="0.1" />
+    <ReflectionsLevel value="-1376" />
+    <ReflectionsDelay value="0.003" />
+    <ReverbLevel value="-1104" />
+    <ReverbDelay value="0.004" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbStoneRoom">
+    <RoomHF value="-300" />
+    <DecayTime value="2.31" />
+    <DecayHFRatio value="0.64" />
+    <ReflectionsLevel value="-711" />
+    <ReflectionsDelay value="0.012" />
+    <ReverbLevel value="83" />
+    <ReverbDelay value="0.017" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbAuditorium">
+    <RoomHF value="-476" />
+    <DecayTime value="4.32" />
+    <DecayHFRatio value="0.59" />
+    <ReflectionsLevel value="-789" />
+    <ReflectionsDelay value="0.02" />
+    <ReverbLevel value="-289" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbConcertHall">
+    <RoomHF value="-500" />
+    <DecayTime value="3.92" />
+    <DecayHFRatio value="0.7" />
+    <ReflectionsLevel value="-1230" />
+    <ReflectionsDelay value="0.02" />
+    <ReverbLevel value="-2" />
+    <ReverbDelay value="0.029" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbCave">
+    <DecayTime value="2.91" />
+    <DecayHFRatio value="1.3" />
+    <ReflectionsLevel value="-602" />
+    <ReflectionsDelay value="0.015" />
+    <ReverbLevel value="-302" />
+    <ReverbDelay value="0.022" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbArena">
+    <RoomHF value="-698" />
+    <DecayTime value="7.24" />
+    <DecayHFRatio value="0.33" />
+    <ReflectionsLevel value="-1166" />
+    <ReflectionsDelay value="0.02" />
+    <ReverbLevel value="16" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbHangar">
+    <RoomHF value="-1000" />
+    <DecayTime value="10.05" />
+    <DecayHFRatio value="0.23" />
+    <ReflectionsLevel value="-602" />
+    <ReflectionsDelay value="0.02" />
+    <ReverbLevel value="198" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbCarpetedHallway">
+    <RoomHF value="-4000" />
+    <DecayTime value="0.3" />
+    <DecayHFRatio value="0.1" />
+    <ReflectionsLevel value="-1831" />
+    <ReflectionsDelay value="0.002" />
+    <ReverbLevel value="-1630" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbHallway">
+    <RoomHF value="-300" />
+    <DecayHFRatio value="0.59" />
+    <ReflectionsLevel value="-1219" />
+    <ReverbLevel value="411" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbStoneCorridor">
+    <RoomHF value="-237" />
+    <DecayTime value="2.7" />
+    <DecayHFRatio value="0.79" />
+    <ReflectionsLevel value="-1214" />
+    <ReflectionsDelay value="0.013" />
+    <ReverbLevel value="395" />
+    <ReverbDelay value="0.02" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbAlley">
+    <RoomHF value="-270" />
+    <DecayHFRatio value="0.86" />
+    <ReflectionsLevel value="-1204" />
+    <ReverbLevel value="-4" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbForest">
+    <RoomHF value="-3300" />
+    <DecayHFRatio value="0.54" />
+    <ReflectionsLevel value="-2560" />
+    <ReflectionsDelay value="0.162" />
+    <ReverbLevel value="-229" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="79" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbCity">
+    <RoomHF value="-800" />
+    <DecayHFRatio value="0.67" />
+    <ReflectionsLevel value="-2273" />
+    <ReverbLevel value="-1691" />
+    <Diffusion value="50" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbMountains">
+    <RoomHF value="-2500" />
+    <DecayHFRatio value="0.21" />
+    <ReflectionsLevel value="-2780" />
+    <ReflectionsDelay value="0.3" />
+    <ReverbLevel value="-1434" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="27" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbQuarry">
+    <RoomHF value="-1000" />
+    <ReflectionsLevel value="-10000" />
+    <ReflectionsDelay value="0.061" />
+    <ReverbLevel value="500" />
+    <ReverbDelay value="0.025" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbPlain">
+    <RoomHF value="-2000" />
+    <DecayHFRatio value="0.5" />
+    <ReflectionsLevel value="-2466" />
+    <ReflectionsDelay value="0.179" />
+    <ReverbLevel value="-1926" />
+    <ReverbDelay value="0.1" />
+    <Diffusion value="21" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbParkingLot">
+    <DecayTime value="1.65" />
+    <DecayHFRatio value="1.5" />
+    <ReflectionsLevel value="-1363" />
+    <ReflectionsDelay value="0.008" />
+    <ReverbLevel value="-1153" />
+    <ReverbDelay value="0.012" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbSewerPipe">
+    <RoomHF value="-1000" />
+    <DecayTime value="2.81" />
+    <DecayHFRatio value="0.14" />
+    <ReflectionsLevel value="429" />
+    <ReflectionsDelay value="0.014" />
+    <ReverbLevel value="1023" />
+    <ReverbDelay value="0.021" />
+    <Diffusion value="80" />
+    <Density value="60" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbUnderwater">
+    <RoomHF value="-4000" />
+    <DecayHFRatio value="0.1" />
+    <ReflectionsLevel value="-449" />
+    <ReverbLevel value="1700" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbDrugged">
+    <DecayTime value="8.39" />
+    <DecayHFRatio value="1.39" />
+    <ReflectionsLevel value="-115" />
+    <ReflectionsDelay value="0.002" />
+    <ReverbLevel value="985" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbDizzy">
+    <RoomHF value="-400" />
+    <DecayTime value="17.23" />
+    <DecayHFRatio value="0.56" />
+    <ReflectionsLevel value="-1713" />
+    <ReflectionsDelay value="0.02" />
+    <ReverbLevel value="-613" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPReverb id="ReverbPsychotic">
+    <RoomHF value="-151" />
+    <DecayTime value="7.56" />
+    <DecayHFRatio value="0.91" />
+    <ReflectionsLevel value="-626" />
+    <ReverbLevel value="774" />
+    <ReverbDelay value="0.03" />
+  </CDSPReverb>
+  <CDSPLowPassSimple id="LowPassSimple_700Hz">
+    <Cutoff value="700" />
+  </CDSPLowPassSimple>
+  <CDSPLimiter id="Void_HowlingWolfeLimiter_MasterOutputs">
+    <ThresholdDB value="-1" />
+    <MakeUpGainDB value="0.7" />
+    <ARCMinReleaseMs value="1" />
+    <ARCMaxReleaseMs value="500" />
+    <ReleaseMs value="1" />
+    <SoftKneeWidthDB value="0" />
+  </CDSPLimiter>
+</Catalog>

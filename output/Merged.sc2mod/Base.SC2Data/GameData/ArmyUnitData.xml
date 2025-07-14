@@ -1,0 +1,8 @@
+<Catalog>
+  <CArmyUnit default="1">
+    <Name value="ArmyUnit/Name/##id##" />
+    <Description value="ArmyUnit/Description/##id##" />
+    <Confirmation value="ArmyUnit/Confirmation/##id##" />
+    <BankPath Key="##id##" />
+  </CArmyUnit>
+</Catalog>

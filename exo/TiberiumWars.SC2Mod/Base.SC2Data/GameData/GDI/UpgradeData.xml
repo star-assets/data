@@ -1,0 +1,20 @@
+<Catalog>
+    <CUpgrade default="1" id="GDIUpgrade">
+        <?token id="icon" value="gdi-gold"?>
+        <EditorCategories value="Race:GDI,UpgradeType:SpellResearch"/>
+        <Icon value="Assets\Icons\GDI\##icon##.dds"/>
+        <Race value="GDI"/>
+    </CUpgrade>
+    <CUpgrade id="GDIJetPack" parent="GDIUpgrade" icon="FXGDI_AssaultJetpacks">
+        <EffectArray Operation="Set" Reference="Unit,GDIZoneDefender,Mover" Value="CliffJumper"/>
+        <EffectArray Operation="Set" Reference="Unit,GDIZoneTrooper,Mover" Value="CliffJumper"/>
+        <EffectArray Operation="Set" Reference="Unit,GDIZoneEnforcer,Mover" Value="CliffJumper"/>
+        <EffectArray Operation="Set" Reference="Unit,GDIZoneCommando,Mover" Value="CliffJumper"/>
+        <EffectArray Reference="Unit,GDIZoneDefender,LifeStart" Value="10"/>
+        <EffectArray Reference="Unit,GDIZoneEnforcer,LifeStart" Value="10"/>
+        <EffectArray Reference="Unit,GDIZoneTrooper,LifeStart" Value="10"/>
+        <EffectArray Reference="Unit,GDIZoneDefender,LifeMax" Value="10"/>
+        <EffectArray Reference="Unit,GDIZoneEnforcer,LifeMax" Value="10"/>
+        <EffectArray Reference="Unit,GDIZoneTrooper,LifeMax" Value="10"/>
+    </CUpgrade>
+</Catalog>

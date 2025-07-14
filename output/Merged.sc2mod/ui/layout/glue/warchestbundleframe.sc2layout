@@ -1,0 +1,626 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="SelectedBundleFrame" name="WarChestBundleFrameTemplate" template="SelectedBundleFrame/BaseBundleFrameTemplate">
+    <Bundle val="{$parent/@Bundle}" />
+    <Visible val="false" />
+    <Frame type="WarChestTierFrame" name="WarChestTierFrame">
+      <Anchor relative="$parent" />
+    </Frame>
+    <Frame type="UnlockableTileListTooltip" name="UnlockableTileListTooltip" template="UnlockablePanel/UnlockableTileListTooltipTemplate" />
+    <Frame type="AchievementInfoFrame" name="WarChestOwnedAchievement">
+      <Anchor relative="$parent" />
+      <Visible val="false" />
+      <AchievementId val="{$parent/WarChestTierFrame/@StartAchievementId}" />
+      <PresenceId val="{$BattleUI/@LocalToonPresenceId}" />
+    </Frame>
+    <Frame type="AchievementInfoFrame" name="NodeCompletedAchievement">
+      <Anchor relative="$parent" />
+      <Visible val="false" />
+      <AchievementId val="{$parent/WarChestTierFrame/@AchievementId}" />
+      <PresenceId val="{$BattleUI/@LocalToonPresenceId}" />
+    </Frame>
+    <Frame type="Image" name="LockIcon">
+      <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="56" />
+      <Anchor side="Right" relative="$parent/BackgroundImage" pos="Max" offset="-56" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_Dialogs_SelectedBundle_LockIcon" />
+      <CollapseLayout val="true" />
+    </Frame>
+    <Frame type="Label" name="BundleXPLabel">
+      <Anchor side="Top" relative="$parent/BackgroundImage" pos="Min" offset="81" />
+      <Anchor side="Right" relative="$parent/LockIcon" pos="Min" offset="-3" />
+      <Style val="@Collection_WarChest_BundleXP" />
+      <Text val="{$parent/FormattedXPText/@Text}" />
+      <Color val="#WarChestNodeColor_ProgressBar_Primary" />
+    </Frame>
+    <Frame type="TextFormatFrame" name="FormattedXPText">
+      <Anchor relative="$parent" />
+      <Visible val="false" />
+      <FormatText val="@UI/ScreenCollection/WarChest/Tooltip/MinMaxXP" />
+      <Replacement val="{$this/CurrentXPFinalBuffer/@Text}" />
+      <Replacement val="{$this/GoalXPWithCommas/@Text}" />
+      <Frame type="Label" name="CurrentXP">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <Text val="0" />
+      </Frame>
+      <Frame type="Label" name="CurrentXPFinalBuffer">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <Text val="{$parent/CurrentXPWithCommas/@Text}" />
+      </Frame>
+      <Frame type="MathFrame" name="CurrentXPVal">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <A val="{$WarChestFrame/@EarnedXP}" />
+        <B val="{$parent/$parent/WarChestTierFrame/@MinXP}" />
+        <Operator val="Subtract" />
+      </Frame>
+      <Frame type="MathFrame" name="GoalXPVal">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <A val="{$parent/$parent/WarChestTierFrame/@MaxXP}" />
+        <B val="{$parent/$parent/WarChestTierFrame/@MinXP}" />
+        <Operator val="Subtract" />
+      </Frame>
+      <Frame type="CountdownLabel" name="CurrentXPWithCommas">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <FormatNumber val="true" />
+        <CurrentValue val="{$parent/CurrentXP/@Text}" />
+      </Frame>
+      <Frame type="CountdownLabel" name="GoalXPWithCommas">
+        <Anchor relative="$parent" />
+        <Visible val="false" />
+        <FormatNumber val="true" />
+        <CurrentValue val="{$parent/GoalXPVal/@ResultInt}" />
+      </Frame>
+      <StateGroup name="CurrentXPRangeState">
+        <DefaultState val="BelowMin" />
+        <State name="BetweenMinMax">
+          <When type="Property" frame="CurrentXPVal" />
+          <When type="Property" frame="CurrentXPVal" />
+          <Action type="SetProperty" frame="CurrentXP" />
+          <Action type="SetProperty" frame="CurrentXPFinalBuffer" />
+        </State>
+        <State name="AboveMax">
+          <When type="Property" frame="CurrentXPVal" />
+          <Action type="SetProperty" frame="CurrentXP" />
+          <Action type="SetProperty" frame="CurrentXPFinalBuffer" />
+        </State>
+        <State name="BelowMin">
+          <Action type="SetProperty" frame="CurrentXP" />
+          <Action type="SetProperty" frame="CurrentXPFinalBuffer" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <StateGroup name="WarChestBundleStateGroup">
+      <DefaultState val="Unlocked" />
+      <State name="NotOwned_StartingProtoss">
+        <When type="StateGroup" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotOwned_StartingTerran">
+        <When type="StateGroup" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotOwned_StartingZerg">
+        <When type="StateGroup" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="Owned_StartingProtoss">
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="LockIcon" Visible="false" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="Owned_StartingTerran">
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="LockIcon" Visible="false" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="Owned_StartingZerg">
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="LockIcon" Visible="false" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="false" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotOwned_Protoss">
+        <When type="Property" frame="WarChestTierFrame" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="true" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotOwned_Terran">
+        <When type="Property" frame="WarChestTierFrame" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="true" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotOwned_Zerg">
+        <When type="Property" frame="WarChestTierFrame" />
+        <When type="Property" frame="WarChestOwnedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="true" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="NotUnlocked">
+        <When type="Property" frame="NodeCompletedAchievement" />
+        <Action type="SetProperty" frame="LockIcon" Visible="true" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="true" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+      <State name="Unlocked">
+        <Action type="SetProperty" frame="LockIcon" Visible="false" />
+        <Action type="SetProperty" frame="BundleXPLabel" Visible="true" />
+        <Action type="SetProperty" frame="BundleSubLabel" />
+        <Action type="SetProperty" frame="BundleDescriptionLabel" />
+      </State>
+    </StateGroup>
+    <StateGroup name="WarChestTierStateGroup">
+      <DefaultState val="ProtossTier15" />
+      <State name="TerranStarting">
+        <When type="Property" frame="BundleCacheFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergStarting">
+        <When type="Property" frame="BundleCacheFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossStarting">
+        <When type="Property" frame="BundleCacheFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier1">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier2">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier3">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier4">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier5">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier6">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier7">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier8">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier9">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier10">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier11">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier12">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier13">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier14">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="FreeTier15">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier1">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier2">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier3">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier4">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier5">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier6">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier7">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier8">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier9">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier10">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier11">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier12">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier13">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier14">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="TerranTier15">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier1">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier2">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier3">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier4">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier5">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier6">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier7">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier8">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier9">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier10">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier11">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier12">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier13">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier14">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ZergTier15">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier1">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier2">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier3">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier4">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier5">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier6">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier7">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier8">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier9">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier10">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier11">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier12">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier13">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier14">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+      <State name="ProtossTier15">
+        <When type="Property" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+        <Action type="SetProperty" frame="WarChestTierFrame" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

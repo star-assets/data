@@ -1,0 +1,58 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: SPAWN PANEL
+//--------------------------------------------------------------------------------------------------
+// Constants
+const int libSPPN_gv_spawnSets = 4;
+const int libSPPN_gv_buttonsMax = 40;
+const int libSPPN_gv_panels = 4;
+const int libSPPN_gv_placementCardRows = 8;
+const int libSPPN_gv_placementCardColumns = 5;
+
+// Variable Declarations
+string[17] libSPPN_gv_creator_selectedRace;
+int[17] libSPPN_gv_creator_selectedPlayer;
+int[17] libSPPN_gv_selectedTab;
+int[libSPPN_gv_panels + 1] libSPPN_gv_placementCardOffset;
+playergroup libSPPN_gv_allPlayers;
+string libSPPN_gv_allStructures;
+string libSPPN_gv_allRaces;
+string libSPPN_gv_allUnits;
+string libSPPN_gv_allUpgradesSkills;
+string libSPPN_gv_allUpgradesLevels;
+string libSPPN_gv_currentStructures;
+string libSPPN_gv_currentUnits;
+string libSPPN_gv_currentUpgradesSkills;
+string libSPPN_gv_currentUpgradesLevels;
+int libSPPN_gv_spawnDialog;
+int[libSPPN_gv_spawnSets + 1] libSPPN_gv_spawnDialogCommandsSet;
+int[libSPPN_gv_spawnSets + 1][15] libSPPN_gv_spawnDialogCommandsSetButtons;
+unit[libSPPN_gv_spawnSets + 1] libSPPN_gv_spawnCasters;
+int[libSPPN_gv_panels + 1] libSPPN_gv_creator_tabsButtons;
+int[libSPPN_gv_panels + 1] libSPPN_gv_creator_tabsButtonsimage;
+int[libSPPN_gv_panels + 1] libSPPN_gv_creator_bottomButton;
+int[libSPPN_gv_panels + 1] libSPPN_gv_creator_upButton;
+int[libSPPN_gv_panels + 1][libSPPN_gv_buttonsMax + 1] libSPPN_gv_creator_itembutton;
+string[libSPPN_gv_panels + 1][libSPPN_gv_buttonsMax + 1] libSPPN_gv_creator_itemunit;
+int[libSPPN_gv_panels + 1][libSPPN_gv_buttonsMax + 1] libSPPN_gv_creator_itemface;
+int[libSPPN_gv_panels + 1] libSPPN_gv_buttons_panels;
+
+// Function Declarations
+int libSPPN_gf_CountWords (string lp_str);
+void libSPPN_gf_RunTester ();
+void libSPPN_gf_SelectRace (string lp_race, int lp_triggeringPlayer);
+void libSPPN_gf_Selectplayer (int lp_player, int lp_triggeringPlayer);
+void libSPPN_gf_SelectPanel (int lp_player, int lp_tab);
+void libSPPN_gf_SetupUnitTesterData ();
+void libSPPN_gf_MakeUnitTesterPlacementCard ();
+void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player);
+
+// Trigger Declarations
+trigger libSPPN_gt_UntitledTrigger001;
+trigger libSPPN_gt_ChangeSpawnedUnitOwner;
+trigger libSPPN_gt_CardButtonCliked;
+
+// Library Initialization
+void libSPPN_InitVariables ();
+

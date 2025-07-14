@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DocInfo>
+    <Dependencies>
+        <Value>bnet:[AR2] BASE/0.0/231102,file:Mods\all-races-factions-versions\Base.sc2mod</Value>
+    </Dependencies>
+</DocInfo>

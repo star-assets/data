@@ -1,0 +1,7 @@
+<Desc>
+  <Frame type="PylonButton" name="PylonButtonTemplate" template="StandardTemplates/HelperButtonTemplate">
+    <Frame type="Image" name="Icon">
+      <Texture val="@@@UI/WarpButtonIcon" />
+    </Frame>
+  </Frame>
+</Desc>

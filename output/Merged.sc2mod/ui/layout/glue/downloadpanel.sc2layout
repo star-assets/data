@@ -1,0 +1,291 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="DownloadPanel" name="DownloadPanelTemplate">
+    <Height val="200" />
+    <Width val="550" />
+    <Frame type="Frame" name="CircleAnchor">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="68" />
+      <Width val="4" />
+      <Height val="4" />
+    </Frame>
+    <Frame type="Image" name="SearchBackgroundImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/CircleAnchor" pos="Min" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_BG" />
+      <Height val="70" />
+      <Width val="344" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.2" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+        <Controller type="Anchor" side="Left" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.2" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchBackgroundBottomLine">
+      <Anchor side="Bottom" relative="$parent/SearchBackgroundImage" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/SearchBackgroundImage" pos="Min" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_BottomLine" />
+      <Height val="10" />
+      <Width val="172" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="1.2" />
+          <Key type="Curve" time="1.9" />
+        </Controller>
+        <Controller type="Anchor" side="Left" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="1.2" />
+          <Key type="Curve" time="1.9" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchBackgroundTopLine">
+      <Anchor side="Top" relative="$parent/SearchBackgroundImage" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent/SearchBackgroundImage" pos="Min" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_TopLine" />
+      <Height val="10" />
+      <Width val="187" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.7" />
+          <Key type="Curve" time="1.9" />
+        </Controller>
+        <Controller type="Anchor" side="Left" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.7" />
+          <Key type="Curve" time="1.9" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchCircleBg">
+      <Anchor side="Top" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_CircleBg" />
+      <Height val="84" />
+      <Width val="84" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchOuterCircle">
+      <Anchor side="Top" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_OuterCircle" />
+      <Height val="84" />
+      <Width val="84" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Rotation" relative="False" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="3.5" />
+        </Controller>
+        <Controller type="Dimension" dimension="Width" relative="False" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+        <Controller type="Dimension" dimension="Height" relative="False" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchInnerCircle">
+      <Anchor side="Top" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/CircleAnchor" pos="Mid" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_InnerCircle" />
+      <Height val="84" />
+      <Width val="84" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Rotation" relative="False" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="3.5" />
+        </Controller>
+        <Controller type="Dimension" dimension="Width" relative="False" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+        <Controller type="Dimension" dimension="Height" relative="False" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchDownloadArrows">
+      <Anchor side="Top" relative="$parent/SearchInnerCircle" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/SearchInnerCircle" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/SearchInnerCircle" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent/SearchInnerCircle" pos="Mid" offset="0" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingIcon" />
+      <Height val="48" />
+      <Width val="47" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+          <Key type="Curve" time="0.5" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchDownloadArrowHighlight1">
+      <Anchor side="Top" relative="$parent/SearchDownloadArrows" pos="Min" offset="5" />
+      <Anchor side="Left" relative="$parent/SearchDownloadArrows" pos="Min" offset="1" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingHighlight" />
+      <Height val="34" />
+      <Width val="47" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.5" />
+          <Key type="Curve" time="0.8" />
+          <Key type="Curve" time="1.1" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="SearchDownloadArrowHighlight2">
+      <Anchor side="Top" relative="$parent/SearchDownloadArrows" pos="Min" offset="14" />
+      <Anchor side="Left" relative="$parent/SearchDownloadArrows" pos="Min" offset="1" />
+      <Texture val="@UI/Glues_Battlenet_DownloadPanel_DownloadingHighlight" />
+      <Height val="34" />
+      <Width val="47" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.8" />
+          <Key type="Curve" time="1.1" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Label" name="TitleLabel">
+      <Anchor side="Top" relative="$parent/SearchBackgroundImage" pos="Min" offset="15" />
+      <Anchor side="Left" relative="$parent/SearchBackgroundImage" pos="Min" offset="52" />
+      <Style val="Coop_DownloadPanelTitle" />
+      <Text val="Title Lorem Ipsum" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Label" name="MessageLabel">
+      <Anchor side="Top" relative="$parent/TitleLabel" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent/TitleLabel" pos="Max" offset="1" />
+      <Style val="Coop_DownloadPanelTitle" />
+      <Text val="35%" />
+      <Alpha val="0" />
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="ProgressBar" name="ProgressBar">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="28" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="-10" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Width val="0" />
+      <Height val="42" />
+      <MinValue val="0.000000" />
+      <MaxValue val="1.00" />
+      <FillInset val="0.03125" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Button" name="Button" template="StandardBattlenetTemplates/BattlenetSmallButtonTemplate">
+      <Anchor side="Top" relative="$parent/SearchBackgroundImage" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent/SearchBackgroundImage" pos="Min" offset="7" />
+      <Width val="338" />
+      <Height val="66" />
+      <Frame type="Image" name="NormalImage">
+        <Alpha val="0" />
+      </Frame>
+      <Frame type="Image" name="HoverImage">
+        <Alpha val="0" />
+      </Frame>
+      <Frame type="Label" name="Label">
+        <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+        <Anchor side="Left" relative="$parent/$parent/TitleLabel" pos="Min" offset="1" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Style val="Coop_DownloadPanelSubTitle" />
+      </Frame>
+      <Frame type="Frame" name="HitTestFrame">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      </Frame>
+      <Animation name="Spin">
+        <Event event="OnShown" action="Reset, Play" />
+        <Controller type="Fade" end="Pause">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Frame" name="TooltipHitFrame">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="30" />
+      <Width val="400" />
+      <Height val="70" />
+      <AcceptsMouseTooltip val="True" />
+      <Tooltip val="{$this/FormattedTooltip/@Text}" />
+      <TooltipAnchorPosition val="BottomToTop | LeftToLeft" />
+      <Frame type="TextFormatFrame" name="FormattedTooltip">
+        <Anchor relative="$parent" />
+        <Replacement val="{$parent/$parent/@FullDownloadKBCurrent}" />
+        <Replacement val="{$parent/$parent/@FullDownloadKBTotal}" />
+        <FormatText val="@UI/ScreenCustomGames/DownloadTooltip" />
+      </Frame>
+    </Frame>
+  </Frame>
+</Desc>

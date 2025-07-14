@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Catalog>
+    <CFootprint id="Footprint1x1">
+        <Layers index="Check" Area="0,0,1,1">
+            <Rows value="x"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place" Area="0,0,1,1">
+            <Rows value="x"/>
+        </Layers>
+        <Shape Radius="0.7072" Offsets="-0.5,-0.5;-0.5,0.5;0.5,0.5;0.5,-0.5" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint2x2">
+        <Layers index="Check">
+            <Rows value="xx"/>
+            <Rows value="xx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place">
+            <Rows value="xx"/>
+            <Rows value="xx"/>
+        </Layers>
+        <Shape Radius="1.4143" Offsets="-1,-1;-1,1;1,1;1,-1" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint3x3">
+        <Layers index="Check" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Shape Radius="2.1213" Offsets="-1.5,-1.5;-1.5,1.5;1.5,1.5;1.5,-1.5" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint4x4">
+        <Layers index="Check" Area="-2,-2,2,2">
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place" Area="-2,-2,2,2">
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+        </Layers>
+        <Shape Radius="2.8286" Offsets="-2,-2;-2,2;2,2;2,-2" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint1x1Creep" parent="Footprint1x1">
+        <Layers index="Check">
+            <Sets index="0">
+                <Positive index="Creep" value="1"/>
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+    </CFootprint>
+    <CFootprint id="Footprint2x2Creep" parent="Footprint2x2">
+        <Layers index="Check">
+            <Sets index="0">
+                <Positive index="Creep" value="1"/>
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Shape Radius="1.1181" Offsets="0.5,-1;-0.5,-1;-1,-0.5;-1,0.5;-0.5,1;0.5,1;1,0.5;1,-0.5" Borders="7,0,2;0,1,2;1,2,2;2,3,2;3,4,2;4,5,2;5,6,2;6,7,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint3x3Creep">
+        <Layers index="Check" Area="-1,-1,2,2">
+            <Sets index="0">
+                <Positive index="Creep" value="1"/>
+                <Negative index="Creep" value="0"/>
+            </Sets>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Layers index="Place" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Shape Radius="1.591" Offsets="-1.125,-1.125;-1.125,1.125;1.125,1.125;1.125,-1.125" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint2x2Contour">
+        <Layers index="Check">
+            <Rows value="xx"/>
+            <Rows value="xx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place">
+            <Rows value="xx"/>
+            <Rows value="xx"/>
+        </Layers>
+        <Shape Radius="1.1181" Offsets="-1,0.5;-0.5,1;0.5,1;1,0.5;1,-0.5;0.5,-1;-0.5,-1;-1,-0.5" Borders="7,0,2;0,1,2;1,2,2;2,3,2;3,4,2;4,5,2;5,6,2;6,7,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint3x3Contour">
+        <Layers index="Check" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place" Area="-1,-1,2,2">
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+            <Rows value="xxx"/>
+        </Layers>
+        <Shape Radius="1.803" Offsets="-1.5,-1;-1.5,1;-1,1.5;1,1.5;1.5,1;1.5,-1;1,-1.5;-1,-1.5" Borders="7,0,2;0,1,2;1,2,2;2,3,2;3,4,2;4,5,2;5,6,2;6,7,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint4x4Contour">
+        <Layers index="Check" Area="-2,-2,2,2">
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+        </Layers>
+        <Layers index="Place" Area="-2,-2,2,2">
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+            <Rows value="xxxx"/>
+        </Layers>
+        <Shape Radius="2.236" Offsets="-2,-1;-2,1;-1,2;1,2;2,1;2,-1;1,-2;-1,-2" Borders="7,0,2;0,1,2;1,2,2;2,3,2;3,4,2;4,5,2;5,6,2;6,7,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint5x5Contour">
+        <Layers index="Check" Area="-2,-2,3,3">
+            <Sets index="0">
+                <Negative index="NearResources" value="1"/>
+            </Sets>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+        </Layers>
+        <Layers index="Place" Area="-2,-2,3,3">
+            <Sets index="0">
+                <Positive index="DropOff" value="1"/>
+            </Sets>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+        </Layers>
+        <Shape Radius="2.6926" Offsets="-1,-2.5;-2.5,-1;-2.5,1;-1,2.5;1,2.5;2.5,1;2.5,-1;1,-2.5" Borders="7,0,2;0,1,2;1,2,2;2,3,2;3,4,2;4,5,2;5,6,2;6,7,2"/>
+    </CFootprint>
+    <CFootprint id="Footprint5x5DropOff">
+        <Layers index="Check" Area="-2,-2,3,3">
+            <Sets index="0">
+                <Negative index="NearResources" value="1"/>
+            </Sets>
+            <Sets index="0">
+                <Negative index="Creep" value="0"/>
+            </Sets>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+        </Layers>
+        <Layers index="Place" Area="-2,-2,3,3">
+            <Sets index="0">
+                <Positive index="DropOff" value="1"/>
+            </Sets>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+            <Rows value="xxxxx"/>
+        </Layers>
+        <Shape Radius="3.5356" Offsets="-2.5,-2.5;-2.5,2.5;2.5,2.5;2.5,-2.5" Borders="3,0,2;0,1,2;1,2,2;2,3,2"/>
+    </CFootprint>
+</Catalog>

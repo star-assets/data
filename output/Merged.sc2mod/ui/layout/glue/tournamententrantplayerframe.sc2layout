@@ -1,0 +1,222 @@
+<Desc>
+  <Animation name="EntrantStateAnimation_Self">
+    <Event event="Self" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="SelfImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_NotSelf">
+    <Event event="NotSelf" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="SelfImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="Prot">
+    <Event event="Prot" action="Reset,Play" />
+    <Controller type="Texture" end="Pause" frame="RaceImage">
+      <Key type="Image" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="RaceImageHighlight">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="Terr">
+    <Event event="Terr" action="Reset,Play" />
+    <Controller type="Texture" end="Pause" frame="RaceImage">
+      <Key type="Image" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="RaceImageHighlight">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="Zerg">
+    <Event event="Zerg" action="Reset,Play" />
+    <Controller type="Texture" end="Pause" frame="RaceImage">
+      <Key type="Image" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="RaceImageHighlight">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="Rand">
+    <Event event="Rand" action="Reset,Play" />
+    <Controller type="Texture" end="Pause" frame="RaceImage">
+      <Key type="Image" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="RaceImageHighlight">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimationTemplate_Default">
+    <Controller type="Style" end="Pause" frame="NameLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="RaceImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="RaceImageHighlight">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="NameLabel">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="ByeImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="ByeLabel">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="RaceImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="NameLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="ByeLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="ByeImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="SelfImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="SelfImage">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Empty">
+    <Event event="Empty" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="NameLabel">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Undecided">
+    <Event event="Undecided" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="RaceImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Won">
+    <Event event="Won" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="RaceImageHighlight">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Style" end="Pause" frame="NameLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Advanced">
+    <Event event="Advanced" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="RaceImageHighlight">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Style" end="Pause" frame="NameLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Lost">
+    <Event event="Lost" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="RaceImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Bye">
+    <Event event="Bye" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="NameLabel">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="ByeImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Visibility" end="Pause" frame="ByeLabel">
+      <Key type="Bool" time="0" />
+    </Controller>
+  </Animation>
+  <Animation name="EntrantStateAnimation_Eliminated">
+    <Event event="Eliminated" action="Reset,Play" frame="$parent" />
+    <Controller type="Visibility" end="Pause" frame="RaceImage">
+      <Key type="Bool" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="RaceImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="NameLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="ByeLabel">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="ByeImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Fade" end="Pause" frame="SelfImage">
+      <Key type="Curve" time="0" />
+    </Controller>
+    <Controller type="Texture" end="Pause" frame="SelfImage">
+      <Key type="Image" time="0" />
+    </Controller>
+  </Animation>
+  <Frame type="TournamentEntrantPlayerFrame" name="TournamentEntrantPlayerFrameTemplate">
+    <Frame type="Image" name="RaceImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="44" />
+      <Height val="44" />
+      <Visible val="False" />
+    </Frame>
+    <Frame type="Image" name="RaceImageHighlight">
+      <Anchor relative="$parent/RaceImage" />
+      <Visible val="False" />
+    </Frame>
+    <Frame type="Image" name="ByeImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="44" />
+      <Height val="44" />
+      <Alpha val="51" />
+      <Visible val="False" />
+      <Texture val="@UI/SC2_UI_Tournament_ByeIcon_Normal" />
+    </Frame>
+    <Frame type="Label" name="NameLabel">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/RaceImage" pos="Max" offset="-4" />
+      <Style val="@Tournament_Playername_Normal" />
+      <AcceptsMouse val="true" />
+    </Frame>
+    <Frame type="Label" name="ByeLabel">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Left" relative="$parent/RaceImage" pos="Max" offset="-4" />
+      <Style val="@Tournament_Playername_Normal" />
+      <Alpha val="51" />
+      <Visible val="False" />
+      <Text val="@UI/TournamentMatchFrames/Bye" />
+    </Frame>
+    <Frame type="Image" name="SelfImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Left" relative="$parent/NameLabel" pos="Max" offset="-9" />
+      <Width val="44" />
+      <Height val="44" />
+      <Visible val="False" />
+      <Texture val="UI/SC2_UI_Tournament_SelfIcon_Highlight" />
+    </Frame>
+    <Animation name="EntrantStateAnimation_Self" />
+    <Animation name="EntrantStateAnimation_NotSelf" />
+    <Animation name="Prot" />
+    <Animation name="Terr" />
+    <Animation name="Zerg" />
+    <Animation name="Rand" />
+    <Animation name="EntrantStateAnimation_Empty" />
+    <Animation name="EntrantStateAnimation_Undecided" />
+    <Animation name="EntrantStateAnimation_Won" />
+    <Animation name="EntrantStateAnimation_Advanced" />
+    <Animation name="EntrantStateAnimation_Lost" />
+    <Animation name="EntrantStateAnimation_Bye" />
+    <Animation name="EntrantStateAnimation_Eliminated" />
+  </Frame>
+</Desc>

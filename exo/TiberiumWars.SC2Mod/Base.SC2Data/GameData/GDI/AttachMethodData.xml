@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodPattern id="AMPatternMastodon">
+        <Keyword value="Weapon"/>
+        <Driver value="MastodonDamageMissileLM"/>
+    </CAttachMethodPattern>
+    <CAttachMethodFilter id="HammerHeadFilter">
+        <Keys Keyword="Weapon" Index="4"/>
+        <Keys Keyword="Weapon" Index="5"/>
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+    <CAttachMethodPattern id="GDIHammerHeadRocket">
+        <Keyword value="Weapon"/>
+        <Driver value="HammerHeadRocketLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodFilter id="MastodonFilter">
+        <Keys Keyword="Weapon" Index="3"/>
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+
+</Catalog>

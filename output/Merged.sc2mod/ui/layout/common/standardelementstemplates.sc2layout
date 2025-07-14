@@ -1,0 +1,753 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="Button" name="PageSelectorButtonTemplate">
+    <Width val="20" />
+    <Height val="20" />
+    <CollapseLayout val="true" />
+    <HoverSound val="@UI_HoverTick" />
+    <ClickSound val="@UI_ActionButtonSelect" />
+    <Frame type="Image" name="NormalImage">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_PagePips_Normal" />
+    </Frame>
+    <Frame type="Image" name="HoverImage">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_PagePips_Selected" />
+    </Frame>
+    <Frame type="Image" name="SelectedImage">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_PagePips_Selected" />
+      <DesaturateOnDisable val="false" />
+      <Visible val="false" />
+    </Frame>
+    <StateGroup name="SelectedState">
+      <DefaultState val="NotSelected" />
+      <State name="Selected">
+        <When type="Property" frame="$this" Toggled="True" />
+        <Action type="SetProperty" frame="$this/SelectedImage" Visible="True" />
+        <Action type="SetProperty" frame="$this/NormalImage" />
+        <Action type="SetProperty" frame="$this/HoverImage" />
+      </State>
+      <State name="NotSelected">
+        <Action type="SetProperty" frame="$this/SelectedImage" Visible="False" />
+        <Action type="SetProperty" frame="$this/NormalImage" />
+        <Action type="SetProperty" frame="$this/HoverImage" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="PageSelectorButtonList" name="PageSelectorButtonListTemplate">
+    <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    <AllowPageWrap val="true" />
+    <AllowAutoPageWrap val="true" />
+    <AutoIncrement val="true" />
+    <CycleDelay val="7000" />
+    <Frame type="Button" name="IncrementButton">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    </Frame>
+    <Frame type="Button" name="PageButton0" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton1" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton1" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton2" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton2" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton3" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton3" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton4" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton4" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton5" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton5" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton6" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton6" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton7" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton7" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton8" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton8" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent/PageButton9" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent/PageButton9" pos="Min" offset="4" />
+    </Frame>
+    <Frame type="Button" name="PageButton9" template="StandardElementsTemplates/PageSelectorButtonTemplate">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-7" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-7" />
+    </Frame>
+  </Frame>
+  <Frame type="Control" name="ArtButtonBaseTemplate">
+    <Anchor side="Top" relative="$this/AnchorFrame" pos="Min" offset="-30" />
+    <Anchor side="Bottom" relative="$this/AnchorFrame" pos="Max" offset="30" />
+    <Anchor side="Left" relative="$this/AnchorFrame" pos="Min" offset="-30" />
+    <Anchor side="Right" relative="$this/AnchorFrame" pos="Max" offset="30" />
+    <Animation name="HoverSound">
+      <Event event="OnMouseEnter" action="Reset,Play" />
+      <Controller type="Sound" end="Stop">
+        <Key type="Sound" time="0" sound="@UI_HoverTick" />
+      </Controller>
+    </Animation>
+    <Frame type="Frame" name="AnchorFrame">
+      <Width val="186" />
+      <Height val="210" />
+    </Frame>
+    <Frame type="Frame" name="HitTestFrame">
+      <Anchor relative="$parent/AnchorFrame" />
+    </Frame>
+    <Frame type="Image" name="Background">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <DesaturateOnDisable val="False" />
+      <Visible val="True" />
+      <LayerCount val="4" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Mask" layer="0" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Mask" layer="2" />
+      <Texture val="@UI/Glues_Battlenet_StandardButtons_Small_Background_Gradient" layer="3" />
+      <TextureType val="NineSlice" layer="0" />
+      <TextureType val="NineSlice" layer="2" />
+      <AlphaLayer val="True" />
+      <AlphaLayer val="True" />
+      <LayerColor val="0,0,0" />
+      <LayerColor val="12,43,82" />
+      <LayerAlpha val="178" />
+      <LayerAlpha val="170" />
+      <TextureCoords top="0" left="0" bottom="1.1" right="1" />
+      <StateGroup name="DisplayState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Frame" name="ArtContainer">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="3" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="-3" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="2" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="-2" />
+    </Frame>
+    <Frame type="Image" name="InnerGlow">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="3" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="-3" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="2" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="-2" />
+      <DesaturateOnDisable val="False" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_InnerGlow" layer="0" />
+      <TextureType val="NineSlice" layer="0" />
+      <Color val="20,68,113" />
+      <Alpha val="179" />
+      <StateGroup name="DisplayState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="False" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="False" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="True" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" Visible="True" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Image" name="Overlay">
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="-3" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="2" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="-2" />
+      <Height val="146" />
+      <DesaturateOnDisable val="False" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Overlay_Normal" />
+      <StateGroup name="DisplayState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Overlay_Selected" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="Assets/Textures/Blank.dds" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Overlay_Normal" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Overlay_Normal" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Image" name="BorderGlow">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="-21" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="21" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="-21" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="21" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_OuterGlow" />
+      <TextureType val="NineSlice" />
+      <DesaturateOnDisable val="False" />
+      <RenderPriority val="500" />
+      <Color val="0,102,255" />
+      <Alpha val="191" />
+      <Animation name="Pulse">
+        <Event event="OnShown" action="Play" frame="$this" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="1" />
+          <Key type="Curve" time="2" />
+        </Controller>
+      </Animation>
+      <StateGroup name="VisibleState">
+        <DefaultState val="NotVisible" />
+        <State name="Visible">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="True" />
+        </State>
+        <State name="NotVisible">
+          <Action type="SetProperty" frame="$this" Visible="False" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Image" name="Border">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <DesaturateOnDisable val="False" />
+      <LayerCount val="3" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Normal" layer="0" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Normal" layer="1" />
+      <Texture val="@UI/Glues_Battlenet_TabsStandard_Background_Gradient" layer="2" />
+      <TextureType val="NineSlice" layer="0" />
+      <TextureType val="NineSlice" layer="1" />
+      <AlphaLayer val="True" />
+      <LayerColor val="78,153,199" />
+      <LayerAlpha val="255" />
+      <StateGroup name="DisplayState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Selected" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="255" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Disabled" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="0" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Hovered" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="255" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" Texture="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Normal" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="255" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Image" name="BorderHighlight">
+      <Anchor side="Top" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <DesaturateOnDisable val="False" />
+      <LayerCount val="2" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Normal" layer="0" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardElements_ArtButton_Border_Highlight" layer="1" />
+      <TextureType val="NineSlice" layer="0" />
+      <AlphaLayer val="True" />
+      <LayerColor val="65,131,199" />
+      <LayerAlpha val="64" />
+      <BlendMode val="Add" />
+      <StateGroup name="DisplayState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="64" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="0" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="64" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" />
+          <Action type="SetProperty" frame="$this" LayerAlpha="64" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Label" name="Label">
+      <Anchor side="Bottom" relative="$parent/AnchorFrame" pos="Max" offset="-16" />
+      <Anchor side="Left" relative="$parent/AnchorFrame" pos="Min" offset="-4" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="4" />
+      <Style val="@StandardElements_ArtButton_Normal" />
+      <StateGroup name="SelectedState">
+        <DefaultState val="NotSelected" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Disabled">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="NotSelected">
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <StateGroup name="ToggledState">
+      <DefaultState val="NotToggled" />
+      <State name="Toggled">
+        <When type="Property" frame="$this" />
+      </State>
+      <State name="NotToggled" />
+    </StateGroup>
+    <StateGroup name="HoveredState">
+      <DefaultState val="NotHovered" />
+      <State name="Hovered">
+        <When type="Property" frame="$this" Hovering="True" />
+      </State>
+      <State name="NotHovered" />
+    </StateGroup>
+    <StateGroup name="PressedState">
+      <DefaultState val="NotPressed" />
+      <State name="Pressed">
+        <When type="Property" frame="$this" />
+      </State>
+      <State name="NotPressed" />
+    </StateGroup>
+    <StateGroup name="DisabledState">
+      <DefaultState val="NotDisabled" />
+      <State name="Disabled">
+        <When type="Property" frame="$this" Enabled="False" />
+      </State>
+      <State name="NotDisabled" />
+    </StateGroup>
+  </Frame>
+  <Frame type="Frame" name="SimpleProgressBarContainerTemplate">
+    <Anchor side="Top" relative="$this/AnchorFrame" pos="Min" offset="-7" />
+    <Anchor side="Bottom" relative="$this/AnchorFrame" pos="Max" offset="7" />
+    <Anchor side="Left" relative="$this/AnchorFrame" pos="Min" offset="-7" />
+    <Anchor side="Right" relative="$this/AnchorFrame" pos="Max" offset="7" />
+    <Frame type="Frame" name="AnchorFrame">
+      <Height val="10" />
+      <Width val="400" />
+    </Frame>
+    <Frame type="Image" name="Background">
+      <Anchor relative="$parent/ProgressBar" />
+      <Texture val="Assets/Textures/white.dds" />
+      <Color val="8,57,106" />
+      <Alpha val="153" />
+    </Frame>
+    <Frame type="Image" name="Glow">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ProgressBar/FillImageContainer" pos="Max" offset="7" />
+      <Texture val="@UI/SC2_UI_UserProfile_Summary_ProgressBar_Fill" />
+      <TextureType val="NineSlice" />
+    </Frame>
+    <Frame type="ProgressBar" name="ProgressBar">
+      <Anchor relative="$parent/AnchorFrame" />
+      <UseFillContainer val="true" />
+      <FillInset val="0" />
+      <Frame type="Frame" name="FillImageContainer">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Frame type="Image" name="FillImage">
+          <Anchor relative="$parent" />
+          <Visible val="True" />
+          <LayerCount val="2" />
+          <LayerColor val="0,158,247" />
+          <LayerColor val="0,201,255" />
+          <Texture val="@UI/Glues_Battlenet_TabsStandard_Background_Gradient" layer="1" />
+        </Frame>
+        <Frame type="Frame" name="FillImageAccentMask">
+          <Anchor relative="$parent" />
+          <Frame type="Image" name="FillImageAccent">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent/$parent" pos="Max" offset="0" />
+            <Texture val="@UI/SC2_UI_UserProfile_Summary_ProgressBar_Highlight" />
+            <Width val="49" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="MMRProgressBarContainerTemplate">
+    <Anchor side="Top" relative="ProgressBar" pos="Min" offset="-7" />
+    <Anchor side="Bottom" relative="ProgressBar" pos="Max" offset="7" />
+    <Anchor side="Left" relative="ProgressBar" pos="Min" offset="-7" />
+    <Anchor side="Right" relative="ProgressBar" pos="Max" offset="7" />
+    <Frame type="Image" name="BorderImage">
+      <Anchor relative="$parent/ProgressBar" />
+      <Texture val="Assets/Textures/white.dds" />
+      <Color val="8,57,106" />
+      <Alpha val="153" />
+    </Frame>
+    <Frame type="Image" name="RealFillImage">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ProgressBar/FillImageContainer" pos="Max" offset="7" />
+      <Texture val="@UI/SC2_UI_UserProfile_Summary_ProgressBar_Fill" />
+      <TextureType val="NineSlice" />
+    </Frame>
+    <Frame type="ProgressBar" name="ProgressBar">
+      <UseFillContainer val="true" />
+      <FillInset val="0" />
+      <Frame type="Frame" name="FillImageContainer">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Frame type="Image" name="FillImage">
+          <Anchor relative="$parent" />
+          <Visible val="False" />
+        </Frame>
+        <Frame type="Frame" name="FillImageAccentMask">
+          <Anchor relative="$parent" />
+          <Frame type="Image" name="FillImageAccent">
+            <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+            <Anchor side="Right" relative="$parent/$parent" pos="Max" offset="0" />
+            <Texture val="@UI/SC2_UI_UserProfile_Summary_ProgressBar_Highlight" />
+            <Width val="49" />
+          </Frame>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="ImageBorderTemplate">
+    <Frame type="Image" name="BorderOuter">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer" />
+      <TextureType val="NineSlice" />
+      <Color val="0,0,0" />
+    </Frame>
+    <Frame type="Image" name="BorderInner">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner" />
+      <TextureType val="NineSlice" />
+      <Color val="29,46,69" />
+    </Frame>
+    <StateGroup name="AspectRatioState">
+      <DefaultState val="Default" />
+      <State name="16x9">
+        <When type="StateGroup" frame="$GlueUI" />
+        <Action type="SetProperty" frame="BorderOuter" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer_16x9" />
+        <Action type="SetProperty" frame="BorderInner" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner_16x9" />
+      </State>
+      <State name="Default">
+        <Action type="SetProperty" frame="BorderOuter" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer" />
+        <Action type="SetProperty" frame="BorderInner" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Control" name="TextListBoxItemTemplate">
+    <Frame type="Frame" name="AnchorFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent/DescriptionLabel" pos="Max" offset="30" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    </Frame>
+    <Frame type="Image" name="TitleBg">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="2" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Height val="40" />
+      <Color val="0,50,115" />
+      <Alpha val="64" />
+      <Texture val="Assets/Textures/White.dds" />
+      <TextureType val="Normal" />
+      <Tiled val="False" />
+    </Frame>
+    <Frame type="Label" name="TitleLabel">
+      <Anchor side="Top" relative="$parent/TitleBg" pos="Min" offset="3" />
+      <Anchor side="Bottom" relative="$parent/TitleBg" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/TitleBg" pos="Min" offset="15" />
+      <Anchor side="Right" relative="$parent/TitleBg" pos="Max" offset="-15" />
+      <Style val="@StandardListItemTitle_Large_Standard_Normal" />
+    </Frame>
+    <Frame type="Label" name="SubtitleLabel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="DescriptionBg">
+      <Anchor side="Top" relative="$parent/TitleBg" pos="Max" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Color val="0,50,115" />
+      <Alpha val="32" />
+    </Frame>
+    <Frame type="Label" name="DescriptionLabel">
+      <Anchor side="Top" relative="$parent/TitleBg" pos="Max" offset="14" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Right" relative="$parent/AnchorFrame" pos="Max" offset="-10" />
+      <Style val="@Arcade_GameInfo_HowToPlay_Desc" />
+      <AcceptsMouse val="true" />
+    </Frame>
+  </Frame>
+  <Frame type="ListBox" name="TextListBoxTemplate">
+    <Anchor side="Top" relative="$parent/ListBoxBackground" pos="Min" offset="45" />
+    <Anchor side="Left" relative="$parent/ListBoxBackground" pos="Min" offset="10" />
+    <Anchor side="Bottom" relative="$parent/ListBoxBackground" pos="Max" offset="-10" />
+    <Anchor side="Right" relative="$parent/ListBoxBackground" pos="Max" offset="-10" />
+    <Insets />
+    <ItemHeight val="0" />
+    <ItemGap val="0" />
+    <HighlightOnHover val="false" />
+    <SaveScrollHeightOnClear val="false" />
+    <Frame type="Frame" name="TextListBoxBorder" template="StandardElementsTemplates/ImageBorderTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    </Frame>
+    <Frame type="Image" name="Divider" template="StandardBattlenetTemplates/BattlenetStandardContentContainerDividerTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-28" />
+      <Width val="2" />
+    </Frame>
+    <Frame type="Image" name="ScrollBarBackground" template="StandardTileListTemplates/StandardTileListScrollBarBackgroundTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-6" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-6" />
+      <Alpha val="0" />
+      <StateGroup name="AlphaState">
+        <DefaultState val="Visible" />
+        <State name="NotVisible">
+          <When type="Property" frame="$this" Enabled="True" />
+          <Action type="SetProperty" frame="$this" Visible="True" />
+        </State>
+        <State name="Visible">
+          <Action type="SetProperty" frame="$this" Visible="True" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="ScrollBar" name="ScrollBar" template="StandardTileListTemplates/StandardTileListScrollBarTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-6" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-6" />
+      <RenderPriority val="900" />
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="PremiumMapLargeIconTemplate">
+    <Width val="76" />
+    <Height val="76" />
+    <Frame type="Image" name="Background">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <LayerCount val="1" />
+      <Texture val="@UI/Glues_Generic_Mask_Circle_76x76_Buffer12pt" layer="0" />
+      <TextureCoords top="-0.12" left="-0.12" bottom="1.12" right="1.12" />
+      <LayerColor val="51,34,26" />
+    </Frame>
+    <Frame type="Image" name="BackgroundFluff">
+      <Anchor side="Top" relative="$parent" pos="0.15789" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="0.84211" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="0.21053" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="0.78947" offset="0" />
+      <LayerCount val="3" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_BackgroundFluff" layer="0" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_BackgroundFluff" layer="1" />
+      <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameShimmer" layer="2" />
+      <LayerColor val="255,185,115" />
+      <LayerColor val="255,255,255" />
+      <LayerAlpha val="82" />
+      <LayerAlpha val="255" />
+      <AlphaLayer val="True" />
+      <TextureCoords top="0.25" left="0.25" bottom="0.75" right="0.75" />
+      <Animation name="Shimmer">
+        <Event event="OnShown" action="Reset,Play" frame="$parent" />
+        <Controller type="LayerUV" side="Top" relative="True" end="Loop" frame="$this">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" time="9" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="Ring">
+      <Anchor side="Top" relative="$parent" pos="0.15789" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="0.84211" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="0.15789" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="0.84211" offset="0" />
+      <LayerCount val="3" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_Ring" layer="0" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_Ring" layer="1" />
+      <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameShimmer" layer="2" />
+      <LayerColor val="255,189,139" />
+      <AlphaLayer val="True" />
+      <TextureCoords top="0.25" left="0.25" bottom="0.75" right="0.75" />
+      <LayerAlpha val="255" />
+      <Animation name="Shimmer">
+        <Event event="OnShown" action="Reset,Play" frame="$parent" />
+        <Controller type="LayerUV" side="Top" relative="True" end="Loop" frame="$this">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" time="9" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="GemGlow">
+      <Anchor side="Top" relative="$parent" pos="0.02632" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="0.97368" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="0.02632" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="0.97368" offset="0" />
+      <LayerCount val="1" />
+      <Visible val="True" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_GemGlow" layer="0" />
+      <LayerColor val="255,165,0" />
+      <Animation name="Pulse">
+        <Event event="OnShown" action="DirectionForward,Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="1.5" />
+          <Key type="Curve" time="3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="Gem">
+      <Anchor side="Top" relative="$parent" pos="0.26316" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="0.73684" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="0.26316" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="0.73684" offset="0" />
+      <LayerCount val="1" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_LargeIcon_Gem" layer="0" />
+      <LayerColor val="255,255,255" />
+      <Alpha val="255" />
+    </Frame>
+  </Frame>
+  <Frame type="Frame" name="PremiumMapSmallIconTemplate">
+    <Width val="76" />
+    <Height val="76" />
+    <Frame type="Image" name="Background">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="28" />
+      <Height val="28" />
+      <LayerCount val="1" />
+      <Texture val="@UI/Glues_Generic_Mask_Circle_76x76_Buffer12pt" layer="0" />
+      <TextureCoords top="0.05" left="0.05" bottom="0.95" right="0.95" />
+      <LayerColor val="51,34,26" />
+    </Frame>
+    <Frame type="Image" name="Ring">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="28" />
+      <Height val="28" />
+      <LayerCount val="3" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_SmallIcon_Ring" layer="0" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_SmallIcon_Ring" layer="1" />
+      <Texture val="@UI/Glues_Avatar_LeagueBorder_Small_FrameShimmer" layer="2" />
+      <LayerColor val="255,189,139" />
+      <AlphaLayer val="True" />
+      <TextureCoords top="0.25" left="0.25" bottom="0.75" right="0.75" />
+      <LayerAlpha val="255" />
+      <Animation name="Shimmer">
+        <Event event="OnShown" action="Reset,Play" frame="$parent" />
+        <Controller type="LayerUV" side="Top" relative="True" end="Loop" frame="$this">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" />
+          <Key type="Curve" time="9" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="GemGlow">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="50" />
+      <Height val="50" />
+      <LayerCount val="1" />
+      <Visible val="True" />
+      <Texture val="@UI/Glues_Generic_Effect_RadialGradient_256x256" layer="0" />
+      <LayerColor val="255,165,0" />
+      <Animation name="Pulse">
+        <Event event="OnShown" action="DirectionForward,Play" />
+        <Controller type="Fade" end="Loop">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="1.5" />
+          <Key type="Curve" time="3" />
+        </Controller>
+      </Animation>
+    </Frame>
+    <Frame type="Image" name="Gem">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="16" />
+      <Height val="16" />
+      <LayerCount val="1" />
+      <Texture val="@UI/SC2_UI_Battlenet_Glue_PremiumArcade_SmallIcon_Gem" layer="0" />
+      <LayerColor val="255,255,255" />
+      <Alpha val="255" />
+    </Frame>
+  </Frame>
+</Desc>

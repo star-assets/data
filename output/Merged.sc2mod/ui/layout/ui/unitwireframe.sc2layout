@@ -1,0 +1,3 @@
+<Desc>
+  <Frame type="UnitWireframe" name="UnitWireframeTemplate" template="UnitButton/UnitButtonTemplate" />
+</Desc>

@@ -1,0 +1,611 @@
+<catalog>
+    <CModel id="GDIAirfield" parent="CommandCenterBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Airfield.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDICombatSupportAirfield" parent="CommandCenterBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Airfield.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIAirfieldDeath" parent="SiegeTankDeathBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Airfield_Death.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIConYard" parent="CommandCenterBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Construction_Yard.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIConyardDeath" parent="SiegeTankDeathBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Construction_Yard_Death.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIMCVPackCC3" parent="SiegeTankMorphBase">
+        <Model value="Assets\Models\NodMCV\NodKaneMCVMorph.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIMCVCC3Death" parent="SiegeTankDeathBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Construction_Yard_Death.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIMCVCC3Morph" parent="SiegeTankMorphBase">
+        <Model value="Assets\Models\GDI\GDI_Unit_MCV_Morph.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIMCVCC3" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\GDI_Unit_MCV.m3"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <Radius value="2.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="James" parent="Unit">
+        <Model value="Assets\Models\GDI\James\james.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="GDIZoneRaider" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI Raider\GDI Zone Raider.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="GDIZoneCommando" parent="Unit">
+        <Model value="Assets\Models\GDI\GDIComando\GDICommando.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="GDIJuggernaut" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI juggernaut\GDIJuggernaut.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDISpartan" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI Spartan\GDI Spartan.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIStriker" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI Striker\GDI Striker.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+<!--    <CModel id="GDIMammoth" parent="Unit" Race="Terran">-->
+<!--        <Model value="Assets\Models\GDIMamoth.m3"/>-->
+<!--        <Flags index="AutoUnload" value="1"/>-->
+<!--        <SelectionRadius value="1.300000"/>-->
+<!--    </CModel>-->
+    <CModel id="GDIMammoth" parent="Unit">
+        <Model value="Assets\Models\GDI\Mammoth Tank\Mammoth.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIRefractor" parent="Unit">
+        <Model value="Assets\Models\GDI\Refractor\Refractor.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDITitan" parent="Unit" >
+        <Model value="Assets\Models\GDI\Titan Upgrade.m3"/>
+        <Occlusion value="Show"/>
+        <PlanetPanelCamera value="Star2CameraHigh09"/>
+        <Radius value="0.650000"/>
+        <SelectionRadius value="0.999700"/>
+        <ShadowRadius value="0.999700"/>
+        <TechPurchaseCamera value="TechPurchaseGoliath"/>
+        <UnitGlossaryCamera value="Star2CameraHigh09"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIPredator" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI Predator Tank.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIGuardianCannon" parent="Unit">
+        <Model value="Assets\Models\GDI\Towers\GDIGuardianCannon.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIZoneEnforcer" parent="Unit">
+        <Model value="Assets\Models\GDI\Zone Enforcer.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="GDIZoneTrooper" parent="Unit">
+        <Model value="Assets\Models\GDI\Zone Trooper Upgrade.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="GDIZoneDefender" parent="Unit">
+        <Model value="Assets\Models\GDI\Zone Defender Upgrade.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
+    <CModel id="Mastodon" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\GDI Mastodon\GDIMastodon.m3"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.100000"/>
+        <TipabilityLength value="0.100000"/>
+        <TipabilityWidth value="0.100000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIDefenseMCVPlacement" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\GDIMCVA\GDIMCVA Placement.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="0.500000"/>
+        <ShadowRadius value="0.500000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIDefenseMCV" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\GDIMCVA\GDIMCVA Tech3.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="0.500000"/>
+        <ShadowRadius value="0.500000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIShepherdTank" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\ShepherdTank\ShepherdTank Upgrade.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIMammothTank" parent="SiegeTankBase">
+        <Model value="Assets\Models\GDI\Mammoth Tank\Mammoth Upgrade.m3"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDITiberiumSiloPlacement" parent="RefineryBase">
+        <Model value="Assets\Models\GDI\GDISilo\GDISilo Placement.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.600000,1.600000,1.600000"/>
+        <ScaleMin value="1.600000,1.600000,1.600000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIRefinery" parent="RefineryBase">
+        <Model value="Assets\Models\GDI\GDIRefinery\GDIRefinery.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <Radius value="1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="RefineryGDIPM" parent="RefineryBase">
+        <Model value="Assets\Models\GDI\GDIRefinery\GDIRefinery Placement.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="RefineryPlacement2" parent="RefineryPlacementBase" low="GDIRefinery">
+        <Model value="Assets\Models\GDI\GDIRefinery\GDIRefinery Placement.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="WarFactoryGDI" parent="FactoryBase">
+        <Model value="Assets\Models\GDI\GDI Warfactory\GDIfactory.m3"/>
+        <Radius value="1.200000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.200000"/>
+        <ShadowRadius value="1.200000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIDefenseCY" parent="CommandCenterBase">
+        <Model value="Assets\Models\GDI\GDIMCVA\GDICYA Tech3.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIDefenseMCVUnpack" parent="SiegeTankMorphBase">
+        <Model value="Assets\Models\GDI\GDIMCVA\GDIMCVA Morph Tech3.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="Dozer" parent="SCVBase">
+        <Model value="Assets\Models\GDI\GDIDozer\Dozer.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIEngineer" parent="ReaperBase">
+        <Model value="Assets\Models\GDI\GDI Engineer\GDIEngineer.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIFocusBeam" parent="MissileTurretBase">
+        <Model value="Assets\Models\GDI\Towers\GDIFocusBeam.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="HammerHead" parent="BattlecruiserBase">
+        <Model value="Assets\Models\GDI\GDI HammerHead\GDI HammerHead.m3"/>
+        <AttachProps index="0" removed="1"/>
+        <AttachProps index="1" removed="1"/>
+        <AttachProps index="2" removed="1"/>
+        <AttachProps index="3" removed="1"/>
+        <AttachProps index="4" removed="1"/>
+        <AttachProps index="5" removed="1"/>
+        <AttachProps index="6" removed="1"/>
+        <AttachProps index="7" removed="1"/>
+        <AttachProps index="8" removed="1"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIFireHawk" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI_Unit_Firehawk.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="2,2,2"/>
+        <ScaleMin value="2,2,2"/>
+    </CModel>
+    <CModel id="GDIOxTransport" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI_Unit_V_35_Ox_Transport.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIOxTransportPackage" parent="Unit">
+        <Model value="Assets\Models\GDI\GDI_Unit_V_35_Ox_Transport_Package.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIPowerPlant2" parent="SupplyDepotBase">
+        <Model value="Assets\Models\GDI\GDI Powerplant\GDIPowerplant.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GdiPortrait" parent="Portrait" Race="Terran">
+        <Model value="Assets\Models\GDI\Gdi Portrait.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Image value="Assets\Textures\Gdi.dds"/>
+        <Lighting value="FemaleCivilian4Portrait"/>
+    </CModel>
+    <CModel id="GDIPowerPlantU" parent="SupplyDepotBase">
+        <Model value="Assets\Models\GDI\GDI Powerplant\GDIPowerplant Upgrade.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIPowerPlantPM2" parent="SupplyDepotBase">
+        <Model value="Assets\Models\GDI\GDI Powerplant\GDIPowerplant Placement.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIPowerPlant" parent="SupplyDepotBase">
+        <Model value="Assets\Models\GDI\GDI Powerplant\GDIPowerplant.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIPowerPlantPM" parent="SupplyDepotBase">
+        <Model value="Assets\Models\GDI\GDI Powerplant\GDIPowerplant Placement.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDITiberiumSilo" parent="RefineryBase">
+        <Model value="Assets\Models\GDI\GDISilo\GDISilo.m3"/>
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.600000,1.600000,1.600000"/>
+        <ScaleMin value="1.600000,1.600000,1.600000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIBarracks" parent="BarracksBase">
+        <Model value="Assets\Models\GDI\GDIBarracks\GDIBarracks.m3"/>
+        <Radius value="1.200000"/>
+        <ScaleMax value="1.150000,1.150000,1.150000"/>
+        <ScaleMin value="1.150000,1.150000,1.150000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="BarracksGDIPlacement" parent="BarracksBase">
+        <Model value="Assets\Models\GDI\GDIBarracks\GDIBarracks Placement.m3"/>
+        <Radius value="1.200000"/>
+        <ScaleMax value="1.150000,1.150000,1.150000"/>
+        <ScaleMin value="1.150000,1.150000,1.150000"/>
+        <SelectionRadius value="1.200000"/>
+        <ShadowRadius value="1.200000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIBunker" parent="BunkerBase">
+        <Model value="Assets\Models\GDI\GDI Bunker\GDI BUnker.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDICommandPost" parent="EngineeringBayBase">
+        <Model value="Assets\Models\GDI\GDICommandpost\GDICommandPost.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="1.200000"/>
+        <ShadowRadius value="1.200000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="Argus" parent="BattlecruiserBase">
+        <Model value="Assets\Models\GDI\ARGUS\ARGUS.m3"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+        <AttachProps index="0" removed="1"/>
+        <AttachProps index="1" removed="1"/>
+        <AttachProps index="2" removed="1"/>
+        <AttachProps index="3" removed="1"/>
+        <AttachProps index="4" removed="1"/>
+        <AttachProps index="5" removed="1"/>
+        <AttachProps index="6" removed="1"/>
+        <AttachProps index="7" removed="1"/>
+        <AttachProps index="8" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="ComandPostPlacement" parent="EngineeringBayPlacementBase" low="GDICommandPost">
+        <Model value="Assets\Models\GDI\GDICommandpost\GDICommandPost Placement.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDITiberiumSiloDeath" parent="RefineryDeathBase">
+        <Model value="Assets\Models\GDI\GDISilo\GDISilo Death.m3"/>
+        <Events index="0" removed="1"/>
+        <Events index="1" removed="1"/>
+        <Events index="2" removed="1"/>
+        <Events index="3" removed="1"/>
+        <Events index="4" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="MastodonDeathRagdoll" parent="SiegeTankDeathRagdollBase">
+        <Model value="Assets\Models\GDI\GDI Mastodon\GDIMastodon Death.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIShepherdTankDeathRagdoll" parent="SiegeTankDeathRagdollBase">
+        <Model value="Assets\Models\GDI\ShepherdTank\ShepherdTank Upgrade  Death.m3"/>
+        <AttachProps index="0" removed="1"/>
+        <AttachProps index="1" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIZoneTrooperDeath" parent="QueenDeathBase">
+        <Model value="Assets\Models\GDI\Zone Trooper Death.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="MammothDeathRagdoll" parent="SiegeTankDeathRagdollBase">
+        <Model value="Assets\Models\GDI\Mammoth Tank\Mammoth Death.m3"/>
+        <AttachProps index="0" removed="1"/>
+        <AttachProps index="1" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="SupplyDepotDeath2" parent="SupplyDepotDeathBase">
+        <Model value="Assets\Buildings\Terran\SupplyDepotDeathEx1\SupplyDepotDeathEx1.m3"/>
+        <Events index="0" removed="1"/>
+        <Events index="1" removed="1"/>
+        <Events index="2" removed="1"/>
+        <Events index="3" removed="1"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIbuild" parent="BarracksBuildBase">
+        <Model value="Assets\Models\GDI\GDI DropPod\GDI Build.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="DropPodGDI" parent="PersistentSpellFX">
+        <Model value="Assets\Models\GDI\GDI DropPod\GDIDroppod.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIFactoryPlacement" parent="FactoryPlacementBase" low="WarFactoryGDI">
+        <Model value="Assets\Models\GDI\GDI Warfactory\GDIfactory Placement.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+
+    <CModel id="GDIRaiderAttackImpact" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TerranSmallBlast\TerranSmallBlast.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIRaiderChargeWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MagneticMineMissile\MagneticMineMissile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="HammerHeadRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ScoutAirMissile\ScoutAirMissile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="IonCannonAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Models\GDI\Storm_FX_Nova_Spectre_OrbitalBombardment.m3"/>
+        <AnimSpeed value="0.300000"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="MCVReapirImpactArgus" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\RegenerativeBileBuff\RegenerativeBileBuff.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <Flags index="Wait" value="1"/>
+        <Priority value="32"/>
+    </CModel>
+    <CModel id="GDIRaiderWeaponAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\Liberator_GroundCannon_Upgrade\Liberator_GroundCannon_Upgrade.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:GDI"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="RepairZoneArgus" parent="PersistentSpellFX">
+        <Model value="Assets\Splats\TerranCircle_Ex3\TerranCircle_Ex3.m3"/>
+        <ScaleMax value="1.600000,1.600000,1.600000"/>
+        <ScaleMin value="1.600000,1.600000,1.600000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="MastodonLMWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\PsionicShift\PsionicShift.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="ArgusAttackBeam1" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\DiamondbackBeam\DiamondbackBeam.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="ARGUSMissileWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ScoutAirMissile\ScoutAirMissile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="ARGUSAirAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Raven_Scrambler_Missile_MP_Impact\Raven_Scrambler_Missile_MP_Impact.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="ARGUSAirAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDILightAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Models\GDI\GhostSnipeBeamBlue.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <AnimSpeed value="2.000000"/>
+    </CModel>
+    <CModel id="DefenderAWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\ScoutAirMissile\ScoutAirMissile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="DefenderAirAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\GoliathAirMissileImpact\GoliathAirMissileImpact.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="DefenderAirAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="JumpPackImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\SiegeTank_BlackOps_JumpJets_Land\SiegeTank_BlackOps_JumpJets_Land.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="GDIGrenadesAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Nova_PulseGrenade\Nova_PulseGrenade.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="GDIGrenadesWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Nova_PulseGrenade_Missile\Nova_PulseGrenade_Missile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.400000,0.400000,0.400000"/>
+        <ScaleMin value="0.400000,0.400000,0.400000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
+    <CModel id="GDIZoneTrooperAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\SiegeTankWeaponLaunch\SiegeTankWeaponLaunch.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="GDIZoneTrooperBaseAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <EditorCategories value="Race:GDI"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="GDIZoneTrooperLMWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Marauder_ConcussiveShell_MP_Missile\Marauder_ConcussiveShell_MP_Missile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="LMWeaponCommando" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Marauder_ConcussiveShell_MP_Missile\Marauder_ConcussiveShell_MP_Missile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+    <CModel id="GDIZoneTrooperLMWeapon2" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\ThorShoulderMissile\ThorShoulderMissile.m3"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
+</catalog>

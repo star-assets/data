@@ -1,0 +1,117 @@
+<Catalog>
+  <CCamera default="1">
+    <FieldOfViewMin value="6.8" />
+    <FieldOfViewMax value="120" />
+    <FieldOfViewIncrement value="1.875" />
+    <DistanceMin value="0.001" />
+    <DistanceMax value="400" />
+    <DistanceIncrement value="-1.7" />
+    <PitchMin value="270" />
+    <PitchMax value="90" />
+    <PitchIncrement value="5" />
+    <YawLeft value="-45" />
+    <YawRight value="45" />
+    <YawMax value="360" />
+    <YawIncrement value="5" />
+    <FollowOffsetUpdateBandX value="1.000000,-1.000000" />
+    <FollowOffsetUpdateBandY value="1.000000,-1.000000" />
+    <FollowScrollLeash value="1.000000,1.000000,-1.000000,-1.000000" />
+    <FollowScrollLimit value="2" />
+    <BorderSizeX value="4" />
+    <BorderSizeY value="4" />
+    <SmartPanJumpDistance value="56" />
+    <SmartPanSkipDistance value="8" />
+    <HeightDisplacementFactor value="1" />
+    <HeightDisplacementPitchMin value="45" />
+    <HeightDisplacementPitchMax value="90" />
+    <HeightDisplacementMax value="10" />
+    <ParamInitial />
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTableObserver>
+      <Param />
+    </ZoomTableObserver>
+    <ZoomTableObserver>
+      <Param />
+    </ZoomTableObserver>
+    <ParamSmooth />
+    <TargetSmooth SmoothTimeMin="0.4" SmoothTimeMax="2" VelocityMax="10" />
+    <MaxScrollRate />
+    <MaxScrollDistance />
+    <VerticalScrollRateMultiplier />
+    <ScrollAccelerationPeriod />
+    <ScrollDecelerationPeriod />
+    <ForwardScale />
+    <StrafeScale />
+    <RotateScale value="0.2" />
+  </CCamera>
+  <CCamera id="Dflt" />
+  <CCamera id="Installation">
+    <ParamInitial />
+  </CCamera>
+  <CCamera id="SpacePlatform">
+    <ParamInitial />
+  </CCamera>
+  <CCamera id="Floaty">
+    <ParamSmooth />
+  </CCamera>
+  <CCamera id="Micro">
+    <DistanceIncrement value="-0.17" />
+    <PitchIncrement value="0.5" />
+    <YawIncrement value="0.5" />
+  </CCamera>
+  <CCamera id="Marine">
+    <ParamInitial />
+  </CCamera>
+  <CCamera id="BlizzardAllStars">
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ZoomTable>
+      <Param />
+    </ZoomTable>
+    <ParamInitial />
+    <HeightMap value="Camera" />
+    <MaxScrollRate />
+    <TargetSmooth SmoothTimeMin="0" SmoothTimeMax="0" VelocityMax="80" />
+    <ScrollAccelerationPeriod />
+    <ScrollDecelerationPeriod />
+    <ForwardScale />
+    <StrafeScale />
+    <FollowOffsetUpdateBandX value="-4.000000,4.000000" />
+    <FollowOffsetUpdateBandY value="-3.000000,3.000000" />
+    <FollowResetDecayDuration value="2" />
+    <FollowResetDecayFactor value="0.7" />
+    <FollowResetJumpDelay value="1" />
+    <FollowResetJumpDistance value="17" />
+    <FollowResetTimeoutNormal value="6" />
+    <FollowResetTimeoutLeashed value="0.0625" />
+    <FollowResetTimeoutUnleashed value="12" />
+    <FollowScrollLeash value="-9.500000,-10.000000,9.500000,10.000000" />
+  </CCamera>
+  <CCamera id="SpacePlatform">
+    <ParamInitial />
+  </CCamera>
+</Catalog>

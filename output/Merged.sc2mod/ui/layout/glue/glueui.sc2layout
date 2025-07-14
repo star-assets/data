@@ -1,0 +1,299 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="GlueUI" name="GlueUI">
+    <Handle val="GlueUI" />
+    <Anchor relative="$parent" />
+    <Shortcut val="@UI/GlueChat_Hotkey" />
+    <Shortcut val="@UI/GlueReply_Hotkey" />
+    <Shortcut val="@UI/GlueSlashCommand_Hotkey" />
+    <StateGroup name="ContentFeedState">
+      <DefaultState val="Default" />
+      <State name="Artanis">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Planets">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Kerrigan">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="SpaceClouds">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Karax">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="NovaCommander">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Abathur">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Nova2">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Alarak">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Nova3">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="WCS">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Nova4_TargetAcquired">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Stukov">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Fenix">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Dehaka">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Horner">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Tychus">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Stetmann">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="WCS2017">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Rebrand">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="VideoTakeOver">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Default">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="8thAnniversary">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="WCS2018">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="WCS2019">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Mengsk">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="10thAnniversary">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+    </StateGroup>
+    <StateGroup name="IGRState">
+      <DefaultState val="Inactive" />
+      <State name="Active" />
+      <State name="Inactive" />
+    </StateGroup>
+    <StateGroup name="AspectRatioState">
+      <DefaultState val="4x3" />
+      <State name="16x9">
+        <When type="Property" frame="AspectRatioListener_16x9" Visible="true" />
+        <Action type="SetProperty" frame="Anchor_Standard_Left" />
+        <Action type="SetProperty" frame="Anchor_SubNav" />
+        <Action type="SetProperty" frame="Anchor_Header" />
+        <Action type="SetProperty" frame="Anchor_ActionButton" />
+        <Action type="SetProperty" frame="Anchor_CollectionContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_CustomGamesContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_OldContentContainer_Right" />
+      </State>
+      <State name="16x10">
+        <When type="Property" frame="AspectRatioListener_16x10" Visible="true" />
+        <Action type="SetProperty" frame="Anchor_Standard_Left" />
+        <Action type="SetProperty" frame="Anchor_SubNav" />
+        <Action type="SetProperty" frame="Anchor_Header" />
+        <Action type="SetProperty" frame="Anchor_ActionButton" />
+        <Action type="SetProperty" frame="Anchor_CollectionContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_CustomGamesContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_OldContentContainer_Right" />
+      </State>
+      <State name="4x3">
+        <Action type="SetProperty" frame="Anchor_Standard_Left" />
+        <Action type="SetProperty" frame="Anchor_SubNav" />
+        <Action type="SetProperty" frame="Anchor_Header" />
+        <Action type="SetProperty" frame="Anchor_ActionButton" />
+        <Action type="SetProperty" frame="Anchor_CollectionContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_CustomGamesContentContainer_Right" />
+        <Action type="SetProperty" frame="Anchor_OldContentContainer_Right" />
+      </State>
+    </StateGroup>
+    <StateGroup name="WarChestActiveState">
+      <State name="Active" />
+      <State name="Inactive" />
+    </StateGroup>
+    <Frame type="AspectRatioFrame" name="AspectRatioListener_16x9">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+      <Width val="1" />
+      <Height val="1" />
+      <Handle val="AspectRatioListener_16x9" />
+      <MinVisibleAspectRatio val="1.77" />
+    </Frame>
+    <Frame type="AspectRatioFrame" name="AspectRatioListener_16x10">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+      <Width val="1" />
+      <Height val="1" />
+      <Handle val="AspectRatioListener_16x10" />
+      <MinVisibleAspectRatio val="1.6" />
+    </Frame>
+    <Frame type="AspectRatioFrame" name="AspectRatioListener_4x3">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+      <Width val="1" />
+      <Height val="1" />
+      <Handle val="AspectRatioListener_4x3" />
+      <MinVisibleAspectRatio val="1.33" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_Header">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="130" />
+      <Height val="164" />
+      <Handle val="Anchor_Header" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_Subheader">
+      <Anchor side="Top" relative="$parent/Anchor_Header" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/Anchor_Header" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/Anchor_Header" pos="Max" offset="0" />
+      <Height val="40" />
+      <Handle val="Anchor_Subheader" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_SubNav">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="-200" />
+      <Width val="251" />
+      <Height val="72" />
+      <Handle val="Anchor_SubNav" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_ActionButton">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="90" />
+      <Height val="104" />
+      <Handle val="Anchor_ActionButton" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_Standard_Left">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="106" />
+      <Handle val="Anchor_Standard_Left" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentContainer_Top">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Handle val="Anchor_StandardContentContainer_Top" />
+      <Height val="262" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_OldContentContainer_Top">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Handle val="Anchor_OldContentContainer_Top" />
+      <Height val="224" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentContainer_Bottom">
+      <Anchor side="Top" relative="$parent/Anchor_StandardContentContainer_Top" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Handle val="Anchor_StandardContentContainer_Bottom" />
+      <Height val="746" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentContainer_Left">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$Anchor_Standard_Left" pos="Max" offset="0" />
+      <Handle val="Anchor_StandardContentContainer_Left" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentContainer_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Width val="1576" />
+      <Handle val="Anchor_StandardContentContainer_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_OldContentContainer_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Width val="1041" />
+      <Handle val="Anchor_OldContentContainer_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentHeader_Bottom">
+      <Anchor side="Top" relative="$Anchor_StandardContentContainer_Top" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Handle val="Anchor_StandardContentHeader_Bottom" />
+      <Height val="76" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_StandardContentSidebar_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Handle val="Anchor_StandardContentSidebar_Right" />
+      <Width val="540" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_OldContentSidebar_Left">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_OldContentContainer_Right" pos="Max" offset="0" />
+      <Handle val="Anchor_OldContentSidebar_Left" />
+      <Width val="21" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_CollectionContentContainer_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Width val="1576" />
+      <Handle val="Anchor_CollectionContentContainer_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_CollectionContentSidebar_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$Anchor_StandardContentSidebar_Right" pos="Max" offset="0" />
+      <Handle val="Anchor_CollectionContentSidebar_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_CustomGamesContentContainer_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Width val="1576" />
+      <Handle val="Anchor_CustomGamesContentContainer_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_CustomGamesContentSidebar_Right">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentContainer_Left" pos="Max" offset="0" />
+      <Width val="1066" />
+      <Handle val="Anchor_CustomGamesContentSidebar_Right" />
+    </Frame>
+    <Frame type="Frame" name="Anchor_RightStandardSidebar">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$Anchor_StandardContentSidebar_Right" pos="Max" offset="0" />
+      <Handle val="Anchor_RightStandardSidebar" />
+      <Width val="30" />
+    </Frame>
+    <Frame type="WarChestAdvertisementFrame" name="WarChestInfo">
+      <Anchor side="Top" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Max" offset="0" />
+      <Width val="1" />
+      <Height val="1" />
+      <Handle val="WarChestInfo" />
+    </Frame>
+  </Frame>
+</Desc>

@@ -1,0 +1,146 @@
+<Catalog>
+
+    <CButton id="NodStasisField" parent="CabalButton" icon="FXNod_UA_CloakModuleUpgrade"/>
+    <CButton id="CabalFlameMine" parent="CabalButton"/>
+    <CButton id="CabalUnderminer" parent="CabalButton"/>
+    <CButton id="CabalMarauder" parent="CabalButton"/>
+    <CButton id="Devout" parent="CabalButton"/>
+    <CButton id="CabalDefenseCrawlerPack" parent="CabalButton" icon="NodDefenseGroupMCVIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="CabalMonitoringStation" parent="CabalButton" icon="NodOperationsCenterIcon"/>
+    <CButton id="CabalWeaponsLaboratory" parent="CabalButton"/>
+    <CButton id="LiquidTib" parent="CabalButton">
+        <Icon value="Assets\textures\btn-techupgrade-terran-twin-linkedflamethrower.dds"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="LaunchRocket" parent="CabalButton">
+        <Icon value="Assets\textures\btn-techupgrade-terran-devastatorMissiles.dds"/>
+    </CButton>
+    <CButton id="FlameMineAttack" parent="CabalButton">
+        <TooltipFlags index="ShowHotkey" value="0"/>
+        <Icon value="Assets\textures\btn-command-attack.dds"/>
+        <HotkeyAlias value=""/>
+        <SimpleDisplayText value="SimpleDisplay/AttackBuilding"/>
+    </CButton>
+    <CButton id="DominationMechanical" parent="CabalButton">
+        <Icon value="Assets\textures\btn-upgrade-terran-nova-dominationvisor.dds"/>
+        <TintRacially value="1"/>
+    </CButton>
+    <CButton id="MedicHealObelisk" parent="CabalButton">
+        <Icon value="Assets\textures\btn-ability-terran-heal-color.dds"/>
+    </CButton>
+    <CButton id="CabalHelipad" parent="CabalButton">
+        <HotkeyAlias value="NodVertigo"/>
+    </CButton>
+    <CButton id="CabalReaperGuerrillaCharge">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+    </CButton>
+    <CButton id="CabalReaperTacticalChargeWeapon"/>
+    <CButton id="CabalIntelligenceHighGround">
+        <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-roboticsfacility.dds"/>
+    </CButton>
+    <CButton id="CabalWidowRebuiltfromWreckage" parent="CabalButton" icon="CabalWidow">
+        <Icon value="Assets\Textures\talent-swann-level12-immortalityprotocol.dds"/>
+        <HotkeyAlias value="CabalWidow"/>
+    </CButton>
+    <CButton id="CabalWidowReconstitutionStructure" parent="CabalButton" icon="SpeedupgradeBTN">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+    </CButton>
+    <CButton id="CabalSurvivorBug" parent="CabalButton" icon="SpeedupgradeBTN">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+    </CButton>
+    <CButton id="CabalDevoutGuardianGroupUpgrade">
+        <Icon value="Assets\Textures\btn-upgrade-karax-anionpulsecrystals.dds"/>
+    </CButton>
+    <CButton id="CabalLeviathanWeaponSystem" parent="CabalButton" icon="SpeedupgradeBTN">
+        <Icon value="Assets\Textures\btn-tips-laserdrillantiair.dds"/>
+    </CButton>
+    <CButton id="CabalAvengerTankFlameMine" parent="CabalButton" icon="SpeedupgradeBTN">
+        <Icon value="Assets\Textures\btn-ability-hornerhan-widowmine-deathblossom.dds"/>
+    </CButton>
+    <CButton id="CabalTrainVisceroid" parent="CabalButton" icon="CNC3CommandoIcon">
+        <Icon value="Assets\Textures\btn-unit-zerg-creeperhostspawnflyer-mecha.dds"/>
+    </CButton>
+    <CButton id="Level2NodVehicleAttackUpgrade" parent="CabalButton" icon="AccuracyUpgrade">
+        <Icon value="Assets\Textures\btn-techupgrade-terran-attacksair.dds"/>
+    </CButton>
+    <CButton id="CabalGrandTemple" parent="CabalButton" icon="NodTempleIcon">
+        <Icon value="Assets\Icons\GrandShrineIcon.dds"/>
+        <AlertName value="Button/Name/NodTemple2"/>
+        <HotkeyAlias value="NodTemple"/>
+    </CButton>
+    <CButton id="CabalBuildTunnel">
+        <Icon value="Assets\Icons\CabalTunnel.dds"/>
+    </CButton>
+    <CButton id="CabalHolyOneTaunt">
+        <Icon value="Assets\Textures\btn-tips-rubble.dds"/>
+    </CButton>
+    <CButton id="CabalWidowLongeron" parent="CabalButton" icon="SpeedupgradeBTN">
+        <Icon value="Assets\Textures\btn-upgrade-zerg-stukov-researchqueenfungalgrowth.dds"/>
+    </CButton>
+    <CButton id="CabalControlNode" parent="CabalButton"/>
+    <CButton id="CabalDropShip" parent="CabalButton"/>
+    <CButton id="CabalAscender" parent="CabalButton"/>
+    <CButton id="CabalEngineer" parent="CabalButton"/>
+    <CButton id="CabalVenom" parent="CabalButton"/>
+    <CButton id="CabalStealthTank" parent="CabalButton"/>
+    <CButton id="CabalShrine" parent="CabalButton"/>
+    <CButton id="CabalPyramid" parent="CabalButton"/>
+    <CButton id="Outpost" parent="CabalButton" icon="CabalOutpostIcon"/>
+    <CButton id="CabalRaider" parent="CabalButton"/>
+    <CButton id="CabalVertigo" parent="CabalButton"/>
+    <CButton id="OutpostPassive" parent="CabalButton" icon="CabalOutpostIcon"/>
+    <CButton id="CabalDeepBurrow" parent="CabalButton">
+        <Icon value="Assets\textures\btn-ability-zerg-deeptunnel.dds"/>
+    </CButton>
+    <CButton id="CabalObeliskOfLife" parent="CabalButton" icon="BrightstoneIcon"/>
+    <CButton id="CabalOffenseCrawlerPack" parent="CabalButton" icon="NodOffensiveGroupMCVIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="SpeedUpgrade" parent="CabalButton" icon="SpeedupgradeBTN"/>
+    <CButton id="CabalReckoner" parent="CabalButton"/>
+    <CButton id="RangeUpgrade" parent="CabalButton" icon="RangeUpgradeBTN"/>
+    <CButton id="ReloadUpgrade" parent="CabalButton"/>
+    <CButton id="TibBomb" parent="CabalButton" icon="FXNod_FirestormIgnitionUpgrade"/>
+    <CButton id="Slave" parent="CabalButton"/>
+    <CButton id="CabalViperTurret" parent="CabalButton"/>
+    <CButton id="CabalMissilePod" parent="CabalButton"/>
+    <CButton id="SelfRepairNod" parent="CabalButton" icon="BackUpSystemsUpgrade"/>
+    <CButton id="EMPCabalHijacker" parent="CabalButton" icon="FXNOD_EMPCountermeasuresUpgrade"/>
+    <CButton id="Healingfield" parent="CabalButton" icon="FXGDI_MedicalTrainingUpgrade"/>
+    <CButton id="CabalAvenger" parent="CabalButton"/>
+    <CButton id="CabalHolySpirit" parent="CabalButton"/>
+    <CButton id="CabalScorpion" parent="CabalButton"/>
+    <CButton id="CabalCenturion" parent="CabalButton"/>
+    <CButton id="CabalSpecter" parent="CabalButton"/>
+    <CButton id="CabalSpider" parent="CabalButton"/>
+    <CButton id="CabalWidow" parent="CabalButton"/>
+    <CButton id="CabalTyrant" parent="CabalButton"/>
+    <CButton id="CabalSalvator" parent="CabalButton"/>
+    <CButton id="CabalDominator" parent="CabalButton"/>
+    <CButton id="CabalReaper" parent="CabalButton"/>
+    <CButton id="CabalMedusa" parent="CabalButton"/>
+    <CButton id="CabalHijacker" parent="CabalButton"/>
+    <CButton id="CabalSalamander" parent="CabalButton"/>
+    <CButton id="CabalBasilisk" parent="CabalButton"/>
+    <CButton id="CabalLeviathan" parent="CabalButton"/>
+    <CButton id="CabalDefenseCrawlerDeploy" parent="CabalButton" icon="NodDefenseGroupConstructionPlantIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="CabalOffenseCrawlerDeploy" parent="CabalButton" icon="NodDefenseGroupConstructionPlantIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="CabalSupportCrawlerDeploy" parent="CabalButton" icon="NodDefenseGroupConstructionPlantIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="CabalBike" parent="CabalButton"/>
+    <CButton id="CabalCobra" parent="CabalButton"/>
+    <CButton id="CabalFlameTank" parent="CabalButton"/>
+    <CButton id="CabalScalpel" parent="CabalButton"/>
+    <CButton id="CabalMantis" parent="CabalButton"/>
+    <CButton id="CabalInterceptor" parent="CabalButton"/>
+    <CButton id="CabalFlameColumn" parent="CabalButton"/>
+    <CButton id="CabalIncinerator" parent="CabalButton"/>
+    <CButton id="CabalShieldGenerator" parent="CabalButton"/>
+</Catalog>

@@ -1,0 +1,1986 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Constant name="WarChesteSportsNodeAnimationSpeed" val="1" />
+  <Constant name="WarChesteSportsNodeColor_Primary" val="0,156,255" />
+  <Constant name="WarChesteSportsNodeColor_Primary_Highlight" val="70,215,255" />
+  <Constant name="WarChesteSportsNodeColor_Secondary" val="5,105,154" />
+  <Constant name="WarChesteSportsNodeColor_Secondary_Highlight" val="3,136,197" />
+  <Constant name="WarChesteSportsNode_HoverAnim_Time" val="0.150" />
+  <Constant name="WarChesteSportsNode_HoverAnim_Time_4x3" val="0.150" />
+  <Constant name="WarChesteSportsConnectorImage_Color" val="0,126,255" />
+  <Constant name="WarChesteSportsMainEventNode_HoverAnim_Time" val="0.205" />
+  <Constant name="WarChesteSportsMainEventNode_Background_Color" val="6,28,57" />
+  <Constant name="WarChesteSportsMainEventNode_OuterGlow_Color_Normal" val="0,120,255" />
+  <Constant name="WarChesteSportsMainEventNode_OuterGlow_Color_Hover" val="0,120,255" />
+  <Constant name="WarChesteSportsMainEventNode_OuterGlow_Alpha_Normal" val="153" />
+  <Constant name="WarChesteSportsMainEventNode_OuterGlow_Alpha_Hover" val="255" />
+  <Constant name="WarChesteSportsMainEventNode_InnerGlow_Color" val="0,126,255" />
+  <Constant name="WarChesteSportsMainEventNode_InnerGlow_Alpha_Normal" val="153" />
+  <Constant name="WarChesteSportsMainEventNode_InnerGlow_Alpha_Hover" val="255" />
+  <Frame type="Image" name="ConnectorImageTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="1024" />
+    <Height val="1024" />
+    <Color val="#WarChesteSportsConnectorImage_Color" />
+    <LayerCount val="4" />
+    <Alpha val="255" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_Wheel_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_Wheel_Mask" layer="1" />
+    <Texture val="Assets/Textures/White.dds" layer="2" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_Wheel_RenderImage" layer="3" />
+    <TextureCoords top="-0.332" left="-0.332" bottom="1.332" right="1.332" />
+    <TextureCoords top="-0.338" left="-0.338" bottom="1.338" right="1.338" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <TextureCoords top="0.49" left="0.49" bottom="0.51" right="0.51" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="Blue" />
+    <AlphaChannel val="InverseBlue" />
+    <AlphaChannel val="Red" />
+    <TextureType val="Circular" layer="3" />
+    <LayerAlpha val="75" />
+    <StateGroup name="AspectRatioStateGroup">
+      <DefaultState val="Large" />
+      <State name="Small">
+        <When type="StateGroup" frame="$parent" />
+        <Action type="SetProperty" />
+        <Action type="SetProperty" />
+      </State>
+      <State name="Large">
+        <Action type="SetProperty" />
+        <Action type="SetProperty" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Image" name="NucleusTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="100" />
+    <Height val="100" />
+    <LayerCount val="4" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="1" />
+    <Texture val="Assets/Textures/White.dds" layer="2" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_Node_Components_Sheet" layer="3" />
+    <TextureCoords top="-1.8" left="-1.8" bottom="2.8" right="2.8" />
+    <TextureCoords top="0" left="0" bottom="0.01" right="0.01" />
+    <TextureCoords top="0" left="0" bottom="0.01" right="0.01" />
+    <TextureCoords top="-0.182" left="0.261" bottom="0.818" right="1.261" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="InverseAlpha" />
+    <LayerAlpha val="255" />
+    <Animation name="Hide">
+      <Event event="OnMouseEnter" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="OnMouseExit" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+        <Key type="Bool" />
+        <Key type="Bool" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Frame" name="PlayerTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="120" />
+    <Height val="120" />
+    <Visible val="False" />
+    <Frame type="Image" name="PlayerPortrait">
+      <Anchor relative="$parent" />
+      <LayerCount val="2" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+      <Texture val="Assets/Textures/White.dds" layer="1" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <TextureCoords top="-0.25" left="-0.25" bottom="1.25" right="1.25" />
+      <AlphaLayer val="True" />
+      <AlphaLayer val="False" />
+    </Frame>
+    <Frame type="Image" name="PlayerHex">
+      <Anchor relative="$parent" />
+      <LayerCount val="3" />
+      <Alpha val="200" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_Node_HexagonGlowMask" layer="1" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_Node_HexagonPattern" layer="2" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <TextureCoords top="0" left="0" bottom="17" right="10" />
+      <AlphaLayer val="True" />
+      <AlphaLayer val="true" />
+      <WrapUV val="true" />
+      <LayerAlpha val="255" />
+      <LayerColor val="44,138,255" />
+    </Frame>
+    <Frame type="Image" name="PlayerGlow">
+      <Anchor relative="$parent" />
+      <LayerCount val="3" />
+      <Alpha val="220" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_Node_HexagonGlowMask" layer="1" />
+      <Texture val="Assets/Textures/White.dds" layer="2" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <AlphaLayer val="True" />
+      <AlphaLayer val="true" />
+      <LayerAlpha val="255" />
+      <LayerColor val="006ad6" />
+    </Frame>
+    <Frame type="Image" name="PlayerCover">
+      <Anchor relative="$parent" />
+      <LayerCount val="2" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+      <Texture val="Assets/Textures/White.dds" layer="1" />
+      <TextureCoords top="-2.7" left="-2.7" bottom="3.7" right="3.7" />
+      <TextureCoords top="0" left="0" bottom="0.01" right="0.01" />
+      <AlphaLayer val="True" />
+      <LayerAlpha val="255" />
+      <LayerColor val="#WarChesteSportsNodeColor_Primary" />
+    </Frame>
+    <Animation name="Ripple">
+      <Event event="Ripple" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+        <Key type="Bool" />
+        <Key type="Bool" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="PlayerCover">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.067" />
+        <Key type="Property" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple4x3">
+      <Event event="Ripple4x3" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Controller type="Visibility" end="Pause">
+        <Key type="Bool" time="0" />
+        <Key type="Bool" />
+        <Key type="Bool" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="PlayerCover">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.067" />
+        <Key type="Property" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerPortrait">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerCover">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="false" end="Pause" frame="PlayerHex">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="false" end="Pause" frame="PlayerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+    </Animation>
+    <StateGroup name="AspectRatioStateGroup">
+      <DefaultState val="Large" />
+      <State name="Small">
+        <When type="StateGroup" frame="$parent/$parent/$parent" />
+        <Action type="SetProperty" frame="PlayerPortrait" />
+        <Action type="SetProperty" frame="PlayerHex" />
+      </State>
+      <State name="Large">
+        <Action type="SetProperty" frame="PlayerPortrait" />
+        <Action type="SetProperty" frame="PlayerHex" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Image" name="InnerRingTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="120" />
+    <Height val="120" />
+    <Color val="#WarChesteSportsNodeColor_Primary" />
+    <LayerCount val="4" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="1" />
+    <Texture val="Assets/Textures/White.dds" layer="2" />
+    <Texture val="Assets/Textures/White.dds" layer="3" />
+    <TextureCoords top="-1.9" left="-1.9" bottom="2.9" right="2.9" />
+    <TextureCoords top="-2.2" left="-2.2" bottom="3.2" right="3.2" />
+    <TextureCoords top="0" left="0" bottom="0.01" right="0.01" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="InverseAlpha" />
+    <LayerAlpha val="255" />
+    <Animation name="Ripple">
+      <Event event="Ripple" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Event event="Ripple4x3" action="Reset,Stop" frame="$parent/$parent" />
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple4x3">
+      <Event event="Ripple4x3" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Event event="Ripple" action="Reset,Stop" frame="$parent/$parent" />
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="OuterRingTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="120" />
+    <Height val="120" />
+    <Color val="#WarChesteSportsNodeColor_Primary" />
+    <LayerCount val="4" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="1" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="2" />
+    <Texture val="Assets/Textures/White.dds" layer="3" />
+    <TextureCoords top="-1.185" left="-1.185" bottom="2.185" right="2.185" />
+    <TextureCoords top="-1.55" left="-1.55" bottom="2.55" right="2.55" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="InverseAlpha" />
+    <AlphaChannel val="InverseGreen" />
+    <LayerAlpha val="255" />
+    <Animation name="Rotate">
+      <Event event="OnShown" action="Reset,Play" frame="$parent" />
+      <Controller type="Property" property="TextureCoordRotation" end="Loop" frame="$this">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="20" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple">
+      <Event event="Ripple" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Event event="Ripple4x3" action="Reset,Stop" frame="$parent/$parent" />
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple4x3">
+      <Event event="Ripple4x3" action="DirectionForward,Play" frame="$parent/$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent/$parent" />
+      <Event event="Ripple" action="Reset,Stop" frame="$parent/$parent" />
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="OuterRingGlowTemplate" template="WarChesteSportsNodeTemplate/OuterRingTemplate">
+    <Blur val="True" />
+    <BlurAmount val="1.0" />
+  </Frame>
+  <Frame type="Frame" name="HitTestFrameTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="50" />
+    <Height val="50" />
+    <Animation name="Ripple">
+      <Event event="Ripple" action="DirectionForward,Play" frame="$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent" />
+      <Event event="Ripple4x3" action="Reset,Stop" frame="$parent" />
+      <Controller type="Dimension" dimension="Width" relative="True" end="Pause">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="True" end="Pause">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple4x3">
+      <Event event="Ripple4x3" action="DirectionForward,Play" frame="$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent" />
+      <Event event="Ripple" action="Reset,Stop" frame="$parent" />
+      <Controller type="Dimension" dimension="Width" relative="True" end="Pause">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="True" end="Pause">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Label" name="NodeNumberLabelStandardTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="-15" />
+    <Style val="@Collection_WarChest_eSportsNodeNumberNoGlow" />
+    <Visible val="False" />
+    <StateGroup name="HoverState">
+      <DefaultState val="Normal" />
+      <State name="Hover">
+        <When type="Property" frame="$parent" Hovering="true" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Normal">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+    </StateGroup>
+    <Animation name="ScreenSizeMove">
+      <Event event="OnSmallScreen" frame="$parent/$parent" action="DirectionForward,Play" />
+      <Event event="OnLargeScreen" frame="$parent/$parent" action="DirectionReverse,Play" />
+      <Controller type="Anchor" end="Pause" side="Right" relative="true">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.01" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Label" name="NodeNumberLabelGlowTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="-15" />
+    <Style val="@Collection_WarChest_eSportsNodeNumber" />
+    <Text val="{$parent/NodeNumberLabelStandard/@Text}" />
+    <Visible val="False" />
+    <Animation name="Ripple">
+      <Event event="Ripple" action="DirectionForward,Play" frame="$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent" />
+      <Event event="Ripple4x3" action="Reset,Stop" frame="$parent" />
+      <Controller type="Anchor" end="Pause" side="Right" relative="true">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Ripple4x3">
+      <Event event="Ripple4x3" action="DirectionForward,Play" frame="$parent" />
+      <Event event="ClearRipple" action="DirectionReverse,Play" frame="$parent" />
+      <Event event="Ripple" action="Reset,Stop" frame="$parent" />
+      <Controller type="Anchor" end="Pause" side="Right" relative="true">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsNode_HoverAnim_Time_4x3" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="StandardEventNodeTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="72" />
+    <Height val="72" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_Node_States_Sheet" />
+    <TextureCoords top="-1.6" left="-1.6" bottom="2.6" right="2.6" />
+    <StateGroup name="HoverState">
+      <DefaultState val="Normal" />
+      <State name="Hover">
+        <When type="Property" frame="$parent" Hovering="true" />
+        <Action type="SetProperty" frame="$this" />
+      </State>
+      <State name="Normal">
+        <Action type="SetProperty" frame="$this" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="Button" name="WarChesteSportsNodeTemplate">
+    <Width val="130" />
+    <Height val="130" />
+    <Batch val="False" />
+    <TooltipAnchorPosition val="TopCenter" />
+    <StateGroup name="eSportsNodeState">
+      <DefaultState val="EventNode" />
+      <State name="PlayerNodeBlizzCon">
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="$this/NodeNumberLabelGlow" Visible="True" />
+        <Action type="SetProperty" frame="$this/NodeNumberLabelStandard" Visible="False" />
+        <Action type="SetProperty" frame="$this/StandardEventNode" Visible="False" />
+        <Action type="SetProperty" frame="$this/PlayerNodeContainer" Visible="True" />
+      </State>
+      <State name="EventNode">
+        <Action type="SetProperty" frame="$this/NodeNumberLabelGlow" Visible="False" />
+        <Action type="SetProperty" frame="$this/NodeNumberLabelStandard" Visible="True" />
+        <Action type="SetProperty" frame="$this/StandardEventNode" Visible="True" />
+        <Action type="SetProperty" frame="$this/PlayerNodeContainer" Visible="False" />
+      </State>
+      <State name="Empty">
+        <Action type="SetProperty" frame="$this/NodeNumberLabelGlow" Visible="False" />
+        <Action type="SetProperty" frame="$this/NodeNumberLabelStandard" Visible="False" />
+        <Action type="SetProperty" frame="$this/StandardEventNode" Visible="False" />
+        <Action type="SetProperty" frame="$this/PlayerNodeContainer" Visible="False" />
+      </State>
+      <State name="PlayerNodeGeneric" />
+    </StateGroup>
+    <StateGroup name="NodeAnimationStateGroup">
+      <DefaultState val="Contracted" />
+      <State name="ExpandedSmall">
+        <When type="StateGroup" frame="$parent" />
+        <When type="Property" Hovering="true" />
+        <Action type="SendEvent" event="Ripple4x3" />
+      </State>
+      <State name="ExpandedLarge">
+        <When type="Property" Hovering="true" />
+        <Action type="SendEvent" event="Ripple" />
+      </State>
+      <State name="Contracted">
+        <Action type="SendEvent" event="ClearRipple" />
+      </State>
+    </StateGroup>
+    <Frame type="Frame" name="HitTestFrame" template="WarChesteSportsNodeTemplate/HitTestFrameTemplate" />
+    <Frame type="Label" name="NodeNumberLabelStandard" template="WarChesteSportsNodeTemplate/NodeNumberLabelStandardTemplate" />
+    <Frame type="Label" name="NodeNumberLabelGlow" template="WarChesteSportsNodeTemplate/NodeNumberLabelGlowTemplate" />
+    <Frame type="Image" name="StandardEventNode" template="WarChesteSportsNodeTemplate/StandardEventNodeTemplate" />
+    <Frame type="Frame" name="PlayerNodeContainer">
+      <Anchor relative="$parent" />
+      <Frame type="Image" name="OuterRingGlow" template="WarChesteSportsNodeTemplate/OuterRingGlowTemplate" />
+      <Frame type="Image" name="InnerRing" template="WarChesteSportsNodeTemplate/InnerRingTemplate" />
+      <Frame type="Image" name="OuterRing" template="WarChesteSportsNodeTemplate/OuterRingTemplate" />
+      <Frame type="Frame" name="Player" template="WarChesteSportsNodeTemplate/PlayerTemplate" />
+      <Frame type="Image" name="Nucleus" template="WarChesteSportsNodeTemplate/NucleusTemplate" />
+    </Frame>
+  </Frame>
+  <Frame type="Image" name="MainEventBackgroundGlowTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="180" />
+    <Height val="180" />
+    <Alpha val="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Glow_Under" />
+  </Frame>
+  <Frame type="Image" name="MainEventBackgroundTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="114" />
+    <Height val="114" />
+    <Color val="#WarChesteSportsMainEventNode_Background_Color" />
+    <LayerCount val="2" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="Assets/Textures/White.dds" layer="1" />
+    <AlphaLayer val="True" />
+  </Frame>
+  <Frame type="Image" name="MainEventInnerGlowTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="92" />
+    <Height val="92" />
+    <Color val="#WarChesteSportsMainEventNode_InnerGlow_Color" />
+    <Alpha val="#WarChesteSportsMainEventNode_InnerGlow_Alpha_Normal" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_InnerGlow" />
+  </Frame>
+  <Frame type="Image" name="MainEventHexagonCircleTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="80" />
+    <Height val="80" />
+    <Alpha val="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_HexagonCircle" />
+  </Frame>
+  <Frame type="Image" name="MainEventButtonOutlineNormalTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="138" />
+    <Height val="138" />
+    <LayerCount val="3" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="1" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_ButtonOutline_Gradient_Normal" layer="2" />
+    <TextureCoords top="-0.112" left="-0.112" bottom="1.112" right="1.112" />
+    <TextureCoords top="-0.162" left="-0.162" bottom="1.162" right="1.162" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="InverseAlpha" />
+  </Frame>
+  <Frame type="Image" name="MainEventButtonOutlineHoverTemplate" template="WarChesteSportsNodeTemplate/MainEventButtonOutlineNormalTemplate">
+    <TextureCoords />
+    <TextureCoords />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_ButtonOutline_Gradient_Hover" layer="2" />
+    <LayerAlpha val="0" />
+  </Frame>
+  <Frame type="Image" name="MainEventOuterGlowTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="118" />
+    <Height val="118" />
+    <Color val="#WarChesteSportsMainEventNode_OuterGlow_Color_Normal" />
+    <Alpha val="#WarChesteSportsMainEventNode_OuterGlow_Alpha_Normal" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_OuterGlow" />
+  </Frame>
+  <Frame type="Image" name="MainEventBoundingRingRightTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="58" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="58" />
+    <Width val="12" />
+    <Height val="54" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_BoundingRing_Side" />
+  </Frame>
+  <Frame type="Image" name="MainEventBoundingRingLeftTemplate" template="WarChesteSportsNodeTemplate/MainEventBoundingRingRightTemplate">
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="-58" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="-58" />
+    <TextureCoords top="0" left="1" bottom="1" right="0" />
+  </Frame>
+  <Frame type="Image" name="MainEventBoundingRingTopTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="-48" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-48" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="104" />
+    <Height val="31" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_BoundingRing_Top" />
+  </Frame>
+  <Frame type="Image" name="MainEventBoundingRingBottomTemplate" template="WarChesteSportsNodeTemplate/MainEventBoundingRingTopTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="48" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="48" />
+    <TextureCoords top="1" left="0" bottom="0" right="1" />
+  </Frame>
+  <Frame type="Frame" name="MainEventBoundingRingContainerTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="160" />
+    <Height val="160" />
+    <Alpha val="0" />
+    <Frame type="Image" name="MainEventBoundingRingLeft" template="WarChesteSportsNodeTemplate/MainEventBoundingRingLeftTemplate" />
+    <Frame type="Image" name="MainEventBoundingRingRight" template="WarChesteSportsNodeTemplate/MainEventBoundingRingRightTemplate" />
+    <Frame type="Image" name="MainEventBoundingRingTop" template="WarChesteSportsNodeTemplate/MainEventBoundingRingTopTemplate" />
+    <Frame type="Image" name="MainEventBoundingRingBottom" template="WarChesteSportsNodeTemplate/MainEventBoundingRingBottomTemplate" />
+  </Frame>
+  <Frame type="Image" name="MainEventTriangleTopLeftTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="96" />
+    <Height val="8" />
+    <RotationPosition val="MiddleRight" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Triangle" />
+    <TextureCoords top="0.56" left="0.92" bottom="0.64" right="1.88" />
+    <Rotation val="30" />
+    <Animation name="Bounce">
+      <Event event="OnShown" action="Reset,Play" frame="$this" />
+      <Controller type="LayerUV" side="Left" relative="True" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="0.467" />
+        <Key type="Curve" time="0.533" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="$this">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.05" />
+        <Key type="Property" time="0.1" />
+        <Key type="Property" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="MainEventTriangleTopRightTemplate" template="WarChesteSportsNodeTemplate/MainEventTriangleTopLeftTemplate">
+    <Rotation val="150" />
+  </Frame>
+  <Frame type="Image" name="MainEventTriangleBottomLeftTemplate" template="WarChesteSportsNodeTemplate/MainEventTriangleTopLeftTemplate">
+    <Rotation val="330" />
+  </Frame>
+  <Frame type="Image" name="MainEventTriangleBottomRightTemplate" template="WarChesteSportsNodeTemplate/MainEventTriangleTopLeftTemplate">
+    <Rotation val="210" />
+  </Frame>
+  <Frame type="Frame" name="MainEventTrianglesContainerTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="160" />
+    <Height val="160" />
+    <Alpha val="0" />
+    <Visible val="False" />
+    <Frame type="Image" name="MainEventTriangleTopLeft" template="WarChesteSportsNodeTemplate/MainEventTriangleTopLeftTemplate" />
+    <Frame type="Image" name="MainEventTriangleTopRight" template="WarChesteSportsNodeTemplate/MainEventTriangleTopRightTemplate" />
+    <Frame type="Image" name="MainEventTriangleBottomLeft" template="WarChesteSportsNodeTemplate/MainEventTriangleBottomLeftTemplate" />
+    <Frame type="Image" name="MainEventTriangleBottomRight" template="WarChesteSportsNodeTemplate/MainEventTriangleBottomRightTemplate" />
+  </Frame>
+  <Frame type="Image" name="MainEventInnerRingTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="100" />
+    <Height val="100" />
+    <Color val="#WarChesteSportsNodeColor_Primary" />
+    <LayerCount val="4" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="1" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSportsNode_Mask" layer="2" />
+    <Texture val="Assets/Textures/White.dds" layer="3" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <TextureCoords top="-0.02" left="-0.02" bottom="1.02" right="1.02" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <TextureCoords top="0" left="0" bottom="1" right="1" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaLayer val="True" />
+    <AlphaChannel val="InverseAlpha" />
+    <AlphaChannel val="InverseBlue" />
+    <LayerAlpha val="0" />
+    <Animation name="Rotate">
+      <Event event="OnShown" action="Reset,Play" frame="$this" />
+      <Controller type="Rotation" relative="False" end="Loop">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="20" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="MainEventLogoTemplate">
+    <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    <Width val="96" />
+    <Height val="96" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Icon_WCS_Normal" />
+    <TextureCoords top="-0.12" left="-0.12" bottom="1.12" right="1.12" />
+  </Frame>
+  <Frame type="Button" name="WarChesteSportsMainEventNodeTemplate">
+    <Width val="160" />
+    <Height val="160" />
+    <Batch val="False" />
+    <Frame type="Image" name="MainEventBackgroundGlow" template="WarChesteSportsNodeTemplate/MainEventBackgroundGlowTemplate" />
+    <Frame type="Image" name="MainEventBackground" template="WarChesteSportsNodeTemplate/MainEventBackgroundTemplate" />
+    <Frame type="Image" name="MainEventInnerGlow" template="WarChesteSportsNodeTemplate/MainEventInnerGlowTemplate" />
+    <Frame type="Image" name="MainEventHexagonCircle" template="WarChesteSportsNodeTemplate/MainEventHexagonCircleTemplate" />
+    <Frame type="Image" name="MainEventButtonOutlineNormal" template="WarChesteSportsNodeTemplate/MainEventButtonOutlineNormalTemplate" />
+    <Frame type="Image" name="MainEventButtonOutlineHover" template="WarChesteSportsNodeTemplate/MainEventButtonOutlineHoverTemplate" />
+    <Frame type="Image" name="MainEventOuterGlow" template="WarChesteSportsNodeTemplate/MainEventOuterGlowTemplate" />
+    <Frame type="Frame" name="MainEventBoundingRingContainer" template="WarChesteSportsNodeTemplate/MainEventBoundingRingContainerTemplate" />
+    <Frame type="Frame" name="MainEventTrianglesContainer" template="WarChesteSportsNodeTemplate/MainEventTrianglesContainerTemplate" />
+    <Frame type="Image" name="MainEventInnerRing" template="WarChesteSportsNodeTemplate/MainEventInnerRingTemplate" />
+    <Frame type="Image" name="MainEventLogo" template="WarChesteSportsNodeTemplate/MainEventLogoTemplate" />
+    <Animation name="Hover">
+      <Event event="OnMouseEnter" action="DirectionForward,Play" frame="$this" />
+      <Event event="OnMouseExit" action="DirectionReverse,Play" frame="$this" />
+      <Controller type="Fade" end="Pause" frame="$this/MainEventBackgroundGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventBackground">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventBackground">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Loop" frame="$this/MainEventInnerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventInnerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventInnerGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="$this/MainEventHexagonCircle">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" />
+        <Key type="Curve" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventHexagonCircle">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventHexagonCircle">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.033" />
+        <Key type="Property" time="0.067" />
+        <Key type="Property" time="0.1" />
+        <Key type="Property" time="0.133" />
+        <Key type="Property" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="$this/MainEventButtonOutlineHover">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.033" />
+        <Key type="Property" time="0.067" />
+        <Key type="Property" time="0.1" />
+        <Key type="Property" time="0.133" />
+        <Key type="Property" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="False" end="Pause" frame="$this/MainEventButtonOutlineNormal">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="$this/MainEventOuterGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventOuterGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventOuterGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="$this/MainEventBoundingRingContainer">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.05" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="0.15" />
+        <Key type="Curve" time="0.2" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Visibility" end="Pause" frame="$this/MainEventTrianglesContainer">
+        <Key type="Bool" time="0" />
+        <Key type="Bool" time="0.01" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="$this/MainEventTrianglesContainer">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventTrianglesContainer">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventTrianglesContainer">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Pause" frame="$this/MainEventInnerRing">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.05" />
+        <Key type="Property" time="0.1" />
+        <Key type="Property" time="0.15" />
+        <Key type="Property" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="$this/MainEventInnerRing">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Height" relative="False" end="Pause" frame="$this/MainEventInnerRing">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Texture" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Image" time="0" />
+        <Key type="Image" time="0.001" />
+        <Key type="Image" time="0.1" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.067" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="0.133" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Top" relative="False" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Left" relative="False" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Bottom" relative="False" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="False" end="Pause" frame="$this/MainEventLogo">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Image" name="MainEventLineTemplate">
+    <Width val="236" />
+    <Height val="12" />
+    <LayerCount val="3" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Line" layer="0" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Dot" layer="1" />
+    <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Dot" layer="2" />
+    <TextureCoords top="0" left="0" bottom="1" right="18.66667" />
+    <TextureCoords top="0" left="0" bottom="1" right="18.66667" />
+    <TextureCoords top="0" left="-17.66667" bottom="1" right="1" />
+    <LayerColor val="255,255,255" />
+    <LayerColor val="255,255,255" />
+    <Animation name="DotShimmer">
+      <Event event="OnShown" action="Reset,Play" frame="$this" />
+      <Controller type="LayerUV" side="Left" relative="True" end="Loop" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="1.266" />
+        <Key type="Curve" time="1.766" />
+      </Controller>
+      <Controller type="LayerUV" side="Right" relative="True" end="Loop" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="1.266" />
+        <Key type="Curve" time="1.766" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Loop" frame="$this">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.836" />
+        <Key type="Property" time="1.266" />
+        <Key type="Property" time="1.766" />
+      </Controller>
+      <Controller type="Property" property="LayerAlpha" end="Loop" frame="$this">
+        <Key type="Property" time="0" />
+        <Key type="Property" time="0.836" />
+        <Key type="Property" time="1.266" />
+        <Key type="Property" time="1.766" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Frame" name="MainEventTooltipTemplate">
+    <Anchor side="Bottom" relative="$parent/MainEventNode" pos="Mid" offset="0" />
+    <Anchor side="Left" relative="$parent/MainEventNode" pos="Mid" offset="0" />
+    <Anchor side="Right" relative="$parent/MainEventNode" pos="Mid" offset="0" />
+    <Width val="400" />
+    <Height val="250" />
+    <Alpha val="0" />
+    <Frame type="Label" name="Title">
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-27" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="@Collection_WarChest_MainEvent_Title" />
+      <Text val="{$WarChestFrame/@CurrentSeasonId[ESportsSeason]}" />
+    </Frame>
+    <Frame type="Image" name="Line1" template="WarChesteSportsNodeTemplate/MainEventLineTemplate">
+      <Anchor side="Top" relative="$parent/Title" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Frame type="Image" name="TopGlow">
+      <Anchor side="Bottom" relative="$parent/Line1" pos="Min" offset="5" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="224" />
+      <Height val="32" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Glow_Small" />
+      <TextureCoords top="1" left="0" bottom="0" right="1" />
+    </Frame>
+    <Frame type="Image" name="TopHexagons">
+      <Anchor side="Bottom" relative="$parent/Line1" pos="Min" offset="5" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="220" />
+      <Height val="30" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_HexagonLine" />
+      <TextureCoords top="1" left="0" bottom="0" right="1" />
+    </Frame>
+    <Frame type="Label" name="Subtitle">
+      <Anchor side="Top" relative="$parent/Line1" pos="Max" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="@Collection_WarChest_MainEvent_Subtitle" />
+      <Text val="{$WarChestFrame/@CurrentSeasonId[ESportsName]}" />
+    </Frame>
+    <Frame type="Image" name="Line2" template="WarChesteSportsNodeTemplate/MainEventLineTemplate">
+      <Anchor side="Top" relative="$parent/Subtitle" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+    </Frame>
+    <Frame type="Image" name="BottomGlow">
+      <Anchor side="Top" relative="$parent/Line2" pos="Max" offset="-5" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="224" />
+      <Height val="104" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_Glow_Large" />
+      <TextureCoords top="0" left="0" bottom="1" right="1" />
+    </Frame>
+    <Frame type="Image" name="BottomHexagons">
+      <Anchor side="Top" relative="$parent/Line2" pos="Max" offset="-5" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="220" />
+      <Height val="30" />
+      <Texture val="@UI/SC2_UI_Collection_WarChest_eSports_MainEvent_HexagonLine" />
+      <TextureCoords top="0" left="0" bottom="1" right="1" />
+    </Frame>
+    <Frame type="Label" name="Location">
+      <Anchor side="Top" relative="$parent/Line2" pos="Max" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="@Collection_WarChest_MainEvent_Location" />
+      <Text val="{$WarChestFrame/@CurrentSeasonId[ESportsLocation]}" />
+    </Frame>
+    <Frame type="Label" name="Date">
+      <Anchor side="Top" relative="$parent/Location" pos="Max" offset="-1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Style val="@Collection_WarChest_MainEvent_Date" />
+      <Text val="{$WarChestFrame/@CurrentSeasonId[ESportsDate]}" />
+    </Frame>
+    <Animation name="Hover">
+      <Event event="OnMouseEnter" action="DirectionForward,Play" frame="$parent/MainEventNode" />
+      <Event event="OnMouseExit" action="DirectionReverse,Play" frame="$parent/MainEventNode" />
+      <Controller type="Fade" end="Pause" frame="$this">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.05" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.083" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="Line1">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="Line2">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="Line1">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.083" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Top" relative="true" frame="Line1">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="TopHexagons">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="TopGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="TopGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="Subtitle">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.067" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Top" relative="true" frame="Subtitle">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="Line2">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Top" relative="true" frame="Line2">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="BottomHexagons">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="BottomGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Dimension" dimension="Width" relative="False" end="Pause" frame="BottomGlow">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.017" />
+        <Key type="Curve" time="0.1" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="Location">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.04" />
+        <Key type="Curve" time="0.083" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Top" relative="true" frame="Location">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Fade" end="Pause" frame="Date">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.04" />
+        <Key type="Curve" time="0.083" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+      <Controller type="Anchor" end="Pause" side="Top" relative="true" frame="Date">
+        <Key type="Curve" time="0" />
+        <Key type="Curve" time="0.033" />
+        <Key type="Curve" time="0.117" />
+        <Key type="Curve" time="#WarChesteSportsMainEventNode_HoverAnim_Time" />
+      </Controller>
+    </Animation>
+    <Animation name="Sound_WarChest_MainEvent_HoverEnter">
+      <Event event="OnMouseEnter" action="Reset,Play" frame="$parent/MainEventNode" />
+      <Event event="OnMouseExit" action="Reset,Stop" frame="$parent/MainEventNode" />
+      <Controller type="Sound" end="Stop">
+        <Key type="Sound" time="0" sound="@UI_WarChest_MainEvent_HoverEnter" />
+      </Controller>
+    </Animation>
+    <Animation name="Sound_WarChest_MainEvent_HoverArrowsConverge">
+      <Event event="OnMouseEnter" action="Reset,Play" frame="$parent/MainEventNode" />
+      <Event event="OnMouseExit" action="Reset,Stop" frame="$parent/MainEventNode" />
+      <Controller type="Sound" end="Stop">
+        <Key type="Sound" time="0.4" sound="@UI_WarChest_MainEvent_HoverArrowsConverge" />
+      </Controller>
+    </Animation>
+    <Animation name="Sound_WarChest_MainEvent_HoverExit">
+      <Event event="OnMouseExit" action="Reset,Play" frame="$parent/MainEventNode" />
+      <Controller type="Sound" end="Stop">
+        <Key type="Sound" time="0" sound="@UI_WarChest_MainEvent_HoverExit" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="Frame" name="eSportsNodesContainerTemplate">
+    <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    <Frame type="Image" name="eSportsNodeConnectorImage_1-2" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="40.8" />
+      <EndAngleOffset val="8.7" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_2-3" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="55.8" />
+      <EndAngleOffset val="8.6" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_3-4" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="70.7" />
+      <EndAngleOffset val="8.6" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_4-5" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="85.65" />
+      <EndAngleOffset val="8.6" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_5-6" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="100.5" />
+      <EndAngleOffset val="8.6" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_6-7" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="115.5" />
+      <EndAngleOffset val="8.6" />
+    </Frame>
+    <Frame type="Image" name="eSportsNodeConnectorImage_7-8" template="WarChesteSportsNodeTemplate/ConnectorImageTemplate">
+      <StartAngle val="130.4" />
+      <EndAngleOffset val="8.7" />
+    </Frame>
+    <Frame type="Button" name="eSportsNode1" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-238" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-238" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="184" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="184" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="1" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item0/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer0/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode2" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-182" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-182" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="239" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="239" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="2" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item1/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer1/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode3" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-115" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-115" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="278" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="278" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="3" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item2/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer2/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode4" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-39" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-39" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="298" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="298" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="4" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item3/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer3/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode5" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="39" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="39" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="298" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="298" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="5" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item4/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer4/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode6" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="115" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="115" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="278" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="278" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="6" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item5/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer5/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode7" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="182" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="182" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="239" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="239" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="7" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item6/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer6/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="Button" name="eSportsNode8" template="WarChesteSportsNodeTemplate/WarChesteSportsNodeTemplate">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="238" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="238" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="184" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="184" />
+      <HoverSound val="*@UI_WarChest_PlayerSlot_Hover_AS" />
+      <Frame type="Label" name="NodeNumberLabelStandard">
+        <Text val="8" />
+      </Frame>
+      <Frame type="Frame" name="PlayerNodeContainer">
+        <Frame type="Frame" name="Player">
+          <Frame type="Image" name="PlayerPortrait">
+            <Texture val="{$WarChestPlayerInfo/Item7/@Image1}" layer="1" />
+          </Frame>
+        </Frame>
+      </Frame>
+      <Animation name="ScreenSizeMove">
+        <Event event="OnSmallScreen" frame="$parent" action="DirectionForward,Play" />
+        <Event event="OnLargeScreen" frame="$parent" action="DirectionReverse,Play" />
+        <Controller type="Anchor" end="Pause" side="Top" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Bottom" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Left" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+        <Controller type="Anchor" end="Pause" side="Right" relative="true">
+          <Key type="Curve" time="0" />
+          <Key type="Curve" time="0.01" />
+        </Controller>
+      </Animation>
+      <StateGroup name="NodeEmptyStateGroup">
+        <DefaultState val="Empty" />
+        <State name="NotEmpty">
+          <When type="Property" frame="$WarChestPlayerInfo/TooltipContainer7/PlayerNameLabel" Text="" />
+        </State>
+        <State name="Empty" />
+      </StateGroup>
+    </Frame>
+    <Frame type="AspectRatioFrame" name="AspectRatioeSportsListener">
+      <Anchor relative="$ScreenCollection" />
+      <MaxVisibleAspectRatio val="1.475" />
+    </Frame>
+    <Frame type="Label" name="VisibilityLabel">
+      <Anchor relative="$parent" />
+      <Visible val="False" />
+      <Text val="{$ancestor[@type=WarChestFrame]/@CurrentSeasonId[ESportsShowPlayers]}" />
+    </Frame>
+    <StateGroup name="PlayerNodesVisibilityState">
+      <DefaultState val="NotVisible" />
+      <State name="Visible">
+        <When type="Property" frame="VisibilityLabel" Text="1" />
+        <Action type="SetProperty" frame="eSportsNode1" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode2" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode3" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode4" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode5" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode6" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode7" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNode8" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" Visible="True" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" Visible="True" />
+      </State>
+      <State name="NotVisible">
+        <Action type="SetProperty" frame="eSportsNode1" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode2" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode3" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode4" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode5" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode6" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode7" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNode8" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" Visible="False" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" Visible="False" />
+      </State>
+    </StateGroup>
+    <StateGroup name="AspectRatioStateGroup">
+      <DefaultState val="Large" />
+      <State name="Small">
+        <When type="Property" frame="AspectRatioeSportsListener" Visible="true" />
+        <Action type="SendEvent" event="OnSmallScreen" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" />
+      </State>
+      <State name="Large">
+        <Action type="SendEvent" event="OnLargeScreen" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_1-2" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_2-3" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_3-4" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_4-5" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_5-6" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_6-7" />
+        <Action type="SetProperty" frame="eSportsNodeConnectorImage_7-8" />
+      </State>
+    </StateGroup>
+  </Frame>
+</Desc>

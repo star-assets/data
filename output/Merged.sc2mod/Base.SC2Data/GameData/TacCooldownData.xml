@@ -1,0 +1,20 @@
+<Catalog>
+  <CTacCooldown default="1" id="War3_TactCooldown">
+    <UnitLink value="##id##" />
+  </CTacCooldown>
+  <CTacCooldown id="odoc" parent="War3_TactCooldown">
+    <TacAbilData AbilLink="Aeye">
+      <Cooldown value="2" />
+    </TacAbilData>
+  </CTacCooldown>
+  <CTacCooldown id="ospw" parent="War3_TactCooldown">
+    <TacAbilData AbilLink="Aspl">
+      <Cooldown value="1" />
+    </TacAbilData>
+  </CTacCooldown>
+  <CTacCooldown id="ospm" parent="War3_TactCooldown">
+    <TacAbilData AbilLink="Aspl">
+      <Cooldown value="1" />
+    </TacAbilData>
+  </CTacCooldown>
+</Catalog>

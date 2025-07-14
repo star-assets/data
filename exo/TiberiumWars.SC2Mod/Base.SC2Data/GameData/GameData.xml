@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--    <CGame default="1">-->
+    <!--        <AcquireLeashRadius value="5"/>-->
+    <!--        <DamageMinimum value="0.2"/>-->
+    <!--        <EnableRewardVoicePacks value="1"/>-->
+    <!--        <EnableRewardSkins value="1"/>-->
+    <!--        <EnableRewardConsoleSkins value="1"/>-->
+    <!--        <CreepDecayTime value="0.2"/>-->
+    <!--    </CGame>-->
+    <!--    <CGame id="Dflt">-->
+    <!--        <TeamColors index="11" HDRMultiplier="1.200000"/>-->
+    <!--        <AcquireLeashRadius value="5"/>-->
+    <!--        <PlayerLeaveFlags index="FulfillResourceRequests" value="0"/>-->
+    <!--        <PlayerLeaveFlags index="SplitResources" value="0"/>-->
+    <!--        <AcquireMovementLimit value="8"/>-->
+    <!--        <DamageMinimum value="0.2"/>-->
+    <!--        <EnableRewardVoicePacks value="1"/>-->
+    <!--        <EnableRewardSkins value="1"/>-->
+    <!--        <EnableRewardConsoleSkins value="1"/>-->
+    <!--        <CreepDecayTime value="0.2"/>-->
+    <!--        &lt;!&ndash; Test Builds &ndash;&gt;-->
+    <!--        &lt;!&ndash; <AIBuilds index="213" Enabled="0"/>-->
+    <!--             <AIBuilds index="214" Enabled="0"/>-->
+    <!--             <AIBuilds index="215" Enabled="1"/> &ndash;&gt;-->
+    <!--    </CGame>-->
+    <CGame id="Dflt">
+        <TriggerLibs Id="TIBW"/>
+        <TriggerLibs Id="SPPN"/>
+        <TriggerLibs Id="RED3"/>
+        <TriggerLibs Id="CNCC"/>
+        <!--        <TriggerLibs Id="60AE651C"/>-->
+    </CGame>
+</Catalog>

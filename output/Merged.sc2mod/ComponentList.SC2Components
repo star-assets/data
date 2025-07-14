@@ -1,0 +1,124 @@
+<Components>
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="frFR" />
+  <DataComponent Type="text" Locale="deDE" />
+  <DataComponent Type="text" Locale="esES" />
+  <DataComponent Type="text" Locale="esMX" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="text" Locale="koKR" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="text" Locale="zhTW" />
+  <DataComponent Type="text" Locale="plPL" />
+  <DataComponent Type="text" Locale="itIT" />
+  <DataComponent Type="text" Locale="ptBR" />
+  <DataComponent Type="info" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="frFR" />
+  <DataComponent Type="text" Locale="deDE" />
+  <DataComponent Type="text" Locale="esES" />
+  <DataComponent Type="text" Locale="esMX" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="text" Locale="koKR" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="text" Locale="zhTW" />
+  <DataComponent Type="text" Locale="plPL" />
+  <DataComponent Type="text" Locale="itIT" />
+  <DataComponent Type="text" Locale="ptBR" />
+  <DataComponent Type="info" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="frFR" />
+  <DataComponent Type="text" Locale="deDE" />
+  <DataComponent Type="text" Locale="esES" />
+  <DataComponent Type="text" Locale="esMX" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="text" Locale="koKR" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="text" Locale="zhTW" />
+  <DataComponent Type="text" Locale="plPL" />
+  <DataComponent Type="text" Locale="itIT" />
+  <DataComponent Type="text" Locale="ptBR" />
+  <DataComponent Type="info" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="frFR" />
+  <DataComponent Type="text" Locale="deDE" />
+  <DataComponent Type="text" Locale="esES" />
+  <DataComponent Type="text" Locale="esMX" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="text" Locale="koKR" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="text" Locale="zhTW" />
+  <DataComponent Type="text" Locale="plPL" />
+  <DataComponent Type="text" Locale="itIT" />
+  <DataComponent Type="text" Locale="ptBR" />
+  <DataComponent Type="info" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="info" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="font" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="text" Locale="koKR" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="font" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="font" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="font" />
+  <DataComponent Type="text" Locale="ruRU" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="font" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="text" Locale="zhCN" />
+  <DataComponent Type="info" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="info" />
+  <DataComponent Type="uiui" />
+  <DataComponent Type="trig" />
+  <DataComponent Type="gada" />
+  <DataComponent Type="info" />
+  <DataComponent Type="text" Locale="enUS" />
+  <DataComponent Type="trig" />
+  <Optimized />
+</Components>

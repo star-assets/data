@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Desc>
+    <Include path="UI/Layout/NodTopPanel.SC2Layout"/>
+    <Include path="UI/Layout/DeployMCVPanel.SC2Layout"/>
+    <Include path="UI/Layout/SuperWeaponUI.SC2Layout"/>
+    <Include path="UI/Layout/ALLRACES_UIOverrides.SC2Layout"/>
+    <Include path="UI/Layout/SlimUI.SC2Layout"/>
+</Desc>

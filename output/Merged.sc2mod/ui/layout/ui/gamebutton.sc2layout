@@ -1,0 +1,117 @@
+<Desc>
+  <Frame type="GameButton" name="GameButtonBaseTemplate">
+    <NormalImage val="NormalImage" />
+    <HoverImage val="HoverImage" />
+    <Width val="76" />
+    <Height val="76" />
+    <Frame type="Image" name="GameButtonBorderImage">
+      <Anchor relative="$parent" />
+      <LayerCount val="1" />
+      <TextureType val="Normal" layer="0" />
+      <RenderPriority val="510" />
+    </Frame>
+    <Frame type="Image" name="NormalImage">
+      <Anchor relative="$parent" />
+      <LayerCount val="3" />
+      <TextureType val="Normal" layer="0" />
+      <TextureType val="Normal" layer="1" />
+      <TextureType val="Normal" layer="2" />
+      <LayerAlpha val="0" />
+      <TextureCoords top="0" left="0" bottom="0.125" right="0.0625" />
+      <TextureCoords top="0" left="0" bottom="0.125" right="0.0625" />
+      <Texture val="@UI/ButtonCooldown" layer="1" />
+      <Texture val="@UI/ButtonCooldownCharge" layer="2" />
+      <AnimColumns val="16" />
+      <AnimColumns val="16" />
+      <AnimCount val="128" />
+      <AnimCount val="128" />
+      <Animating val="True" />
+      <Animating val="True" />
+      <ManagedAnim val="False" />
+      <ManagedAnim val="False" />
+      <LayerVisible val="False" />
+      <LayerVisible val="False" />
+      <RenderPriority val="512" />
+      <DescFlags val="" />
+    </Frame>
+    <Frame type="Image" name="HoverImage">
+      <Anchor relative="$parent" />
+      <LayerCount val="3" />
+      <TextureType val="Normal" layer="0" />
+      <TextureType val="Normal" layer="1" />
+      <TextureType val="Normal" layer="2" />
+      <LayerAlpha val="0" />
+      <TextureCoords top="0" left="0" bottom="0.125" right="0.0625" />
+      <TextureCoords top="0" left="0" bottom="0.125" right="0.0625" />
+      <Texture val="@UI/ButtonCooldown" layer="1" />
+      <Texture val="@UI/ButtonCooldownCharge" layer="2" />
+      <AnimColumns val="16" />
+      <AnimColumns val="16" />
+      <AnimCount val="128" />
+      <AnimCount val="128" />
+      <Animating val="True" />
+      <Animating val="True" />
+      <ManagedAnim val="False" />
+      <ManagedAnim val="False" />
+      <LayerVisible val="False" />
+      <LayerVisible val="False" />
+      <RenderPriority val="512" />
+      <DescFlags val="" />
+    </Frame>
+    <Frame type="Image" name="AutoCastImage">
+      <Anchor relative="$parent" />
+      <TextureType val="Normal" layer="0" />
+      <TextureCoords top="0" left="0" bottom="0.25" right="0.125" />
+      <Texture val="@UI/ButtonAutocast" layer="0" />
+      <AnimColumns val="8" />
+      <AnimCount val="32" />
+      <AnimDuration val="1000" />
+      <Animating val="True" />
+      <ManagedAnim val="True" />
+      <LayerVisible val="False" />
+      <RenderPriority val="514" />
+    </Frame>
+  </Frame>
+  <Frame type="GameButton" name="GameButtonTemplate" template="GameButton/GameButtonBaseTemplate">
+    <Frame type="Label" name="CooldownLabel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-5" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="5" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-5" />
+      <Style val="GameButtonCooldown" />
+      <RenderPriority val="516" />
+    </Frame>
+    <Frame type="Label" name="ChargeLabel">
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-8" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-8" />
+      <Style val="GameButtonCharge" />
+      <RenderPriority val="516" />
+    </Frame>
+    <Frame type="Image" name="CooldownFinishedImage">
+      <Anchor relative="$parent" />
+      <TextureCoords top="0" left="0" bottom="1" right="0.125" />
+      <Texture val="@UI/ButtonCoolDownBurst" />
+      <AnimDuration val="250" />
+      <AnimColumns val="8" />
+      <AnimCount val="8" />
+      <Animating val="true" />
+      <ManagedAnim val="true" />
+      <LoopingAnim val="false" />
+      <RenderPriority val="518" />
+      <BlendMode val="Add" />
+    </Frame>
+    <Frame type="CommandHotkeyFrame" name="HotkeyFrame" template="StandardTemplates/HotkeyFrameTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <RenderPriority val="520" />
+      <Frame type="Image" name="HotkeyLabelBackground">
+        <RenderPriority val="520" />
+      </Frame>
+      <Frame type="Label" name="HotkeyLabel">
+        <RenderPriority val="520" />
+      </Frame>
+    </Frame>
+  </Frame>
+</Desc>

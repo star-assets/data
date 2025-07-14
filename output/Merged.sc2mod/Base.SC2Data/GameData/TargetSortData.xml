@@ -1,0 +1,228 @@
+<Catalog>
+  <CTargetSort default="1">
+    <WhichUnit Value="Unknown" />
+  </CTargetSort>
+  <CTargetSortAlliance id="TSAlliancePassive" />
+  <CTargetSortAlliance id="TSAllianceVision">
+    <Alliance value="Vision" />
+  </CTargetSortAlliance>
+  <CTargetSortAlliance id="TSAllianceControl">
+    <Alliance value="Control" />
+  </CTargetSortAlliance>
+  <CTargetSortAngle id="TSAngle" />
+  <CTargetSortChargeCount id="TSChargeCount" />
+  <CTargetSortChargeRegen id="TSChargeRegen" />
+  <CTargetSortCooldown id="TSCooldown" />
+  <CTargetSortDistance id="TSDistance" />
+  <CTargetSortDistance id="TSDistanceToTarget">
+    <WhichLocation Value="TargetUnitOrPoint" />
+  </CTargetSortDistance>
+  <CTargetSortDistance id="TSFarthestDistance">
+    <Descending value="1" />
+  </CTargetSortDistance>
+  <CTargetSortInterruptible id="TSInterruptible">
+    <Value value="1" />
+  </CTargetSortInterruptible>
+  <CTargetSortMarker id="TSMarker" />
+  <CTargetSortRandom id="TSRandom" />
+  <CTargetSortPowerSourceLevel id="TSPowerSource" />
+  <CTargetSortPowerUserLevel id="TSPowerUser" />
+  <CTargetSortPriority id="TSPriority" />
+  <CTargetSortVital id="TSLife" />
+  <CTargetSortVital id="TSLifeLargestFirst">
+    <Descending value="1" />
+  </CTargetSortVital>
+  <CTargetSortVital id="TSShields">
+    <Vital value="Shields" />
+  </CTargetSortVital>
+  <CTargetSortVital id="TSEnergy">
+    <Vital value="Energy" />
+  </CTargetSortVital>
+  <CTargetSortVitalFraction id="TSLifeFraction" />
+  <CTargetSortVitalFraction id="TSShieldsFraction">
+    <Vital value="Shields" />
+  </CTargetSortVitalFraction>
+  <CTargetSortVitalFraction id="TSEnergyFraction">
+    <Vital value="Energy" />
+  </CTargetSortVitalFraction>
+  <CTargetSortField id="AirTarget">
+    <Field value="PlaneArray[Air]" />
+    <Value value="1" />
+  </CTargetSortField>
+  <CTargetSortField id="GroundTarget">
+    <Field value="PlaneArray[Ground]" />
+    <Value value="1" />
+  </CTargetSortField>
+  <CTargetSortValidator id="TSGroundOrFiring">
+    <Validator value="TargetIsGroundorCasterIsFiringandNotMoving" />
+  </CTargetSortValidator>
+  <CTargetSortMarker id="TSMarkerDesc">
+    <Descending value="1" />
+  </CTargetSortMarker>
+  <CTargetSortPriority id="TSPriorityDesc">
+    <Descending value="1" />
+  </CTargetSortPriority>
+  <CTargetSortValidator id="TSThreatenBattlecruiser">
+    <Validator value="ThreatensBattlecruiser" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="TSThreatensCyclone">
+    <Validator value="ThreatensCyclone" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="TSTrackedByBattlecruiser">
+    <Validator value="AttackTrackedByBattlecruiser" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="TSTransientBattlecruiser">
+    <Validator value="TransientTrackedByBattlecruiser" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="MothershipTargetFire">
+    <Validator value="TargetFirePriority" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="SpiderMineSCBWWeapon@TargetSort">
+    <Validator value="SpiderMineSCBW@ChaseRange" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="SpiderMineSCBWWeapon@TargetMarker">
+    <Validator value="SpiderMineSCBWWeapon@TargetMarker" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="DefilerSCBWDarkSwarm">
+    <WhichUnit Value="Target" />
+    <Validator value="UnderDarkSwarmCombine" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="DefilerSCBWDarkSwarm@Not">
+    <WhichUnit Value="Target" />
+    <Validator value="NotUnderDarkSwarmCombine" />
+  </CTargetSortValidator>
+  <CTargetSortVital id="TSEnergyLargestFirst" parent="TSEnergy">
+    <Descending value="1" />
+  </CTargetSortVital>
+  <CTargetSortBehaviorCount id="TSNetherShockCount">
+    <Behavior value="AuroraConduitNetherShock" />
+  </CTargetSortBehaviorCount>
+  <CTargetSortBehaviorCount id="TSEmaciate">
+    <Behavior value="GrimGliderEmaciate" />
+  </CTargetSortBehaviorCount>
+  <CTargetSortBehaviorDuration id="TSNetherShockDuration">
+    <Behavior value="AuroraConduitNetherShock" />
+  </CTargetSortBehaviorDuration>
+  <CTargetSortVital id="TSShieldsLargestFirst" parent="TSShields">
+    <Descending value="1" />
+  </CTargetSortVital>
+  <CTargetSortBehaviorCount id="TSKeironProductionChargeDesc">
+    <WhichUnit Value="Target" />
+    <Descending value="1" />
+    <Behavior value="KeironUnitCharge" />
+  </CTargetSortBehaviorCount>
+  <CTargetSortBehaviorDuration id="MiningPriorityDuration">
+    <Behavior value="ResourceTapSearch" />
+    <WhichUnit Value="Target" />
+  </CTargetSortBehaviorDuration>
+  <CTargetSortBehaviorCount id="MiningPriorityCount">
+    <Behavior value="ResourceTapSearch" />
+    <WhichUnit Value="Target" />
+  </CTargetSortBehaviorCount>
+  <CTargetSortBehaviorDuration id="OverclockDuration">
+    <Behavior value="Scion_Overclock" />
+    <WhichUnit Value="Target" />
+  </CTargetSortBehaviorDuration>
+  <CTargetSortBehaviorCount id="OverclockCount">
+    <Behavior value="Scion_Overclock" />
+    <WhichUnit Value="Target" />
+  </CTargetSortBehaviorCount>
+  <CTargetSortVital id="TSEnergyLargestFirst">
+    <Descending value="1" />
+    <Vital value="Energy" />
+  </CTargetSortVital>
+  <CTargetSortValidator id="TalDarimSoulLeechSortHigh">
+    <Validator value="TalDarimSoulLeechHigh" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="TalDarimSoulLeechSortNotLow">
+    <Validator value="TalDarimSoulLeechNotLow" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="TalDarimSoulLeechSortLow">
+    <Validator value="TalDarimSoulLeechLow" />
+  </CTargetSortValidator>
+  <CTargetSortPriority id="TSPriority2">
+    <WhichUnit Value="Target" />
+  </CTargetSortPriority>
+  <CTargetSortValidator id="UEDSortingValidatatorDrakkar">
+    <Validator value="ValidateDrakkarSortingPriorityUED" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="UEDSortingValidatatorHonograund">
+    <Validator value="ValidateHonograndMarker" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="UEDSortingValidatatorNoMarker">
+    <Validator value="noMarkers" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="UEDSortingValidatatorMarkerRange">
+    <Validator value="ValidatePenemundeMarker" />
+  </CTargetSortValidator>
+  <CTargetSortVital id="UmojanTSEnergyLargestFirst">
+    <Descending value="1" />
+    <Vital value="Energy" />
+  </CTargetSortVital>
+  <CTargetSortField id="UmojanGroundTarget">
+    <Field value="PlaneArray[Ground]" />
+    <Value value="1" />
+  </CTargetSortField>
+  <CTargetSortPriority id="UmojanTSPriorityDesc">
+    <Descending value="1" />
+  </CTargetSortPriority>
+  <CTargetSortValidator id="UmojanTSThreatenAir">
+    <Validator value="UmojanThreatensAir" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="UmojanTSThreatenGround">
+    <Validator value="UmojanThreatensGround" />
+  </CTargetSortValidator>
+  <CTargetSortValidator id="UmojanTSTrackedBy">
+    <Validator value="UmojanAttackTrackedByUnit" />
+  </CTargetSortValidator>
+  <CTargetSortVital id="UmojanTSShieldsLargestFirst">
+    <Descending value="1" />
+    <Vital value="Shields" />
+  </CTargetSortVital>
+  <CTargetSortValidator id="UPLSortingValidatator">
+    <Validator value="UPLValidateStingerSortingPriority" />
+  </CTargetSortValidator>
+  <CTargetSortVital id="TSShieldsLargestFirst">
+    <Descending value="1" />
+    <Vital value="Shields" />
+  </CTargetSortVital>
+  <CTargetSortVital id="TSCost" />
+  <CTargetSortDistance id="TSDistance2" />
+  <CTargetSortDistance id="TSDistance22" />
+  <CTargetSortInterruptible id="TSInterruptible2">
+    <Value value="1" />
+  </CTargetSortInterruptible>
+  <CTargetSortInterruptible id="TSInterruptible22">
+    <Value value="1" />
+  </CTargetSortInterruptible>
+  <CTargetSortField id="ArmorTypeSmall">
+    <Descending value="1" />
+    <Field value="Attributes[Light]" />
+    <Value value="0" />
+  </CTargetSortField>
+  <CTargetSortField id="ArmorTypeUnarmored">
+    <Descending value="1" />
+    <Field value="Attributes[Biological]" />
+    <Value value="0" />
+  </CTargetSortField>
+  <CTargetSortField id="HeroFirst">
+    <Field value="FlagArray[Hero]" />
+    <Value value="0" />
+    <Descending value="1" />
+  </CTargetSortField>
+  <CTargetSortInterruptible id="TSBusy" />
+  <CTargetSortField id="TSSubgroupPriorityLargest">
+    <Descending value="1" />
+    <Field value="SubgroupPriority" />
+    <Value value="0" />
+  </CTargetSortField>
+  <CTargetSortField id="SubgroupPriority">
+    <Field value="SubgroupPriority" />
+    <Value value="0" />
+  </CTargetSortField>
+  <CTargetSortField id="UnitLevel">
+    <Descending value="1" />
+    <Field value="KillXP" />
+    <Value value="0" />
+  </CTargetSortField>
+</Catalog>

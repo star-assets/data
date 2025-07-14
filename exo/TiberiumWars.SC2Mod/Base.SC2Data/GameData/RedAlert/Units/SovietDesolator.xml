@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectDamage id="SovietDesolatorDeathsprayDamage">
+        <ValidatorArray value="WeaponInRange"/>
+        <EditorCategories value=""/>
+        <AttributeFactor index="Structure" value="-0.9"/>
+        <ArmorReduction value="1"/>
+        <Amount value="15"/>
+        <Death value="Disintegrate"/>
+        <SearchFilters value="-;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectSet id="SovietDesolatorDeathSprayEffectCollection">
+        <EditorCategories value=""/>
+        <EffectArray value="SovietDesolatorDeathSprayCreation"/>
+        <EffectArray value="SovietDesolatorDeathspraypersistenteffectcreated"/>
+        <TargetLocationType value="Unknown"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="SovietDesolatorDeathSprayCreation">
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="SovietDesolatorDeathspraycreatesacidpiles"/>
+        <PeriodCount value="5"/>
+        <PeriodicValidator value="CasterNotDead"/>
+        <PeriodicEffectArray value="SovietDesolatorDeathSprayLauncher"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="SovietDesolatorDeathspraypersistenteffectcreated">
+        <ValidatorArray value="HasVision"/>
+        <EditorCategories value="Race:Terran"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <WhichLocation Value="CasterPoint"/>
+        <OffsetVectorStartLocation Value="CasterPoint"/>
+        <PeriodCount value="8"/>
+        <PeriodicEffectArray value="SovietDesolatorChemicalForcedeathsprayleftbehindtocreateeffects"/>
+        <PeriodicOffsetArray value="0,-1,0"/>
+        <PeriodicOffsetArray value="0,-3,0"/>
+        <PeriodicOffsetArray value="0,-5,0"/>
+        <PeriodicOffsetArray value="0,-7,0"/>
+        <PeriodicOffsetArray value="0,-9,0"/>
+        <PeriodicOffsetArray value="0,-11,0"/>
+        <PeriodicOffsetArray value="0,-13,0"/>
+        <PeriodicOffsetArray value="0,-15,0"/>
+        <PeriodicPeriodArray value="0.3"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="SovietDesolatorDeathsprayLauncher">
+        <EditorCategories value="Race:Zerg"/>
+        <ImpactLocation Value="TargetUnitOrPoint"/>
+        <ImpactEffect value="Deathsprayvirtualbombardment"/>
+        <Flags index="Channeled" value="1"/>
+        <AmmoUnit value="SovietDesolatorDeathspray"/>
+    </CEffectLaunchMissile>
+    <CEffectEnumArea id="Deathsprayvirtualbombardment">
+        <EditorCategories value="Race:Zerg"/>
+        <SearchFilters value="Ground;Player,Ally,Neutral,Dead,Invulnerable"/>
+        <AreaArray Radius="1" Effect="SovietDesolatorDeathsprayDamageswitch"/>
+    </CEffectEnumArea>
+    <CEffectSwitch id="SovietDesolatorDeathsprayDamageswitch">
+        <EditorCategories value=""/>
+        <CaseArray Validator="TargetNotDead2" Effect="SovietDesolatorDeathsprayDamageinstantlykillslightarmor"/>
+        <CaseDefault value="SovietDesolatorDeathsprayDamage"/>
+    </CEffectSwitch>
+    <CEffectDamage id="SovietDesolatorDeathsprayDamageinstantlykillslightarmor">
+        <ValidatorArray value="WeaponInRange"/>
+        <EditorCategories value=""/>
+        <ArmorReduction value="1"/>
+        <Flags index="Kill" value="1"/>
+        <Amount value="15"/>
+        <Death value="Disintegrate"/>
+        <SearchFilters value="Light;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="SovietDesolatorDeathsprayImpactDummy"/>
+    <!--    <CActorModel id="SovietDesolatorDeathsprayLaunch" parent="ModelAnimationStyleOneShot">-->
+    <!--        <On Terms="Effect.SovietDesolatorDeathsprayLaunchMissile.Start" Send="Create"/>-->
+    <!--    </CActorModel>-->
+    <CEffectCreatePersistent id="SovietDesolatorChemicalForcedeathsprayleftbehindtocreateeffects">
+        <EditorCategories value=""/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="Deathsprayvirtualbombardment"/>
+        <PeriodicPeriodArray value="0.5"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateUnit id="SovietDesolatorDeathspraycreatesacidpiles">
+        <!--ValidatorArray value="CasterIsNovaVirophageOrBlightbriger"/-->
+        <EditorCategories value="Race:Zerg"/>
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <CreateFlags index="DropOff" value="0"/>
+        <CreateFlags index="ProvideFood" value="0"/>
+        <CreateFlags index="TechComplete" value="0"/>
+        <CreateFlags index="UseFood" value="0"/>
+        <SpawnUnit value="DesolatorAcidPuddle"/>
+        <SpawnRange value="4"/>
+    </CEffectCreateUnit>
+    <CEffectSet id="PerditionTurretFlameThrowerSet">
+        <EditorCategories value="Race:Terran"/>
+        <EffectArray value="PerditionTurretFlameThrowerCreatePersistent"/>
+        <EffectArray value="PerditionTurretFlameThrowerDamage"/>
+    </CEffectSet>
+    <CActorAction id="PerditionTurretAttack" parent="GenericAttackBase">
+        <LaunchAttachQuery Methods="Weapon"/>
+        <ImpactMap index="None" Sound="PerditionTurret_AttackImpact"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>
+    </CActorAction>
+    <CActorModel id="PerditionTurretImpactModelFlames" parent="ModelAnimationStyleOneShot">
+        <Terms value="Cap 1"/>
+        <Model value="ImpactModelFlames"/>
+        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachRandomDamage"/>
+    </CActorModel>
+    <CEffectCreatePersistent id="PerditionTurretFlameThrowerCreatePersistent">
+        <EditorCategories value="Race:Terran"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorStartLocation Value="SourcePoint"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="14"/>
+        <PeriodicEffectArray value="PerditionTurretFlameThrowerSearchArea"/>
+        <PeriodicOffsetArray value="0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="0.5,-1,0"/>
+        <PeriodicOffsetArray value="-0.5,-1,0"/>
+        <PeriodicOffsetArray value="0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="0.5,-2,0"/>
+        <PeriodicOffsetArray value="-0.5,-2,0"/>
+        <PeriodicOffsetArray value="0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="0.5,-3,0"/>
+        <PeriodicOffsetArray value="-0.5,-3,0"/>
+        <PeriodicOffsetArray value="0.5,-3.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-3.5,0"/>
+        <PeriodicOffsetArray value="0.5,-4,0"/>
+        <PeriodicOffsetArray value="-0.5,-4,0"/>
+        <PeriodicOffsetArray value="0.5,-4.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-4.5,0"/>
+        <PeriodicOffsetArray value="0.5,-5,0"/>
+        <PeriodicOffsetArray value="-0.5,-5,0"/>
+        <PeriodicOffsetArray value="0.5,-5.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-5.5,0"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="PerditionTurretFlameThrowerSearchArea" parent="EA_WEAP">
+        <EditorCategories value="Race:Terran"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.6" Effect="PerditionTurretFlameThrowerDamage"/>
+    </CEffectEnumArea>
+    <CActorMissile id="SovietDesolatorDeathspray" parent="GenericAttackMissile" unitName="BlightbringerVileStream"/>
+    <!--    <CActorAction id="SovietDesolatorDeathspray" parent="GenericAttack" effectImpact="SovietDesolatorDeathsprayImpact" effectLaunch="SovietDesolatorDeathSprayLauncher">-->
+    <!--        <LaunchAttachQuery Methods="Weapon 1"/>-->
+    <!--        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>-->
+    <!--        <AccuracyHalfArc value="10.000000"/>-->
+    <!--    </CActorAction>-->
+    <CActorAction id="SovietDesolatorDeathsprayImpact" parent="GenericAttack" effectImpact="SovietDesolatorDeathsprayImpact" effectLaunch="SovietDesolatorDeathSprayLauncher">
+        <LaunchAttachQuery Methods="Weapon 1"/>
+        <LaunchAssets Model="SovietDesolatorDeathsprayLaunch" Sound=""/>
+        <Missile value="SovietDesolatorDeathsprayMissile"/>
+        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeStandard SOpForwardLaunchGuide"/>
+        <ImpactMap index="None" Model="SovietDesolatorDeathsprayImpact"/>
+        <AccuracyHalfArc value="10.000000"/>
+        <On Terms="Effect.SovietDesolatorDeathsprayDamage.Start; At Effect" Send="Create"/>
+    </CActorAction>
+    <CActorModel id="SovietDesolatorDeathsprayImpactDummy" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.SovietDesolatorDeathsprayImpactDummy.Start" Send="Create"/>
+    </CActorModel>
+    <CActorModel id="SovietDesolatorDeathsprayLaunch" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.SovietDesolatorDeathSprayLauncher.Start" Send="Create"/>
+    </CActorModel>
+    <CActorMissile id="SovietDesolatorDeathsprayMissile" parent="GenericAttackMissile" unitName="SovietDesolatorDeathspray"/>
+    <CActorSound id="SovietDesolatorDeathsprayLaunchSound" parent="SoundOneShot">
+        <Sound value="SovietDesolatorDeathsprayLaunch"/>
+        <Layers Sound="SovietDesolatorDeathsprayLaunchSound">
+            <Chance value="0"/>
+            <Pitch value="0.000000,0.000000"/>
+            <PlayDelay value="0,0"/>
+            <Volume value="0.000000,0.000000"/>
+        </Layers>
+    </CActorSound>
+    <CActorSound id="SovietDesolatorDeathsprayLoopSound" parent="SoundContinuous"/>
+    <CModel id="SovietDesolatorDeathspray" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\InfestorInfestationMissile\InfestorInfestationMissile.m3"/>
+        <ScaleMax value="1.100000,1.100000,1.000000"/>
+        <ScaleMin value="1.100000,1.100000,1.000000"/>
+        <SelectionRadius value="0.454300"/>
+        <ShadowRadius value="0.454300"/>
+    </CModel>
+    <CModel id="SovietDesolatorDeathsprayImpact" parent="ImpactFX">
+        <!--        <Model value="Assets\Effects\Zerg\InfestorInfestationMissileImpact\InfestorInfestationMissileImpact.m3"/>-->
+        <Model value="Assets\Effects\Zerg\CorrosiveBileImpact\CorrosiveBileImpact.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.454300"/>
+        <ShadowRadius value="0.454300"/>
+    </CModel>
+    <CModel id="SovietDesolatorDeathsprayLaunch" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\InfestorInfestationMissileLaunch\InfestorInfestationMissileLaunch.m3"/>
+        <EditorCategories value="Race:Zerg"/>
+        <Lighting value="DeathsprayLaunch"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <SelectionRadius value="0.454300"/>
+        <ShadowRadius value="0.454300"/>
+    </CModel>
+    <CWeaponLegacy id="SovietDesolatorDeathspray">
+        <EditorCategories value="Race:Zerg"/>
+        <Icon value="assets\textures\chemical-troops-switch-to-death-spray-mode.dds"/>
+        <DisplayEffect value="SovietDesolatorDeathsprayDamage"/>
+        <TargetFilters value="Ground;Self,Dead,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="1.5"/>
+        <Effect value="SovietDesolatorDeathSprayEffectCollection"/>
+    </CWeaponLegacy>
+    <CMoverMissile id="SovietDesolatorDeathspray">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Gravity value="4"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <FlightTime value="0.875"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CSound id="SovietDesolatorDeathsprayLaunchSound" parent="Voice">
+        <AssetArray File="Assets\Sounds\Abathur_Belch_Vx_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Abathur_Belch_Vx_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Abathur_Burp_Vx_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Abathur_Burp_Vx_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Abathur_Burp_Vx_03.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Abathur_Burp_Vx_04.wav" FacialGroup=""/>
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="5"/>
+        <Pitch value="-2.000000,1.000000"/>
+        <Volume value="-2.000000,0.000000"/>
+        <Select value="Random"/>
+    </CSound>
+    <CSound id="SovietDesolatorDeathsprayLaunch" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Virophage\Virophage_Spell0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Virophage\Virophage_Spell1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Virophage\Virophage_Spell2.wav"/>
+        <DupeDestroyCount value="2"/>
+        <Pitch value="-2.000000,2.000000"/>
+    </CSound>
+    <CSound id="SovietDesolatorDeathsprayLoopSound" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\SharedEffects\Effects\Zerg_ColonyInfestationLoop0.wav" FacialGroup=""/>
+        <LoopCount value="-1"/>
+        <Pitch value="-5.000000,-5.000000"/>
+        <VolumeRolloffBlend value="Linear"/>
+        <VolumeRolloffPoints Distance="8.356546"/>
+        <VolumeRolloffPoints Distance="24.791086" Volume="-96.000000"/>
+        <DupeDestroyCount value="4"/>
+        <DupeMuteCount value="6"/>
+    </CSound>
+    <CUnit id="SovietDesolatorDeathspray" parent="MISSILE">
+        <Race value="Soviet"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:Melee"/>
+        <TacticalAI value=""/>
+        <AIEvaluateAlias value=""/>
+    </CUnit>
+</Catalog>

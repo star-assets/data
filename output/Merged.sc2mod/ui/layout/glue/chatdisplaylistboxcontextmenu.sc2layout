@@ -1,0 +1,21 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Frame type="ChatDisplayListBoxContextMenu" name="ChatDisplayListBoxContextMenu" template="StandardBattlenetTemplates/StandardContextMenuTemplate">
+    <MenuMinWidth val="256" />
+    <Frame type="ListBox" name="Menu">
+      <Insets />
+      <HighlightInsets />
+      <ItemHoverWhileDisabled val="false" />
+      <ItemHeight val="27" />
+      <UseScrollBar val="false" />
+    </Frame>
+    <Frame type="Label" name="TitleLabel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Height val="25" />
+      <Style val="SocialPlayerNameLabel" />
+      <RenderPriority val="600" />
+    </Frame>
+  </Frame>
+</Desc>

@@ -1,0 +1,5 @@
+<Catalog>
+    <CValidatorUnitType id="IsCastanarDestructibleDebris">
+        <Value value="CastanarDestructibleDebris"/>
+    </CValidatorUnitType>
+</Catalog>

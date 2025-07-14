@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAttachMethodPattern id="AMPatternDrunkenMissileVolleyNod">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalHailstormMissilePodsLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="AMPatternLaserCannon">
+        <Keyword value="Weapon"/>
+        <Driver value="NodLaserCannonDamage"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="CabalBikeWeaponUMissile">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalBikeWeaponUpLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="NodBikeWeapon">
+        <Keyword value="Weapon"/>
+        <Driver value="NodBikeWeapon@LM1"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="CabalBikeWeapon">
+        <Keyword value="Weapon"/>
+        <Driver value="NodBikeWeapon@LM1"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="CabalCrawlerRocket">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalCrawlerRocketLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="CabalLeviathanLaunchMissile">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalLeviathanLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="NodStealthTankRocket">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalStealthRocketLaunchMissile"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="NodStealthTankRocketUP">
+        <Keyword value="Weapon"/>
+        <Driver value="CabalStealthRocketLaunchMissileUP"/>
+    </CAttachMethodPattern>
+    <CAttachMethodPattern id="RaiderWeaponNod">
+        <Keyword value="Weapon"/>
+        <Driver value="NodRaiderDamage"/>
+    </CAttachMethodPattern>
+    <CAttachMethodFilter id="Weapon0102">
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+    <CAttachMethodFilter id="Weapon0203">
+        <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+    <CAttachMethodFilter id="Weapon010203">
+        <Keys Keyword="Weapon" Index="1"/>
+        <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+</Catalog>

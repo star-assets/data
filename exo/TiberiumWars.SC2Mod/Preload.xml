@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Asset path="assets\textures\ui_arrowwhite.lvl0" Type="Image"/>
+<Asset path="assets\textures\sc2_ui_glues_icons_purchasewarning.dds" Type="Image"/>
+<Asset path="assets\textures\ui_arrowwhite.dds" Type="Image"/>
+<Abil id="move"/>
+<Abil id="attack"/>
+<Abil id="CNCAirplaneMove"/>
+<Abil id="attack2"/>
+<Abil id="VS_ReturnToAirport"/>
+<Actor id="SYSTEM_ActorConfig"/>
+<Actor id="K5KerriganLevelUp2"/>
+<Behavior id="KillsToCaster"/>
+<Behavior id="SuicideWithCaster"/>
+<Behavior id="BeamCannonPathTracker"/>
+<Behavior id="BeamCannonCasterTracker"/>
+<Behavior id="TurretsHubCasterTracker"/>
+<Behavior id="NodGroundDrop"/>
+<Behavior id="NodTurretsHubSuicideWithCaster"/>
+<Behavior id="NodAvatarPilot"/>
+<Behavior id="NodRedeemerPilot"/>
+<Behavior id="Aircraftreversesurveillanceoftheairport"/>
+<Behavior id="RAMovementSpeedAndArmor20Percent62"/>
+<Behavior id="AirportNousefortakeoff"/>
+<Behavior id="VanguardIsCircling"/>
+<Behavior id="VanguardCannotUseMovementSkills"/>
+<Behavior id="Notifyairportaftertakeofforexplosion"/>
+<Behavior id="PioneerDisablesStoppingAutoCirclingA"/>
+<Behavior id="AirportCurrentlyLanding"/>
+<Behavior id="Airportlanded"/>
+<Behavior id="Docked"/>
+<Behavior id="Airporttakingoff"/>
+<Behavior id="LockedLandingPad"/>
+<Effect id="BeamCannonFocusTrackerATU"/>
+<Effect id="BeamCannonTargetTrackerATU"/>
+<Effect id="BeamCannonPathTrackerATU"/>
+<Effect id="BeamCannonCasterTrackerATU"/>
+<Effect id="BeamCannonReflectorTrackerATU"/>
+<Effect id="NodDozerBladesEnableIO"/>
+<Effect id="NodDozerBladesDisableIO"/>
+<Effect id="TurretsHubTurretsTrackerATU"/>
+<Effect id="TurretsHubCasterTrackerATU"/>
+<Effect id="SIInfestedBunkerUprootedRangedFarForcePush3"/>
+<Effect id="CNCTrackairporttoaircraft"/>
+<Effect id="AircraftTraverseTrackingAirport"/>
+<Light id="BattleStation"/>
+<Race id="Terr"/>
+<Sound id="Medivac_Unload" Variations="0"/>
+<Sound id="Vertigo_Attack"/>
+<Sound id="NodAdvisor" Variations="9,12,14,23,44,45,162,194"/>
+<Sound id="JuYorico_What9"/>
+<Sound id="SuOreMiner_What"/>
+<Sound id="JuYorico_What96"/>
+<Sound id="JUConstructionComplete222"/>
+<Sound id="SuOreMiner_What44"/>
+<Sound id="JUConstructionComplete2222"/>
+<Sound id="JUConstructionComplete2224"/>
+<Sound id="JUConstructionComplete2223"/>
+<Sound id="unitlost1"/>
+<Sound id="unitlost12"/>
+<Sound id="unitlost13"/>
+<Sound id="unitlost14"/>
+<Unit id="NodMissileTurretReconstruct"/>
+<Unit id="NodShredderTurretReconstruct"/>
+<Unit id="NodLaserTurretReconstruct"/>
+<Unit id="BeamCannonFocus"/>
+<Unit id="NodCaster"/>
+<Unit id="NodTurretsHubBuildMissile"/>
+<Unit id="DropPodNodDamage"/>
+<Unit id="MCVDeployCaster"/>
+<Unit id="DropPodGDI"/>
+<Unit id="AuChronoTeleportationCoverUnit"/>
+<Unit id="AubuildDunmmyUnit323"/>
+<Unit id="AubuildDunmmyUnit3232"/>
+</Preload>

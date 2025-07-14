@@ -1,0 +1,393 @@
+<Catalog>
+
+    <CWeaponLegacy id="Allied_SpectrumTower_Weapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Options index="DisplayCooldown" value="1"/>
+        <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-adept-recochetglaive.dds"/>
+        <DisplayEffect value="AlliedSpectrumTowerDamagedisplay"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="3"/>
+        <Effect value="AlliedSpectralTowerAttackSet"/>
+        <RandomDelayMax value="0"/>
+    </CWeaponLegacy>
+
+
+    <CUnit id="AuSpectrumTower" parent="AlliedStructure">
+        <Facing value="135"/>
+        <Attributes index="Light" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmorName value="Unit/LifeArmorName/Auormor"/>
+        <Sight value="12"/>
+        <!--Food value="-2"/-->
+        <CostResource index="Minerals" value="200"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="Disband2"/>
+        <AbilArray Link="AuDefenceAdvancedChargeReal"/>
+        <AbilArray Link="AuDefenceAdvancedChargeFake"/>
+        <AbilArray Link="Blink223"/>
+        <BehaviorArray Link="UpgradeLevel122"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
+        <BehaviorArray Link="PowerUserQueue"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
+        <BehaviorArray Link="AutowerUnderConstruction"/>
+        <BehaviorArray Link="RALowPowerForitifcations"/>
+        <BehaviorArray Link="RASufficientpower"/>
+        <WeaponArray Link="Allied_SpectrumTower_Weapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="RASpectralRefractionSuperposition" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="RASpectralRefractionSuperposition" Type="AbilCmd" AbilCmd="AuDefenceAdvancedChargeReal,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink223,Execute" Row="0" Column="0"/>
+        </CardLayouts>
+        <Footprint value="Footprint1x1"/>
+        <PlacementFootprint value="Footprint1x1"/>
+        <TacticalAI value="PreviewBunkerUpgraded"/>
+        <AIEvaluateAlias value="PreviewBunkerUpgraded"/>
+    </CUnit>
+
+    <CActorUnit id="AuDefenceAdvanced" parent="TerranBuildingEx" unitName="AuSpectrumTower">
+        <On index="64" Send="AnimGroupApply Ready {} {} 0 4.000000 AsTimeScale"/>
+        <On Terms="Effect.RASpectrumTowerChargingStartDelay.Start" Send="AnimBracketStart 111 Ready Attack"/>
+        <On Terms="Effect.RASpectrumTowerChargingStartDelay.Stop" Send="AnimBracketStop 111"/>
+        <On Terms="ActorCreation" Send="AnimPlay Attack1 Birth PlayForever,NonLooping -1.000000 -1.000000 1.000000 AsTimeScale"/>
+        <On Terms="AnimDone.*.Complete; AnimName Attack1" Send="AnimClear Attack1"/>
+        <On Terms="AnimDone.*.Complete; AnimName Attack1" Send="ModelSwap AuDefenceAdvanced"/>
+        <On Terms="AnimDone.*.Complete; AnimName Attack1" Send="AnimBaselineStart"/>
+        <DeathArray index="Normal" ModelLink="TerranLargeBuildingDeath" SoundLink="Terran_ExplosionLarge" VoiceLink="InfestedDominionHousing3DeathVoice"/>
+        <PlacementModel value="AuDefenceAdvanced"/>
+        <PlacementSound value="Terran_BuildingPlacement2"/>
+        <PortraitModel value="StaticPortrait9"/>
+        <BarWidth value="50"/>
+        <GroupIcon>
+            <Image value="Assets\Icons\spectrum-tower-wireframe.dds"/>
+        </GroupIcon>
+        <GroupSoundArray index="What" value=""/>
+        <GroupSoundArray index="Yes" value=""/>
+        <GroupSoundArray index="Attack" value=""/>
+        <GroupSoundArray index="Board" value=""/>
+        <HeroIcon value="Assets\Icons\spectrum-tower-icon.dds"/>
+        <LifeArmorIcon value="Assets\Textures\btn-ability-protoss-heavilyarmored.dds"/>
+        <MinimapIcon value="Assets\Textures\minimapiconcreeploc.dds"/>
+        <MinimapIconScale value="0.500000"/>
+        <SoundArray index="Birth" value=""/>
+        <SoundArray index="Ready" value=""/>
+        <SoundArray index="Help" value="RA3Alert5"/>
+        <SoundArray index="What" value="AuBaseDefenceAdvancedVoiceSelect"/>
+        <SoundArray index="Yes" value=""/>
+        <SoundArray index="Attack" value=""/>
+        <SoundArray index="Pissed" value=""/>
+        <SoundArray index="Movement" value=""/>
+        <SoundArray index="Turning" value=""/>
+        <SoundArray index="Board" value=""/>
+        <SoundArray index="Construction" value=""/>
+        <SoundArray index="Click" value="AuBaseDefenceAdvancedVoiceSelect"/>
+        <SoundArray index="ClickError" value=""/>
+        <SoundArray index="Highlight" value=""/>
+        <UnitIcon value="Assets\Icons\spectrum-tower-icon.dds"/>
+        <Wireframe>
+            <Image value="Assets\Icons\spectrum-tower-wireframe.dds"/>
+        </Wireframe>
+        <BuildModel value="AuDefenceAdvanced3"/>
+        <Model value="AuDefenceAdvanced3"/>
+        <HighlightTooltip value="Unit/Name/AuDefenceAdvanced"/>
+    </CActorUnit>
+    <CActorSound id="RASpectrumTowerChargingSoundEffect" parent="SoundOneShot">
+        <FogVisibility value="Visible"/>
+        <On Terms="Effect.RASpectrumTowerChargingStartDelay.Start" Send="Create"/>
+        <On Terms="Effect.RASpectrumTowerAttackStartDelay.Start" Send="Create"/>
+        <On Terms="Effect.RALightPrismTowerAttackStartDelay.Start" Send="Create"/>
+        <Sound value="Karass_PsionicStormImpact253"/>
+    </CActorSound>
+
+
+
+    <CAbilEffectTarget id="AuDefenceAdvancedChargeReal">
+        <Cost>
+            <Cooldown TimeUse="2.9"/>
+        </Cost>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Range value="999"/>
+        <Arc value="360"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="RASpectralRefractionSuperposition"/>
+        <Effect index="0" value="RASpectrumTowerChargingImposesBehavioralVerification"/>
+    </CAbilEffectTarget>
+
+
+
+    <CAbilEffectTarget id="AuDefenceAdvancedChargeFake">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <!-- <Flags index="AutoCast" value="1"/>
+        <Flags index="AutoCastOn" value="1"/> -->
+        <Cost>
+            <Cooldown TimeUse="2.9"/>
+        </Cost>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <!-- <AutoCastFilters value="Ground,Structure,Visible;Self,Ally,Neutral,Enemy"/>
+        <AutoCastRange value="9"/>
+        <AutoCastValidatorArray value="IsAuSpectrumTower"/>
+        <AutoCastValidatorArray value="TargetIsFiringWeapon"/>
+        <AutoCastValidatorArray value="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers"/>
+        <AutoCastValidatorArray value="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior"/> -->
+        <CmdButtonArray index="Execute" DefaultButtonFace="RASpectralRefractionSuperposition"/>
+        <PrepEffect value="AlliedTurnoffattackskillswhentheSpectralTowerischarging"/>
+        <Effect index="0" value="RASpectrumTowerChargingStartDelay"/>
+    </CAbilEffectTarget>
+
+    <CValidatorUnitType id="IsAuSpectrumTower">
+        <ResultFailed value="CantLoadThatUnit"/>
+        <Value value="AuSpectrumTower"/>
+    </CValidatorUnitType>
+
+
+    <CActorAction id="ProbeAttack422" parent="GenericAttack" effectAttack="RASpectralTowerSplashDamageEffectSwitching5Stages">
+        <Beam value="ProbeAttackBeam442"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522"/>
+        <Inherits index="Scale" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack43" parent="GenericAttack" effectAttack="RASpectralTowerChargesFakeDamage">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam43"/>
+        <ImpactSiteOps Ops="SOpAttachWeapon"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound=""/>
+        <DamageSiteOps Ops="SOpAttachWeapon"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack432" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel1">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam432"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack4322" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel2">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam4322"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
+        <ImpactMap index="Shield" Sound="ProbeAttack432ImpactShield" ModelReaction="ProbeAttack432ImpactReactionShield"/>
+        <DamageMap index="None" Model="ProbeAttack432Damage" Sound="ProbeAttack432Damage" ModelReaction="ProbeAttack432DamageReaction"/>
+        <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack4323" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel3">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam4323"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
+        <ImpactMap index="Shield" Sound="ProbeAttack432ImpactShield" ModelReaction="ProbeAttack432ImpactReactionShield"/>
+        <DamageMap index="None" Model="ProbeAttack432Damage" Sound="ProbeAttack432Damage" ModelReaction="ProbeAttack432DamageReaction"/>
+        <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack4324" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel4">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam4324"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
+        <ImpactMap index="Shield" Sound="ProbeAttack432ImpactShield" ModelReaction="ProbeAttack432ImpactReactionShield"/>
+        <DamageMap index="None" Model="ProbeAttack432Damage" Sound="ProbeAttack432Damage" ModelReaction="ProbeAttack432DamageReaction"/>
+        <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+    <CActorAction id="ProbeAttack4325" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel5">
+        <LaunchSiteOps Ops="SOpAttachWeapon"/>
+        <Beam value="ProbeAttackBeam4325"/>
+        <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
+        <ImpactMap index="Shield" Sound="ProbeAttack432ImpactShield" ModelReaction="ProbeAttack432ImpactReactionShield"/>
+        <DamageMap index="None" Model="ProbeAttack432Damage" Sound="ProbeAttack432Damage" ModelReaction="ProbeAttack432DamageReaction"/>
+        <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
+        <ActionFlags index="LaunchForceSite" value="1"/>
+    </CActorAction>
+
+
+
+    <CBehaviorBuff id="RASpectraltowerchargingbehaviorverificationbehavior">
+        <!-- <InfoFlags index="Hidden" value="1"/> -->
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="4"/>
+        <Duration value="4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AlliedTurnoffattackskillswhentheSpectralTowerischarging">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="3.05"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BehaviorofSpectrumTowerAttackApplicationDetection">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.5"/>
+    </CBehaviorBuff>
+
+
+    <CEffectSet id="AlliedSpectralTowerAttackSet">
+        <EffectArray value="RASpectrumTowerAttackStartDelay"/>
+        <EffectArray value="RASpectrumTowerAttacksItsOwnApplicationBehaviorDetection"/>
+        <TargetLocationType value="Unknown"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="RASpectrumTowerAttackStartDelay">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialDelay value="1"/>
+        <InitialEffect value="RASpectralTowerDamageEffectSwitching5Stages"/>
+        <ExpireDelay value="0.1"/>
+        <FinalEffect value="RASpectralTowerRemovesDamageBonusVerificationBehavior"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="RASpectralTowerScatteringVestUnit"/>
+        <PeriodicPeriodArray value="0"/>
+    </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="RASpectrumTowerAttacksItsOwnApplicationBehaviorDetection">
+        <ValidatorArray index="0" removed="1"/>
+        <WhichUnit Value="Caster"/>
+        <Behavior value="BehaviorofSpectrumTowerAttackApplicationDetection"/>
+    </CEffectApplyBehavior>
+
+
+    <CEffectSet id="RACollectionOfSpectralTowerChargingEffects">
+        <EffectArray value="RASpectralTowerChargesFakeDamage"/>
+        <!-- <EffectArray value="RASpectrumTowerChargingImposesBehavioralVerification"/> -->
+    </CEffectSet>
+    <CEffectApplyBehavior id="RASpectrumTowerChargingImposesBehavioralVerification">
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+    </CEffectApplyBehavior>
+    <CEffectCreatePersistent id="RASpectrumTowerChargingStartDelay">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <InitialDelay value="0.05"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="RACollectionOfSpectralTowerChargingEffects"/>
+        <PeriodicPeriodArray value="0.02"/>
+    </CEffectCreatePersistent>
+    <CEffectSwitch id="RASpectralTowerSplashDamageEffectSwitching5Stages">
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifierLevel1" Effect="RASpectralSplashDamageSearchLevel2"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier2ndFloor" Effect="RASpectralSplashDamageSearchLevel3"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier3rdFloor" Effect="RASpectralSplashDamageSearchLevel4"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier4thFloor" Effect="RASpectralSplashDamageSearchLevel5"/>
+        <CaseDefault value="RASpectralSplashDamageSearchLevel1"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="RASpectralTowerDamageEffectSwitching5Stages">
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifierLevel1" Effect="AlliedSpectralTowerDamageLevel2"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier2ndFloor" Effect="AlliedSpectralTowerDamageLevel3"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier3rdFloor" Effect="AlliedSpectralTowerDamageLevel4"/>
+        <CaseArray Validator="RASpectrumTowerChargingStackVerifier4thFloor" Effect="AlliedSpectralTowerDamageLevel5"/>
+        <CaseDefault value="AlliedSpectralTowerDamageLevel1"/>
+        <TargetLocationType value="UnitOrPoint"/>
+    </CEffectSwitch>
+    <CEffectDamage id="RASpectralTowerChargesFakeDamage"/>
+    <CEffectRemoveBehavior id="RASpectralTowerRemovesDamageBonusVerificationBehavior">
+        <WhichUnit Value="Caster"/>
+        <BehaviorLink value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+    </CEffectRemoveBehavior>
+    <CEffectCreateUnit id="RASpectralTowerScatteringVestUnit">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Origin Value="TargetUnitOrPoint"/>
+        <SpawnEffect value="RASpectralTowerSplashDamageEffectSwitching5Stages"/>
+        <SpawnUnit value="RAPhantomTankSpectralVestUnit"/>
+    </CEffectCreateUnit>
+    <CEffectDamage id="AlliedSpectralTowerDamageLevel1" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="15"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="AlliedSpectralTowerDamageLevel2" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="AlliedSpectralTowerDamageLevel3" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="45"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="AlliedSpectralTowerDamageLevel4" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="60"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="AlliedSpectralTowerDamageLevel5" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="75"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectDamage id="AlliedSpectrumTowerDamagedisplay" parent="DU_WEAP">
+        <Kind value="Ranged"/>
+        <Amount value="30"/>
+        <SearchFilters value="-;Player,Ally,Neutral"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+    <CEffectApplyBehavior id="AlliedTurnoffattackskillswhentheSpectralTowerischarging">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel1">
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="4" Radius="2" Effect="AlliedSpectralTowerDamageLevel1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel2">
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="5" Radius="2.5" Effect="AlliedSpectralTowerDamageLevel2"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel3">
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="6" Radius="3" Effect="AlliedSpectralTowerDamageLevel3"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel4">
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="7" Radius="3.5" Effect="AlliedSpectralTowerDamageLevel4"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel5">
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
+        <AreaArray MaxCount="8" Radius="4" Effect="AlliedSpectralTowerDamageLevel5"/>
+    </CEffectEnumArea>
+
+
+
+    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifierLevel1">
+        <Value value="1"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier2ndFloor">
+        <Value value="2"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier3rdFloor">
+        <Value value="3"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier4thFloor">
+        <Value value="4"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers">
+        <Compare value="LE"/>
+        <Value value="4"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior">
+        <Value value="1"/>
+        <Behavior value="BehaviorofSpectrumTowerAttackApplicationDetection"/>
+    </CValidatorUnitCompareBehaviorCount>
+</Catalog>

@@ -1,0 +1,1137 @@
+<Catatlog>
+    <CSound id="GDICrawler_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiAttackg.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDICrawler_Deploy" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUCrOff_voiDeploya.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiDeployb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiDeployc.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIDropPodAscend" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_3ascenda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_3ascendb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_3ascendc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_3ascendd.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="4"/>
+    </CSound>
+    <CSound id="GDIDropPodIncoming" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_1descenda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_1descendb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_1descendc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_1descendd.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="4"/>
+    </CSound>
+    <CSound id="GDICrawler_Help" parent="Voice">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiHelpMea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiHelpMeb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiHelpMec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiHelpMed.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelUnde.ogg" FacialGroup=""/>
+        <Category value="Alert"/>
+        <PanLevel value="1.000000"/>
+        <ReverbBalance Room="-10000"/>
+        <SpeakerMix index="BackLeft" value="0.000000"/>
+        <SpeakerMix index="BackRight" value="0.000000"/>
+        <SpeakerMix index="SideLeft" value="0.000000"/>
+        <SpeakerMix index="SideRight" value="0.000000"/>
+        <Volume value="0.170000,0.170000"/>
+    </CSound>
+    <CSound id="GDICrawler_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Geva_DeploySuccComm.ogg" FacialGroup=""/>
+        <Volume value="2.360000,2.360000"/>
+    </CSound>
+    <CSound id="GDICrawler_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelectf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelectg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiSelecti.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDICrawler_Yes" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrOff_voiMovej.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIEngineer_Attack" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiAttackg.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+    </CSound>
+    <CSound id="GDIEngineer_Help" parent="Alert">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUnde.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiSelUndf.ogg" FacialGroup=""/>
+        <Mode value="3DWorld"/>
+        <Volume value="0.170000,0.170000"/>
+    </CSound>
+    <CSound id="GDIEngineer_Movement" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\NUEngin_InfP_moveStarta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\NUEngin_InfP_moveStartb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\NUEngin_InfP_moveStartc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\NUEngin_InfP_moveStartd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\NUEngin_InfP_moveStarte.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="3"/>
+        <Pitch value="-1.000000,0.000000"/>
+        <Volume value="-16.000000,-16.000000"/>
+    </CSound>
+    <CSound id="GDIEngineer_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiCreateb.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIEngineer_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelectf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiSelectg.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIEngineer_Yes" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_VoiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUEngin_voiMovei.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShota.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShote.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShoth.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShoti.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotj.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiDieShotk.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUnde.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelUndf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiSelectf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovej.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovek.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovel.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiMovem.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_voiAttackg.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="GDIZoneTrooper_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneT_wea1firea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_wea1fireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_wea1firec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_wea1fired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneT_wea1firee.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-4.500000"/>
+        <DupePrioritization value="Oldest"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="3.160000,7.010000"/>
+        <Volume value="0.570000,3.090000"/>
+    </CSound>
+    <CSound id="Enforcer_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUnde.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelUndf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiSelecte.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiMovej.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiAttackf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_Death" parent="Pissed">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieLasera.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieLaserb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieLaserc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieLaserd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieShota.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieShotb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieShotc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieShotd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieShote.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieThrowna.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_voiDieThrownb.ogg" FacialGroup=""/>
+        <Flags index="Download" value="1"/>
+        <Category value="Death"/>
+        <PanLevel value="1.000000"/>
+        <Select value="Shuffle"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Enforcer_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_machGunWeaponFire1L3a.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_machGunWeaponFire1L3b.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_machGunWeaponFire1L3c.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="6"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="6"/>
+        <VariationMinimum value="8"/>
+        <Volume value="-13.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIGrenadeExplosion" parent="Spell">
+        <AssetArray File="Assets\Sounds\Tychus_Grenade_Impact_01.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Tychus_Grenade_Impact_02.wav" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\Tychus_Grenade_Impact_03.wav" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMuteCount value="6"/>
+        <Pitch value="-2.000000,2.000000"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIGrenadeLaunch" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFire2a.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFire2b.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFire2c.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleya.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleye.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireFoleyh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFiree.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneE_InfS_grenadeLauncherWeaponFiref.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMuteCount value="6"/>
+        <Volume value="0.170000,0.170000"/>
+    </CSound>
+    <CSound id="GDIDropPodImpact" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_2impacta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_2impactb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_2impactc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUCrawl_DropPod_2impactd.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="4"/>
+        <Volume value="1.630000,1.630000"/>
+    </CSound>
+    <CSound id="Shepherd_Movement" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUVeh_V_moveLoopa.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_V_moveLoopb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_V_moveLoopc.ogg" FacialGroup=""/>
+        <Volume value="-6.390000,-6.390000"/>
+    </CSound>
+    <CSound id="Shepherd_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiMovej.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Shepherd_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelecte.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Shepherd_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Shepherd_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiSelUnde.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Shepherd_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUShepT_voiAttackf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Defender_AttackImpact" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosiona.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosiond.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosione.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionf.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <Volume value="1.630000,1.630000"/>
+    </CSound>
+    <CSound id="Defender_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFiree.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFiref.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireh.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="-1.820000,2.420000"/>
+        <Volume value="-7.960000,-6.120000"/>
+    </CSound>
+    <CSound id="Commando_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiSelUnde.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Commando_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiCreatec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiCreated.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Commando_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelectf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiSelectg.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovej.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiMovek.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelectf.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiSelUnde.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Commando_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_voiMovej.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShocka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShockb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShockc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShockd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShocke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShota.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShotb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShotc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShotd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShote.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiDieShotf.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Defender_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_voiAttackg.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Commando_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidiea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidieb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidiec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidied.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidiee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidief.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidieg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidieh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidiei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_Voidiej.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Titan_Attack" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiAttackg.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Titan_Help" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelUnde.ogg" FacialGroup=""/>
+        <Category value="Alert"/>
+    </CSound>
+    <CSound id="Titan_Movement" parent="Movement">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepa.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepe.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footsteph.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepi.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepj.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepk.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_footstepl.ogg" FacialGroup=""/>
+        <LoopCount value="10"/>
+    </CSound>
+    <CSound id="Titan_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiCreatec.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Titan_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiSelectf.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="Titan_Yes" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_VoiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUTitan_voiMovej.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="GDIRaiderWeapon_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Protoss"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFiree.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFiref.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFireg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFireh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFirei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFirej.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_gunFirek.ogg" FacialGroup=""/>
+        <Flags index="VariationFallback" value="0"/>
+        <Volume value="3.090000,3.090000"/>
+    </CSound>
+    <CSound id="GDIRaider_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiAttackf.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIRaider_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiRetreaa.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiRetreab.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiRetreac.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelUnde.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIRaider_Ready" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIRaider_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiSelectf.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIRaider_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiMovei.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="GDIRaider_Death" parent="Death">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShocka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShockb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShockc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShockd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShocke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShockg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShockh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShota.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShote.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShoth.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShoti.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieShotj.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieThrowna.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieThrownb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieThrownc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieThrownd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDied.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDief.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiej.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiek.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiel.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDiem.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDien.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneR_voiDieo.ogg" FacialGroup=""/>
+        <Flags index="Stream" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="HammerHead_Ready" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUHamme_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiCreatec.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="12"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HammerHead_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelectf.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="12"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HammerHead_Yes" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUHamme_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiMovei.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="12"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="HammerHead_Help" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiSelUnde.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="12"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="MastodonAttack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiAttackg.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="MastodonReady" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiCreatec.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mastodon_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUnde.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelUndf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mastodon_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiSelectf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mastodon_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMasto_voiMovej.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="James_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2a.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2b.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2c.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2d.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2e.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2f.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2g.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2h.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2i.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2j.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2k.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2l.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2m.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2n.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2o.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2p.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2q.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2r.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2s.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2t.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2u.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2v.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSnipe_gunFire2w.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+    </CSound>
+    <CSound id="James_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUJames_voiSelecta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUJames_voiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUJames_voiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUJames_voiSelectd.ogg" FacialGroup=""/>
+    </CSound>
+    <CSound id="IonCannonPreSound" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponFirec.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="2.000000,2.000000"/>
+    </CSound>
+    <CSound id="IonCannonImpactSound" parent="Spell">
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponExplosiona.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponExplosionb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneC_InfW_IonStrikeWeaponExplosionc.ogg" FacialGroup=""/>
+        <DupeMaximumMethod value="Replace"/>
+        <Pitch value="6.000000,6.000000"/>
+    </CSound>
+    <CSound id="Commando_Attack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_VoiAttackf.ogg" FacialGroup=""/>
+        <Volume value="-1.000000,-1.000000"/>
+    </CSound>
+    <CSound id="Argus_AttackImpact" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFiree.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFiref.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFireg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFireh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFirei.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUWeapo_LaserMediumFirej.ogg" FacialGroup=""/>
+        <Volume value="0.170000,0.170000"/>
+    </CSound>
+    <CSound id="ARGUSMissileAttackImpact" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosiona.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosiond.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosione.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUZoneD_InfO_rocketWeaponImpactExplosionf.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <Volume value="1.630000,1.630000"/>
+    </CSound>
+    <CSound id="ARGUS_MissileAttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFiree.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFiref.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GBCraSu_CraC_rocketWeaponFireh.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <OverlapTimeDelta value="100"/>
+        <Pitch value="-1.820000,2.420000"/>
+        <Volume value="-7.960000,-6.120000"/>
+    </CSound>
+    <CSound id="Mastodon_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1a.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1b.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1c.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1d.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1e.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1f.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1g.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1h.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1i.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1j.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1k.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUVeh_L_weapFire1l.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="5"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupeThresholdPoints/>
+        <DupeThresholdPoints Count="2" Volume="-4.500000"/>
+        <DupePrioritization value="Oldest"/>
+        <OverlapTimeDelta value="100"/>
+        <Volume value="3.000000,3.090000"/>
+    </CSound>
+    <CSound id="SiegeTank_AttackLaunch22" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFired.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="2.360000,2.360000"/>
+    </CSound>
+    <CSound id="HammerHead_AttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUHammer_AirQ_machineGunWeaponFireL2a.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHammer_AirQ_machineGunWeaponFireL2b.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHammer_AirQ_machineGunWeaponFireL2c.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="6"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="6"/>
+        <Pitch value="-0.890000,0.840000"/>
+        <VariationMinimum value="8"/>
+        <Volume value="-2.100000,0.900000"/>
+    </CSound>
+    <CSound id="HammerHead_Attack" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUHamme_voiAttackg.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <DupeDestroyCount value="12"/>
+        <DupeMuteCount value="12"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="MammothAttack" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttacka.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttackb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttackc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttackd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttacke.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttackf.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiAttackg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiAttackh.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mammoth_Help" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUnda.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUndb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUndc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUndd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUnde.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiSelUndf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="MammothReady" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiCreatea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiCreateb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiCreatec.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mammoth_What" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiSelectb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiSelectc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiSelectd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiSelecte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiSelectf.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="Mammoth_Yes" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMovea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMoveb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMovec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMoved.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMovee.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMovef.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_VoiMoveg.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiMoveh.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUMammo_voiMovei.ogg" FacialGroup=""/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="ZonejumpImpact" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetLandImpacta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetLandImpactb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetLandImpactc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetLandImpactd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetLandImpacte.ogg" FacialGroup=""/>
+        <Category value="Combat"/>
+        <DupeDestroyCount value="5"/>
+        <Pitch value="-1.000000,1.000000"/>
+    </CSound>
+    <CSound id="ZoneJumpLaunch" parent="Spell">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetFired.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUComma_jumpJetFiree.ogg" FacialGroup=""/>
+        <Volume value="-0.370000,1.630000"/>
+    </CSound>
+    <CSound id="SCV_Attack2" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartf.ogg" FacialGroup=""/>
+        <Flags index="Download" value="0"/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="SCV_Ready2" parent="Ready">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartf.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="Dozer_What" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartf.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="SCV_Yes2" parent="TerranAck">
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarta.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartc.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartd.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStarte.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartf.ogg" FacialGroup=""/>
+        <Volume value="-3.000000,-3.000000"/>
+    </CSound>
+    <CSound id="GDIShepherdTankAttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFirea.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFireb.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFirec.ogg" FacialGroup=""/>
+        <AssetArray File="Assets\Sounds\GUSheph_cannWeapFired.ogg" FacialGroup=""/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <Volume value="2.360000,2.360000"/>
+    </CSound>
+    <CSound id="ArgusChaingunAttackLaunch" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\Viking\Viking_AssaultAttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Viking\Viking_AssaultAttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Viking\Viking_AssaultAttackLaunch2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Viking\Viking_AssaultAttackLaunch3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\Viking\Viking_AssaultAttackLaunch4.wav"/>
+        <DupeDestroyCount value="8"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-2.000000,0.000000"/>
+        <Volume value="-10.610000,-9.610000"/>
+    </CSound>
+    <CSound id="Argus_ChaingunAttackImpact" parent="Combat">
+        <EditorCategories value="Race:Terran"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\BulletImpacts\Terran_MultipleBulletAttackImpact0.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\BulletImpacts\Terran_MultipleBulletAttackImpact1.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\BulletImpacts\Terran_MultipleBulletAttackImpact2.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\BulletImpacts\Terran_MultipleBulletAttackImpact3.wav"/>
+        <AssetArray File="Assets\Sounds\Terran\SharedEffects\BulletImpacts\Terran_MultipleBulletAttackImpact4.wav"/>
+        <Pitch value="-1.500000,1.500000"/>
+        <Volume value="-12.000000,-12.000000"/>
+    </CSound>
+
+
+    <CSound id="Ultralisk_AttackLaunch2" parent="Combat">
+        <EditorCategories value="Race:Zerg"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackLaunch0.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackLaunch1.wav"/>
+        <AssetArray File="Assets\Sounds\Zerg\Ultralisk\Ultralisk_AttackLaunch2.wav"/>
+        <DupeDestroyCount value="3"/>
+        <DupeMaximumMethod value="Replace"/>
+        <DupeMuteCount value="3"/>
+        <DupePrioritization value="Oldest"/>
+        <Pitch value="-1.000000,1.000000"/>
+        <Volume value="-3.100000,-3.100000"/>
+    </CSound>
+</Catatlog>

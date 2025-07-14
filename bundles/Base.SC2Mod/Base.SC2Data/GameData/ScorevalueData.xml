@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Catalog>
+    <CScoreValueCustom default="1" id="BaseScoreValue">
+        <Collapse value="Latest"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom default="1" id="StatScoreValue" parent="BaseScoreValue">
+        <Flags index="PerformanceMeasure" value="1"/>
+    </CScoreValueCustom>
+    <CScoreValueCustom default="1" id="AchievementScoreValue" parent="BaseScoreValue">
+        <Flags index="TriggerAchievement" value="1"/>
+    </CScoreValueCustom>
+</Catalog>

@@ -1,0 +1,1582 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+
+    <CUnit default="1" id="GDIConstructionBase" parent="GDIStructure">
+        <AbilArray Link="GDIBuild"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="TBl1" Row="2" Column="0"/>
+            <LayoutButtons Face="TerranBuildAdvanced" Type="Submenu" SubmenuCardId="TBl2" Row="2" Column="1"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl1">
+            <LayoutButtons Face="GDIRefinery" Type="AbilCmd" AbilCmd="GDIBuild,Build2" Row="0" Column="0"/>
+            <LayoutButtons Face="GDITiberiumSilo" Type="AbilCmd" AbilCmd="GDIBuild,Build3" Row="0" Column="1"/>
+            <LayoutButtons Face="GDIPowerPlant" Type="AbilCmd" AbilCmd="GDIBuild,Build1" Row="0" Column="2"/>
+            <LayoutButtons Face="GDIBarracks" Type="AbilCmd" AbilCmd="GDIBuild,Build4" Row="1" Column="0"/>
+            <LayoutButtons Face="GDICommandPost" Type="AbilCmd" AbilCmd="GDIBuild,Build5" Row="1" Column="1"/>
+            <LayoutButtons Face="GDIBunker" Type="AbilCmd" AbilCmd="GDIBuild,Build9" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIGuardianCannon" Type="AbilCmd" AbilCmd="GDIBuild,Build8" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIFocusBeam" Type="AbilCmd" AbilCmd="GDIBuild,Build10" Row="2" Column="2"/>
+            <LayoutButtons Face="CancelBuilding" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl2">
+            <LayoutButtons Face="GDIFactory" Type="AbilCmd" AbilCmd="GDIBuild,Build6" Row="0" Column="0"/>
+            <LayoutButtons Face="GDIAirfield" Type="AbilCmd" AbilCmd="GDIBuild,Build7" Row="0" Column="1"/>
+            <LayoutButtons Face="CancelBuilding" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+    </CUnit>
+    <CUnit id="GDIFireHawk" parent="GDIAir">
+        <FlagArray index="AILifetime" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="10"/>
+        <KillXP value="40"/>
+        <BehaviorArray Link="VertigoVeterancyUpgrade"/>
+        <CardLayouts/>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <ScoreMake value="175"/>
+        <ScoreKill value="175"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="160"/>
+        <Speed value="4.4492"/>
+        <Acceleration value="15"/>
+        <VisionHeight value="15"/>
+        <WeaponArray Link="LanzerTorpedoes"/>
+        <LifeArmor value="1"/>
+    </CUnit>
+    <!--CY-->
+    <CUnit id="Dozer" parent="GDIGround">
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="ArmySelect" value="0"/>
+        <Collide index="Small" value="1"/>
+        <DefaultAcquireLevel value="Defensive"/>
+        <Response value="Flee"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+        <Acceleration value="2.5"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <Food value="-1"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="16.667"/>
+        <AIOverideTargetPriority value="10"/>
+        <KillXP value="50"/>
+        <AbilArray Link="Repair"/>
+        <AbilArray Link="SCVHarvest"/>
+        <AbilArray Link="GDIBuild"/>
+        <AbilArray Link="TerranBuildDrop"/>
+        <WeaponArray Link="FusionCutter"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Repair" Type="AbilCmd" AbilCmd="Repair,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="GatherTerr" Type="AbilCmd" AbilCmd="SCVHarvest,Gather" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="SCVHarvest,Return" Row="1" Column="1"/>
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="TBl1" Row="2" Column="0"/>
+            <LayoutButtons Face="TerranBuildAdvanced" Type="Submenu" SubmenuCardId="TBl2" Row="2" Column="1"/>
+            <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="TerranBuild,Halt" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl1">
+            <LayoutButtons Face="GDIRefinery" Type="AbilCmd" AbilCmd="GDIBuild,Build2" Row="0" Column="0"/>
+            <LayoutButtons Face="GDITiberiumSilo" Type="AbilCmd" AbilCmd="GDIBuild,Build3" Row="0" Column="1"/>
+            <LayoutButtons Face="GDIPowerPlant" Type="AbilCmd" AbilCmd="GDIBuild,Build1" Row="0" Column="2"/>
+            <LayoutButtons Face="GDIBarracks" Type="AbilCmd" AbilCmd="GDIBuild,Build4" Row="1" Column="0"/>
+            <LayoutButtons Face="GDICommandPost" Type="AbilCmd" AbilCmd="GDIBuild,Build5" Row="1" Column="1"/>
+            <LayoutButtons Face="GDIBunker" Type="AbilCmd" AbilCmd="GDIBuild,Build9" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIGuardianCannon" Type="AbilCmd" AbilCmd="GDIBuild,Build8" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIFocusBeam" Type="AbilCmd" AbilCmd="GDIBuild,Build10" Row="2" Column="2"/>
+            <LayoutButtons Face="CancelBuilding" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl2">
+            <LayoutButtons Face="GDIFactory" Type="AbilCmd" AbilCmd="GDIBuild,Build6" Row="0" Column="0"/>
+            <LayoutButtons Face="GDIAirfield" Type="AbilCmd" AbilCmd="GDIBuild,Build7" Row="0" Column="1"/>
+            <LayoutButtons Face="CancelBuilding" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="50"/>
+        <SubgroupPriority value="6"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAIThink value="AIThinkSCV"/>
+        <GlossaryPriority value="10"/>
+        <TechTreeProducedUnitArray value="GDIRefinery"/>
+        <TechTreeProducedUnitArray value="GDITiberiumSilo"/>
+        <TechTreeProducedUnitArray value="GDIPowerPlant"/>
+        <TechTreeProducedUnitArray value="GDIBarracks"/>
+        <TechTreeProducedUnitArray value="GDICommandPost"/>
+        <TechTreeProducedUnitArray value="GDIBunker"/>
+        <TechTreeProducedUnitArray value="GDIFactory"/>
+        <TechTreeProducedUnitArray value="GDIAirfield"/>
+        <TechTreeProducedUnitArray value="GDIGuardianCannon"/>
+        <TechTreeProducedUnitArray value="GDIFocusBeam"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDIdefenseMCVCY" parent="GDIConstructionBase">
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Sight value="11"/>
+        <Food value="14"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <RepairTime value="150"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="RallyCommand"/>
+        <AbilArray Link="GDIRefineryTrain"/>
+        <AbilArray Link="CommandCenterTransport"/>
+        <AbilArray Link="GDIDefenseMCVpack"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
+        <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
+        <!--        <BehaviorArray Link="CabalShieldGenerator"/>-->
+        <WeaponArray Link="TwinIbiksCannon" Turret="PlanetaryFortress"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="PlanetaryFortressLoad" Type="AbilCmd" AbilCmd="CommandCenterTransport,LoadAll" Row="2" Column="0"/>
+            <LayoutButtons Face="CommandCenterUnloadAll" Type="AbilCmd" AbilCmd="CommandCenterTransport,UnloadAll" Row="2" Column="1"/>
+            <LayoutButtons Face="StopPlanetaryFortress" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Dozer" Type="AbilCmd" AbilCmd="GDIRefineryTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="RallyCommand,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="packD" Type="AbilCmd" AbilCmd="GDIDefenseMCVpack,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint5x5Contour"/>
+        <PlacementFootprint value="Footprint5x5DropOff"/>
+        <ScoreMake value="700"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
+        <TacticalAI value="PlanetaryFortress"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <AIEvalFactor value="0.7"/>
+        <TechAliasArray value="Alias_CommandCenter"/>
+        <TechAliasArray value="Alias_CommandCenter"/>
+        <GlossaryPriority value="240"/>
+    </CUnit>
+    <CUnit id="GDIdefenseMCV" parent="GDIGround">
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <PushPriority value="50"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Speed value="0.6992"/>
+        <Acceleration value="1.5"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="58.711"/>
+        <TurningRate value="58.711"/>
+        <Sight value="11"/>
+        <Food value="14"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <RepairTime value="45"/>
+        <KillXP value="1300"/>
+        <AbilArray Link="GDIDefenseMCVDeploy"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="DeployD" Type="AbilCmd" AbilCmd="GDIDefenseMCVDeploy,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="2.5"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <ScoreMake value="1300"/>
+        <ScoreKill value="1300"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="2.5"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <TechAliasArray value="Alias_SiegeTank"/>
+        <GlossaryPriority value="130"/>
+        <AlliedPushPriority value="50"/>
+    </CUnit>
+    <CUnit id="GDIConyardCC3" parent="GDIConstructionBase">
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Sight value="11"/>
+        <Food value="14"/>
+        <CostResource index="Minerals" value="400"/>
+        <RepairTime value="150"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="GDIMCVpackCC3"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIMCVUndeploy" Type="AbilCmd" AbilCmd="GDIMCVpackCC3,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <Radius value="3"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint4x4Contour"/>
+        <PlacementFootprint value="Footprint4x4"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <AIEvalFactor value="0.7"/>
+        <TechAliasArray value="Alias_CommandCenter"/>
+        <BehaviorArray Link="CNCTabConstruction"/>
+    </CUnit>
+    <!--MCV-->
+    <CUnit id="GDIMCVCC3" parent="GDIGround">
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <PushPriority value="50"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Speed value="1.5"/>
+        <Acceleration value="1.5"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="58.711"/>
+        <TurningRate value="58.711"/>
+        <Sight value="11"/>
+        <Food value="14"/>
+        <CostResource index="Minerals" value="400"/>
+        <RepairTime value="45"/>
+        <KillXP value="1000"/>
+        <AbilArray Link="GDIMCVDeploy"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="DeployCC3" Type="AbilCmd" AbilCmd="GDIMCVDeploy,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="8"/>
+        <ScoreMake value="1000"/>
+        <ScoreKill value="1000"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="2.5"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <AlliedPushPriority value="50"/>
+    </CUnit>
+    <!--Tech-->
+    <CUnit id="GDIPowerPlant" parent="GDIStructure">
+        <BehaviorArray Link="Deployable"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Food value="8"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <AbilArray Link="Upgradepowerplant"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="UpgradePowerPlant" Type="AbilCmd" AbilCmd="Upgradepowerplant,Train1" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAI value="SupplyDepot"/>
+        <TechAliasArray value="Alias_SupplyDepot"/>
+        <GlossaryPriority value="248"/>
+    </CUnit>
+    <CUnit id="GDIPowerPlant2" parent="GDIStructure">
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Food value="8"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <AbilArray Link="SupplyDepotLower"/>
+        <AbilArray Link="Upgradepowerplant"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAI value="SupplyDepot"/>
+        <TechAliasArray value="Alias_SupplyDepot"/>
+        <GlossaryPriority value="248"/>
+    </CUnit>
+    <CUnit id="GDIPowerPlantU" parent="GDIPowerPlant2">
+        <Food value="16"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="25"/>
+    </CUnit>
+    <CUnit id="GDITiberiumSilo" parent="GDIStructure">
+        <Facing value="315"/>
+        <ResourceState value="Harvestable"/>
+        <ResourceType value="Vespene"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="75"/>
+        <RepairTime value="14"/>
+        <BehaviorArray Link="HarvestableVespeneGeyserGas"/>
+        <BehaviorArray Link="RefineryMorph"/>
+        <EffectArray index="Create" value="RefineryRichSearch"/>
+        <Radius value="1.5"/>
+        <SeparationRadius value="1.5"/>
+        <Footprint value="FootprintGeyserRoundedBuilt"/>
+        <PlacementFootprint value="Footprint3x3CappedGeyser"/>
+        <BuiltOn value="VespeneGeyser"/>
+        <BuiltOn value="SpacePlatformGeyser"/>
+        <BuiltOn value="RichVespeneGeyser"/>
+        <BuiltOn value="ProtossVespeneGeyser"/>
+        <BuiltOn value="PurifierVespeneGeyser"/>
+        <BuiltOn value="ShakurasVespeneGeyser"/>
+        <BuildOnAs value="RefineryRich"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="75"/>
+        <SubgroupPriority value="1"/>
+        <GlossaryPriority value="244"/>
+    </CUnit>
+    <CUnit id="GDIBarracks" parent="GDIStructure">
+        <Facing value="315"/>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <RepairTime value="65"/>
+        <AbilArray Link="GDIBarracksTrain"/>
+        <AbilArray Link="Rally"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CNCTabInfantry"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIZoneEnforcer" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="GDIZoneTrooper" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train4" Row="0" Column="1"/>
+            <LayoutButtons Face="GDIZoneDefender" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train5" Row="0" Column="2"/>
+            <LayoutButtons Face="GDIZoneRaider" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train3" Row="0" Column="3"/>
+            <LayoutButtons Face="GDIEngineer" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train2" Row="1" Column="0"/>
+            <LayoutButtons Face="GDIZoneCommando" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train6" Row="1" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="BarracksAddOns,Halt" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.75"/>
+        <SeparationRadius value="1.75"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <TacticalAI value="Barracks"/>
+        <TechAliasArray value="Alias_Barracks"/>
+        <GlossaryPriority value="252"/>
+        <TechTreeProducedUnitArray value="GDIZoneRaider"/>
+        <TechTreeProducedUnitArray value="GDIZoneEnforcer"/>
+        <TechTreeProducedUnitArray value="GDIZoneTrooper"/>
+        <TechTreeProducedUnitArray value="GDIZoneDefender"/>
+        <TechTreeProducedUnitArray value="GDIZoneCommando"/>
+        <TechTreeProducedUnitArray value="GDIEngineer"/>
+    </CUnit>
+    <CUnit id="GDIRefinery" parent="GDIStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
+        <BehaviorArray Link="Deployable"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <ResourceDropOff index="Minerals" value="1"/>
+        <ResourceDropOff index="Vespene" value="1"/>
+        <ResourceDropOff index="Terrazine" value="1"/>
+        <ResourceDropOff index="Custom" value="1"/>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="11"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="400"/>
+        <RepairTime value="34"/>
+        <AbilArray Link="GDIRefineryTrain"/>
+        <AbilArray Link="RallyCommand"/>
+        <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
+        <!--        <BehaviorArray Link="GameTime5Seconds"/>-->
+        <!--        <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>-->
+        <EffectArray index="Create" value="CCCreateSet"/>
+        <EffectArray index="Birth" value="GDIRefineryBirthSet"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Dozer" Type="AbilCmd" AbilCmd="GDIRefineryTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="RallyCommand,Rally1" Row="1" Column="4"/>
+        </CardLayouts>
+        <Radius value="2.5"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint5x5Contour"/>
+        <PlacementFootprint value="Footprint5x5DropOff"/>
+        <ScoreMake value="400"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <TacticalAI value="CommandCenter"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <TechAliasArray value="Alias_CommandCenter"/>
+        <GlossaryPriority value="30"/>
+        <TechTreeProducedUnitArray value="SCV"/>
+        <TechTreeProducedUnitArray value="PlanetaryFortress"/>
+        <TechTreeProducedUnitArray value="OrbitalCommand"/>
+        <InnerRadius value="2.5"/>
+    </CUnit>
+    <CUnit id="GDIGuardianCannon" parent="GDIStructure">
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <Sight value="7"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="25"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="Detector11"/>
+        <WeaponArray Link="CabalViperTurretWeaponO" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Behavior="DistortionSensors" Row="2" Column="3"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="12"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="230"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+    </CUnit>
+    <CUnit id="GDIAirfield" parent="GDIStructure">
+        <LifeStart value="1250"/>
+        <LifeMax value="1250"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="60"/>
+        <AbilArray Link="GDIAirfieldTrain"/>
+        <AbilArray Link="Rally"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CNCTabAirforce"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIHammerhead" Type="AbilCmd" AbilCmd="GDIAirfieldTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="GDIArgus" Type="AbilCmd" AbilCmd="GDIAirfieldTrain,Train2" Row="0" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="FactoryAddOns,Halt" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.625"/>
+        <TacticalAI value="Factory"/>
+        <GlossaryPriority value="322"/>
+    </CUnit>
+    <CUnit id="GDICombatSupportAirfield" parent="GDIStructure">
+        <LifeStart value="1250"/>
+        <LifeMax value="1250"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="0"/>
+        <RepairTime value="60"/>
+        <AbilArray Link="Rally"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.625"/>
+        <TacticalAI value="Factory"/>
+        <GlossaryPriority value="322"/>
+    </CUnit>
+    <CUnit id="GDICommandPost" parent="GDIStructure">
+        <Facing value="315"/>
+        <LifeStart value="850"/>
+        <LifeMax value="850"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="125"/>
+        <RepairTime value="35"/>
+        <AbilArray Link="GDIResearch"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="MissileTurretPassive" Type="Passive" Row="2" Column="2"/>
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="GDIResearch,Research3" Row="0" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="125"/>
+        <ScoreKill value="125"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+    <CUnit id="GDIWarFactory" parent="GDIStructure">
+        <BehaviorArray Link="Deployable"/>
+        <LifeStart value="1250"/>
+        <LifeMax value="1250"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="60"/>
+        <AbilArray Link="GDIFactoryTrain"/>
+        <AbilArray Link="Rally"/>
+        <BehaviorArray Link="CNCTabVehicles"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIStriker" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="GDITitan" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train2" Row="0" Column="1"/>
+            <LayoutButtons Face="GDIMCV" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train9" Row="0" Column="2"/>
+            <LayoutButtons Face="GDISpartan" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train3" Row="1" Column="0"/>
+            <LayoutButtons Face="GDIShepherdTank" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train4" Row="1" Column="1"/>
+            <LayoutButtons Face="GDIRefractor" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train5" Row="1" Column="2"/>
+            <LayoutButtons Face="GDIMammothTank" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train6" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIJuggernaut" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train7" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIMastodon" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train8" Row="2" Column="2"/>
+            <LayoutButtons Face="GDIPredator" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train10" Row="0" Column="3"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="FactoryAddOns,Halt" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.625"/>
+        <TacticalAI value="Factory"/>
+        <GlossaryPriority value="322"/>
+        <TechTreeProducedUnitArray value="GDIMCVCC3"/>
+        <TechTreeProducedUnitArray value="GDITitan"/>
+        <TechTreeProducedUnitArray value="GDIShepherdTank"/>
+        <TechTreeProducedUnitArray value="GDIMammothTank"/>
+        <TechTreeProducedUnitArray value="GDIMastodon"/>
+        <TechTreeProducedUnitArray value="GDIJuggernaut"/>
+        <TechTreeProducedUnitArray value="GDISpartan"/>
+        <TechTreeProducedUnitArray value="GDIStriker"/>
+        <TechTreeProducedUnitArray value="GDIRefractor"/>
+        <TechTreeProducedUnitArray value="GDIPredator"/>
+    </CUnit>
+    <CUnit id="GDIFocusBeam" parent="GDIStructure">
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <Sight value="7"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="25"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="Detector11"/>
+        <WeaponArray Link="CabalViperTurretWeaponO" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Behavior="DistortionSensors" Row="2" Column="3"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="12"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="230"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+    </CUnit>
+    <!--defense-->
+    <CUnit id="GDIBunker" parent="GDIStructure">
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <BehaviorArray Link="BunkerNotJumbo"/>
+        <BehaviorArray Link="ShrikeTurret"/>
+        <Facing value="315"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <Sight value="10"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="40"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="BunkerTransport"/>
+        <AbilArray Link="SalvageShared"/>
+        <AbilArray Link="SalvageBunkerRefund"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="StimpackRedirect"/>
+        <AbilArray Link="StimpackMarauderRedirect"/>
+        <AbilArray Link="StopRedirect"/>
+        <AbilArray Link="AttackRedirect"/>
+        <AbilArray Link="healRedirect"/>
+        <AbilArray Link="BunkerAttack"/>
+        <AbilArray Link="BunkerStop"/>
+        <WeaponArray Link="ShrikeTurret" Turret="ShrikeTurret"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackRedirect" Type="AbilCmd" AbilCmd="AttackRedirect,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="StopRedirect,Execute" Row="0" Column="1"/>
+            <!--            <LayoutButtons Face="StimRedirect" Type="AbilCmd" AbilCmd="StimpackRedirect,Execute" Row="2" Column="0"/>-->
+            <!--            <LayoutButtons Face="StimRedirect" Type="AbilCmd" AbilCmd="StimpackMarauderRedirect,Execute" Row="2" Column="0"/>-->
+            <LayoutButtons Face="SetBunkerRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="1"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="2"/>
+            <LayoutButtons Face="Salvage" Type="AbilCmd" AbilCmd="SalvageShared,On" Row="2" Column="3"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SalvageShared,Off" Row="2" Column="4"/>
+            <LayoutButtons Face="StopBunker" Type="AbilCmd" AbilCmd="BunkerStop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="ShrikeTurret" Type="Passive" Requirements="ShrikeTurretResearched" Row="1" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="BunkerAttack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <TacticalAIThink value="AIThinkBunker"/>
+        <AIEvalFactor value="1.1"/>
+        <GlossaryPriority value="300"/>
+    </CUnit>
+    <CUnit id="GDIJuggernaut" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDISpartan" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <!--vehicles-->
+<!--    <CUnit id="GDIMammothMecha" parent="SovietGround">-->
+<!--        <Subtitle value="UnitSubtitle/Sujijia"/>-->
+<!--        <Race value="GDI"/>-->
+<!--        <FlagArray index="AIPressForwardDisabled" value="1"/>-->
+<!--        <PushPriority value="21"/>-->
+<!--        <Response value="AcquireNoFlee"/>-->
+<!--        <Attributes index="Mechanical" value="1"/>-->
+<!--        <LifeStart value="4000"/>-->
+<!--        <LifeMax value="4000"/>-->
+<!--        <LifeArmor value="1"/>-->
+<!--        <LifeRegenRate value="5"/>-->
+<!--        <Speed value="1.1015"/>-->
+<!--        <Deceleration value="500"/>-->
+<!--        <Sight value="17"/>-->
+<!--        <Food value="-5"/>-->
+<!--        <CostResource index="Minerals" value="4500"/>-->
+<!--        <RepairTime value="41.667"/>-->
+<!--        <KillXP value="25"/>-->
+<!--        <AbilArray Link="GDIMammothSacrificialLaunch"/>-->
+<!--        <BehaviorArray Link="SovietT4unitveteranbehavior"/>-->
+<!--        <BehaviorArray Link="GDIMammothCrushLevel4"/>-->
+<!--        <WeaponArray Link="GDIMammothMechDualArmorPiercingCannon" Turret="RAApocalypseMainCannon"/>-->
+<!--        <WeaponArray Link="GDIMammothMultitubeMissileLauncher1" Turret="GDIMammothMechMissileTurret1"/>-->
+<!--        <WeaponArray Link="GDIMammothMultitubeMissileLauncher2" Turret="GDIMammothMechMissileTurret2"/>-->
+<!--        <WeaponArray Link="RARoller4"/>-->
+<!--        <CardLayouts index="0">-->
+<!--            <LayoutButtons Face="Stim3222" Type="AbilCmd" AbilCmd="GDIMammothSacrificialLaunch,255" Row="1" Column="0"/>-->
+<!--            <LayoutButtons Face="Stim322" Type="AbilCmd" AbilCmd="GDIMammothSacrificialLaunch,255" Row="1" Column="1"/>-->
+<!--        </CardLayouts>-->
+<!--        <Radius value="1"/>-->
+<!--        <InnerRadius value="0.5"/>-->
+<!--        <SubgroupPriority value="15"/>-->
+<!--    </CUnit>-->
+    <CUnit id="GDIMammothTank" parent="GDIGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PushPriority value="15"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <LifeArmor value="7"/>
+        <Speed value="1.75"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="45"/>
+        <KillXP value="450"/>
+        <WeaponArray Link="GDIMammoth120mmCannons" Turret="SiegeTank"/>
+        <WeaponArray Link="GDIMammothMissile" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <TechAliasArray value="Alias_SiegeTank"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="GDIMammothTankVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="GDIRefractor" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <!--infantry-->
+    <CUnit id="GDIEngineer" parent="GDIGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="60"/>
+        <LifeMax value="60"/>
+        <LifeRegenDelay value="10"/>
+        <LifeRegenRate value="2"/>
+        <Mover value="CliffJumper"/>
+        <Speed value="2.75"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="20"/>
+        <KillXP value="50"/>
+        <AbilArray Link="healCNC"/>
+        <BehaviorArray Link="ReaperJump"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIJetPack" Type="Passive" AbilCmd="255,255" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIHeal" Type="AbilCmd" AbilCmd="healCNC,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="7"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Reaper"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="50"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDIMastodon" parent="GDIGround">
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PushPriority value="30"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="700"/>
+        <LifeMax value="700"/>
+        <LifeArmor value="6"/>
+        <Speed value="1.6992"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="119.8828"/>
+        <TurningRate value="119.8828"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="250"/>
+        <RepairTime value="45"/>
+        <KillXP value="325"/>
+        <WeaponArray Link="GDIMastodonWeapon" Turret="SiegeTank"/>
+        <WeaponArray Link="GDIMastodonAttackMissile" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <TechAliasArray value="Alias_SiegeTank"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="GDIMastodonVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="GDIPredator" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDIStriker" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDITitan" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="225"/>
+        <LifeMax value="225"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="325"/>
+        <WeaponArray Link="TitanLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="TitanVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="GDIZoneRaider" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="160"/>
+        <LifeMax value="160"/>
+        <LifeArmor value="1"/>
+        <Mover value="CliffJumper"/>
+        <Speed value="2.9492"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <KillXP value="50"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="GDIZoneRaiderVeterancyUpgrade"/>
+        <WeaponArray Link="GDIRaiderWeapon"/>
+        <WeaponArray Link="GDIRaiderCharge"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="CombatShield"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value="UseCombatShield"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDIShepherdTank" parent="GDIGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="125"/>
+        <RepairTime value="45"/>
+        <KillXP value="225"/>
+        <WeaponArray Link="90mmCannonsShepherd" Turret="SiegeTank"/>
+        <WeaponArray Link="GDIShepherdMachineGun" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <TechAliasArray value="Alias_SiegeTank"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="15"/>
+        <BehaviorArray Link="GDIShepherdTankVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="GDIZoneCommando" parent="GDIGround">
+        <FlagArray index="Hero" value="1"/>
+        <PushPriority value="20"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmor value="2"/>
+        <LifeRegenRate value="3"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="20"/>
+        <KillXP value="350"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <AbilArray Link="CommandoC4"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="GDIZoneCommandoVeterancyUpgrade"/>
+        <WeaponArray Link="CommandoWeapon"/>
+        <WeaponArray Link="CommandoWeapon2"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="PlantC4" Type="AbilCmd" AbilCmd="CommandoC4,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="GDIZoneEnforcer" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="55"/>
+        <LifeMax value="55"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <KillXP value="50"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <AbilArray Link="ZoneEGrenades"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="ZoneEnforcerVeterancyUpgrade"/>
+        <WeaponArray Link="Enforcerweapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIPulseGrenades" Type="Passive" AbilCmd="255,255" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="James" parent="GDIGround">
+        <FlagArray index="Hero" value="1"/>
+        <PushPriority value="20"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <LifeArmor value="2"/>
+        <LifeRegenRate value="3"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="JamesVeterancyUpgrade"/>
+        <WeaponArray Link="GDIJamesC10CanisterRifleSnipe"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <KillXP value="350"/>
+    </CUnit>
+    <CUnit id="GDIZoneTrooper" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="75"/>
+        <LifeMax value="75"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="10"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <WeaponArray Link="ATgun"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="CombatShield"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value="UseCombatShield"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="GDIZoneTrooperVeterancyUpgrade"/>
+        <KillXP value="85"/>
+    </CUnit>
+    <CUnit id="GDIZoneDefender" parent="GDIGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="60"/>
+        <LifeMax value="60"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="Stimpack"/>
+        <AbilArray Link="JumpPack"/>
+        <WeaponArray Link="DefenderMissile"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="JumpPack" Type="AbilCmd" AbilCmd="JumpPack,Execute" Row="2" Column="0"/>
+            <LayoutButtons>
+                <Face value="CombatShield"/>
+                <Type value="Passive"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value="UseCombatShield"/>
+                <Row value="2"/>
+                <Column value="1"/>
+            </LayoutButtons>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="GDIZoneDefenderVeterancyUpgrade"/>
+        <KillXP value="50"/>
+    </CUnit>
+    <!--Air-->
+    <CUnit id="Hammerhead" parent="GDIAir">
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="450"/>
+        <LifeMax value="450"/>
+        <LifeArmor value="3"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <Speed value="2.25"/>
+        <SpeedMaximum value="2.25"/>
+        <Acceleration value="1"/>
+        <Deceleration value="1"/>
+        <Sight value="12"/>
+        <Food value="-6"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="90"/>
+        <KillXP value="450"/>
+        <AbilArray Link="SpecOpsDropshipTransport"/>
+        <WeaponArray Link="HammerheadWeapon" Turret="SiegeTank"/>
+        <WeaponArray Link="HammerHeadRocket"/>
+        <CardLayouts>
+            <LayoutButtons Face="MedivacLoad" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="MedivacUnloadAll" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport,UnloadAt" Row="2" Column="1"/>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="700"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <TechAliasArray value="Alias_BattlecruiserClass"/>
+        <GlossaryPriority value="210"/>
+        <BehaviorArray Link="HammerheadVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="Argus" parent="GDIAir">
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <Attributes index="MapBoss" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <LifeRegenRate value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranShipPlating"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1"/>
+        <StationaryTurningRate value="119.8828"/>
+        <TurningRate value="119.8828"/>
+        <Sight value="12"/>
+        <Food value="-6"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="300"/>
+        <RepairTime value="90"/>
+        <KillXP value="700"/>
+        <BehaviorArray Link="ARGUSWeaponSearch"/>
+        <BehaviorArray Link="ArgusVeterancyUpgrade"/>
+        <BehaviorArray Link="ArgusReapirZone"/>
+        <WeaponArray Link="ArgusLaser"/>
+        <WeaponArray Link="ArgusLaser3"/>
+        <WeaponArray Link="ArgusChaingun1"/>
+        <WeaponArray Link="ArgusChaingun2"/>
+        <WeaponArray Link="ArgusChaingun3"/>
+        <WeaponArray Link="ARGUSMissilePod"/>
+        <WeaponArray Link="ARGUSMissilePod2"/>
+        <WeaponArray Link="ARGUSMissilePod3"/>
+        <CardLayouts>
+            <LayoutButtons Face="GDIAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="700"/>
+        <ScoreKill value="700"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <TechAliasArray value="Alias_BattlecruiserClass"/>
+        <GlossaryPriority value="210"/>
+    </CUnit>
+    <CUnit id="GDIOxTransport" parent="GDIAir">
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <Acceleration value="2.3125"/>
+        <StationaryTurningRate value="359.4726"/>
+        <TurningRate value="359.4726"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="10"/>
+        <KillXP value="40"/>
+        <AbilArray Link="GDITransport"/>
+        <WeaponArray Link="GaussRifle"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodCarryallLoad" Type="AbilCmd" AbilCmd="GDITransport,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="NodCarryallUnloadAll" Type="AbilCmd" AbilCmd="GDITransport,UnloadAt" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="10"/>
+        <MinimapRadius value="0.75"/>
+        <LeaderAlias value=""/>
+    </CUnit>
+    <!--missiles-->
+    <CUnit id="ATgunLMWeaponCommando" parent="GDIMissile">
+        <Mover value="ATgunWeapon"/>
+    </CUnit>
+    <CUnit id="DefenderWeapon2" parent="GDIMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="HammerHeadRocket" parent="GDIMissile">
+        <Mover value="GoliathMissile"/>
+    </CUnit>
+    <CUnit id="MastodonDamageMissile" parent="GDIMissile">
+        <Mover value="LiberatorMissile"/>
+    </CUnit>
+    <CUnit id="GDIMastodonWeapon" parent="GDIMissile">
+        <Mover value="ATgunWeapon"/>
+    </CUnit>
+    <CUnit id="GDIRaiderWeapon" parent="GDIMissile">
+        <Mover value="D8Charge"/>
+    </CUnit>
+    <CUnit id="DefenderWeapon" parent="GDIMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="ARGUSMissile" parent="GDIMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="ATgunLMWeapon" parent="GDIMissile">
+        <Mover value="ATgunWeapon"/>
+    </CUnit>
+    <CUnit id="GDIGrenadesWeapon" parent="GDIMissile">
+        <Mover value="TossGrenade"/>
+    </CUnit>
+    <!--other-->
+    <CUnit id="GDICaster">
+        <FlagArray index="Turnable" value="0"/>
+        <FlagArray index="PenaltyRevealed" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="TownAlert" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <FogVisibility value="Snapshot"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="RoachBurrow" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="450"/>
+        <LifeMax value="450"/>
+        <LifeArmor value="1"/>
+        <EnergyMax value="200"/>
+        <EnergyRegenRate value="0.4218"/>
+        <ShieldsStart value="450"/>
+        <ShieldsMax value="450"/>
+        <ShieldRegenDelay value="10"/>
+        <ShieldRegenRate value="2"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Sight value="0.5"/>
+        <CostResource index="Minerals" value="150"/>
+        <AttackTargetPriority value="11"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="GDIIonCannonAttack"/>
+        <CardLayouts>
+            <LayoutButtons Face="IonCannonAttack" Type="AbilCmd" AbilCmd="GDIIonCannonAttack,Execute" Row="1" Column="1"/>
+        </CardLayouts>
+        <Radius value="1.75"/>
+        <SeparationRadius value="1.75"/>
+        <Footprint value="Footprint3x3Contour"/>
+        <PlacementFootprint value="Footprint3x3"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1.75"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="GDI"/>
+    </CUnit>
+    <CUnit id="DropPodGDI" parent="DESTRUCTIBLE">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <BehaviorArray Link="GDIdroppodland"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="GDI"/>
+    </CUnit>
+</Catalog>

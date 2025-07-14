@@ -1,0 +1,1640 @@
+<Catalog>
+  <CRace default="1">
+    <Name value="Race/Name/##id##" />
+    <RaceIcon value="@UI/RaceIcon/##id##" />
+    <StartLocationAlert value="StartLocation" />
+    <GameMusic value="Music_##id##Low" />
+    <FoodCeiling value="200" />
+    <ShowResource index="Minerals" value="1" />
+    <ShowResource index="Vespene" value="1" />
+    <MiniMapBorderColor value="255,0,0,0" />
+    <PlacementGridColorBlindColor value="255,200,128,32" />
+  </CRace>
+  <CRace id="Neut">
+    <AttributeId value="Neut" />
+  </CRace>
+  <CRace id="Terr">
+    <AttributeId value="Terr" />
+    <ExpansionOrder value="1" />
+    <StartingResource index="Minerals" value="50" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="CommandCenter">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="6" Unit="SCV">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,40,172,68" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <LevelAchievementId value="91475320767753" />
+  </CRace>
+  <CRace id="Prot">
+    <AttributeId value="Prot" />
+    <ExpansionOrder value="3" />
+    <StartingResource index="Minerals" value="50" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="Nexus">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="6" Unit="Probe">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <GlossaryTeamColorIndex value="2" />
+    <MiniMapBorderColor value="100,12,149,250" />
+    <PlacementGridColorBlindColor value="255,72,140,255" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <LevelAchievementId value="91475320767755" />
+  </CRace>
+  <CRace id="Zerg">
+    <AttributeId value="Zerg" />
+    <ExpansionOrder value="2" />
+    <StartingResource index="Minerals" value="50" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="Hatchery">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="6" Unit="Drone">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray Unit="Overlord">
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <GlossaryTeamColorIndex value="4" />
+    <MiniMapBorderColor value="100,245,140,70" />
+    <PlacementGridColorBlindColor value="255,192,80,192" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <LevelAchievementId value="91475320767751" />
+  </CRace>
+  <CRace id="Prot">
+    <StartingUnitArray Count="12" Unit="Probe">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="Terr">
+    <StartingUnitArray Count="12" Unit="SCV">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="Zerg">
+    <StartingUnitArray Count="12" Unit="Drone">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="BWTe">
+    <AttributeId value="BWTe" />
+    <RaceIcon value="@UI/RaceIcon/Terr" />
+    <GameMusic value="Music_TerrLow_SCI" />
+    <StartingUnitArray Unit="CommandCenterSCBW">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="SCVSCBW">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="2" />
+    <MiniMapBorderColor value="100,40,172,68" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <DefaultConsoleSkin value="ConsoleTerran_Classic" />
+    <Icon value="Assets\Textures\icon-1v1-BWTerran.dds" />
+  </CRace>
+  <CRace id="BWPr">
+    <AttributeId value="BWPr" />
+    <RaceIcon value="@UI/RaceIcon/Prot" />
+    <GameMusic value="Music_ProtLow_SCI" />
+    <StartingUnitArray Unit="NexusSCBW">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="ProbeSCBW">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="11" />
+    <MiniMapBorderColor value="100,40,172,68" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="3" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Classic" />
+    <Icon value="Assets\Textures\icon-1v1-BWProtoss.dds" />
+  </CRace>
+  <CRace id="BWZe">
+    <AttributeId value="BWZe" />
+    <RaceIcon value="@UI/RaceIcon/Zerg" />
+    <GameMusic value="Music_ZergLow_SCI" />
+    <StartingUnitArray Unit="HatcherySCBW">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="DroneSCBW">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray Unit="OverlordSCBW">
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="6" />
+    <MiniMapBorderColor value="100,245,140,70" />
+    <PlacementGridColorBlindColor value="255,192,80,192" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="2" />
+    <DefaultConsoleSkin value="ConsoleZerg_Classic" />
+    <Icon value="Assets\Textures\icon-1v1-BWZerg.dds" />
+  </CRace>
+  <CRace id="Dragon">
+    <AttributeId value="Drag" />
+    <GameMusic value="ZZerus01MusicMain" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="DenizenoftheDeep">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Plodder">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray Unit="Razorback">
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="4" />
+    <MiniMapBorderColor value="100,255,128,64" />
+    <PlacementGridColorBlindColor value="100,255,128,64" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ShowResource index="Custom" value="1" />
+    <DefaultConsoleSkin value="ConsoleZerg_Abathur" />
+    <Icon value="Assets\UI\lobbyrace-dragon.dds" />
+  </CRace>
+  <CRace id="ZHBR">
+    <AttributeId value="ZHBR" />
+    <Icon value="assets\Icons\lobby-hybrid.dds" />
+    <GameMusic value="Music_ProtLow" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="ZHBRTemple">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="ZHBRMinion">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="14" />
+    <MiniMapBorderColor value="255,0,255,191" />
+    <DefeatSound value="UI_MissionFailed" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Ihanrii" />
+  </CRace>
+  <CRace id="Gen">
+    <AttributeId value="Gen" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="ProcessingCore">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="ACR">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="3" />
+    <MiniMapBorderColor value="100,128,255,255" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <Icon value="Assets\Icons\lobby-genetron.dds" />
+  </CRace>
+  <CRace id="Xayi">
+    <AttributeId value="Xayi" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="ScavengerNest">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Scavenger">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="6" />
+    <MiniMapBorderColor value="155,255,128,64" />
+    <VictorySound value="MusicVictoryZerg3" />
+    <DefeatSound value="TTosh03AMusicOutro" />
+    <Icon value="Assets\Icons\lobby-xayid.dds" />
+  </CRace>
+  <CRace id="Keir">
+    <AttributeId value="Keir" />
+    <GlossaryTeamColorIndex value="4" />
+    <StartingUnitArray Unit="Citadel">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Converter">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <MiniMapBorderColor value="100,255,255,128" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <Icon value="Assets\Icons\lobby-keiron.dds" />
+  </CRace>
+  <CRace id="Esch">
+    <AttributeId value="Esch" />
+    <RaceIcon value="@UI/RaceIcon/Terr" />
+    <GameMusic value="Music_TerrLow" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="ActuationCenter">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Catalyst">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,40,172,68" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <LevelAchievementId value="91475320767753" />
+    <Icon value="Assets\Textures\decal_protoss_0067_01.dds" />
+  </CRace>
+  <CRace id="Synd">
+    <AttributeId value="Synd" />
+    <RaceIcon value="@UI/RaceIcon/Terr" />
+    <GameMusic value="Music_TerrLow" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="MycoChoir">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Prospector">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="6" />
+    <MiniMapBorderColor value="100,40,172,68" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="4" />
+    <LevelAchievementId value="91475320767753" />
+    <DefaultConsoleSkin value="ConsoleTerran_Swann" />
+    <Icon value="Assets\Icons\Synoid.dds" />
+  </CRace>
+  <CRace id="PrTD" parent="Prot">
+    <Icon value="Assets\Icons\taldarim.dds" />
+    <Name value="Race/Name/PrTD" />
+    <AttributeId value="PrTD" />
+    <RaceIcon value="@UI/RaceIcon/PrTD" />
+    <MiniMapBorderColor value="100,255,0,0" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Forged" />
+    <StartingUnitArray Unit="TalDarimCynosure">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="TalDarimLocust">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="UED">
+    <AttributeId value="UED" />
+    <GameMusic value="Music_TerrLow_SCI" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="OperationHeadquarters">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Salvager">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,255,0" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete2" />
+    <DefeatSound value="UI_MissionFailed2" />
+    <ExpansionOrder value="1" />
+    <LevelAchievementId value="91475320767753" />
+    <DefaultConsoleSkin value="ConsoleUED" />
+    <Icon value="Assets\Icons\ued-white.dds" />
+  </CRace>
+  <CRace id="TerU" parent="Terr">
+    <Name value="Race/Name/TerU" />
+    <AttributeId value="TerU" />
+    <Icon value="Assets\Icons\umojan.dds" />
+    <StartingUnitArray Unit="UmojanCommandCenter">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="UmojanMCS">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <LevelAchievementId value="0" />
+    <DefaultConsoleSkin value="ConsoleTerran_Silver" />
+    <MiniMapBorderColor value="100,255,255,255" />
+    <PlacementGridColorBlindColor value="100,255,255,255" />
+  </CRace>
+  <CRace id="UPLL">
+    <AttributeId value="UPL" />
+    <Icon value="Assets\Icons\upl.dds" />
+    <RaceIcon value="Assets\Icons\upl.dds" />
+    <GameMusic value="Music_TerrLow_SCI" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="UPLHeadquarters">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="MiningDrone">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <DefaultConsoleSkin value="ConsoleTerran_Default" />
+  </CRace>
+  <CRace id="Scrin">
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <Icon value="Assets\Icons\factions\faction-tw-scrin.dds" />
+  </CRace>
+  <CRace id="GDI">
+    <AttributeId value="GDI" />
+    <GameMusic value="Music_TerrLow" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="GDIdefenseMCVCY">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="Dozer">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,128,0" />
+    <PlacementGridColorBlindColor value="255,255,168,81" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <LevelAchievementId value="91475320767753" />
+    <Icon value="Assets\Icons\Factions\faction-tw-gdi.dds" />
+  </CRace>
+  <CRace id="Nod">
+    <AttributeId value="Nod" />
+    <GameMusic value="Music_NodEarly" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="NodTiberiumRefinery">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="6" Unit="NodHarvester">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray Unit="NodMCV">
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,0,0" />
+    <PlacementGridColorBlindColor value="255,128,0,64" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Forged" />
+    <Icon value="Assets\Icons\Factions\faction-tw-nod.dds" />
+  </CRace>
+  <CRace id="CABAL">
+    <Name value="Race/Name/CABAL" />
+    <Icon value="Assets\Icons\Factions\faction-cabal.dds" />
+    <AttributeId value="CABL" />
+    <GameMusic value="Music_NodEarly" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="CabalOffenseCrawler">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="CabalSlave">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,0,0" />
+    <PlacementGridColorBlindColor value="255,128,0,64" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Forged" />
+  </CRace>
+  <CRace id="Allied">
+    <Icon value="Assets\icons\factions\Allied-color.dds" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+  </CRace>
+  <CRace id="Japan">
+    <Icon value="Assets\icons\factions\empire-color.dds" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="JpConstructionYard">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="Soviet">
+    <Icon value="Assets\icons\factions\Soviet-color.dds" />
+    <GameMusic value="Music_WW24" />
+    <VictorySound value="UI_MissionComplete2" />
+    <ExpansionOrder value="1" />
+    <StartingResource index="Minerals" value="50" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="SuRefinery">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="6" Unit="SuHarvester">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray Unit="SuMCV">
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="China">
+    <GameMusic value="Music_WW25" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <ShowResource index="Vespene" value="0" />
+    <ShowResource index="Terrazine" value="1" />
+    <StartingUnitArray Range="1" Unit="CnConstructionYard">
+      <Flags index="ResourceRally" value="1" />
+      <Flags index="ResourceSetRally" value="1" />
+      <Offset value="0,0" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="400" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,128,0" />
+    <PlacementGridColorBlindColor value="255,90,255,133" />
+    <VictorySound value="UI_MissionComplete2" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <LevelAchievementId value="91475320767753" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Fenix" />
+    <Icon value="Assets\icons\factions\china-color.dds" />
+  </CRace>
+  <CRace id="Neut">
+    <Icon value="assets\textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_selected_rand.dds" />
+  </CRace>
+  <CRace id="Prot">
+    <Icon value="assets\textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_selected_prot.dds" />
+  </CRace>
+  <CRace id="Terr">
+    <Icon value="assets\textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_selected_terr.dds" />
+  </CRace>
+  <CRace id="Zerg">
+    <Icon value="assets\textures\ui_battlenet_glues_multiplayer_racebutton_raceicon_selected_zerg.dds" />
+  </CRace>
+  <CRace id="Creeps">
+    <Icon value="Assets\Icons\pandaren.dds" />
+  </CRace>
+  <CRace id="Draenei">
+    <GameMusic value="Draenei_Music_V1" />
+    <ShowResource index="Minerals" value="0" />
+    <ShowResource index="Vespene" value="0" />
+    <ShowResource index="Terrazine" value="1" />
+    <ShowResource index="Custom" value="1" />
+    <StartingResource index="Terrazine" value="500" />
+    <StartingResource index="Custom" value="150" />
+    <FoodCeiling value="100" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <StartingUnitArray Unit="ndh3" />
+    <StartingUnitArray Count="12" Unit="ndrl">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <Icon value="Assets\Icons\Draenei.dds" />
+  </CRace>
+  <CRace id="Human">
+    <AttributeId value="Huma" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <StartingUnitArray Unit="htow" />
+    <StartingUnitArray Count="12" Unit="hpea">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <Icon value="Assets\Icons\Human.dds" />
+  </CRace>
+  <CRace id="Naga">
+    <GameMusic value="Naga_Music_V1" />
+    <ShowResource index="Terrazine" value="1" />
+    <ShowResource index="Custom" value="1" />
+    <StartingResource index="Minerals" value="50" />
+    <FoodCeiling value="100" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <StartingUnitArray Unit="nntt">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="nmpe">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <Icon value="Assets\Icons\Naga.dds" />
+  </CRace>
+  <CRace id="NightElf">
+    <AttributeId value="Nelf" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <StartingUnitArray Unit="etol" />
+    <StartingUnitArray Count="12" Unit="ewsp">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <Icon value="Assets\Icons\Nightelf.dds" />
+  </CRace>
+  <CRace id="Orc">
+    <AttributeId value="Orci" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <StartingUnitArray Unit="ogre" />
+    <StartingUnitArray Count="12" Unit="opeo">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <Icon value="Assets\Icons\Orc.dds" />
+  </CRace>
+  <CRace id="Undead">
+    <AttributeId value="Unde" />
+    <UpkeepTax FoodLevel="50" />
+    <UpkeepTax FoodLevel="80">
+      <Tax />
+    </UpkeepTax>
+    <UpkeepTax FoodLevel="524287">
+      <Tax />
+    </UpkeepTax>
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <DefaultConsoleSkin value="ConsoleTerran_Alliance" />
+    <StartingUnitArray Unit="unpl" />
+    <StartingUnitArray Count="12" Unit="uaco">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <Icon value="Assets\Icons\Undead.dds" />
+  </CRace>
+  <CRace id="DOW" default="1">
+    <?token id="icon"?>
+    <token id="icon" />
+    <Icon value="Assets\Icons\Races\##icon##.dds" />
+    <GameMusic value="Music_NecronEarly" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray>
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray>
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="100,255,0,0" />
+    <PlacementGridColorBlindColor value="255,128,0,64" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+    <DefaultConsoleSkin value="ConsoleProtoss_Forged" />
+  </CRace>
+  <CRace id="Necron" parent="DOW">
+    <AttributeId value="WHNE" />
+    <StartingUnitArray Unit="NecronBuilderScarab" />
+  </CRace>
+  <CRace id="Tyranid" parent="DOW">
+    <AttributeId value="WHTY" />
+    <GameMusic value="Music_ZergLow" />
+    <StartingUnitArray Unit="NornQueensNest" />
+    <StartingUnitArray Unit="Ripper" />
+  </CRace>
+  <CRace id="WHCD" parent="DOW">
+    <AttributeId value="WHCD" />
+  </CRace>
+  <CRace id="WHCM" parent="DOW">
+    <AttributeId value="WHCM" />
+  </CRace>
+  <CRace id="WHDE" parent="DOW">
+    <AttributeId value="WHDE" />
+  </CRace>
+  <CRace id="WHEL" parent="DOW">
+    <AttributeId value="WHEL" />
+  </CRace>
+  <CRace id="WHTA" parent="DOW">
+    <AttributeId value="WHTA" />
+  </CRace>
+  <CRace id="WHIG" parent="DOW">
+    <AttributeId value="WHIG" />
+  </CRace>
+  <CRace id="WHOR" parent="DOW">
+    <AttributeId value="WHOR" />
+  </CRace>
+  <CRace id="WHSM" parent="DOW">
+    <AttributeId value="WHSM" />
+  </CRace>
+  <CRace id="WHSB" parent="DOW">
+    <AttributeId value="WHSB" />
+  </CRace>
+  <CRace id="WZScav">
+    <Icon value="Assets\Icons\Factions\Scavengers-white.dds" />
+    <GameMusic value="Music_WZEarly" />
+    <StartingUnitArray Unit="WZHeadquarters">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+  </CRace>
+  <CRace id="WZ">
+    <AttributeId value="WRZN" />
+    <Icon value="Assets\Icons\Factions\expedition-white.dds" />
+    <GameMusic value="Music_WZEarly" />
+    <Flags index="Selectable" value="1" />
+    <Flags index="TrialAllowed" value="1" />
+    <StartingUnitArray Unit="WZHeadquarters">
+      <Flags index="ResourceSetRally" value="1" />
+    </StartingUnitArray>
+    <StartingUnitArray Count="12" Unit="NecronBuilderScarab">
+      <Flags index="ResourceRally" value="1" />
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingUnitArray>
+      <Offset value="0,-3" />
+      <Offset value="1,-3" />
+      <Offset value="2,-3" />
+      <Offset value="3,-3" />
+      <Offset value="3,-2" />
+      <Offset value="3,-1" />
+      <Offset value="3,0" />
+      <Offset value="3,1" />
+      <Offset value="3,2" />
+      <Offset value="3,3" />
+      <Offset value="2,3" />
+      <Offset value="1,3" />
+      <Offset value="0,3" />
+      <Offset value="-1,3" />
+      <Offset value="-2,3" />
+      <Offset value="-3,3" />
+      <Offset value="-3,2" />
+      <Offset value="-3,1" />
+      <Offset value="-3,0" />
+      <Offset value="-3,-1" />
+      <Offset value="-3,-2" />
+      <Offset value="-3,-3" />
+      <Offset value="-2,-3" />
+      <Offset value="-1,-3" />
+    </StartingUnitArray>
+    <StartingResource index="Minerals" value="50" />
+    <GlossaryTeamColorIndex value="1" />
+    <MiniMapBorderColor value="0,0,255,0" />
+    <PlacementGridColorBlindColor value="0,0,255,64" />
+    <VictorySound value="UI_MissionComplete" />
+    <DefeatSound value="UI_MissionFailed" />
+    <ExpansionOrder value="1" />
+  </CRace>
+</Catalog>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="us-ascii"?>
+<Catalog>
+    <CTargetSortVital id="TSCost"/>
+    <CTargetSortDistance id="TSDistance2"/>
+    <CTargetSortDistance id="TSDistance22"/>
+    <CTargetSortInterruptible id="TSInterruptible2">
+        <Value value="1"/>
+    </CTargetSortInterruptible>
+    <CTargetSortInterruptible id="TSInterruptible22">
+        <Value value="1"/>
+    </CTargetSortInterruptible>
+</Catalog>

@@ -1,0 +1,63 @@
+<Catalog>
+    <CButton default="1" id="GDIButton">
+        <?token id="icon"?>
+        <EditorCategories value="Race:GDI"/>
+        <Icon value="Assets\icons\GDI\##icon##.dds"/>
+    </CButton>
+    <CButton id="GDIZoneDefender" parent="GDIButton" icon="RegionalDefender"/>
+    <CButton id="GDIEngineer" parent="GDIButton" icon="GDIEngineer"/>
+    <CButton id="GDIZoneTrooper" parent="GDIButton" icon="RegionalArmorer"/>
+    <CButton id="GDIZoneEnforcer" parent="GDIButton" icon="RegionalEnforcer"/>
+    <CButton id="GDIZoneRaider" parent="GDIButton" icon="RegionalAssaulter"/>
+    <CButton id="GDIZoneCommando" parent="GDIButton" icon="RegionalCommander"/>
+    <CButton id="GDIMammothTank" parent="GDIButton" icon="MammothII"/>
+    <CButton id="GDIStriker" parent="GDIButton" icon="GDIStriker"/>
+    <CButton id="GDITitan" parent="GDIButton" icon="Titan"/>
+    <CButton id="GDIMastodon" parent="GDIButton" icon="Mastodon"/>
+    <CButton id="GDIJuggernaut" parent="GDIButton" icon="tt-jaggernaut-icon"/>
+    <CButton id="GDISpartan" parent="GDIButton" icon="Spartan"/>
+    <CButton id="GDIRefractor" parent="GDIButton" icon="ReflectorShield"/>
+    <CButton id="GDIPredator" parent="GDIButton" icon="tw_predator"/>
+    <CButton id="GDIHammerhead" parent="GDIButton" icon="gdi-hammerhead-icon"/>
+    <CButton id="GDIArgus" parent="GDIButton" icon="gdi-arcus-icon"/>
+    <CButton id="Dozer" parent="GDIButton" icon="Bulldozer"/>
+    <CButton id="GDIShepherdTank" parent="GDIButton" icon="Shepherd"/>
+    <CButton id="GDIMCV" parent="NodButton" icon="tw_gdimcv"/>
+    <CButton id="GDITiberiumSilo" parent="NodButton" icon="tw_gdisilo"/>
+    <CButton id="JumpPack" parent="GDIButton" icon="FXGDI_AssaultJetpacks">
+        <Hotkey value="Button/Hotkey/MindBolt"/>
+    </CButton>
+    <CButton id="DeployD" parent="GDIButton" icon="DefenseConstructionPlant">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="packD" parent="GDIButton" icon="DefenseConstructionPlant">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="GDIHeal" parent="GDIButton" icon="FXGDI_EnhancedRepairs"/>
+    <CButton id="GDIJetPack" parent="GDIButton" icon="FXGDI_AssaultJetpacks"/>
+    <CButton id="GDIPulseGrenades" parent="GDIButton">
+        <Icon value="Assets\Textures\btn-upgrade-nova-btn-upgrade-nova-pulsegrenade.dds"/>
+    </CButton>
+    <CButton id="GDIGuardianCannon" parent="GDIButton" icon="gdi-guardiancannon-icon"/>
+    <CButton id="GDIFocusBeam" parent="GDIButton" icon="gdi-focusbeam-icon"/>
+    <CButton id="GDIFactory" parent="GDIButton" icon="tw_gdiwarfactory"/>
+    <CButton id="GDIBarracks" parent="GDIButton" icon="tw_barracks"/>
+    <CButton id="GDIAirfield" parent="GDIButton" icon="gdi-airfield-icon"/>
+    <CButton id="GDIRefinery" parent="GDIButton" icon="tw_gdirefinery"/>
+    <CButton id="GDIBunker" parent="GDIButton" icon="GDIBunker"/>
+    <CButton id="UpgradePowerPlant" parent="GDIButton" icon="tw_advancedturbine"/>
+    <CButton id="GDIPowerPlant" parent="GDIButton"  icon="tw_gdipowerplant"/>
+    <CButton id="GDICommandPost" parent="GDIButton"  icon="tw_commandpost"/>
+    <CButton id="DeployCC3" parent="GDIButton" icon="tw_deploy">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="GDIMCVUndeploy" parent="GDIButton" icon="tw_undeploy">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="IonCannonAttack" parent="GDIButton">
+        <Icon value="Assets\icons\FXNOD_EMPCountermeasuresUpgrade.dds"/>
+    </CButton>
+    <CButton id="GDIAramUpgrade" parent="GDIButton" icon="FXGDI_BattleHardening">
+        <HotkeyAlias value="NodAramUpgrade"/>
+    </CButton>
+</Catalog>

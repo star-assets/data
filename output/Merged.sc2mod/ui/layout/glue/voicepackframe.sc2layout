@@ -1,0 +1,675 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Constant name="TileListItemHeight" val="76" />
+  <Constant name="TileListItemOffsetRight" val="0" />
+  <Constant name="TileListItemOffsetTop" val="-6" />
+  <Frame type="Button" name="ExampleLinePlayButton">
+    <Height val="34" />
+    <Width val="34" />
+    <DisplayType val="ImageLayer" />
+    <Frame type="Image" name="NormalImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="34" />
+      <Height val="34" />
+      <LayerCount val="4" />
+      <StateCount val="1" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Normal" layer="0" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="1" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="2" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="3" />
+    </Frame>
+    <Frame type="Image" name="HoverImage">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Width val="34" />
+      <Height val="34" />
+      <LayerCount val="4" />
+      <StateCount val="1" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Over" layer="0" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="1" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="2" />
+      <Texture val="@UI/SC2_UI_Coop_CommanderIcon_PlayButton_Pressed" layer="3" />
+    </Frame>
+    <Animation name="PlayClickSound">
+      <Event event="OnClick" action="Reset, Play" frame="$this" />
+      <Controller type="Sound" end="Stop">
+        <Key type="Sound" time="0" sound="@UI_VoicePackPlayButton" />
+      </Controller>
+    </Animation>
+  </Frame>
+  <Frame type="VoicePackExampleLineFrame" name="VoicePackExampleLineFrameTemplate">
+    <VoicePack val="{$parent/@VoicePack}" />
+    <Frame type="Image" name="BackgroundImage">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="6" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-6" />
+      <LayerCount val="2" />
+      <Color val="0,126,255" />
+      <Alpha val="128" />
+      <Visible val="false" />
+      <Texture val="@UI/SC2_UI_Collection_VoicePack_CharacterFrame_GenericEffect_RadialGradient_256x256" layer="0" />
+      <Texture val="@UI/SC2_UI_Collection_VoicePack_CharacterFrame_GenericEffect_RadialGradient_256x256" layer="1" />
+      <TextureCoords top="0.75" bottom="0.891" left="0.22" right="0.78" />
+      <TextureCoords top="0.891" bottom="0.75" left="0.22" right="0.78" />
+    </Frame>
+    <Frame type="Label" name="DescriptionLabel">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="1" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="4" />
+      <Anchor side="Right" relative="$parent/PlaySoundButton" pos="Min" offset="-20" />
+      <Style val="@VoicePack_ItemFrame_ExampleLine" />
+      <Text val="{$parent/@LineDescriptionText}" />
+    </Frame>
+    <Frame type="Button" name="PlaySoundButton" template="VoicePackFrame/ExampleLinePlayButton">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-13" />
+      <ClickSound val="{$parent/@LineSound}" />
+      <HoverSound val="@UI_HoverTick" />
+    </Frame>
+  </Frame>
+  <Frame type="SelectedVoicePackFrame" name="SelectedVoicePackFrameTemplate">
+    <Width val="112" />
+    <Height val="56" />
+    <PresenceId val="{$ancestor[@type=VoicePackSelectionFrame]/@PresenceId}" />
+    <Tooltip val="{$this/FormattedTooltipText/@Text}" />
+    <TooltipAnchorPosition val="TopCenter" />
+    <AcceptsMouse val="True" />
+    <Frame type="TextFormatFrame" name="FormattedTooltipText">
+      <Anchor relative="$parent" />
+      <FormatText val="@UI/ScreenCollection/VoicePack/SelectedTooltip" />
+      <Replacement val="{$parent/VoicePackFrame/@NameText}" />
+      <Replacement val="" />
+    </Frame>
+    <Frame type="VoicePackFrame" name="VoicePackFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <VoicePack val="{$parent/@VoicePack}" />
+    </Frame>
+    <Frame type="RewardCacheFrame" name="UnlockedRewardCacheFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <PresenceId val="{$parent/@PresenceId}" />
+    </Frame>
+    <Frame type="Image" name="Background">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="4" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="-4" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="4" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-4" />
+      <Texture val="Assets/Textures/White.dds" />
+      <Color val="9,12,21" />
+      <Alpha val="179" />
+    </Frame>
+    <Frame type="Image" name="VoicePackIcon">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="4" />
+      <Width val="90" />
+      <Height val="48" />
+      <Texture val="{$parent/UnlockedRewardCacheFrame/@LargeImageFilePath}" />
+      <TextureCoords top="0.16667" left="0.0625" bottom="0.83333" right="1" />
+      <Alpha val="255" />
+      <RenderPriority val="515" />
+    </Frame>
+    <Frame type="Image" name="Overlay">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Mid" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Mid" offset="0" />
+      <Width val="104" />
+      <Height val="48" />
+      <Texture val="@UI/SC2_UI_Collection_Announcers_ThumbDisplay_Overlay" />
+      <RenderPriority val="516" />
+    </Frame>
+    <Frame type="Image" name="OverlayAdd">
+      <Anchor relative="$parent/Overlay" />
+      <Texture val="{$parent/Overlay/@Texture}" />
+      <RenderPriority val="516" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="RaceIcon">
+      <Anchor side="Top" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Bottom" relative="$parent" pos="Mid" offset="-1" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-12" />
+      <Alpha val="255" />
+      <RenderPriority val="517" />
+    </Frame>
+    <Frame type="Image" name="RaceIconAdd">
+      <Anchor relative="$parent/RaceIcon" />
+      <Texture val="{$parent/RaceIcon/@Texture}" />
+      <TextureCoords />
+      <RenderPriority val="517" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="BorderOuter">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer" />
+      <TextureType val="NineSlice" />
+      <Color val="0,0,0" />
+      <RenderPriority val="520" />
+    </Frame>
+    <Frame type="Image" name="BorderInner">
+      <Anchor relative="$parent" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner" />
+      <TextureType val="NineSlice" />
+      <Color val="31,52,78" />
+      <RenderPriority val="600" />
+    </Frame>
+    <StateGroup name="RaceState">
+      <DefaultState val="None" />
+      <State name="Terran">
+        <When type="Property" frame="$this" />
+        <Action type="SetProperty" frame="$this/FormattedTooltipText" />
+        <Action type="SetProperty" frame="$this/RaceIcon" Texture="@UI/SC2_UI_Collection_Announcers_ThumbDisplay_RaceIcon_Terran" />
+      </State>
+      <State name="Zerg">
+        <When type="Property" frame="$this" />
+        <Action type="SetProperty" frame="$this/FormattedTooltipText" />
+        <Action type="SetProperty" frame="$this/RaceIcon" Texture="@UI/SC2_UI_Collection_Announcers_ThumbDisplay_RaceIcon_Zerg" />
+      </State>
+      <State name="Protoss">
+        <When type="Property" frame="$this" />
+        <Action type="SetProperty" frame="$this/FormattedTooltipText" />
+        <Action type="SetProperty" frame="$this/RaceIcon" Texture="@UI/SC2_UI_Collection_Announcers_ThumbDisplay_RaceIcon_Protoss" />
+      </State>
+      <State name="None">
+        <Action type="SetProperty" frame="$this/FormattedTooltipText" />
+        <Action type="SetProperty" frame="$this/RaceIcon" Texture="Assets/Textures/Blank.dds" />
+      </State>
+    </StateGroup>
+    <StateGroup name="SelectedRaceState">
+      <DefaultState val="NotSelected" />
+      <State name="SelectedTerran">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="OverlayAdd" Visible="True" />
+        <Action type="SetProperty" frame="RaceIconAdd" Visible="True" />
+        <Action type="SetProperty" frame="BorderInner" Color="42,124,196" />
+      </State>
+      <State name="SelectedZerg">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="OverlayAdd" Visible="True" />
+        <Action type="SetProperty" frame="RaceIconAdd" Visible="True" />
+        <Action type="SetProperty" frame="BorderInner" Color="42,124,196" />
+      </State>
+      <State name="SelectedProtoss">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="StateGroup" />
+        <Action type="SetProperty" frame="OverlayAdd" Visible="True" />
+        <Action type="SetProperty" frame="RaceIconAdd" Visible="True" />
+        <Action type="SetProperty" frame="BorderInner" Color="42,124,196" />
+      </State>
+      <State name="NotSelected">
+        <Action type="SetProperty" frame="OverlayAdd" Visible="False" />
+        <Action type="SetProperty" frame="RaceIconAdd" Visible="False" />
+        <Action type="SetProperty" frame="BorderInner" Color="31,52,78" />
+      </State>
+    </StateGroup>
+    <StateGroup name="ValidStateGroup">
+      <DefaultState val="NotValid" />
+      <State name="Valid">
+        <When type="Property" frame="$this/UnlockedRewardCacheFrame" />
+        <Action type="SetProperty" frame="$this/VoicePackIcon" Visible="true" />
+      </State>
+      <State name="NotValid">
+        <Action type="SetProperty" frame="$this/VoicePackIcon" Visible="false" />
+      </State>
+    </StateGroup>
+    <StateGroup name="AspectRatioState">
+      <DefaultState val="Default" />
+      <State name="16x9">
+        <When type="StateGroup" frame="$GlueUI" />
+        <Action type="SetProperty" frame="BorderOuter" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer_16x9" />
+        <Action type="SetProperty" frame="BorderInner" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner_16x9" />
+      </State>
+      <State name="Default">
+        <Action type="SetProperty" frame="BorderOuter" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Outer" />
+        <Action type="SetProperty" frame="BorderInner" Texture="@UI/Glues_Battlenet_PageAssets_GraphicListItem_Border_Inner" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="VoicePackTileListItem" name="VoicePackTileListItemTemplate" template="StandardTileListTemplates/StandardLargeTileListItemTemplate">
+    <Frame type="Frame" name="AnchorFrame">
+      <Anchor side="Left" relative="$parent/$parent" pos="Min" offset="16" />
+      <Anchor side="Right" relative="$parent/$parent/ScrollBar" pos="Min" offset="-2" />
+    </Frame>
+    <Frame type="VoicePackFrame" name="VoicePackFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <VoicePack val="{$parent/@VoicePack}" />
+    </Frame>
+    <Frame type="RewardCacheFrame" name="RewardCacheFrame">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Reward val="{$parent/VoicePackFrame/@UnlockedReward[0]}" />
+      <PresenceId val="{$ancestor[@type=VoicePackSelectionFrame]/@PresenceId}" />
+      <StateGroup name="SelectedRaceState">
+        <DefaultState val="Default" />
+        <State name="Terran">
+          <When type="Property" frame="$ancestor[@name=ContentContainer]/HeaderPanel/RaceTabControl" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Zerg">
+          <When type="Property" frame="$ancestor[@name=ContentContainer]/HeaderPanel/RaceTabControl" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Protoss">
+          <When type="Property" frame="$ancestor[@name=ContentContainer]/HeaderPanel/RaceTabControl" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Default">
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="StoreCacheFrame" name="StoreCacheFrame">
+      <Anchor relative="$parent" />
+      <GameContent val="{$parent/VoicePackFrame/@GameContent}" />
+    </Frame>
+    <Frame type="GameContentFrame" name="GameContentFrame">
+      <Anchor relative="$parent" />
+      <GameContent val="{$parent/StoreCacheFrame/@GameContent}" />
+    </Frame>
+    <Frame type="Image" name="Icon">
+      <Texture val="{$parent/VoicePackFrame/@IconFilePath}" layer="1" />
+      <TextureCoords top="0.05556" left="0" bottom="0.94444" right="0.79167" />
+      <Visible val="True" />
+    </Frame>
+    <Frame type="Image" name="DefaultIcon">
+      <Anchor relative="$parent/Icon" />
+      <Alpha val="{$parent/Icon/@Alpha}" />
+      <Visible val="False" />
+      <LayerCount val="2" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardListItem_IconMask" layer="0" />
+      <Texture val="Assets/Textures/White.dds" layer="1" />
+      <TextureType val="NineSlice" layer="0" />
+      <AlphaLayer val="True" />
+      <TextureCoords top="0.05556" left="0" bottom="0.94444" right="0.79167" />
+    </Frame>
+    <Frame type="Label" name="TitleLabel">
+      <Text val="{$parent/VoicePackFrame/@NameText}" />
+    </Frame>
+    <Frame type="TextFormatFrame" name="FormattedCostText">
+      <FormatText val="@UI/ScreenCollection/VoicePack/All3Races/Normal" />
+      <Replacement val="{$parent/StoreCacheFrame/@CostText}" />
+      <StateGroup name="FormatTextState">
+        <DefaultState val="Normal" />
+        <State name="Selected">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Hovered">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Normal">
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Label" name="SubtitleLabel">
+      <StateGroup name="TextState">
+        <DefaultState val="Empty" />
+        <State name="Equipped">
+          <When type="StateGroup" frame="$parent" />
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Purchasable">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Locked">
+          <When type="StateGroup" frame="$parent" />
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Normal">
+          <When type="StateGroup" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="Empty">
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <StateGroup name="PurchasableState">
+      <DefaultState val="NotPurchasable" />
+      <State name="Purchasable">
+        <When type="Property" frame="StoreCacheFrame" />
+        <When type="Property" frame="StoreCacheFrame" />
+        <When type="Property" frame="$this/VoicePackFrame" />
+      </State>
+      <State name="NotPurchasable" />
+    </StateGroup>
+    <StateGroup name="EquippedState">
+      <DefaultState val="NotEquipped" />
+      <State name="Equipped">
+        <When type="AnimationState" frame="RewardCacheFrame" />
+      </State>
+      <State name="NotEquipped" />
+    </StateGroup>
+    <StateGroup name="LockedState">
+      <DefaultState val="NotLocked" />
+      <State name="Locked">
+        <When type="Property" frame="$this/GameContentFrame" />
+      </State>
+      <State name="NotLocked" />
+    </StateGroup>
+    <StateGroup name="SelectedDefaultRaceState">
+      <DefaultState val="NotDefault" />
+      <State name="DefaultTerran">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="Property" />
+        <Action type="SetProperty" frame="DefaultIcon" Texture="@UI/SC2_UI_Collection_VoicePack_ThumbStandard_Terran" />
+        <Action type="SetProperty" frame="DefaultIcon" Visible="true" />
+        <Action type="SetProperty" frame="Icon" Visible="false" />
+      </State>
+      <State name="DefaultZerg">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="Property" />
+        <Action type="SetProperty" frame="DefaultIcon" Texture="@UI/SC2_UI_Collection_VoicePack_ThumbStandard_Zerg" />
+        <Action type="SetProperty" frame="DefaultIcon" Visible="true" />
+        <Action type="SetProperty" frame="Icon" Visible="false" />
+      </State>
+      <State name="DefaultProtoss">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <When type="Property" />
+        <Action type="SetProperty" frame="DefaultIcon" Texture="@UI/SC2_UI_Collection_VoicePack_ThumbStandard_Protoss" />
+        <Action type="SetProperty" frame="DefaultIcon" Visible="true" />
+        <Action type="SetProperty" frame="Icon" Visible="false" />
+      </State>
+      <State name="NotDefault">
+        <Action type="SetProperty" frame="DefaultIcon" Visible="false" />
+        <Action type="SetProperty" frame="Icon" Visible="true" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="VoicePackFrame" name="VoicePackFrameTemplate">
+    <Frame type="Frame" name="AnnouncerPreviewPane" template="CollectionPreviewPane/VoicePackPreviewPaneTemplate">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="14" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="14" />
+      <Width val="496" />
+      <Height val="632" />
+    </Frame>
+    <Frame type="Label" name="NameLabel">
+      <Anchor side="Top" relative="$parent/AnnouncerPreviewPane" pos="Min" offset="6" />
+      <Anchor side="Left" relative="$parent/AnnouncerPreviewPane" pos="Max" offset="29" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-24" />
+      <Style val="@Collection_ItemFrame_Name" />
+      <Text val="{$parent/@NameText}" />
+      <Options val="NoWrapping|ScaleToPreventTruncation" />
+    </Frame>
+    <Frame type="Label" name="DescriptionLabel">
+      <Anchor side="Top" relative="$parent/AnnouncerPreviewPane" pos="Min" offset="83" />
+      <Anchor side="Left" relative="$parent/NameLabel" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-24" />
+      <Style val="@Collection_ItemFrame_Desc" />
+      <Text val="{$parent/@DescriptionText}" />
+      <Height val="256" />
+    </Frame>
+    <Frame type="Label" name="LocaleRestrictionLabel">
+      <Anchor side="Bottom" relative="$parent/AnnouncerPreviewPane" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent/ExampleLineTitle" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleLineTitle" pos="Max" offset="0" />
+      <Style val="@VoicePack_ItemFrame_LanguageWarning" />
+      <Visible val="false" />
+      <StateGroup name="LocaleStateGroup">
+        <State name="WhiteRaState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="enUSState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="frFRState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="koKRState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="ruRUState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="zhCNState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+        <State name="zhTWState">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" Visible="true" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+    </Frame>
+    <Frame type="Label" name="ExampleLineTitle">
+      <Anchor side="Top" relative="$parent/DescriptionLabel" pos="Max" offset="17" />
+      <Anchor side="Left" relative="$parent/NameLabel" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-24" />
+      <Text val="@UI/ScreenCollection/VoicePack/ExampleLineTitle" />
+      <Style val="@VoicePack_ItemFrame_SoundPreview" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider1">
+      <Anchor side="Top" relative="$parent/ExampleLineTitle" pos="Max" offset="2" />
+      <Anchor side="Left" relative="$parent/AnnouncerPreviewPane" pos="Max" offset="24" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-26" />
+      <Height val="14" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardContainer_ContentDivider" />
+      <TextureType val="EndCap" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider1Add">
+      <Anchor relative="$parent/ExampleDivider1" />
+      <Texture val="{$parent/ExampleDivider1/@Texture}" />
+      <TextureType val="{$parent/ExampleDivider1/@TextureType}" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider2">
+      <Anchor side="Top" relative="$parent/ExampleDivider1" pos="Max" offset="36" />
+      <Anchor side="Left" relative="$parent/ExampleDivider1" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleDivider1" pos="Max" offset="0" />
+      <Height val="14" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardContainer_ContentDivider" />
+      <TextureType val="EndCap" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider2Add">
+      <Anchor relative="$parent/ExampleDivider2" />
+      <Texture val="{$parent/ExampleDivider2/@Texture}" />
+      <TextureType val="{$parent/ExampleDivider2/@TextureType}" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider3">
+      <Anchor side="Top" relative="$parent/ExampleDivider2" pos="Max" offset="36" />
+      <Anchor side="Left" relative="$parent/ExampleDivider2" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleDivider2" pos="Max" offset="0" />
+      <Height val="14" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardContainer_ContentDivider" />
+      <TextureType val="EndCap" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider3Add">
+      <Anchor relative="$parent/ExampleDivider3" />
+      <Texture val="{$parent/ExampleDivider3/@Texture}" />
+      <TextureType val="{$parent/ExampleDivider3/@TextureType}" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider4">
+      <Anchor side="Top" relative="$parent/ExampleDivider3" pos="Max" offset="36" />
+      <Anchor side="Left" relative="$parent/ExampleDivider3" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleDivider3" pos="Max" offset="0" />
+      <Height val="14" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardContainer_ContentDivider" />
+      <TextureType val="EndCap" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider4Add">
+      <Anchor relative="$parent/ExampleDivider4" />
+      <Texture val="{$parent/ExampleDivider4/@Texture}" />
+      <TextureType val="{$parent/ExampleDivider4/@TextureType}" />
+      <BlendMode val="Add" />
+      <Alpha val="128" />
+      <Visible val="false" />
+    </Frame>
+    <Frame type="Image" name="ExampleDivider5">
+      <Anchor side="Top" relative="$parent/ExampleDivider4" pos="Max" offset="36" />
+      <Anchor side="Left" relative="$parent/ExampleDivider4" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleDivider4" pos="Max" offset="0" />
+      <Height val="14" />
+      <Texture val="@UI/Glues_Battlenet_PageAssets_StandardContainer_ContentDivider" />
+      <TextureType val="EndCap" />
+    </Frame>
+    <Frame type="VoicePackExampleLineFrame" name="VoicePackExampleLineFrame1" template="VoicePackFrame/VoicePackExampleLineFrameTemplate">
+      <Anchor side="Top" relative="$parent/ExampleDivider1" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/ExampleDivider2" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/ExampleDivider1" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/ExampleDivider1" pos="Max" offset="0" />
+      <LineIndex val="0" />
+    </Frame>
+    <Frame type="VoicePackExampleLineFrame" name="VoicePackExampleLineFrame2" template="VoicePackFrame/VoicePackExampleLineFrameTemplate">
+      <Anchor side="Top" relative="$parent/ExampleDivider2" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/ExampleDivider3" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/VoicePackExampleLineFrame1" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/VoicePackExampleLineFrame1" pos="Max" offset="0" />
+      <LineIndex val="1" />
+    </Frame>
+    <Frame type="VoicePackExampleLineFrame" name="VoicePackExampleLineFrame3" template="VoicePackFrame/VoicePackExampleLineFrameTemplate">
+      <Anchor side="Top" relative="$parent/ExampleDivider3" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/ExampleDivider4" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/VoicePackExampleLineFrame2" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/VoicePackExampleLineFrame2" pos="Max" offset="0" />
+      <LineIndex val="2" />
+    </Frame>
+    <Frame type="VoicePackExampleLineFrame" name="VoicePackExampleLineFrame4" template="VoicePackFrame/VoicePackExampleLineFrameTemplate">
+      <Anchor side="Top" relative="$parent/ExampleDivider4" pos="Mid" offset="0" />
+      <Anchor side="Bottom" relative="$parent/ExampleDivider5" pos="Mid" offset="0" />
+      <Anchor side="Left" relative="$parent/VoicePackExampleLineFrame3" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent/VoicePackExampleLineFrame3" pos="Max" offset="0" />
+      <LineIndex val="3" />
+    </Frame>
+    <StateGroup name="SelectedRaceState">
+      <State name="Terran">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <Action type="SetProperty" frame="ExampleDivider1Add" Visible="True" />
+        <Action type="SetProperty" frame="ExampleDivider2Add" Visible="True" />
+        <Action type="SetProperty" frame="ExampleDivider3Add" Visible="False" />
+        <Action type="SetProperty" frame="ExampleDivider4Add" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/BackgroundImage" Visible="True" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/DescriptionLabel" />
+      </State>
+      <State name="Zerg">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <Action type="SetProperty" frame="ExampleDivider1Add" Visible="False" />
+        <Action type="SetProperty" frame="ExampleDivider2Add" Visible="True" />
+        <Action type="SetProperty" frame="ExampleDivider3Add" Visible="True" />
+        <Action type="SetProperty" frame="ExampleDivider4Add" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/BackgroundImage" Visible="True" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/DescriptionLabel" />
+      </State>
+      <State name="Protoss">
+        <When type="Property" frame="$ancestor[@type=VoicePackSelectionFrame]" />
+        <Action type="SetProperty" frame="ExampleDivider1Add" Visible="False" />
+        <Action type="SetProperty" frame="ExampleDivider2Add" Visible="False" />
+        <Action type="SetProperty" frame="ExampleDivider3Add" Visible="True" />
+        <Action type="SetProperty" frame="ExampleDivider4Add" Visible="True" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/BackgroundImage" Visible="False" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/BackgroundImage" Visible="True" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame1/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame2/DescriptionLabel" />
+        <Action type="SetProperty" frame="VoicePackExampleLineFrame3/DescriptionLabel" />
+      </State>
+    </StateGroup>
+  </Frame>
+  <Frame type="TileList" name="VoicePackTileListTemplate">
+    <AcceptsMouse val="true" />
+    <RequireSelection val="true" />
+    <Frame type="VoicePackTileListItem" name="Item0" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent" pos="Min" offset="16" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item1" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item0/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item2" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item1/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item3" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item2/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item4" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item3/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item5" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item4/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item6" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item5/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item7" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item6/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="VoicePackTileListItem" name="Item8" template="VoicePackFrame/VoicePackTileListItemTemplate">
+      <Frame type="Frame" name="AnchorFrame">
+        <Anchor side="Top" relative="$parent/$parent/Item7/AnchorFrame" pos="Max" offset="2" />
+      </Frame>
+    </Frame>
+    <Frame type="ScrollBar" name="ScrollBar" template="StandardTileListTemplates/StandardTileListScrollBarTemplate">
+      <Anchor side="Top" relative="$parent/Item0" pos="Min" offset="2" />
+      <Anchor side="Bottom" relative="$parent/Item8" pos="Max" offset="-2" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="-2" />
+    </Frame>
+  </Frame>
+</Desc>

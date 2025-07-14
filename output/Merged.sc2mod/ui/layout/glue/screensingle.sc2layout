@@ -1,0 +1,132 @@
+<Desc>
+  <DescFlags val="Locked" />
+  <Constant name="ButtonOffset" val="-42" />
+  <Constant name="ButtonOffsetLeft" val="-84" />
+  <Constant name="CollectionIndex_Hyperlink_CustomCampaign" val="battlenet:://starcraft/custom/3" />
+  <Frame type="ScreenSingle" name="ScreenSingle">
+    <Handle val="ScreenSingle" />
+    <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+    <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+    <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    <DisplayBackgroundModel val="false" />
+    <Frame type="CampaignSelectionPanel" name="CampaignSelectionPanel" template="CampaignSelectionPanel/CampaignSelectionPanel">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+    </Frame>
+    <Frame type="TabControl" name="CampaignTabControl">
+      <Anchor side="Top" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+      <Anchor side="Bottom" relative="$parent" pos="Max" offset="0" />
+      <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+      <Handle val="CampaignTabControl" />
+      <TabListItem val="SubnavContainer/SubnavButton0" />
+      <PanelListItem val="OfficialCampaignFrame" />
+      <StateGroup name="SelectedTabState">
+        <State name="ScreenCustomIndex_Official">
+          <When type="Property" frame="$parent" />
+          <Action type="SetProperty" frame="$this" />
+        </State>
+      </StateGroup>
+      <Animation name="HideNav">
+        <Event event="HideNav" action="DirectionForward" frame="$parent" />
+        <Event event="HideNav" action="Play" frame="$parent" />
+        <Event event="ShowNav" action="DirectionReverse" frame="$parent" />
+        <Event event="ShowNav" action="Play" frame="$parent" />
+        <Controller type="Visibility" end="Pause">
+          <Key type="Bool" time="0" />
+          <Key type="Bool" time="0.1" />
+        </Controller>
+      </Animation>
+      <Frame type="Frame" name="OfficialCampaignFrame">
+        <Anchor relative="$parent/Background" />
+      </Frame>
+      <Frame type="BlurFrame" name="BlurEffect">
+        <Anchor relative="$parent/Background" />
+        <BlurAmount val=".3" />
+        <Frame type="Image" name="LowImage">
+          <Anchor relative="$parent" />
+          <Color val="0,0,0" />
+          <Alpha val="150" />
+        </Frame>
+      </Frame>
+      <Frame type="Image" name="Background">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="72" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0" />
+        <Height val="52" />
+        <Texture val="@UI/Glues_Battlenet_SubNav_Bg" />
+        <TextureType val="Nineslice" />
+        <Tiled val="true" />
+        <Alpha val="0" />
+        <Animation name="FadeNav">
+          <Event event="OnShown" action="Reset" />
+          <Event event="OnShown" action="Play" />
+          <Controller type="Fade" end="Pause">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="0.95" />
+          </Controller>
+        </Animation>
+      </Frame>
+      <Frame type="Image" name="BottomLineHighlightAnim">
+        <Anchor side="Bottom" relative="$parent/Background" pos="Max" offset="0" />
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0" />
+        <Texture val="@UI/Glues_Battlenet_TopNav_BottomHighlightAnim" />
+        <Alpha val="150" />
+        <Animation name="Highlight">
+          <Event event="OnShown" action="DirectionForward" frame="$parent" />
+          <Event event="OnShown" action="Play" frame="$parent" />
+          <Controller type="Fade" end="Loop">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="2" />
+            <Key type="Curve" time="4.5" />
+            <Key type="Curve" time="6" />
+            <Key type="Curve" time="10" />
+          </Controller>
+          <Controller type="Anchor" end="Loop" side="Left" relative="true">
+            <Key type="Curve" time="0" />
+            <Key type="Curve" time="2" />
+            <Key type="Curve" time="10" />
+          </Controller>
+        </Animation>
+      </Frame>
+      <Frame type="Frame" name="SubnavContainer" template="StandardNavigationTemplates/SubnavTemplate">
+        <Frame type="Button" name="SubnavButton0">
+          <Text val="@UI/ScreenCampaign/OfficialCampaignsButton" />
+          <Visible val="True" />
+        </Frame>
+        <Frame type="Image" name="SubnavButtonDivider0" template="StandardNavigationTemplates/SubnavButtonDividerTemplate">
+          <Anchor side="Top" relative="$parent/SubnavButton0" pos="Min" offset="15" />
+          <Anchor side="Left" relative="$parent/SubnavButton0" pos="Max" offset="#StandardNavigation_Subnav_Divider_Spacing_Horizontal" />
+          <Alpha val="{$parent/CustomCampaignNavButton/@Alpha}" />
+          <Visible val="{$parent/CustomCampaignNavButton/@Visible}" />
+        </Frame>
+        <Frame type="GlueHyperlinkButton" name="CustomCampaignNavButton" template="StandardNavigationTemplates/SubnavExtendedGlueLinkButtonTemplate">
+          <Text val="@UI/ScreenCampaign/CustomCampaignNavButton" />
+          <Hyperlink val="#CollectionIndex_Hyperlink_CustomCampaign" />
+          <Visible val="True" />
+          <Frame type="Frame" name="AnchorFrame">
+            <Anchor side="Top" relative="$parent/$parent/SubnavButton0" pos="Mid" offset="-4" />
+            <Anchor side="Bottom" relative="$parent/$parent/SubnavButton0" pos="Mid" offset="-4" />
+            <Anchor side="Left" relative="$parent/$parent/SubnavButton0" pos="Max" offset="-29" />
+          </Frame>
+          <Animation name="FadeIn">
+            <Event event="OnShown" action="Reset,Play" />
+            <Controller type="Fade" end="Pause">
+              <Key type="Curve" time="0" />
+              <Key type="Curve" time="0.3" />
+              <Key type="Curve" time="0.48" />
+            </Controller>
+            <Controller type="Anchor" end="Pause" side="Left" relative="true">
+              <Key type="Curve" time="0" />
+              <Key type="Curve" time="0.3" />
+              <Key type="Curve" time="0.48" />
+            </Controller>
+          </Animation>
+        </Frame>
+      </Frame>
+    </Frame>
+  </Frame>
+</Desc>
